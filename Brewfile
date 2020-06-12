@@ -22,8 +22,11 @@ brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 brew "somdoron/formulae/spacebar"
 cask "1password"
+cask "ableton-live"
+cask "audio-hijack"
 cask "balenaetcher"
 cask "banktivity"
+cask "beatport-pro"
 cask "blackhole"
 cask "cleanmymac"
 cask "clipy"
@@ -57,12 +60,15 @@ cask "quicklook-json"
 cask "rekordbox"
 cask "selfcontrol"
 cask "slack"
+cask "streamlabs-obs"
 cask "sublime-merge"
 cask "sublime-text"
 cask "tableplus"
 cask "telegram"
 cask "timing"
+cask "visual-studio-code"
 cask "vk-messenger"
+cask "vlc"
 mas "CleanMyDrive 2", id: 523620159
 mas "Commander One", id: 1035236694
 mas "Dark Mode for Safari", id: 1397180934
@@ -92,4 +98,3 @@ mas "ToothFairy", id: 1191449274
 mas "Trello", id: 1278508951
 mas "Twitter", id: 1482454543
 mas "WhatsApp", id: 1147396723
-mas "Xcode", id: 497799835

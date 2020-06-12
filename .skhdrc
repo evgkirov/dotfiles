@@ -1,6 +1,6 @@
 # open safari
-# ctrl + cmd - return : /Users/evgkirov/Documents/dotfiles/bin/open_new_safari_window.sh
-# ctrl + alt + cmd - return : /Users/evgkirov/Documents/dotfiles/bin/open_new_private_window.sh
+ctrl + cmd - return : /Users/evgkirov/Documents/dotfiles/bin/open_new_safari_window.sh
+ctrl + alt + cmd - return : /Users/evgkirov/Documents/dotfiles/bin/open_new_private_window.sh
 
 
 # focus window
