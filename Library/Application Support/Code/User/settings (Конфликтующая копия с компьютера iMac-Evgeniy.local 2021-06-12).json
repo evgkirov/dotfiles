@@ -10,14 +10,17 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "python.defaultInterpreterPath": "/usr/bin/python3",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
     "window.autoDetectColorScheme": true,
     "autoDarkMode.lightTheme": "GitHub Light",
     "workbench.colorTheme": "GitHub Light",
     "yaml.schemas": {
-        "file:///Users/evgkirov/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///Users/evgkirov/.vscode/extensions/atlassian.atlascode-2.9.0/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
         {
@@ -38,9 +41,5 @@
         }
     ],
     "python.showStartPage": false,
-    "editor.minimap.enabled": false,
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    }
+    "editor.minimap.enabled": false
 }

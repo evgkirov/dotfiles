@@ -1,3 +1,7 @@
+# big sur
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 # global settings
 yabai -m config mouse_follows_focus          on
 yabai -m config focus_follows_mouse          off
@@ -26,16 +30,16 @@ yabai -m config layout                       bsp
 # yabai -m config window_gap                   5
 
 # yabai -m config top_padding                  31
-yabai -m config top_padding                  5
-yabai -m config bottom_padding               5
-yabai -m config left_padding                 5
-yabai -m config right_padding                5
-yabai -m config window_gap                   5
+# yabai -m config top_padding                  5
+# yabai -m config bottom_padding               5
+# yabai -m config left_padding                 5
+# yabai -m config right_padding                5
+# yabai -m config window_gap                   5
 
-# yabai -m config top_padding                  36
-# yabai -m config bottom_padding               10
-# yabai -m config left_padding                 10
-# yabai -m config right_padding                10
-# yabai -m config window_gap                   10
+yabai -m config top_padding                  7
+yabai -m config bottom_padding               7
+yabai -m config left_padding                 7
+yabai -m config right_padding                7
+yabai -m config window_gap                   7
 
 echo "yabai configuration loaded.."
