@@ -1,6 +1,9 @@
+:: default : yabai -m config active_window_border_color 0xff775759
+:: ins @ : yabai -m config active_window_border_color 0xffff0000 ; sleep 1 ; skhd -k "escape"
+
 # open safari
-#ctrl + cmd - return : /Users/evgkirov/Documents/dotfiles/bin/open_new_safari_window.sh
-#ctrl + alt + cmd - return : /Users/evgkirov/Documents/dotfiles/bin/open_new_private_window.sh
+ctrl + cmd - return : /Users/evgkirov/Dropbox/Projects/dotfiles/bin/open_new_safari_window.sh
+ctrl + alt + cmd - return : /Users/evgkirov/Dropbox/Projects/dotfiles/bin/open_new_terminal_window.sh
 
 
 # focus window
@@ -15,7 +18,14 @@ cmd - w -> : sleep 1 && yabai -m window --focus mouse
 rctrl + rshift - 0x21 : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 rctrl + rshift - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
-hyper - p : yabai -m window --insert stack 
+hyper - i ; ins
+ins < escape ; default
+ins < hyper - i ; default
+ins < hyper - s : yabai -m window --insert stack ; skhd -k "escape"
+ins < hyper - h : yabai -m window --insert west ; skhd -k "escape"
+ins < hyper - j : yabai -m window --insert south ; skhd -k "escape"
+ins < hyper - k : yabai -m window --insert north ; skhd -k "escape"
+ins < hyper - l : yabai -m window --insert east ; skhd -k "escape"
 hyper - 0x21 : yabai -m window prev --stack mouse
 hyper - 0x1E : yabai -m window next --stack mouse
 
