@@ -4,39 +4,41 @@
 
 
 # focus window
-rctrl + rshift - j : yabai -m window --focus west
-rctrl + rshift - k : yabai -m window --focus south
-rctrl + rshift - i : yabai -m window --focus north
+rctrl + rshift - h : yabai -m window --focus west
+rctrl + rshift - j : yabai -m window --focus south
+rctrl + rshift - k : yabai -m window --focus north
 rctrl + rshift - l : yabai -m window --focus east
 
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
 
+# stacks! p, [ and ]
+rctrl + rshift - 0x21 : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+rctrl + rshift - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+
+hyper - p : yabai -m window --insert stack 
+hyper - 0x21 : yabai -m window prev --stack mouse
+hyper - 0x1E : yabai -m window next --stack mouse
+
 # swap window
-meh - j : yabai -m window --swap west
-meh - k : yabai -m window --swap south
-meh - i : yabai -m window --swap north
+meh - h : yabai -m window --swap west
+meh - j : yabai -m window --swap south
+meh - k : yabai -m window --swap north
 meh - l : yabai -m window --swap east
 
-
 # move "push" window
-hyper - j : yabai -m window --warp west
-hyper - k : yabai -m window --warp south
-hyper - i : yabai -m window --warp north
+hyper - h : yabai -m window --warp west
+hyper - j : yabai -m window --warp south
+hyper - k : yabai -m window --warp north
 hyper - l : yabai -m window --warp east
 
+# change layout of desktop 
+meh - z : yabai -m space --layout bsp
+meh - x : yabai -m space --layout stack
+meh - c : yabai -m space --layout float
 
 # balance size of windows
-# shift + alt - 0 : yabai -m space --balance
 hyper - b : yabai -m space --balance
 
-# make floating window fill screen
-# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
-
-# make floating window fill left-half of screen
-# shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
-
-# make floating window fill right-half of screen
-# shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 # shift + cmd - n : yabai -m space --create && \
@@ -118,7 +120,6 @@ hyper - w : yabai -m window --resize top:0:100
 hyper - d : yabai -m window --resize right:-100:0
 
 
-
 # set insertion point in focused container
 #ctrl + alt - h : yabai -m window --insert west
 #ctrl + alt - j : yabai -m window --insert south
@@ -167,7 +168,3 @@ hyper - t : yabai -m window --toggle float;\
 #          yabai -m window --toggle topmost;\
 #          yabai -m window --toggle border;\
 #          yabai -m window --toggle pip
-
-# change layout of desktop
-#ctrl + alt - b : yabai -m space --layout bsp
-#ctrl + alt - f : yabai -m space --layout float

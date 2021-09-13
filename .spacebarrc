@@ -1,9 +1,0 @@
-# bar settings
-spacebar -m config status_bar_text_font         "Helvetica Neue:Bold:14.0"
-spacebar -m config status_bar_icon_font         "Font Awesome 5 Free:Regular:12.0"
-spacebar -m config status_bar_background_color  0xff202020
-spacebar -m config status_bar_foreground_color  0xffa8a8a8
-spacebar -m config status_bar_space_icon_strip  "1 web" "2 manage" "3 comm" "4 support" "5 front" "6 back" "7 bottas" "8 velobanda" "9 dj" 10 11 12 13 14 15 16 17 18 19 20
-spacebar -m config status_bar_power_icon_strip   
-spacebar -m config status_bar_space_icon        
-spacebar -m config status_bar_clock_icon        
