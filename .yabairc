@@ -27,4 +27,10 @@ yabai -m config left_padding                 0
 yabai -m config right_padding                0
 yabai -m config window_gap                   0
 
+yabai -m space 1 --label web
+yabai -m space 2 --label mnge
+yabai -m space 3 --label comm
+yabai -m space 4 --label supp
+yabai -m space 5 --label dev
+
 echo "yabai configuration loaded.."
