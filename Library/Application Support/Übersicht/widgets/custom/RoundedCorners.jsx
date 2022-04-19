@@ -11,6 +11,7 @@ export const command = "echo 1";
 // the refresh frequency in milliseconds
 export const refreshFrequency = 1000000;
 
+const color = '#000';
 const cornerSize = '11px';
 const borderWidth = '2px';
 const barHeight = '36px'
@@ -27,7 +28,7 @@ export const className =`
   z-index: -1;
 
   .border {
-    border: ${borderWidth} solid black;
+    border: ${borderWidth} solid ${color};
     position: absolute;
     bottom: 0;
     left: 0;
@@ -36,7 +37,7 @@ export const className =`
   }
 
   .bar {
-    background: black;
+    background: ${color};
     position: absolute;
     top: 0;
     left: 0;
@@ -45,7 +46,7 @@ export const className =`
   }
 
   .corner {
-    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAABBElEQVR42s3VgYYCURhH8RIIEgSxJKBFD7AAArAPEcDu0ovsYhc9RTCAQI+xgAiQAK6C7h74wyLAzIkD996++TFmpsevdtiZ9vRD77SiBU1oSIO2gYUa2tCS+rXW3qPaAN7pQGsa/Qd0CbzSluYPER0AC33RNBcxARuaZbgJeKTXDLUBdzTOQBPwRh8ZZANe6CVDbMATPWeADfhLT/mzDXgKzgi85LYagbc8EEpgXiVW4C4HjcAjjbXAfFutwCYHjMBCMzPwM5tG4JWmZuA2G0bgneZm4CGLVuDaDCw0MgObLFiBGztwaQaeqW8G7q24AL/twDc7cGUHLuzAiR04tAMHZuAf1UqKFksYePoAAAAASUVORK5CYII=);
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:${color};fill-rule:evenodd;fill-opacity:1' d='M0 0v50A50 50 0 0 1 50 0H0z' /%3E%3C/svg%3E");
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
