@@ -15,9 +15,8 @@
     },
     "window.autoDetectColorScheme": true,
     "autoDarkMode.lightTheme": "GitHub Light",
-    "workbench.colorTheme": "GitHub Light",
     "yaml.schemas": {
-        "file:///Users/evgkirov/.vscode/extensions/atlassian.atlascode-2.9.1/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+        "file:///Users/evgkirov/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
     },
     "atlascode.jira.jqlList": [
         {
@@ -45,5 +44,9 @@
     },
     "[json]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
+    "git.enableSmartCommit": true,
+    "redhat.telemetry.enabled": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "workbench.colorTheme": "GitHub Light"
 }

@@ -1,4 +1,5 @@
 tap "cmacrae/formulae"
+tap "felixkratz/formulae"
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -14,11 +15,13 @@ tap "qmk/qmk"
 tap "somdoron/formulae"
 brew "bash-completion"
 brew "blueutil"
+brew "python@3.9"
 brew "glib"
+brew "coreutils"
 brew "elinks"
 brew "guile"
-brew "nghttp2"
 brew "unbound"
+brew "gobject-introspection"
 brew "harfbuzz"
 brew "libass"
 brew "ffmpeg"
@@ -35,22 +38,30 @@ brew "lynx"
 brew "mas"
 brew "mercurial"
 brew "midnight-commander"
+brew "neofetch"
 brew "neovim"
+brew "nghttp2"
 brew "node"
 brew "parallel"
 brew "python@2", link: false
 brew "ranger"
+brew "tmux"
 brew "tree"
 brew "wget"
+brew "wireguard-go"
+brew "wireguard-tools"
 brew "yarn"
 brew "youtube-dl"
 brew "zlib"
 brew "cmacrae/formulae/spacebar"
+brew "felixkratz/formulae/sketchybar"
 brew "heroku/brew/heroku"
 brew "koekeishiya/formulae/skhd"
 brew "koekeishiya/formulae/yabai"
 brew "qmk/qmk/qmk"
 cask "1password"
+cask "ace-link"
+cask "arduino"
 cask "audio-hijack"
 cask "balenaetcher"
 cask "banktivity"
@@ -60,6 +71,7 @@ cask "clipy"
 cask "cyberduck"
 cask "daisydisk"
 cask "dash"
+cask "deepl"
 cask "discord"
 cask "docker"
 cask "dosbox"
@@ -69,6 +81,7 @@ cask "hammerspoon"
 cask "icons8"
 cask "iina"
 cask "imageoptim"
+cask "istat-menus"
 cask "iterm2"
 cask "ivideonclient"
 cask "keep-it"
@@ -88,49 +101,18 @@ cask "qlvideo"
 cask "qmk-toolbox"
 cask "quicklook-json"
 cask "rekordbox"
+cask "rocket-chat"
 cask "selfcontrol"
 cask "slack"
+cask "spotify"
 cask "sublime-merge"
 cask "tableplus"
 cask "telegram"
 cask "timing"
+cask "tor-browser"
+cask "transmission-remote-gui"
 cask "ubersicht"
+cask "virtualbox"
 cask "visual-studio-code"
 cask "vk-messenger"
 cask "vlc"
-mas "Boop", id: 1518425043
-mas "CleanMyDrive 2", id: 523620159
-mas "Commander One", id: 1035236694
-mas "Craft", id: 1487937127
-mas "Dark Mode for Safari", id: 1397180934
-mas "Day One", id: 1055511498
-mas "Disk Speed Test", id: 425264550
-mas "djay Pro AI", id: 450527929
-mas "DjVu Reader Pro", id: 895264364
-mas "Home Assistant", id: 1099568401
-mas "iMovie", id: 408981434
-mas "Jira", id: 1475897096
-mas "KeyKey", id: 1035137927
-mas "Keynote", id: 409183694
-mas "Letters", id: 1233167730
-mas "Mactracker", id: 430255202
-mas "Microsoft OneNote", id: 784801555
-mas "MindNode", id: 1289197285
-mas "Neural Mix Pro", id: 1527105121
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Pixelmator Pro", id: 1289583905
-mas "Quick Camera", id: 598853070
-mas "Save to Pocket", id: 1477385213
-mas "Session", id: 1521432881
-mas "Spark", id: 1176895641
-mas "The Unarchiver", id: 425424353
-mas "Things", id: 904280696
-mas "Time Out", id: 402592703
-mas "Todoist", id: 585829637
-mas "Toolbox for Pages - Templates", id: 571654652
-mas "ToothFairy", id: 1191449274
-mas "Trello", id: 1278508951
-mas "Twitter", id: 1482454543
-mas "Webcam Time Lapse", id: 458481706
-mas "WhatsApp", id: 1147396723

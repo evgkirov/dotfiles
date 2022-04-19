@@ -17,9 +17,9 @@ function copy {
 }
 
 relink .skhdrc
-relink .spacebarrc
 relink .yabairc
 relink .simplebarrc
+relink "Library/Application Support/Übersicht/widgets/custom"
 
 relink "Library/Application Support/Code/User/keybindings.json"
 relink "Library/Application Support/Code/User/settings.json"

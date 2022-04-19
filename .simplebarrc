@@ -1,42 +1,49 @@
 {
   "global": {
-    "theme": "dark",
-    "floatingBar": false,
-    "noBarBg": false,
+    "theme": "auto",
+    "floatingBar": true,
+    "noBarBg": true,
     "noColorInData": false,
     "bottomBar": false,
     "inlineSpacesOptions": false,
     "disableNotifications": false,
-    "backgroundColorAsForeground": false,
+    "compactMode": true,
+    "widgetMaxWidth": "160px",
+    "spacesBackgroundColorAsForeground": false,
+    "widgetsBackgroundColorAsForeground": false,
     "font": "JetBrains Mono",
     "fontSize": "12px",
     "yabaiPath": "/usr/local/bin/yabai",
     "shell": "dash",
-    "slidingAnimationPace": "100000",
-    "externalConfigFile": true
+    "slidingAnimationPace": "20",
+    "externalConfigFile": true,
+    "backgroundColorAsForeground": false
   },
   "themes": {
-    "lightTheme": "GruvboxLight",
-    "darkTheme": "GruvboxDark"
+    "lightTheme": "OneLight",
+    "darkTheme": "OneDark"
   },
   "process": {
     "displayOnlyCurrent": false,
-    "showCurrentSpaceMode": true
+    "showCurrentSpaceMode": false,
+    "hideWindowTitle": false,
+    "displayOnlyIcon": false
   },
   "spacesDisplay": {
     "exclusions": "Session, Hammerspoon",
     "titleExclusions": "Slack | mini panel, \"\"",
     "exclusionsAsRegex": false,
     "displayAllSpacesOnAllScreens": false,
-    "hideDuplicateAppsInSpaces": false,
+    "hideDuplicateAppsInSpaces": true,
     "displayStickyWindowsSeparately": false,
     "hideEmptySpaces": false,
-    "showOptionsOnHover": true
+    "showOptionsOnHover": true,
+    "switchSpacesWithoutYabai": false
   },
   "widgets": {
     "processWidget": true,
-    "weatherWidget": false,
-    "batteryWidget": false,
+    "weatherWidget": true,
+    "batteryWidget": true,
     "wifiWidget": false,
     "vpnWidget": false,
     "zoomWidget": false,
@@ -45,56 +52,100 @@
     "dateWidget": true,
     "timeWidget": true,
     "keyboardWidget": false,
-    "spotifyWidget": false,
-    "musicWidget": true,
+    "spotifyWidget": true,
+    "cryptoWidget": false,
+    "stockWidget": false,
+    "musicWidget": false,
     "mpdWidget": false,
-    "browserTrackWidget": true
+    "dndWidget": true,
+    "browserTrackWidget": false
   },
   "weatherWidgetOptions": {
+    "refreshFrequency": 1800000,
     "unit": "C",
     "hideLocation": true,
     "hideGradient": false,
-    "customLocation": ""
-  },
-  "zoomWidgetOptions": {
-    "showVideo": true,
-    "showMic": true
+    "customLocation": "Saint Petersburg"
   },
   "batteryWidgetOptions": {
+    "refreshFrequency": "60000",
     "toggleCaffeinateOnClick": true,
     "caffeinateOption": ""
   },
   "networkWidgetOptions": {
+    "refreshFrequency": 20000,
     "networkDevice": "en0",
     "toggleWifiOnClick": false
   },
   "vpnWidgetOptions": {
+    "refreshFrequency": 8000,
     "vpnConnectionName": "",
     "vpnShowConnectionName": false
   },
-  "timeWidgetOptions": {
-    "hour12": false,
-    "dayProgress": true,
-    "showSeconds": false
+  "zoomWidgetOptions": {
+    "refreshFrequency": 5000,
+    "showVideo": true,
+    "showMic": true
+  },
+  "soundWidgetOptions": {
+    "refreshFrequency": 20000
+  },
+  "micWidgetOptions": {
+    "refreshFrequency": 20000
   },
   "dateWidgetOptions": {
+    "refreshFrequency": 30000,
     "shortDateFormat": true,
     "locale": "en-US",
     "calendarApp": ""
   },
+  "timeWidgetOptions": {
+    "refreshFrequency": 1000,
+    "hour12": false,
+    "dayProgress": true,
+    "showSeconds": false
+  },
+  "keyboardWidgetOptions": {
+    "refreshFrequency": "200000"
+  },
+  "cryptoWidgetOptions": {
+    "refreshFrequency": 300000,
+    "denomination": "usd",
+    "identifiers": "bitcoin,ethereum,celo",
+    "precision": 5
+  },
+  "stockWidgetOptions": {
+    "refreshFrequency": 900000,
+    "yahooFinanceApiKey": "YOUR_API_KEY",
+    "symbols": "AAPL,TSLA",
+    "showSymbol": true,
+    "showCurrency": true,
+    "showMarketPrice": true,
+    "showMarketChange": false,
+    "showMarketPercent": true,
+    "showColor": true
+  },
   "spotifyWidgetOptions": {
+    "refreshFrequency": 10000,
     "showSpecter": true
   },
   "musicWidgetOptions": {
+    "refreshFrequency": 10000,
     "showSpecter": true
   },
   "mpdWidgetOptions": {
+    "refreshFrequency": 10000,
     "showSpecter": true,
     "mpdPort": "6600",
     "mpdHost": "127.0.0.1",
     "mpdFormatString": "%title%[ - %artist%]|[%file%]"
   },
+  "dndWidgetOptions": {
+    "refreshFrequency": "10000",
+    "showDndLabel": false
+  },
   "browserTrackWidgetOptions": {
+    "refreshFrequency": 10000,
     "showSpecter": true
   },
   "userWidgets": {
@@ -102,16 +153,30 @@
       "1": {
         "title": "Input Source",
         "icon": "Keyboard",
-        "backgroundColor": "--magenta",
-        "output": "defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurrentKeyboardLayoutInputSourceID | sed s/org.sil.ukelele.keyboardlayout.t.english-ilyabirmantypography/EN/g | sed s/org.sil.ukelele.keyboardlayout.t.russian-ilyabirmantypography/RU/g",
+        "backgroundColor": "--red",
+        "output": "defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurrentKeyboardLayoutInputSourceID | sed 's/org.sil.ukelele.keyboardlayout.t.english-ilyabirmantypography/EN/g' | sed 's/org.sil.ukelele.keyboardlayout.t.russian-ilyabirmantypography/RU/g'",
         "onClickAction": "",
         "onRightClickAction": "",
         "onMiddleClickAction": "",
-        "refreshFrequency": "300"
+        "refreshFrequency": "500",
+        "active": true,
+        "noIcon": false
+      },
+      "2": {
+        "title": "Session",
+        "icon": "BellOff",
+        "backgroundColor": "--red",
+        "output": "cd \"/Users/evgkirov/Library/Mobile Documents/iCloud~is~workflow~my~workflows/Documents\" && if test -f session.txt; then python3 -c \"import os.path; from datetime import datetime, timedelta; f=open('session.txt'); started = datetime.fromisoformat(f.readlines()[-1]); f.close(); expected = started + timedelta(minutes=45); remaining = expected - datetime.now(tz=expected.tzinfo); print(str(int(remaining.seconds/60)) + ':' + str(int(remaining.seconds % 60)))\"; else echo '—'; fi",
+        "onClickAction": "",
+        "onRightClickAction": "",
+        "onMiddleClickAction": "",
+        "refreshFrequency": "1000",
+        "active": "",
+        "noIcon": false
       }
     }
   },
   "customStyles": {
-    "styles": "/* your custom css styles here */"
+    "styles": "/* your custom css styles here */\n\n.simple-bar--floating {\n  /*top: 10px;*/\n  top: 2px;\n}\n\n.simple-bar--floating.simple-bar--data {\n  /*right: 10px;*/\n  right: 2px;\n}\n\n.simple-bar--floating.simple-bar--spaces {\n  /*left: 10px;*/\n  left: 2px;\n}"
   }
 }
