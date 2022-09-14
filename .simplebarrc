@@ -25,6 +25,7 @@
   },
   "process": {
     "displayOnlyCurrent": false,
+    "centered": true,
     "showCurrentSpaceMode": false,
     "hideWindowTitle": false,
     "displayOnlyIcon": false
@@ -43,7 +44,7 @@
   "widgets": {
     "processWidget": true,
     "weatherWidget": true,
-    "batteryWidget": true,
+    "batteryWidget": false,
     "wifiWidget": false,
     "vpnWidget": false,
     "zoomWidget": false,
@@ -52,12 +53,12 @@
     "dateWidget": true,
     "timeWidget": true,
     "keyboardWidget": false,
-    "spotifyWidget": true,
+    "spotifyWidget": false,
     "cryptoWidget": false,
     "stockWidget": false,
-    "musicWidget": false,
+    "musicWidget": true,
     "mpdWidget": false,
-    "dndWidget": true,
+    "dndWidget": false,
     "browserTrackWidget": false
   },
   "weatherWidgetOptions": {
@@ -177,6 +178,6 @@
     }
   },
   "customStyles": {
-    "styles": "/* your custom css styles here */\n\n.simple-bar--floating {\n  /*top: 10px;*/\n  top: 2px;\n}\n\n.simple-bar--floating.simple-bar--data {\n  /*right: 10px;*/\n  right: 2px;\n}\n\n.simple-bar--floating.simple-bar--spaces {\n  /*left: 10px;*/\n  left: 2px;\n}"
+    "styles": "/* your custom css styles here */\n\n/*.simple-bar--no-bar-background,\n.simple-bar--no-bar-background .spaces,\n.simple-bar--no-bar-background .process {\n  background: none !important;\n}*/\n\n.simple-bar--floating {\n  /*top: 10px;*/\n  top: 2px;\n}\n\n.simple-bar--floating.simple-bar--data {\n  /*right: 10px;*/\n  right: 2px;\n}\n\n.simple-bar--floating.simple-bar--spaces {\n  /*left: 10px;*/\n  left: 2px;\n}\n\n/*\n.simple-bar__data {\n  padding: 4px 5px 4px 0;\n  background-color: var(--background);\n  box-shadow: var(--light-shadow);\n  border-radius: var(--bar-radius);\n}*/"
   }
 }

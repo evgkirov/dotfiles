@@ -37,7 +37,6 @@
         }
     ],
     "python.showStartPage": false,
-    "editor.minimap.enabled": false,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -48,5 +47,14 @@
     "git.enableSmartCommit": true,
     "redhat.telemetry.enabled": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
+    "terminal.external.osxExec": "iTerm.app",
+    "customizeUI.titleBar": "inline",
+    "window.titleBarStyle": "native",
+    "customizeUI.activityBar": "bottom",
+    "customizeUI.statusBarPosition": "under-panel",
+    "customizeUI.activityBarHideSettings": true,
+    "files.exclude": {
+        "**/__pycache__": true
+    },
     "workbench.colorTheme": "GitHub Light"
 }

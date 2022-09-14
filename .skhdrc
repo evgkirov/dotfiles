@@ -1,12 +1,12 @@
-:: default : yabai -m config active_window_border_color 0xff775759
-:: swap @ : yabai -m config active_window_border_color 0xff0000ff
-:: warp @ : yabai -m config active_window_border_color 0xffff00ff
-:: inc @ : yabai -m config active_window_border_color 0xffffff00
-:: dec @ : yabai -m config active_window_border_color 0xff00ffff
-:: ins @ : yabai -m config active_window_border_color 0xffff0000 ; sleep 2 ; skhd -k "escape"
+:: default : yabai -m config window_opacity off
+:: swap @ : yabai -m config active_window_border_color 0xff0000ff ; yabai -m config window_opacity on
+:: warp @ : yabai -m config active_window_border_color 0xffff00ff ; yabai -m config window_opacity on
+:: inc @ : yabai -m config active_window_border_color 0xffffff00 ; yabai -m config window_opacity on
+:: dec @ : yabai -m config active_window_border_color 0xff00ffff ; yabai -m config window_opacity on
+:: ins @ : yabai -m config active_window_border_color 0xffff0000; yabai -m config window_opacity on ; sleep 2 ; skhd -k "escape"
 
-ctrl + cmd - return : /Users/evgkirov/Dropbox/Projects/dotfiles/bin/open_new_safari_window.sh
-ctrl + alt + cmd - return : /Users/evgkirov/Dropbox/Projects/dotfiles/bin/open_new_terminal_window.sh
+ctrl + cmd - return : /Users/evgkirov/Documents/Projects/dotfiles/bin/open_new_safari_window.sh
+ctrl + alt + cmd - return : /Users/evgkirov/Documents/Projects/dotfiles/bin/open_new_terminal_window.sh
 
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
 
@@ -100,9 +100,9 @@ ins < hyper - l : yabai -m window --insert east ; skhd -k "escape"
 ## hyper - l : yabai -m window --warp east
 
 ## # change layout of desktop 
-## meh - z : yabai -m space --layout bsp
-## meh - x : yabai -m space --layout stack
-## meh - c : yabai -m space --layout float
+hyper - z : yabai -m space --layout bsp
+hyper - x : yabai -m space --layout stack
+hyper - c : yabai -m space --layout float
 
 # balance size of windows
 hyper - b : yabai -m space --balance

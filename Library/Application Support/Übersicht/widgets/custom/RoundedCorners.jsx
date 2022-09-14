@@ -12,7 +12,7 @@ export const command = "echo 1";
 export const refreshFrequency = 1000000;
 
 const color = '#000';
-const cornerSize = '11px';
+const cornerSize = '12px';
 const borderWidth = '2px';
 const barHeight = '36px'
 
@@ -46,8 +46,7 @@ export const className =`
   }
 
   .corner {
-    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:${color};fill-rule:evenodd;fill-opacity:1' d='M0 0v50A50 50 0 0 1 50 0H0z' /%3E%3C/svg%3E");
-    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:%23000;fill-rule:evenodd;fill-opacity:1' d='M0 0v50A50 50 0 0 1 50 0H0z' /%3E%3C/svg%3E");    background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
     width: ${cornerSize};
