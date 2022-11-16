@@ -56,5 +56,6 @@
     "files.exclude": {
         "**/__pycache__": true
     },
-    "workbench.colorTheme": "GitHub Light"
+    "workbench.colorTheme": "GitHub Light",
+    "diffEditor.renderSideBySide": false
 }

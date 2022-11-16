@@ -21,7 +21,7 @@
   },
   "themes": {
     "lightTheme": "OneLight",
-    "darkTheme": "OneDark"
+    "darkTheme": "MacOSDark"
   },
   "process": {
     "displayOnlyCurrent": false,
@@ -33,6 +33,7 @@
   "spacesDisplay": {
     "exclusions": "Session, Hammerspoon",
     "titleExclusions": "Slack | mini panel, \"\"",
+    "spacesExclusions": "",
     "exclusionsAsRegex": false,
     "displayAllSpacesOnAllScreens": false,
     "hideDuplicateAppsInSpaces": true,
@@ -76,6 +77,7 @@
   "networkWidgetOptions": {
     "refreshFrequency": 20000,
     "networkDevice": "en0",
+    "hideWifiIfDisabled": false,
     "toggleWifiOnClick": false
   },
   "vpnWidgetOptions": {
@@ -173,6 +175,18 @@
         "onMiddleClickAction": "",
         "refreshFrequency": "1000",
         "active": "",
+        "noIcon": false
+      },
+      "3": {
+        "title": "Amphetamine",
+        "icon": "Coffee",
+        "backgroundColor": "--main-alt",
+        "output": "$(osascript -e 'tell application \"Amphetamine\" to set a to session is active') == \"true\" ] && echo $(date -u -r $(osascript -e 'tell application \"Amphetamine\" to set r to session time remaining') +\"%H:%M\") || echo off",
+        "onClickAction": "[ $(osascript -e 'tell application \"Amphetamine\" to set a to session is active') == \"true\" ] && osascript -e 'tell application \"Amphetamine\" to end session' || osascript -e 'tell application \"Amphetamine\" to start new session'",
+        "onRightClickAction": "",
+        "onMiddleClickAction": "",
+        "refreshFrequency": 10000,
+        "active": true,
         "noIcon": false
       }
     }
