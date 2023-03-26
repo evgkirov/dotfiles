@@ -1,17 +1,17 @@
 {
   "global": {
-    "theme": "auto",
+    "theme": "dark",
     "floatingBar": true,
     "noBarBg": true,
     "noColorInData": false,
     "bottomBar": false,
     "inlineSpacesOptions": false,
     "disableNotifications": false,
-    "compactMode": true,
+    "compactMode": false,
     "widgetMaxWidth": "160px",
     "spacesBackgroundColorAsForeground": false,
     "widgetsBackgroundColorAsForeground": false,
-    "font": "JetBrains Mono",
+    "font": "JetBrainsMono Nerd Font Mono",
     "fontSize": "12px",
     "yabaiPath": "/usr/local/bin/yabai",
     "shell": "dash",
@@ -20,18 +20,18 @@
     "backgroundColorAsForeground": false
   },
   "themes": {
-    "lightTheme": "OneLight",
-    "darkTheme": "MacOSDark"
+    "lightTheme": "GruvboxLight",
+    "darkTheme": "GruvboxMaterial"
   },
   "process": {
     "displayOnlyCurrent": false,
-    "centered": true,
+    "centered": false,
     "showCurrentSpaceMode": false,
     "hideWindowTitle": false,
     "displayOnlyIcon": false
   },
   "spacesDisplay": {
-    "exclusions": "Session, Hammerspoon",
+    "exclusions": "Hammerspoon",
     "titleExclusions": "Slack | mini panel, \"\"",
     "spacesExclusions": "",
     "exclusionsAsRegex": false,
@@ -44,30 +44,30 @@
   },
   "widgets": {
     "processWidget": true,
-    "weatherWidget": true,
-    "batteryWidget": false,
-    "wifiWidget": false,
+    "weatherWidget": false,
+    "batteryWidget": true,
+    "wifiWidget": true,
     "vpnWidget": false,
-    "zoomWidget": false,
+    "zoomWidget": true,
     "soundWidget": true,
     "micWidget": false,
     "dateWidget": true,
     "timeWidget": true,
     "keyboardWidget": false,
-    "spotifyWidget": false,
+    "spotifyWidget": true,
     "cryptoWidget": false,
     "stockWidget": false,
     "musicWidget": true,
     "mpdWidget": false,
     "dndWidget": false,
-    "browserTrackWidget": false
+    "browserTrackWidget": true
   },
   "weatherWidgetOptions": {
     "refreshFrequency": 1800000,
     "unit": "C",
     "hideLocation": true,
     "hideGradient": false,
-    "customLocation": "Saint Petersburg"
+    "customLocation": ""
   },
   "batteryWidgetOptions": {
     "refreshFrequency": "60000",
@@ -109,7 +109,7 @@
     "showSeconds": false
   },
   "keyboardWidgetOptions": {
-    "refreshFrequency": "200000"
+    "refreshFrequency": "2000000"
   },
   "cryptoWidgetOptions": {
     "refreshFrequency": 300000,
@@ -156,8 +156,8 @@
       "1": {
         "title": "Input Source",
         "icon": "Keyboard",
-        "backgroundColor": "--red",
-        "output": "defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurrentKeyboardLayoutInputSourceID | sed 's/org.sil.ukelele.keyboardlayout.t.english-ilyabirmantypography/EN/g' | sed 's/org.sil.ukelele.keyboardlayout.t.russian-ilyabirmantypography/RU/g'",
+        "backgroundColor": "--orange",
+        "output": "defaults read ~/Library/Preferences/com.apple.HIToolbox.plist AppleCurrentKeyboardLayoutInputSourceID | sed 's/org.sil.ukelele.keyboardlayout.t.english-ilyabirmantypography/EN/g' | sed 's/org.sil.ukelele.keyboardlayout.t.russian-ilyabirmantypography/RU/g' | sed 's/com.apple.keylayout.//g' | sed 's/RussianWin/RU/g'",
         "onClickAction": "",
         "onRightClickAction": "",
         "onMiddleClickAction": "",
@@ -186,12 +186,12 @@
         "onRightClickAction": "",
         "onMiddleClickAction": "",
         "refreshFrequency": 10000,
-        "active": true,
+        "active": "",
         "noIcon": false
       }
     }
   },
   "customStyles": {
-    "styles": "/* your custom css styles here */\n\n/*.simple-bar--no-bar-background,\n.simple-bar--no-bar-background .spaces,\n.simple-bar--no-bar-background .process {\n  background: none !important;\n}*/\n\n.simple-bar--floating {\n  /*top: 10px;*/\n  top: 2px;\n}\n\n.simple-bar--floating.simple-bar--data {\n  /*right: 10px;*/\n  right: 2px;\n}\n\n.simple-bar--floating.simple-bar--spaces {\n  /*left: 10px;*/\n  left: 2px;\n}\n\n/*\n.simple-bar__data {\n  padding: 4px 5px 4px 0;\n  background-color: var(--background);\n  box-shadow: var(--light-shadow);\n  border-radius: var(--bar-radius);\n}*/"
+    "styles": ".process { margin-left: 1em; }\n.process__container { border-radius: 10px !important; padding: 5px; }\n.simple-bar--no-bar-background .spaces { border-radius: 10px; padding: 5px; }\n.simple-bar--no-bar-background .simple-bar__data { border-radius: 10px; padding: 5px; }\n.process__window:first-child { margin-left: 0; }"
   }
 }

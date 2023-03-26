@@ -13,8 +13,8 @@ export const refreshFrequency = 1000000;
 
 const color = '#000';
 const cornerSize = '12px';
-const borderWidth = '2px';
-const barHeight = '36px'
+const borderWidth = '0px';
+const barHeight = '45px'
 
 // the CSS style for this widget, written using Emotion
 // https://emotion.sh/

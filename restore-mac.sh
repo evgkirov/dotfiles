@@ -3,7 +3,6 @@
 cd `dirname $0`
 SRC=`pwd`
 
-
 function relink {
     dst_file="$HOME/$1"
     mkdir -p "`dirname \"$dst_file\"`"
@@ -16,12 +15,14 @@ function copy {
     cp -v "$SRC/$1" "$HOME/$1"
 }
 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install mas
+brew bundle
+
 relink .skhdrc
 relink .yabairc
 relink .simplebarrc
 relink "Library/Application Support/Übersicht/widgets/custom"
-
-relink "Library/Application Support/Code/User/keybindings.json"
-relink "Library/Application Support/Code/User/settings.json"
+relink '.config/karabiner/karabiner.json'
 
 copy "Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application Support/userSettings.json"
