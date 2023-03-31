@@ -23,6 +23,8 @@ relink .skhdrc
 relink .yabairc
 relink .simplebarrc
 relink "Library/Application Support/Übersicht/widgets/custom"
-relink '.config/karabiner/karabiner.json'
+relink ".config/karabiner/karabiner.json"
+# relink ".config/nvim"
+sh install_my_nvim.sh
 
 copy "Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application Support/userSettings.json"

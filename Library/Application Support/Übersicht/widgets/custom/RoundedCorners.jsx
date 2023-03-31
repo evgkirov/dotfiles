@@ -12,9 +12,9 @@ export const command = "echo 1";
 export const refreshFrequency = 1000000;
 
 const color = '#000';
-const cornerSize = '12px';
+const cornerSize = '10px';
 const borderWidth = '0px';
-const barHeight = '45px'
+const barHeight = '48px'
 
 // the CSS style for this widget, written using Emotion
 // https://emotion.sh/
