@@ -1,16 +1,18 @@
 -- Set up nvim-cmp.
 local cmp = require("cmp")
+local servers = { "lua_ls" } -- jedi is configured separately
+vim.lsp.set_log_level("debug")
 
 cmp.setup({
-	--    snippet = {
-	--      -- REQUIRED - you must specify a snippet engine
-	--      expand = function(args)
-	--        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-	--        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-	--        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-	--        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-	--      end,
-	--    },
+	snippet = {
+		-- REQUIRED - you must specify a snippet engine
+		expand = function(args)
+			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+			-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+			-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+			-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+		end,
+	},
 	window = {
 		-- completion = cmp.config.window.bordered(),
 		-- documentation = cmp.config.window.bordered(),
@@ -18,22 +20,61 @@ cmp.setup({
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-m>"] = cmp.mapping.complete(),
+		["<C-.>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 	}),
-	sources = cmp.config.sources(
-		{
-			{ name = "nvim_lsp" },
-			--      { name = 'vsnip' }, -- For vsnip users.
-			-- { name = 'luasnip' }, -- For luasnip users.
-			-- { name = 'ultisnips' }, -- For ultisnips users.
-			-- { name = 'snippy' }, -- For snippy users.
-		} --, {
-		-- { name = 'buffer' },
-		--}
-	),
+	sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "vsnip" }, -- For vsnip users.
+		-- { name = 'luasnip' }, -- For luasnip users.
+		-- { name = 'ultisnips' }, -- For ultisnips users.
+		-- { name = 'snippy' }, -- For snippy users.
+	}, {
+		{ name = "buffer" },
+	}),
+})
+
+-- Set configuration for specific filetype.
+cmp.setup.filetype("gitcommit", {
+	sources = cmp.config.sources({
+		{ name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
+	}, {
+		{ name = "buffer" },
+	}),
+})
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ "/", "?" }, {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = "buffer" },
+	},
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(":", {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources({
+		{ name = "path" },
+	}, {
+		{ name = "cmdline" },
+	}),
 })
 
 -- Set up lspconfig.
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lspconfig = require("lspconfig")
+
+for _, lsp in ipairs(servers) do
+	lspconfig[lsp].setup({
+		capabilities = capabilities,
+	})
+end
+
+lspconfig["jedi_language_server"].setup({
+	capabilities = capabilities,
+	on_new_config = function(new_config, new_root_dir)
+		require("helpers.cmp-jedi-venv").on_new_config(new_config, new_root_dir)
+	end,
+})

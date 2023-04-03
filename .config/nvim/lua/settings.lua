@@ -8,4 +8,3 @@ vim.o.relativenumber = true
 vim.o.title = true
 vim.o.clipboard = "unnamedplus"
 vim.o.fillchars = "eob: ,vert: "
-

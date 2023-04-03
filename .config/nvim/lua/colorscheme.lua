@@ -20,10 +20,9 @@ auto_dark_mode.setup({
 auto_dark_mode.init()
 
 vim.api.nvim_create_autocmd("ColorScheme", {
-  pattern="*",
-  callback = function()
-	vim.api.nvim_set_hl(0, "VertSplit", { link = "NvimTreeNormal" })
-	vim.api.nvim_set_hl(0, "BufferLineOffsetSeparator", { link = "VertSplit" })
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "VertSplit", { link = "NvimTreeNormal" })
+		vim.api.nvim_set_hl(0, "BufferLineOffsetSeparator", { link = "VertSplit" })
 	end,
 })
-
