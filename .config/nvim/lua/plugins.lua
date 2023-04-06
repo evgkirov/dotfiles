@@ -43,7 +43,7 @@ return require("packer").startup(function(use)
 	})
 	use({ "rmagatti/auto-session" })
 	-- use({ "zwhitchcox/auto-session-nvim-tree" })
-	use({ "kdheepak/lazygit.nvim" })
+	-- use({ "kdheepak/lazygit.nvim" })
 
 	-- lsp
 	use({ "neovim/nvim-lspconfig" })
