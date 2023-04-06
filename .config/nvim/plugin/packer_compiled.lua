@@ -85,6 +85,11 @@ local no_errors, error_msg = pcall(function()
 			path = "/Users/evgkirov/.local/share/nvim/site/pack/packer/start/auto-dark-mode.nvim",
 			url = "https://github.com/f-person/auto-dark-mode.nvim",
 		},
+		["auto-session"] = {
+			loaded = true,
+			path = "/Users/evgkirov/.local/share/nvim/site/pack/packer/start/auto-session",
+			url = "https://github.com/rmagatti/auto-session",
+		},
 		["bufferline.nvim"] = {
 			loaded = true,
 			path = "/Users/evgkirov/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -125,6 +130,11 @@ local no_errors, error_msg = pcall(function()
 			path = "/Users/evgkirov/.local/share/nvim/site/pack/packer/start/editorconfig-vim",
 			url = "https://github.com/editorconfig/editorconfig-vim",
 		},
+		["gitsigns.nvim"] = {
+			loaded = true,
+			path = "/Users/evgkirov/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+			url = "https://github.com/lewis6991/gitsigns.nvim",
+		},
 		["gruvbox-material"] = {
 			loaded = true,
 			path = "/Users/evgkirov/.local/share/nvim/site/pack/packer/start/gruvbox-material",
@@ -134,6 +144,11 @@ local no_errors, error_msg = pcall(function()
 			loaded = true,
 			path = "/Users/evgkirov/.local/share/nvim/site/pack/packer/start/lualine.nvim",
 			url = "https://github.com/nvim-lualine/lualine.nvim",
+		},
+		["nvim-bufdel"] = {
+			loaded = true,
+			path = "/Users/evgkirov/.local/share/nvim/site/pack/packer/start/nvim-bufdel",
+			url = "https://github.com/ojroques/nvim-bufdel",
 		},
 		["nvim-cmp"] = {
 			loaded = true,
@@ -146,7 +161,6 @@ local no_errors, error_msg = pcall(function()
 			url = "https://github.com/neovim/nvim-lspconfig",
 		},
 		["nvim-surround"] = {
-			config = { "\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0" },
 			loaded = true,
 			path = "/Users/evgkirov/.local/share/nvim/site/pack/packer/start/nvim-surround",
 			url = "https://github.com/kylechui/nvim-surround",
@@ -205,10 +219,6 @@ local no_errors, error_msg = pcall(function()
 		"toggleterm.nvim"
 	)
 	time([[Config for toggleterm.nvim]], false)
-	-- Config for: nvim-surround
-	time([[Config for nvim-surround]], true)
-	try_loadstring("\27LJ\2\n\v\0\0\1\0\0\0\1K\0\1\0\0", "config", "nvim-surround")
-	time([[Config for nvim-surround]], false)
 
 	_G._packer.inside_compile = false
 	if _G._packer.needs_bufread == true then

@@ -8,6 +8,7 @@ return require("packer").startup(function(use)
 	use({ "nvim-tree/nvim-tree.lua" })
 	use({ "nvim-tree/nvim-web-devicons" })
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
+	use({ "ojroques/nvim-bufdel" })
 	use({ "f-person/auto-dark-mode.nvim" })
 	use({
 		"akinsho/toggleterm.nvim",
@@ -26,6 +27,9 @@ return require("packer").startup(function(use)
 		tag = "0.1.x",
 		requires = { { "nvim-lua/plenary.nvim" } },
 	})
+	use({
+		"lewis6991/gitsigns.nvim",
+	})
 
 	-- themes
 	use({ "sainnhe/gruvbox-material" })
@@ -36,8 +40,10 @@ return require("packer").startup(function(use)
 	use({
 		"kylechui/nvim-surround",
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
-		config = function() end,
 	})
+	use({ "rmagatti/auto-session" })
+	-- use({ "zwhitchcox/auto-session-nvim-tree" })
+	use({ "kdheepak/lazygit.nvim" })
 
 	-- lsp
 	use({ "neovim/nvim-lspconfig" })

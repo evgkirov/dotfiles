@@ -3,6 +3,7 @@
 local colorscheme_light = "gruvbox-material"
 local colorscheme_dark = "gruvbox-material"
 
+vim.o.termguicolors = true
 vim.cmd("colorscheme " .. colorscheme_light)
 
 local auto_dark_mode = require("auto-dark-mode")
