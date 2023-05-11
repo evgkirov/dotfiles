@@ -44,6 +44,13 @@ return require("packer").startup(function(use)
 	use({ "rmagatti/auto-session" })
 	-- use({ "zwhitchcox/auto-session-nvim-tree" })
 	-- use({ "kdheepak/lazygit.nvim" })
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = function()
+			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+			ts_update()
+		end,
+	})
 
 	-- lsp
 	use({ "neovim/nvim-lspconfig" })

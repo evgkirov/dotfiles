@@ -34,3 +34,16 @@ require("auto-session").setup({
 	},
 })
 require("bufdel").setup()
+
+require("nvim-treesitter.configs").setup({
+	-- A list of parser names, or "all" (the five listed parsers should always be installed)
+	ensure_installed = "all",
+})
+vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx" })
+
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+-- WTF??
+-- vim.o.nofoldenable = true
+-- vim.cmd("nofoldenable")
+vim.o.foldlevel = 99

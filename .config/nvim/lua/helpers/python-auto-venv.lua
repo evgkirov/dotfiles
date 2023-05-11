@@ -20,7 +20,7 @@ local function venv_path()
 	return venvs_root .. "/" .. cwd_name
 end
 
-local function python_path()
+function M.python_path()
 	return venv_path() .. "/bin/python"
 end
 
@@ -49,12 +49,12 @@ function M.create_venv()
 	return false
 end
 
-function M.on_new_config(new_config)
+function M.on_new_jedi_config(new_config)
 	local use_venv = M.create_venv()
 	if use_venv then
 		new_config.init_options = {
 			workspace = {
-				environmentPath = python_path(),
+				environmentPath = M.python_path(),
 			},
 		}
 	end

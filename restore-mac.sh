@@ -28,3 +28,4 @@ relink ".config/karabiner/karabiner.json"
 sh install_my_nvim.sh
 
 copy "Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application Support/userSettings.json"
+cp -r "Applications/Neovim.app" /Applications 

@@ -9,13 +9,13 @@ nvim_tree.setup({
 	},
 
 	view = {
-		hide_root_folder = true,
 		width = 40,
 	},
 	update_focused_file = {
 		enable = true,
 	},
 	renderer = {
+		root_folder_label = false,
 		icons = {
 			git_placement = "after",
 		},
