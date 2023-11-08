@@ -22,6 +22,8 @@ brew bundle
 relink .skhdrc
 relink .yabairc
 relink .simplebarrc
+relink .config/sketchybar
+relink .config/svim
 relink "Library/Application Support/Übersicht/widgets/custom"
 relink ".config/karabiner/karabiner.json"
 # relink ".config/nvim"
