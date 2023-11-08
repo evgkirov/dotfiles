@@ -14,7 +14,7 @@ lalt - f : set has_window (yabai -m query --windows --space | jq 'any(.app == "F
 cmd - space -> : im-select org.sil.ukelele.keyboardlayout.t.keylayout.English-IlyaBirmanTypography 
 
 lalt - space ; app_switcher_1
-hyper - a ; app_switcher_1
+# hyper - a ; app_switcher_1
 app_switcher_1 < escape -> ; default
 app_switcher_1 < return -> ; default
 app_switcher_1 < q -> ; app_switcher_2
@@ -74,10 +74,14 @@ app_switcher_2 < m -> : skhd -k "return"
 
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
 
-default < hyper - h : yabai -m window --focus west
-default < hyper - j : yabai -m window --focus south
-default < hyper - k : yabai -m window --focus north
-default < hyper - l : yabai -m window --focus east
+# default < hyper - h : yabai -m window --focus west
+# default < hyper - j : yabai -m window --focus south
+# default < hyper - k : yabai -m window --focus north
+# default < hyper - l : yabai -m window --focus east
+default < hyper - h : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "ctrl - h"; else; yabai -m window --focus west; end
+default < hyper - j : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "ctrl - j"; else; yabai -m window --focus south; end
+default < hyper - k : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "ctrl - k"; else; yabai -m window --focus north; end
+default < hyper - l : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "ctrl - l"; else; yabai -m window --focus east; end
 default < hyper - 0x21 : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 default < hyper - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
@@ -147,27 +151,27 @@ ins < hyper - l : yabai -m window --insert east ; skhd -k "escape"
 # hyper - 0x1E : yabai -m window next --stack mouse
 
 ## # change layout of desktop
-hyper - z : sh ~/.yabairc set_space_to_bsp
-hyper - x : sh ~/.yabairc set_space_to_stack
+hyper - z : sh ~/.yabairc set_space_to_stack
+hyper - x : sh ~/.yabairc set_space_to_bsp
 hyper - c : yabai -m space --layout float
 
 # balance size of windows
 hyper - b : yabai -m space --balance
 
 # fast focus desktop
-cmd + alt - x : yabai -m space --focus recent
-cmd + alt - z : yabai -m space --focus prev
-cmd + alt - c : yabai -m space --focus next
-cmd + alt - 1 : yabai -m space --focus 1
-cmd + alt - 2 : yabai -m space --focus 2
-cmd + alt - 3 : yabai -m space --focus 3
-cmd + alt - 4 : yabai -m space --focus 4
-cmd + alt - 5 : yabai -m space --focus 5
-cmd + alt - 6 : yabai -m space --focus 6
-cmd + alt - 7 : yabai -m space --focus 7
-cmd + alt - 8 : yabai -m space --focus 8
-cmd + alt - 9 : yabai -m space --focus 9
-cmd + alt - 0 : yabai -m space --focus 10
+# cmd + alt - x : yabai -m space --focus recent
+# cmd + alt - z : yabai -m space --focus prev
+# cmd + alt - c : yabai -m space --focus next
+# cmd + alt - 1 : yabai -m space --focus 1
+# cmd + alt - 2 : yabai -m space --focus 2
+# cmd + alt - 3 : yabai -m space --focus 3
+# cmd + alt - 4 : yabai -m space --focus 4
+# cmd + alt - 5 : yabai -m space --focus 5
+# cmd + alt - 6 : yabai -m space --focus 6
+# cmd + alt - 7 : yabai -m space --focus 7
+# cmd + alt - 8 : yabai -m space --focus 8
+# cmd + alt - 9 : yabai -m space --focus 9
+# cmd + alt - 0 : yabai -m space --focus 10
 
 hyper - f : yabai -m window --toggle zoom-fullscreen
 
