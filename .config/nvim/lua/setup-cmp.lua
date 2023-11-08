@@ -1,16 +1,12 @@
 -- Set up nvim-cmp.
 local cmp = require("cmp")
-local servers = { "lua_ls", "diagnosticls" } -- jedi is configured separately
+local servers = { "lua_ls", "diagnosticls", "tsserver", "cssls" }
 vim.lsp.set_log_level("debug")
 
 cmp.setup({
 	snippet = {
-		-- REQUIRED - you must specify a snippet engine
 		expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-			-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-			-- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-			-- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+			vim.fn["vsnip#anonymous"](args.body)
 		end,
 	},
 	window = {
@@ -26,10 +22,7 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "vsnip" }, -- For vsnip users.
-		-- { name = 'luasnip' }, -- For luasnip users.
-		-- { name = 'ultisnips' }, -- For ultisnips users.
-		-- { name = 'snippy' }, -- For snippy users.
+		{ name = "vsnip" },
 	}, {
 		{ name = "buffer" },
 	}),
@@ -75,7 +68,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+		-- vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
 		vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, opts)
 		vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, opts)
 		vim.keymap.set("n", "<space>wl", function()
@@ -100,34 +93,12 @@ for _, lsp in ipairs(servers) do
 	})
 end
 
--- lspconfig["pylsp"].setup({
--- 	capabilities = capabilities,
--- 	settings = {
--- 		pylsp = {
--- 			plugins = {
--- 				pycodestyle = {
--- 					ignore = { "W391" },
--- 					maxLineLength = 100,
--- 				},
--- 				jedi = {
--- 					environment = require("helpers.python-auto-venv").python_path(),
--- 				},
--- 			},
--- 		},
--- 	},
--- })
-
--- lspconfig["jedi_language_server"].setup({
--- 	capabilities = capabilities,
--- 	on_new_config = function(new_config, new_root_dir)
--- 		require("helpers.python-auto-venv").on_new_jedi_config(new_config, new_root_dir)
--- 	end,
--- })
-
+require("helpers.python-auto-venv").create_pyright_config()
 lspconfig["pyright"].setup({
+	capabilities = capabilities,
 	settings = {
-	python = {
-		pythonPath = require("helpers.python-auto-venv").python_path(),
+		python = {
+			pythonPath = require("helpers.python-auto-venv").python_path(),
+		},
 	},
-}
 })

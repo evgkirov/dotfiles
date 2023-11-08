@@ -1,9 +1,26 @@
--- local colorscheme_light = "base16-tomorrow"
--- local colorscheme_dark = "base16-tomorrow-night"
-local colorscheme_light = "gruvbox-material"
-local colorscheme_dark = "gruvbox-material"
+local selected_abbr = "edge" -- change it
+
+local available_colorschemes = {
+	adwaita = { "adwaita", "adwaita" },
+	alabaster = { "alabaster", "alabaster" },
+	catppuccin = { "catppuccin-latte", "catppuccin-macchiato" }, -- !!!
+	edge = { "edge", "edge" }, -- !!!
+	fox = { "dawnfox", "nightfox" },
+	github = { "github_light", "github_dark" },
+	gruvbox = { "gruvbox-material", "gruvbox-material" }, -- !!!
+	one = { "onelight", "onedark" },
+	rosepine = { "rose-pine", "rose-pine" },
+	xcode = { "xcode", "xcode" },
+	everforest = { "everforest", "everforest" },
+}
+
+local selected_pair = available_colorschemes[selected_abbr]
+local colorscheme_light = selected_pair[1]
+local colorscheme_dark = selected_pair[2]
 
 vim.o.termguicolors = true
+vim.g.gruvbox_material_background = "medium"
+vim.g.everforest_background = "hard"
 vim.cmd("colorscheme " .. colorscheme_light)
 
 local auto_dark_mode = require("auto-dark-mode")
@@ -19,11 +36,3 @@ auto_dark_mode.setup({
 	end,
 })
 auto_dark_mode.init()
-
-vim.api.nvim_create_autocmd("ColorScheme", {
-	pattern = "*",
-	callback = function()
-		vim.api.nvim_set_hl(0, "VertSplit", { link = "NvimTreeNormal" })
-		vim.api.nvim_set_hl(0, "BufferLineOffsetSeparator", { link = "VertSplit" })
-	end,
-})

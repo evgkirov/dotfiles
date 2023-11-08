@@ -10,12 +10,11 @@ nvim_tree.setup({
 
 	view = {
 		width = 40,
-	},
-	update_focused_file = {
-		enable = true,
+		relativenumber = true,
 	},
 	renderer = {
-		root_folder_label = false,
+		root_folder_label = ":t",
+		--root_folder_label = false,
 		icons = {
 			git_placement = "after",
 		},

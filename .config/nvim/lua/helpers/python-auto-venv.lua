@@ -14,6 +14,42 @@ local function exists(file)
 	return ok, err
 end
 
+-- Function to check if a string is present in a file
+local function isStringPresentInFile(filename, searchString)
+	-- Open the file in read mode
+	local file = io.open(filename, "r")
+
+	if file then
+		-- Read the file contents
+		local contents = file:read("*a")
+
+		-- Check if the search string is present
+		if contents:find(searchString) then
+			return true
+		end
+
+		-- Close the file
+		file:close()
+	end
+
+	return false
+end
+
+local function executeCommand(command)
+	local file = io.popen(command)
+	local output = file:read("*a")
+	file:close()
+	return output
+end
+
+local function has_poetry()
+	local has_pyproject = exists("pyproject.toml")
+	if not has_pyproject then
+		return false
+	end
+	return isStringPresentInFile("pyproject.toml", "%[tool%.poetry%]")
+end
+
 local function venv_path()
 	local cwd = vim.fn.getcwd()
 	local cwd_name = string.match(cwd, ".+/([^/]+)$")
@@ -21,6 +57,9 @@ local function venv_path()
 end
 
 function M.python_path()
+	if has_poetry() then
+		return executeCommand("poetry run which python")
+	end
 	return venv_path() .. "/bin/python"
 end
 
@@ -30,6 +69,10 @@ end
 
 function M.create_venv()
 	local dir = venv_path()
+	if has_poetry() then
+		return true
+	end
+
 	if not exists("requirements.txt") then
 		return false
 	end
@@ -60,4 +103,11 @@ function M.on_new_jedi_config(new_config)
 	end
 end
 
+function M.create_pyright_config()
+	if has_poetry() then
+		os.execute(
+			'jq --null-input --arg venv "$(basename $(poetry env info -p))" --arg venvPath "$(dirname $(poetry env info -p))" \'{ "venv": $venv, "venvPath": $venvPath }\' > pyrightconfig.json'
+		)
+	end
+end
 return M

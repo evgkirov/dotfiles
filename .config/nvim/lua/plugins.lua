@@ -1,4 +1,15 @@
-vim.cmd([[packadd packer.nvim]])
+local ensure_packer = function()
+	local fn = vim.fn
+	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+	if fn.empty(fn.glob(install_path)) > 0 then
+		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+		vim.cmd([[packadd packer.nvim]])
+		return true
+	end
+	return false
+end
+
+local packer_bootstrap = ensure_packer()
 
 return require("packer").startup(function(use)
 	-- packer
@@ -8,13 +19,30 @@ return require("packer").startup(function(use)
 	use({ "nvim-tree/nvim-tree.lua" })
 	use({ "nvim-tree/nvim-web-devicons" })
 	use({ "akinsho/bufferline.nvim", tag = "v3.*", requires = "nvim-tree/nvim-web-devicons" })
+
 	use({ "ojroques/nvim-bufdel" })
 	use({ "f-person/auto-dark-mode.nvim" })
 	use({
 		"akinsho/toggleterm.nvim",
 		tag = "*",
 		config = function()
-			require("toggleterm").setup()
+			require("toggleterm").setup({
+				open_mapping = "<F10>",
+				-- highlights = {
+				-- 	Normal = { link = "Normal" },
+				-- 	NormalFloat = { link = "Normal" },
+				-- 	FloatBorder = { link = "FloatBorder" },
+				-- 	SignColumn = { link = "SignColumn" },
+				-- 	StatusLine = { link = "StatusLine" },
+				-- 	StatusLineNC = { link = "StatusLineNC" },
+				-- },
+
+				shade_terminals = true,
+				shading_factor = "-50",
+				start_in_insert = true,
+				insert_mappings = true,
+				terminal_mappings = true,
+			})
 		end,
 	})
 	use({ "folke/which-key.nvim" })
@@ -31,9 +59,21 @@ return require("packer").startup(function(use)
 		"lewis6991/gitsigns.nvim",
 	})
 
+	-- utilities
+
 	-- themes
 	use({ "sainnhe/gruvbox-material" })
 	use({ "catppuccin/nvim", as = "catppuccin" })
+	use({ "arzg/vim-colors-xcode" })
+	use("Mofiqul/adwaita.nvim")
+	--use 'RRethy/nvim-base16'
+	use("EdenEast/nightfox.nvim")
+	use({ "projekt0n/github-nvim-theme" })
+	use("olimorris/onedarkpro.nvim")
+	use("sainnhe/edge")
+	use({ "rose-pine/neovim", as = "rose-pine" })
+	use("p00f/alabaster.nvim")
+	use("sainnhe/everforest")
 
 	-- code
 	use({ "editorconfig/editorconfig-vim" })
@@ -42,8 +82,6 @@ return require("packer").startup(function(use)
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
 	})
 	use({ "rmagatti/auto-session" })
-	-- use({ "zwhitchcox/auto-session-nvim-tree" })
-	-- use({ "kdheepak/lazygit.nvim" })
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = function()
@@ -51,6 +89,7 @@ return require("packer").startup(function(use)
 			ts_update()
 		end,
 	})
+	use("nvim-treesitter/nvim-treesitter-context")
 
 	-- lsp
 	use({ "neovim/nvim-lspconfig" })
@@ -61,4 +100,10 @@ return require("packer").startup(function(use)
 	use({ "hrsh7th/nvim-cmp" })
 	use({ "hrsh7th/cmp-vsnip" })
 	use({ "hrsh7th/vim-vsnip" })
+	use({ "rafamadriz/friendly-snippets" })
+	-- Automatically set up your configuration after cloning packer.nvim
+	-- Put this at the end after all plugins
+	if packer_bootstrap then
+		require("packer").sync()
+	end
 end)

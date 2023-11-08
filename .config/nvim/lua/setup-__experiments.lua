@@ -1,11 +1,12 @@
-require("lualine").setup({
-	options = {
-		theme = "gruvbox-material",
-		globalstatus = false,
-		disabled_filetypes = { "NvimTree" },
-		--section_separators = '', component_separators = ''
-	},
-})
+-- require("lualine").setup({
+-- 	options = {
+-- 		-- theme = "gruvbox-material",
+-- 		globalstatus = false,
+-- 		--disabled_filetypes = { "NvimTree" },
+--
+-- 		-- section_separators = '', component_separators = ''
+-- 	},
+-- })
 
 require("gitsigns").setup({
 	signs = {
@@ -23,6 +24,14 @@ end
 local function open_nvim_tree()
 	require("nvim-tree.api").tree.toggle({ focus = false, find_file = true })
 end
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+	pattern = { "*" },
+	callback = function()
+		os.execute("im-select org.sil.ukelele.keyboardlayout.t.keylayout.English-IlyaBirmanTypography")
+	end,
+})
+
 require("auto-session").setup({
 	log_level = "error",
 	pre_save_cmds = { close_nvim_tree },
@@ -38,6 +47,9 @@ require("bufdel").setup()
 require("nvim-treesitter.configs").setup({
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
 	ensure_installed = "all",
+})
+require("treesitter-context").setup({
+	mode = "topline", -- Line used to calculate context. Choices: 'cursor', 'topline'
 })
 vim.api.nvim_create_autocmd({ "BufEnter" }, { pattern = { "*" }, command = "normal zx" })
 
