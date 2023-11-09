@@ -8,13 +8,35 @@ get_app_icon() {
     fi
 
     case $1 in
+        "Anki") echo 󰓎 ;;
+        "App Store") echo  ;;
+        "Banktivity") echo 󰁰 ;;
+        "Calculator") echo 󰃬 ;;
         "Calendar") echo 󰸗 ;;
-        "Google Chrome") echo 󰊯 ;;
+        "Contacts") echo 󰛋 ;;
+        "Day One") echo 󰃀 ;;
+        "Dictionary") echo 󰗊 ;;
+        "Discord") echo 󰙯 ;;
+        "Find My") echo 󰐷 ;;
         "Finder") echo 󰀶 ;;
+        "GitHub Desktop") echo 󰊤 ;;
+        "Google Chrome") echo 󰊯 ;;
+        "Home Assistant") echo 󰟐 ;;
+        "Home") echo 󰋜 ;;
         "iTerm2") echo 󰞷 ;;
+        "Keynote") echo 󰐨 ;;
         "Mail") echo 󰇮 ;;
+        "Maps") echo 󰦂 ;;
         "Messages") echo 󰭹 ;;
+        "Music") echo 󰝚 ;;
+        "Notes") echo 󰎞 ;;
+        "Numbers") echo 󰄨 ;;
         "Obsidian") echo 󰇈 ;;
+        "Pages") echo 󰏪 ;;
+        "Photos") echo  ;;
+        "Pixelmator Pro") echo 󰃣 ;;
+        "Podcasts") echo 󰦔 ;;
+        "Reminders") echo 󰝖 ;;
         "Rocket.Chat") echo 󱓞 ;;
         "Safari") echo 󰀹 ;;
         "Session") echo 󰁫 ;;
@@ -22,10 +44,14 @@ get_app_icon() {
         "Spotify") echo 󰓇 ;;
         "Sublime Text") echo 󰰡 ;;
         "System Settings") echo 󰒓 ;;
+        "Telegram Desktop") echo  ;;
         "Telegram") echo  ;;
         "Things") echo 󰄲 ;;
+        "TV") echo 󰠹 ;;
         "Twitter") echo 󰕄 ;;
-        *) echo 󰘔 ;;
+        "Weather") echo 󰖕 ;;
+        # *) echo 󰘔 ;;
+        *) echo  ;;
     esac
 }
 
