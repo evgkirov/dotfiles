@@ -1,8 +1,9 @@
 volume=(
-    background.color=$BLUE
+    background.color=$DATA_VOLUME
     script="$PLUGIN_DIR/volume.sh"      
 )
-sketchybar            --add item volume right                             \
+
+sketchybar --add item volume right \
            --set volume  "${volume[@]}" \
-           --subscribe volume volume_change                    \
+           --subscribe volume volume_change
 

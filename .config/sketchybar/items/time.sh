@@ -1,5 +1,5 @@
 time=(
-    background.color=$YELLOW          
+    background.color=$DATA_TIME
     icon=                                
     script="$PLUGIN_DIR/time.sh"         
     update_freq=10

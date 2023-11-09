@@ -6,6 +6,7 @@
 ITEMS_DIR="$CONFIG_DIR/items"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 
+source "$CONFIG_DIR/config.sh"
 source "$CONFIG_DIR/colors.sh"
 
 ##### Bar Appearance #####
@@ -17,11 +18,12 @@ source "$CONFIG_DIR/colors.sh"
 
 bar=(
     blur_radius=0
-    color=0x00000000
+    color=0xff000000
     height=48
     padding_left=8
     padding_right=8
     position=top    
+    sticky=off      
 )
 
 sketchybar --bar "${bar[@]}"
@@ -35,24 +37,21 @@ defaults=(
     background.corner_radius=5 
     background.height=24   
     icon.color=0xff000000                 
-    icon.font="JetBrainsMono Nerd Font:Bold:12.0"  
+    icon.font="$ICON_FONT"
     icon.padding_left=8                   
     icon.padding_right=4
     label.color=0xff000000                
-    label.font="JetBrainsMono Nerd Font:Bold:12.0" 
+    label.font="$TEXT_FONT"
     label.padding_left=4                  
     label.padding_right=8                 
-    padding_left=5                        
-    padding_right=5                       
+    padding_left=3
+    padding_right=3
     popup.background.border_width=2
     popup.background.corner_radius=9
     popup.background.border_color=0xff000000
-    popup.background.color=0xffffffff
-    popup.color=0xffffffff
+    popup.background.color=0x66ffffff
     popup.blur_radius=20
     popup.background.shadow.drawing=on
-    scroll_texts=on
-    sticky=off      
     updates=when_shown
 )
 
@@ -68,7 +67,10 @@ sketchybar --default "${defaults[@]}"
 # only the properties deviating from the current defaults need to be set
 
 
-source "$ITEMS_DIR/space_old.sh"
+# source "$ITEMS_DIR/space_old.sh"
+# source "$ITEMS_DIR/spaces.sh"
+# source "$ITEMS_DIR/yabai.sh"
+source "$ITEMS_DIR/spaces_new.sh"
 source "$ITEMS_DIR/front_app.sh"
 
 ##### Adding Right Items #####

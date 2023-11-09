@@ -1,5 +1,5 @@
 date=(
-    background.color=$GREEN
+    background.color=$DATA_DATE
     icon=󰃭                               
     script="$PLUGIN_DIR/date.sh"         
     update_freq=60                        

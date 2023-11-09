@@ -1,10 +1,10 @@
 battery=(
-    background.color=$VIOLET
+    background.color=$DATA_BATTERY
     script="$PLUGIN_DIR/battery.sh"       
     update_freq=120                       
 )
 
-sketchybar  --add item battery right                            \
+sketchybar --add item battery right \
            --set battery "${battery[@]}" \
-           --subscribe battery system_woke power_source_change \
+           --subscribe battery system_woke power_source_change
 

@@ -10,7 +10,7 @@ else
 fi
 
 VISIBLE=on
-COLOR=$SVIM_NORMAL
+COLOR=$DATA_SVIM_NORMAL
 FULL_MODE=$MODE
 
 if [ "$MODE" = "N" ]; then
@@ -18,14 +18,14 @@ if [ "$MODE" = "N" ]; then
 elif [ "$MODE" = "_" ]; then
     FULL_MODE="NORMAL"
 elif [ "$MODE" = "I" ]; then
-    COLOR=$SVIM_INSERT
+    COLOR=$DATA_SVIM_INSERT
     FULL_MODE="INSERT"
 elif [ "$MODE" = "V" ]; then
     FULL_MODE="VISUAL"
-    COLOR=$SVIM_VISUAL
+    COLOR=$DATA_SVIM_VISUAL
 elif [ "$MODE" = "C" ]; then
     FULL_MODE="COMMAND"
-    COLOR=$SVIM_COMMAND
+    COLOR=$DATA_SVIM_COMMAND
 elif [ "$MODE" = "" ]; then
     VISIBLE=off
 fi

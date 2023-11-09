@@ -21,7 +21,7 @@ done
 
 sketchybar --add item space_separator left                         \
            --set space_separator icon=                            \
-	   			icon.color=0xff7c6f64    \
+	   			icon.color=$GREY2    \
                                  padding_left=10                   \
                                  padding_right=10                  \
                                  label.drawing=off                
