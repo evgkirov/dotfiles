@@ -8,6 +8,7 @@ get_app_icon() {
     fi
 
     case $1 in
+        "AlDente") echo 󱅠 ;;
         "Anki") echo 󰓎 ;;
         "App Store") echo  ;;
         "Banktivity") echo 󰁰 ;;
@@ -17,6 +18,7 @@ get_app_icon() {
         "Day One") echo 󰃀 ;;
         "Dictionary") echo 󰗊 ;;
         "Discord") echo 󰙯 ;;
+        "Docker Desktop") echo 󰡨 ;;
         "Find My") echo 󰐷 ;;
         "Finder") echo 󰀶 ;;
         "GitHub Desktop") echo 󰊤 ;;
@@ -49,6 +51,7 @@ get_app_icon() {
         "Things") echo 󰄲 ;;
         "TV") echo 󰠹 ;;
         "Twitter") echo 󰕄 ;;
+        "Upwork") echo 󰰨 ;;
         "Weather") echo 󰖕 ;;
         # *) echo 󰘔 ;;
         *) echo  ;;

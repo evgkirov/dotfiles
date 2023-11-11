@@ -23,7 +23,6 @@ bar=(
     padding_left=8
     padding_right=8
     position=top    
-    sticky=off      
 )
 
 sketchybar --bar "${bar[@]}"
@@ -34,20 +33,22 @@ sketchybar --bar "${bar[@]}"
 # https://felixkratz.github.io/SketchyBar/config/items
 
 defaults=(
-    background.corner_radius=5 
-    background.height=24   
+    background.corner_radius=5
+    background.height=26  
     icon.color=0xff000000                 
     icon.font="$ICON_FONT"
     icon.padding_left=8                   
     icon.padding_right=4
+    icon.y_offset=1
     label.color=0xff000000                
     label.font="$TEXT_FONT"
     label.padding_left=4                  
     label.padding_right=8                 
+    label.y_offset=0
     padding_left=3
     padding_right=3
     popup.background.border_width=2
-    popup.background.corner_radius=9
+    popup.background.corner_radius=20
     popup.background.border_color=0xff000000
     popup.background.color=0x66ffffff
     popup.blur_radius=20

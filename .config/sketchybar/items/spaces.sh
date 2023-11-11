@@ -13,8 +13,10 @@ do
     associated_space=$sid
     icon="${SPACE_ICONS[i]}"
     icon.highlight_color=$RED
+    icon.y_offset=0
     label.color=0xff000000
     label.highlight_color=0xffffff
+    label.y_offset=1
     background.color=$BLUE
     background.drawing=off
     label.drawing=off
