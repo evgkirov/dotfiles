@@ -17,11 +17,6 @@ return {
                 "lua_ls",
                 "pyright",
                 "tsserver",
-                -- "tailwindcss",
-                -- "svelte",
-                -- "graphql",
-                -- "emmet_ls",
-                -- "prismals",
             },
             automatic_installation = true,
         })

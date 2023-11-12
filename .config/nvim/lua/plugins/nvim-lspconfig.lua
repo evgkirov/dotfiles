@@ -30,7 +30,7 @@ return {
             on_attach = on_attach,
         })
 
-        -- javascript, javascriptreact, javascript.jsx, typescript, typescriptreact, typescript.tsx
+        -- javascript and typescript w/react
         lspconfig["tsserver"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
@@ -42,6 +42,7 @@ return {
             on_attach = on_attach,
             filetypes = { "html", "htmldjango" },
         })
+
         -- lua
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
