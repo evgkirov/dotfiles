@@ -1,7 +1,9 @@
 return {
     "nvim-tree/nvim-tree.lua",
-    lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    commit = "a2aaf8b430c11af36b869cf1c0ad2f7c8ceeaf2c",
+    lazy = false,
+    priority = 900,
     config = function()
         local nvimtree = require("nvim-tree")
 
@@ -29,19 +31,6 @@ return {
                     git_placement = "after",
                 },
             },
-        })
-
-        -- workaround for auto-session
-        vim.api.nvim_create_autocmd({ "BufEnter" }, {
-            pattern = "NvimTree*",
-            callback = function()
-                local api = require("nvim-tree.api")
-                local view = require("nvim-tree.view")
-
-                if not view.is_visible() then
-                    api.tree.open()
-                end
-            end,
         })
     end,
     keys = {
