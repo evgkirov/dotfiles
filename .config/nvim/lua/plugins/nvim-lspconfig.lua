@@ -24,7 +24,25 @@ return {
 
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
-        -- LUA
+        -- CSS, SCSS, LESS
+        lspconfig["cssls"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- javascript, javascriptreact, javascript.jsx, typescript, typescriptreact, typescript.tsx
+        lspconfig["tsserver"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
+
+        -- html
+        lspconfig["html"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            filetypes = { "html", "htmldjango" },
+        })
+        -- lua
         lspconfig["lua_ls"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
@@ -45,7 +63,7 @@ return {
             },
         })
 
-        -- PYTHON
+        -- python
         require("helpers.python-auto-venv").create_pyright_config()
         lspconfig["pyright"].setup({
             capabilities = capabilities,

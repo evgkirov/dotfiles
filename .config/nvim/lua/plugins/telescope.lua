@@ -1,7 +1,10 @@
 return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    },
     config = function()
         local telescope = require("telescope")
         local actions = require("telescope.actions")
@@ -29,10 +32,15 @@ return {
                     file_ignore_patterns = { "node_modules", "\\.git" },
                     hidden = true,
                 },
-                lsp_dynamic_workspace_symbols = {},
+                lsp_dynamic_workspace_symbols = {
+                    ignore_symbols = { "variable" },
+                },
+                lsp_document_symbols = {
+                    ignore_symbols = { "variable" },
+                },
             },
-            extensions = {},
         })
+        telescope.load_extension("fzf")
     end,
     keys = {
         { "<Tab>", "<cmd>Telescope buffers sort_lastused=true<cr>", { desc = "Buffer list" } },
