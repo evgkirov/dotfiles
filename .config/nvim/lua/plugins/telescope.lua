@@ -45,13 +45,13 @@ return {
         telescope.load_extension("fzf")
     end,
     keys = {
-        { "<Tab>", "<cmd>Telescope buffers sort_lastused=true<cr>", { desc = "Buffer list" } },
-        { "<F1>", "<cmd>Telescope help_tags<cr>", { desc = "Help" } },
-        { "<leader>ff", "<cmd>Telescope find_files<cr>", { desc = "Find files" } },
-        { "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Find files with grep" } },
-        { "<leader>fc", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor" } },
-        { "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", { desc = "Find symbols in workspace" } },
-        { "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", { desc = "Find symbols in document" } },
-        { "<leader>fr", "<cmd>Telescope lsp_references<cr>", { desc = "Find references" } },
+        { "<Tab>", "<cmd>Telescope buffers sort_lastused=true<cr>", desc = "Buffers" },
+        { "<F1>", "<cmd>Telescope help_tags<cr>", desc = "Help" },
+        { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
+        { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
+        { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
+        { "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace symbols" },
+        { "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
+        { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
     },
 }
