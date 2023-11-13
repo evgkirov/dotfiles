@@ -1,3 +1,4 @@
+require("helpers.which-key-config").c = { name = "󰅩 Code..." }
 -- loosely based on https://raw.githubusercontent.com/josean-dev/dev-environment-files/1bcf8bfd532c1fe549798a0f4a3ab351970de3d3/.config/nvim/lua/josean/plugins/lsp/lspconfig.lua
 
 return {
@@ -17,9 +18,27 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
-        local opts = { noremap = true, silent = true }
         local on_attach = function(client, bufnr)
-            -- keymap here
+            local opts = { buffer = bufnr, silent = true }
+
+            opts.desc = "Rename"
+            vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+
+            opts.desc = "Action..."
+            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
+            opts.desc = "Info (hover)"
+            vim.keymap.set("n", "<leader>ci", vim.lsp.buf.hover, opts)
+
+            opts.desc = "Go to definition"
+            vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, opts)
+
+
+            opts.desc = "Go to definition (horizontal split)"
+            vim.keymap.set("n", "<leader>cs", "<cmd>belowright split | lua vim.lsp.buf.definition()<cr>", opts)
+
+            opts.desc = "Go to definition (vertical split)"
+            vim.keymap.set("n", "<leader>cv", "<cmd>belowright vsplit | lua vim.lsp.buf.definition()<cr>", opts)
         end
 
         local capabilities = cmp_nvim_lsp.default_capabilities()
