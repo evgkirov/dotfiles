@@ -12,16 +12,18 @@ return {
     end,
     keys = {
         {
-            "<leader>lg",
+            "<leader>gs",
             function()
                 require("helpers.lazygit"):toggle()
             end,
+            desc = "Status (LazyGit)"
         },
         {
-            "<leader>ld",
+            "<leader>ds",
             function()
                 require("helpers.lazydocker"):toggle()
             end,
+            desc = "Status (LazyDocker)"
         },
     },
 }

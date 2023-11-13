@@ -1,3 +1,5 @@
+require("helpers.which-key-config").g = { name = "󰊢 Git..." }
+
 return {
     "lewis6991/gitsigns.nvim",
     event = "BufEnter",
@@ -37,11 +39,11 @@ return {
             end,
             desc = "Previous change",
         },
-        { "<leader>ph", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview Hunk" },
-        { "<leader>pd", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Preview Deleted lines" },
+        { "<leader>gp", "<cmd>Gitsigns preview_hunk<cr>", desc = "Preview hunk" },
+        { "<leader>gd", "<cmd>Gitsigns toggle_deleted<cr>", desc = "Preview deleted lines" },
         -- { "<leader>sh", "<cmd>Gitsigns stage_hunk<cr>", desc = "Stage Hunk" },
         -- { "<leader>uh", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Unstage Hunk" },
-        { "<leader>rh", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset Hunk" },
-        { "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Git Blame" },
+        { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset hunk" },
+        { "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame" },
     },
 }

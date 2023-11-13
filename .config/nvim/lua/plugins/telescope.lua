@@ -1,3 +1,5 @@
+require("helpers.which-key-config").f = { name = "󰍉 Find..." }
+
 return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",

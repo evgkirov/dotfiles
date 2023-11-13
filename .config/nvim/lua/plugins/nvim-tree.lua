@@ -1,3 +1,5 @@
+require("helpers.which-key-config").e = { name = "󰙅 File explorer..." }
+
 return {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -34,9 +36,9 @@ return {
         })
     end,
     keys = {
-        { "<leader>ee", "<cmd>NvimTreeToggle<cr>", { desc = "Toggle file explorer (nvim-tree)" } },
-        { "<leader>ef", "<cmd>NvimTreeFindFile<cr>", { desc = "Find file in the expolerer" } },
-        { "<leader>ec", "<cmd>NvimTreeCollapse<cr>", { desc = "Collapse file explorer" } },
-        { "<leader>er", "<cmd>NvimTreeRefresh<cr>", { desc = "Refresh file explorer" } },
+        { "<leader>ee", "<cmd>NvimTreeToggle<cr>", desc = "Toggle" },
+        { "<leader>ef", "<cmd>NvimTreeFindFile<cr>", desc = "Focus file" },
+        { "<leader>ec", "<cmd>NvimTreeCollapse<cr>", desc = "Collapse" },
+        { "<leader>er", "<cmd>NvimTreeRefresh<cr>", desc = "Refresh" },
     },
 }
