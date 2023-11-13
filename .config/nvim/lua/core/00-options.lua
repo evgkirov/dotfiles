@@ -7,3 +7,7 @@ vim.o.fillchars = table.concat({ "eob: ", "vert:▏", "verthoriz:╬", "vertleft
 
 vim.cmd("autocmd BufNewFile,BufRead *.variables setfiletype less")
 vim.cmd("autocmd BufNewFile,BufRead *.overrides setfiletype less")
+
+-- https://github.com/rmagatti/auto-session#recommended-sessionoptions-config
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
