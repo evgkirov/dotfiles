@@ -33,7 +33,6 @@ return {
             opts.desc = "Go to definition"
             vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, opts)
 
-
             opts.desc = "Go to definition (horizontal split)"
             vim.keymap.set("n", "<leader>cs", "<cmd>belowright split | lua vim.lsp.buf.definition()<cr>", opts)
 

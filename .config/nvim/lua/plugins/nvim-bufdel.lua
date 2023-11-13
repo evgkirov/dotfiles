@@ -1,7 +1,7 @@
 return {
-    'ojroques/nvim-bufdel',
+    "ojroques/nvim-bufdel",
     opts = {
-        quit = false
+        quit = false,
     },
     keys = {
         { "<leader>x", "<cmd>BufDel<cr>", desc = "Close buffer" },

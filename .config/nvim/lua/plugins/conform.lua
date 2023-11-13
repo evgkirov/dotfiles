@@ -1,7 +1,7 @@
 require("helpers.which-key-config").c = { name = "󰅩 Code..." }
 
 return {
-    'stevearc/conform.nvim',
+    "stevearc/conform.nvim",
     opts = {
         formatters_by_ft = {
             javascript = { "prettier" },
@@ -25,8 +25,7 @@ return {
             function()
                 require("conform").format({ async = true, lsp_fallback = true })
             end,
-            desc = "Format"
-        }
-
-    }
+            desc = "Format",
+        },
+    },
 }

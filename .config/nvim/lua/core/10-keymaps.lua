@@ -1,11 +1,11 @@
 local wkc = require("helpers.which-key-config")
 local keymap = vim.keymap.set
-local opts = { silent = true}
+local opts = { silent = true }
 
 -- editor
 
 vim.o.langmap =
-	"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
+    "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 
 opts.desc = "󰆔 Write all"
 keymap("n", "<leader>w", "<cmd>:wa<cr>", opts)
@@ -41,7 +41,7 @@ keymap("n", "<leader>sh", "<cmd>split<cr>", opts)
 opts.desc = " Split vertically"
 keymap("n", "<leader>sv", "<cmd>vsplit<cr>", opts)
 
--- docker 
+-- docker
 
 wkc.d = { name = "󰡨 Docker..." }
 
@@ -61,4 +61,3 @@ keymap("n", "<leader>th", "<cmd>belowright split | terminal<cr>", opts)
 
 opts.desc = "New terminal (vertical split)"
 keymap("n", "<leader>tv", "<cmd>belowright vsplit | terminal<cr>", opts)
-

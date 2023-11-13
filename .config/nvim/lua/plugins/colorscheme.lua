@@ -1,5 +1,5 @@
 -- set theme here
-local current_theme_name = "everforest"
+local current_theme_name = "edge"
 
 local available_themes = {
     adwaita = {
