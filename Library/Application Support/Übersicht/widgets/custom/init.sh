@@ -1,1 +1,0 @@
-$yabai_path -m signal --add event=space_changed action="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"custom-RoundedCorners-jsx\"'" label="Refresh RoundedCorners on space change"
