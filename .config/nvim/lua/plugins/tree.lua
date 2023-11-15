@@ -6,15 +6,14 @@ return {
     commit = "a2aaf8b430c11af36b869cf1c0ad2f7c8ceeaf2c",
     lazy = false,
     priority = 900,
-    config = true,
-    opts = function()
-        local nvimtree = require("nvim-tree")
+    init = function()
+        local nvim_tree = require("nvim-tree")
 
         -- recommended settings from nvim-tree documentation
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1
 
-        nvimtree.setup({
+        nvim_tree.setup({
 
             sync_root_with_cwd = true,
             actions = {
@@ -27,6 +26,7 @@ return {
                 width = 40,
                 relativenumber = true,
             },
+
             renderer = {
                 root_folder_label = ":t",
                 --root_folder_label = false,
