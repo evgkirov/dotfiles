@@ -8,12 +8,14 @@ get_app_icon() {
     fi
 
     case $1 in
+        "Activity Monitor") echo 󱕎 ;;
         "AlDente") echo 󱅠 ;;
         "Anki") echo 󰓎 ;;
         "App Store") echo  ;;
         "Banktivity") echo 󰁰 ;;
         "Calculator") echo 󰃬 ;;
         "Calendar") echo 󰸗 ;;
+        "ChatGPT") echo 󰧑 ;;
         "Contacts") echo 󰛋 ;;
         "Day One") echo 󰃀 ;;
         "Dictionary") echo 󰗊 ;;
