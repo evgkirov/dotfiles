@@ -2,7 +2,8 @@ return {
     "nvim-treesitter/nvim-treesitter",
     event = "BufEnter",
     main = "nvim-treesitter.configs",
-    config = {
+    config = true,
+    opts = {
         ensure_installed = {
             "bash",
             "comment",

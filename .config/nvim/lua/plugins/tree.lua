@@ -6,7 +6,8 @@ return {
     commit = "a2aaf8b430c11af36b869cf1c0ad2f7c8ceeaf2c",
     lazy = false,
     priority = 900,
-    config = function()
+    config = true,
+    opts = function()
         local nvimtree = require("nvim-tree")
 
         -- recommended settings from nvim-tree documentation

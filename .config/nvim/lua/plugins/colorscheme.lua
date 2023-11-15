@@ -52,6 +52,11 @@ local available_themes = {
         light = "rose-pine",
         dark = "rose-pine",
     },
+    tokyonight = {
+        repo = "folke/tokyonight.nvim",
+        light = "tokyonight-day",
+        dark = "tokyonight",
+    },
     xcode = {
         repo = "arzg/vim-colors-xcode",
         light = "xcode",

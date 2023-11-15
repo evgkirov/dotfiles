@@ -3,7 +3,8 @@ require("helpers.which-key-config").g = { name = "󰊢 Git..." }
 return {
     "lewis6991/gitsigns.nvim",
     event = "BufEnter",
-    config = {
+    config = true,
+    opts = {
         signs = {
             add = { text = "▎" },
             change = { text = "▎" },
