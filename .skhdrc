@@ -78,10 +78,10 @@ cmd - w -> : sleep 1 && yabai -m window --focus mouse
 # default < hyper - j : yabai -m window --focus south
 # default < hyper - k : yabai -m window --focus north
 # default < hyper - l : yabai -m window --focus east
-default < hyper - h : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "ctrl - h"; else; yabai -m window --focus west; end
-default < hyper - j : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "ctrl - j"; else; yabai -m window --focus south; end
-default < hyper - k : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "ctrl - k"; else; yabai -m window --focus north; end
-default < hyper - l : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "ctrl - l"; else; yabai -m window --focus east; end
+default < hyper - h : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "f7"; else; yabai -m window --focus west; end
+default < hyper - j : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "f8"; else; yabai -m window --focus south; end
+default < hyper - k : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "f9"; else; yabai -m window --focus north; end
+default < hyper - l : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "f10"; else; yabai -m window --focus east; end
 default < hyper - 0x21 : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 default < hyper - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 

@@ -1,4 +1,4 @@
-vim.keymap.set({ "n", "t", "v", "i" }, "<C-h>", function()
+vim.keymap.set({ "n", "t", "v", "i" }, "<F7>", function()
     local oldnr = vim.fn.winnr()
     vim.cmd("wincmd h")
     if oldnr == vim.fn.winnr() then
@@ -6,7 +6,7 @@ vim.keymap.set({ "n", "t", "v", "i" }, "<C-h>", function()
     end
 end, { desc = "Focus 󰁍" })
 
-vim.keymap.set({ "n", "t", "v", "i" }, "<C-j>", function()
+vim.keymap.set({ "n", "t", "v", "i" }, "<F8>", function()
     local oldnr = vim.fn.winnr()
     vim.cmd("wincmd j")
     if oldnr == vim.fn.winnr() then
@@ -14,7 +14,7 @@ vim.keymap.set({ "n", "t", "v", "i" }, "<C-j>", function()
     end
 end, { desc = "Focus 󰁅" })
 
-vim.keymap.set({ "n", "t", "v", "i" }, "<C-k>", function()
+vim.keymap.set({ "n", "t", "v", "i" }, "<F9>", function()
     local oldnr = vim.fn.winnr()
     vim.cmd("wincmd k")
     if oldnr == vim.fn.winnr() then
@@ -22,7 +22,7 @@ vim.keymap.set({ "n", "t", "v", "i" }, "<C-k>", function()
     end
 end, { desc = "Focus 󰁝" })
 
-vim.keymap.set({ "n", "t", "v", "i" }, "<C-l>", function()
+vim.keymap.set({ "n", "t", "v", "i" }, "<F10>", function()
     local oldnr = vim.fn.winnr()
     vim.cmd("wincmd l")
     if oldnr == vim.fn.winnr() then
