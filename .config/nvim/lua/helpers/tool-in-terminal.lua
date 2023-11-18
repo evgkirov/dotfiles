@@ -10,7 +10,7 @@ return function(name, cmd)
         on_open = function(term)
             vim.cmd("startinsert!")
             vim.api.nvim_buf_del_keymap(term.bufnr, "t", "jk")
-            vim.api.nvim_buf_set_keymap(term.bufnr, "t", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+            vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<leader>x", "<cmd>close<CR>", { noremap = true, silent = true })
         end,
     })
 end

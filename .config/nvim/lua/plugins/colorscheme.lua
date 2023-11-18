@@ -68,11 +68,13 @@ local current_theme = available_themes[current_theme_name]
 
 local function set_light_mode()
     vim.api.nvim_set_option("background", "light")
+    vim.cmd('let ayucolor="light"')
     vim.cmd("colorscheme " .. current_theme.light)
 end
 
 local function set_dark_mode()
     vim.api.nvim_set_option("background", "dark")
+    vim.cmd('let ayucolor="dark"')
     vim.cmd("colorscheme " .. current_theme.dark)
 end
 

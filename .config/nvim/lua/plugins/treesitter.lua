@@ -44,5 +44,8 @@ return {
             "xml",
             "yaml",
         },
+        highlight = {
+            enable = true,
+        }
     },
 }

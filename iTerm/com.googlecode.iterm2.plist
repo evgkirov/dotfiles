@@ -2138,7 +2138,7 @@
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>IRMemory</key>
-	<integer>4</integer>
+	<integer>16</integer>
 	<key>NeverWarnAboutShortLivedSessions_CB20EB0A-48AC-4899-8F8A-BC5535A5B124</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_CB20EB0A-48AC-4899-8F8A-BC5535A5B124_selection</key>
@@ -5374,6 +5374,8 @@
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
+	<true/>
+	<key>ZippyTextDrawing</key>
 	<true/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>

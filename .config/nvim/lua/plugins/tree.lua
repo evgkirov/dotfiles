@@ -23,7 +23,7 @@ return {
             },
 
             view = {
-                width = 40,
+                width = 42,
                 relativenumber = true,
             },
 
