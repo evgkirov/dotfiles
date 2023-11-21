@@ -11,17 +11,26 @@ return {
         "nvim-lua/plenary.nvim",
     },
     opts = {
-        notes_subdir = "Inbox",
+        notes_subdir = nil,
+        templates = {
+            subdir = "Resources/Софт/Obsidian/Templates",
+            substitutions = {
+                ["date:dddd"] = function()
+                    return os.date("%A")
+                end,
+            },
+        },
         daily_notes = {
             folder = "Areas/Daily Notes",
             date_format = "%Y/%Y-%m/%Y-%m-%d",
-            template = "Resources/Софт/Obsidian/Templates/Daily Note Template.md",
+            template = "Daily Note Template.md",
         },
         note_id_func = function(title)
+            local prefix = "Inbox/"
             if title ~= nil then
-                return title
+                return prefix .. title
             else
-                return os.date("%Y-%m-%d %H%M%S")
+                return prefix .. os.date("%Y-%m-%d %H%M%S")
             end
         end,
         -- disable_frontmatter = true,
@@ -50,6 +59,9 @@ return {
                 name = "Personal",
                 path = "~/Obsidian/Personal",
             },
+        },
+        attachments = {
+            img_folder = "Inbox",
         },
     },
     keys = {

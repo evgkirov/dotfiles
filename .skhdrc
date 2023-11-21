@@ -4,7 +4,7 @@
 :: inc @ : yabai -m config active_window_border_color 0xffffff00 ; yabai -m config window_opacity on
 :: dec @ : yabai -m config active_window_border_color 0xff00ffff ; yabai -m config window_opacity on
 :: ins @ : yabai -m config active_window_border_color 0xffff0000; yabai -m config window_opacity on ; sleep 2 ; skhd -k "escape"
-:: app_switcher_1 : skhd -k "ctrl - f3" && im-select org.sil.ukelele.keyboardlayout.t.keylayout.English-IlyaBirmanTypography
+:: app_switcher_1 : skhd -k "ctrl - f3" && im-select org.sil.ukelele.keyboardlayout.t.english-ilyabirmantypography
 :: app_switcher_2
 
 lalt - s : set has_window (yabai -m query --windows --space | jq 'any(.app == "Safari")') ; if not $has_window ; osascript -e 'tell application "Safari" to make new document'; end; osascript -e 'tell application "Safari" to activate'

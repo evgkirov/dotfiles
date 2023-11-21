@@ -38,7 +38,7 @@ return {
             vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, opts)
 
             opts.desc = "Go to definition (horizontal split)"
-            vim.keymap.set("n", "<leader>cs", "<cmd>belowright split | lua vim.lsp.buf.definition()<cr>", opts)
+            vim.keymap.set("n", "<leader>ch", "<cmd>belowright split | lua vim.lsp.buf.definition()<cr>", opts)
 
             opts.desc = "Go to definition (vertical split)"
             vim.keymap.set("n", "<leader>cv", "<cmd>belowright vsplit | lua vim.lsp.buf.definition()<cr>", opts)
