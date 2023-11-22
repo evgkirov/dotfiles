@@ -3,7 +3,7 @@ return {
     event = "VeryLazy",
     config = true,
     opts = {
-        highlight_on_key = true,
-        dim = true,
+        highlight_on_key = false,
+        dim = false,
     },
 }
