@@ -36,10 +36,10 @@ opts.desc = "󰅗 Close window"
 keymap("n", "<leader>sx", "<cmd>close<cr>", opts)
 
 opts.desc = " Split horizontally"
-keymap("n", "<leader>sh", "<cmd>split<cr>", opts)
+keymap("n", "<leader>sh", "<cmd>belowright split<cr>", opts)
 
 opts.desc = " Split vertically"
-keymap("n", "<leader>sv", "<cmd>vsplit<cr>", opts)
+keymap("n", "<leader>sv", "<cmd>belowright vsplit<cr>", opts)
 
 -- docker
 
