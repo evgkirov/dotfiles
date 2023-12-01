@@ -3,7 +3,6 @@ require("helpers.which-key-config").e = { name = "󰙅 File explorer..." }
 return {
     "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    commit = "a2aaf8b430c11af36b869cf1c0ad2f7c8ceeaf2c",
     lazy = false,
     priority = 900,
     init = function()

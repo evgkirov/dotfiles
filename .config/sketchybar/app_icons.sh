@@ -8,6 +8,7 @@ get_app_icon() {
     fi
 
     case $1 in
+        "1Password") echo 󰌆 ;;
         "Activity Monitor") echo 󱕎 ;;
         "Arq") echo  ;;
         "AlDente") echo 󱅠 ;;
