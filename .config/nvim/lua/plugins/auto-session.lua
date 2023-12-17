@@ -11,8 +11,8 @@ return {
         save_extra_cmds = {
             "NvimTreeOpen",
         },
-        -- post_restore_cmds = {
-        --     "NvimTreeOpen",
-        -- },
+        post_restore_cmds = {
+            "NvimTreeOpen",
+        },
     },
 }

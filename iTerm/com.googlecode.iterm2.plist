@@ -10,6 +10,8 @@
 	<true/>
 	<key>CompactMinimalTabBarHeight</key>
 	<real>41</real>
+	<key>ConvertTabDragToWindowDragForSolitaryTabInCompactOrMinimalTheme</key>
+	<true/>
 	<key>Custom Color Presets</key>
 	<dict>
 		<key>catppuccin-frappe</key>
@@ -2133,6 +2135,8 @@
 	</dict>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
+	<key>HideMenuBarInFullscreen</key>
+	<true/>
 	<key>HideScrollbar</key>
 	<false/>
 	<key>HideTab</key>
@@ -3741,6 +3745,8 @@
 			<array/>
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
+			<key>Thin Strokes</key>
+			<integer>4</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -5365,14 +5371,20 @@
 	<true/>
 	<key>ShowMetalFPSmeter</key>
 	<false/>
+	<key>ShowWindowTitleWhenTabBarInvisible</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.17706064168689317</real>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
 	<key>SynchronizeQueryWithFindPasteboard</key>
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>6</integer>
+	<key>TabViewType</key>
+	<integer>0</integer>
 	<key>TerminalMargin</key>
 	<integer>0</integer>
 	<key>TerminalVMargin</key>

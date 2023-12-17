@@ -79,7 +79,8 @@ return {
         })
 
         -- python
-        require("helpers.python-auto-venv").create_pyright_config()
+        -- require("helpers.python-auto-venv").create_pyright_config()
+        require("helpers.python-auto-venv").create_venv()
         lspconfig["pyright"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
