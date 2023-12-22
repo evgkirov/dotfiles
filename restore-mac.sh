@@ -18,10 +18,11 @@ function copy {
 }
 
 # /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install mas
-brew bundle
+# brew install mas
+# brew bundle
 
 relink .config/karabiner/karabiner.json
+relink .config/borders
 relink .config/nvim
 relink .config/sketchybar
 relink .config/skhd

@@ -151,8 +151,8 @@ ins < hyper - l : yabai -m window --insert east ; skhd -k "escape"
 # hyper - 0x1E : yabai -m window next --stack mouse
 
 ## # change layout of desktop
-hyper - z : sh ~/.yabairc set_space_to_stack
-hyper - x : sh ~/.yabairc set_space_to_bsp
+hyper - z : sh ~/.config/yabai/yabairc set_space_to_stack
+hyper - x : sh ~/.config/yabai/yabairc set_space_to_bsp
 hyper - c : yabai -m space --layout float
 
 # balance size of windows
