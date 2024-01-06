@@ -4059,6 +4059,10 @@
 	<string>CB20EB0A-48AC-4899-8F8A-BC5535A5B124</string>
 	<key>DefaultTabBarHeight</key>
 	<real>19</real>
+	<key>DimBackgroundWindows</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<true/>
 	<key>DisableCustomBoxDrawing</key>
 	<false/>
 	<key>EnableDivisionView</key>
@@ -5415,7 +5419,7 @@
 			<key>Minimum Contrast (Dark)</key>
 			<real>0.0</real>
 			<key>Minimum Contrast (Light)</key>
-			<real>0.0</real>
+			<real>0.32825520833333333</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -7422,7 +7426,7 @@
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.17706064168689317</real>
+	<real>0.41892540200242717</real>
 	<key>StatusBarPosition</key>
 	<integer>1</integer>
 	<key>SynchronizeQueryWithFindPasteboard</key>
