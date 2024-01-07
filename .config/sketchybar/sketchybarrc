@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # This is a demo config to show some of the most important commands more easily.
 # This is meant to be changed and configured, as it is intentionally kept sparse.
 # For a more advanced configuration example see my dotfiles:
@@ -23,7 +25,7 @@ bar=(
     # height=38
     padding_left=8
     padding_right=8
-    position=top    
+    position=top
 )
 
 sketchybar --bar "${bar[@]}"
@@ -35,17 +37,17 @@ sketchybar --bar "${bar[@]}"
 
 defaults=(
     background.corner_radius=5
-    # background.height=24  
+    # background.height=24
     background.height=26
-    icon.color=$BLACK                 
+    icon.color=$BLACK
     icon.font="$ICON_FONT"
-    icon.padding_left=8                   
+    icon.padding_left=8
     icon.padding_right=4
     icon.y_offset=1
-    label.color=$BLACK                
+    label.color=$BLACK
     label.font="$TEXT_FONT"
-    label.padding_left=4                  
-    label.padding_right=8                 
+    label.padding_left=4
+    label.padding_right=8
     label.y_offset=0
     padding_left=3
     padding_right=3
@@ -90,21 +92,18 @@ source "$ITEMS_DIR/battery.sh"
 source "$ITEMS_DIR/keyboard.sh"
 source "$ITEMS_DIR/svim.sh"
 
-
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to
 # force all scripts to run the first time, it should never be run in an item script.
 sketchybar --hotload on
 sketchybar --update
 
-
 ##### Borders! #####
 borders_options=(
-	style=square
-	width=6.0
-	active_color=$BAR_BACKGROUND
-	inactive_color=$BAR_BACKGROUND
+    style=square
+    width=6.0
+    active_color=$BAR_BACKGROUND
+    inactive_color=$BAR_BACKGROUND
 )
 
 borders "${borders_options[@]}"
-

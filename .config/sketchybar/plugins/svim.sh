@@ -1,10 +1,10 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 source "/Users/evgkirov/.config/sketchybar/colors.sh"
 
 DRAW_CMD="off"
 if [ "$MODE" = "C" ]; then
-  DRAW_CMD="on"
+    DRAW_CMD="on"
 else
     DRAW_CMD="off"
 fi
@@ -36,6 +36,7 @@ svim_mode=(
     label="$FULL_MODE"
     popup.drawing=$DRAW_CMD
 )
-sketchybar --set svim.mode "${svim_mode[@]}" \
-           --set svim.cmdline label="$CMDLINE"
 
+sketchybar \
+    --set svim.mode "${svim_mode[@]}" \
+    --set svim.cmdline label="$CMDLINE"

@@ -22,6 +22,7 @@ return {
                 "html",
                 "lua_ls",
                 "pyright",
+                "shfmt",
                 "tsserver",
             },
             automatic_installation = true,

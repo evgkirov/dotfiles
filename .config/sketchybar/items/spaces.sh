@@ -1,11 +1,12 @@
 SPACE_ICONS=("web" "mnge" "comm" "dev" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15")
 # SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15")
 
-sketchybar --add event window_focus            \
-           --add event windows_on_spaces    
-for i in "${!SPACE_ICONS[@]}"
-do
-    sid=$(($i+1))
+sketchybar \
+    --add event window_focus \
+    --add event windows_on_spaces
+
+for i in "${!SPACE_ICONS[@]}"; do
+    sid=$(($i + 1))
     space=(
         background.color=$SPACE_BG
         # click_script="yabai -m space --focus $sid"
@@ -19,15 +20,17 @@ do
         script="$PLUGIN_DIR/space.sh"
         space=$sid
     )
-    sketchybar --add space space.$sid left \
-               --set space.$sid ${space[@]} \
-                     icon.font="$TEXT_FONT" \
-                     label.font="$ICON_FONT" \
-                     click_script="yabai -m config mouse_follows_focus off && yabai -m space --focus $sid && sleep 1 && yabai -m config mouse_follows_focus on" \
-           --subscribe space.$sid window_focus      \
-                             space_change      \
-                             windows_on_spaces 
-           
+
+    sketchybar \
+        --add space space.$sid left \
+        --set space.$sid ${space[@]} \
+        icon.font="$TEXT_FONT" \
+        label.font="$ICON_FONT" \
+        click_script="yabai -m config mouse_follows_focus off && yabai -m space --focus $sid && sleep 1 && yabai -m config mouse_follows_focus on" \
+        --subscribe space.$sid window_focus \
+        space_change \
+        windows_on_spaces
+
 done
 
 # sketchybar --add item space_separator left                         \
@@ -35,4 +38,4 @@ done
 # 	   			icon.color=$GREY0    \
 #                                  padding_left=10                   \
 #                                  padding_right=10                  \
-#                                  label.drawing=off                
+#                                  label.drawing=off

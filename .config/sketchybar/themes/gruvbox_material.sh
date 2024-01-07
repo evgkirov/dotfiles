@@ -23,4 +23,3 @@ export GREY2=0xffa89984
 
 export WHITE=0xffffffff
 export BLACK=0xff000000
-
