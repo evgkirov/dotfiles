@@ -69,11 +69,7 @@ sketchybar --default "${defaults[@]}"
 # We add some regular items to the left side of the bar
 # only the properties deviating from the current defaults need to be set
 
-
-# source "$ITEMS_DIR/space_old.sh"
-# source "$ITEMS_DIR/spaces.sh"
-# source "$ITEMS_DIR/yabai.sh"
-source "$ITEMS_DIR/spaces_new.sh"
+source "$ITEMS_DIR/spaces.sh"
 source "$ITEMS_DIR/front_app.sh"
 
 ##### Adding Right Items #####

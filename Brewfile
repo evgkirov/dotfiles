@@ -27,6 +27,7 @@ brew "midnight-commander"
 brew "ncdu"
 brew "neofetch"
 brew "neovim"
+brew "nnn"
 brew "node"
 brew "openjdk"
 brew "pngpaste"
@@ -92,6 +93,8 @@ cask "ukelele"
 cask "utm"
 cask "viber"
 cask "vnc-viewer"
+cask "wezterm"
+cask "xscreensaver"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Banktivity", id: 1480779512

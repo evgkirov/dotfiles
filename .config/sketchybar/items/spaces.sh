@@ -1,49 +1,38 @@
-SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15")
+SPACE_ICONS=("web" "mnge" "comm" "dev" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15")
+# SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15")
 
-# Destroy space on right click, focus space on left click.
-# New space by left clicking separator (>)
-
-sid=0
-spaces=()
+sketchybar --add event window_focus            \
+           --add event windows_on_spaces    
 for i in "${!SPACE_ICONS[@]}"
 do
-  sid=$(($i+1))
-
-  space=(
-    associated_space=$sid
-    icon="${SPACE_ICONS[i]}"
-    icon.highlight_color=$RED
-    icon.y_offset=0
-    label.color=0xff000000
-    label.highlight_color=0xffffff
-    label.y_offset=1
-    background.color=$BLUE
-    background.drawing=off
-    label.drawing=off
-    script="$PLUGIN_DIR/space.sh"
-  )
-
-  sketchybar --add space space.$sid left    \
-             --set space.$sid "${space[@]}" \
-             --subscribe space.$sid mouse.clicked
+    sid=$(($i+1))
+    space=(
+        background.color=$SPACE_BG
+        # click_script="yabai -m space --focus $sid"
+        icon=${SPACE_ICONS[i]}
+        icon.color=$SPACE_FG
+        icon.highlight_color=$SPACE_ACTIVE_FG
+        icon.padding_right=8
+        label.color=$SPACE_FG
+        label.drawing=off
+        label.highlight_color=$SPACE_ACTIVE_FG
+        script="$PLUGIN_DIR/space.sh"
+        space=$sid
+    )
+    sketchybar --add space space.$sid left \
+               --set space.$sid ${space[@]} \
+                     icon.font="$TEXT_FONT" \
+                     label.font="$ICON_FONT" \
+                     click_script="yabai -m config mouse_follows_focus off && yabai -m space --focus $sid && sleep 1 && yabai -m config mouse_follows_focus on" \
+           --subscribe space.$sid window_focus      \
+                             space_change      \
+                             windows_on_spaces 
+           
 done
 
-spaces_bracket=(
-  background.color=$PURPLE
-)
-
-separator=(
-  icon=􀆊
-  padding_left=10
-  padding_right=8
-  label.drawing=off
-  associated_display=active
-  click_script='yabai -m space --create'
-  icon.color=$WHITE
-)
-
-sketchybar --add bracket spaces_bracket '/space\..*/'  \
-           --set spaces_bracket "${spaces_bracket[@]}" \
-                                                       \
-           --add item separator left                   \
-           --set separator "${separator[@]}"
+# sketchybar --add item space_separator left                         \
+#            --set space_separator icon=                            \
+# 	   			icon.color=$GREY0    \
+#                                  padding_left=10                   \
+#                                  padding_right=10                  \
+#                                  label.drawing=off                
