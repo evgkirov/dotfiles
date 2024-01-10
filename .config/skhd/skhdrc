@@ -8,7 +8,9 @@
 :: app_switcher_2
 
 lalt - s : set has_window (yabai -m query --windows --space | jq 'any(.app == "Safari")') ; if not $has_window ; osascript -e 'tell application "Safari" to make new document'; end; osascript -e 'tell application "Safari" to activate'
-lalt - i : set has_window (yabai -m query --windows --space | jq 'any(.app == "iTerm2")') ; if not $has_window ; osascript -e 'tell application "iTerm" to set new_window to (create window with default profile)'; end; osascript -e 'tell application "iTerm" to activate'
+# lalt - i : set has_window (yabai -m query --windows --space | jq 'any(.app == "iTerm2")') ; if not $has_window ; osascript -e 'tell application "iTerm" to set new_window to (create window with default profile)'; end; osascript -e 'tell application "iTerm" to activate'
+# lalt - i -> : set has_window (yabai -m query --windows --space | jq 'any(.app == "WezTerm")') ; if not $has_window; wezterm cli spawn --new-window ; end; yabai -m window --focus (yabai -m query --windows --space | jq -s 'map(.[] | select(.app == "WezTerm")) | first | .id')
+lalt - i : set has_window (yabai -m query --windows --space | jq 'any(.app == "WezTerm")') ; set is_running (yabai -m query --windows | jq 'any(.app == "WezTerm")') ; if $is_running; and not $has_window; WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window ; end; osascript -e 'tell application "WezTerm" to activate'
 lalt - f : set has_window (yabai -m query --windows --space | jq 'any(.app == "Finder")') ; if not $has_window ; osascript -e 'tell application "Finder" to make new Finder window'; end; osascript -e 'tell application "Finder" to activate'
 
 cmd - space -> : im-select org.sil.ukelele.keyboardlayout.t.keylayout.English-IlyaBirmanTypography 

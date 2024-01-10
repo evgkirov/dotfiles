@@ -70,6 +70,7 @@ get_app_icon() {
     "Twitter") echo 󰕄 ;;
     "Upwork") echo 󰰨 ;;
     "Weather") echo 󰖕 ;;
+    "WezTerm") echo 󰞷 ;;
     "WhatsApp (old)") echo 󰖣 ;;
     "WhatsApp") echo 󰖣 ;;
     "iTerm2") echo 󰞷 ;;

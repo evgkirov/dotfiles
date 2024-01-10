@@ -21,12 +21,13 @@ function copy {
 # brew install mas
 # brew bundle
 
-relink .config/karabiner/karabiner.json
 relink .config/borders
+relink .config/karabiner/karabiner.json
 relink .config/nvim
 relink .config/sketchybar
 relink .config/skhd
 relink .config/svim
+relink .config/wezterm
 relink .config/yabai
 
 copy "Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application Support/userSettings.json"
