@@ -22,7 +22,6 @@ return {
                 "html",
                 "lua_ls",
                 "pyright",
-                "shfmt",
                 "tsserver",
             },
             automatic_installation = true,
@@ -30,12 +29,13 @@ return {
 
         mason_tool_installer.setup({
             ensure_installed = {
-                "prettier",
-                "stylua",
-                "isort",
                 "black",
-                -- "pylint",
+                "isort",
+                "prettier",
+                "shfmt",
+                "stylua",
                 -- "eslint_d",
+                -- "pylint",
             },
         })
     end,
