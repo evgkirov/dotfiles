@@ -10,6 +10,7 @@ get_app_icon() {
     case $1 in
     "1Password") echo 󰌆 ;;
     "Activity Monitor") echo 󱕎 ;;
+    "AetherSX2") echo  ;;
     "AlDente") echo 󱅠 ;;
     "Anki") echo 󰓎 ;;
     "App Store") echo  ;;
@@ -37,12 +38,15 @@ get_app_icon() {
     "IINA") echo 󰐊 ;;
     "Keynote") echo 󰐨 ;;
     "Mail") echo 󰇮 ;;
+    "MacDown") echo  ;;
     "Maps") echo 󰦂 ;;
     "Messages") echo 󰭹 ;;
+    "MindNode") echo 󰌪 ;;
     "MultiViewer for F1") echo 󰶓 ;;
     "Music") echo 󰝚 ;;
     "Notes") echo 󰎞 ;;
     "Numbers") echo 󰄨 ;;
+    "OBS Studio") echo  ;;
     "Obsidian") echo 󰇈 ;;
     "Pages") echo 󰏪 ;;
     "Phanpy") echo 󰫑 ;;

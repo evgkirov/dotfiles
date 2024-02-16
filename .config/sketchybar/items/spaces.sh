@@ -17,6 +17,7 @@ for i in "${!SPACE_ICONS[@]}"; do
         label.color=$SPACE_FG
         label.drawing=off
         label.highlight_color=$SPACE_ACTIVE_FG
+        label.y_offset=1
         script="$PLUGIN_DIR/space.sh"
         space=$sid
     )
