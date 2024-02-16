@@ -1,9 +1,9 @@
-:: default : yabai -m config window_opacity off
-:: swap @ : yabai -m config active_window_border_color 0xff0000ff ; yabai -m config window_opacity on
-:: warp @ : yabai -m config active_window_border_color 0xffff00ff ; yabai -m config window_opacity on
-:: inc @ : yabai -m config active_window_border_color 0xffffff00 ; yabai -m config window_opacity on
-:: dec @ : yabai -m config active_window_border_color 0xff00ffff ; yabai -m config window_opacity on
-:: ins @ : yabai -m config active_window_border_color 0xffff0000; yabai -m config window_opacity on ; sleep 2 ; skhd -k "escape"
+:: default : yabai -m config normal_window_opacity 0.8
+:: swap @ : yabai -m config active_window_border_color 0xff0000ff ; yabai -m config normal_window_opacity 0.4
+:: warp @ : yabai -m config active_window_border_color 0xffff00ff ; yabai -m config normal_window_opacity 0.4
+:: inc @ : yabai -m config active_window_border_color 0xffffff00 ; yabai -m config normal_window_opacity 0.4
+:: dec @ : yabai -m config active_window_border_color 0xff00ffff ; yabai -m config normal_window_opacity 0.4
+:: ins @ : yabai -m config active_window_border_color 0xffff0000; yabai -m config normal_window_opacity 0.4 ; sleep 2 ; skhd -k "escape"
 :: app_switcher_1 : skhd -k "ctrl - f3" && im-select org.sil.ukelele.keyboardlayout.t.english-ilyabirmantypography
 :: app_switcher_2
 
