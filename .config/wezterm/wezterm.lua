@@ -12,16 +12,19 @@ end
 
 -- This is where you actually apply your config choices
 
--- For example, changing the color scheme:
--- config.color_scheme = "Edge Light (base16)"
-config.color_scheme = "Everforest Light (Gogh)"
-config.font_size = 14.0
-config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.automatically_reload_config = true
 config.default_cwd = "/Users/evgkirov/Projects/"
--- config.font = wezterm.font 'FiraCode Nerd Font'
+-- config.color_scheme = "Everforest Light (Gogh)"
+config.font_size = 14.0
+config.font = wezterm.font({
+    family = "JetBrainsMono Nerd Font",
+    stretch = "ExtraExpanded",
+    weight = "Regular",
+})
 config.line_height = 1.01
 config.cell_width = 0.9
 config.freetype_load_target = "Light"
+
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
 config.window_padding = {
@@ -30,14 +33,8 @@ config.window_padding = {
     top = 0,
     bottom = 0,
 }
--- config.term = "wezterm"
--- config.default_cursor_style = "SteadyBar"
--- config.colors = {
---   cursor_bg = "#000000",
---   cursor_fg = "#FFFFFF",
---   cursor_border = "#000000",
--- }
-function scheme_for_appearance(appearance)
+
+local function scheme_for_appearance(appearance)
     if appearance:find("Dark") then
         return "Everforest Dark (Gogh)"
     else
