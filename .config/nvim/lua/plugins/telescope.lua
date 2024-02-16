@@ -5,6 +5,7 @@ return {
     branch = "0.1.x",
     dependencies = {
         "nvim-lua/plenary.nvim",
+        "stevearc/aerial.nvim",
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
@@ -41,6 +42,15 @@ return {
                     ignore_symbols = { "variable" },
                 },
             },
+            extensions = {
+                aerial = {
+                    show_lines = false,
+                    -- Display symbols as <root>.<parent>.<symbol>
+                    show_nesting = {
+                        ["_"] = true, -- This key will be the default
+                    },
+                },
+            },
         })
         telescope.load_extension("fzf")
     end,
@@ -51,7 +61,8 @@ return {
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
         { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
         { "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace symbols" },
-        { "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
+        -- { "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
+        { "<leader>fd", "<cmd>Telescope aerial<cr>", desc = "Document symbols" },
         { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
     },
 }

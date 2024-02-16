@@ -51,7 +51,7 @@ end
 
 local function venv_path()
     local cwd = vim.fn.getcwd()
-    local cwd_name = string.match(cwd, ".+/([^/]+)$")
+    local cwd_name = string.match(cwd, ".+/([^/]+)$") or "NONE"
     return venvs_root .. "/" .. cwd_name
 end
 
