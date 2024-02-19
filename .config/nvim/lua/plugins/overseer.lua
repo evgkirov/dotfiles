@@ -1,5 +1,4 @@
 require("helpers.which-key-config").r = { name = "󱤵 Run..." }
-require("helpers.which-key-config").r.m = { name = "󰍔 Markdown..." }
 
 return {
     "stevearc/overseer.nvim",

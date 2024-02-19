@@ -4,7 +4,9 @@ return {
     init = function()
         vim.o.timeout = true
         vim.o.timeoutlen = 300
-        require("which-key").register(require("helpers.which-key-config"), { prefix = "<leader>" })
+        local which_key = require("which-key")
+        which_key.register(require("helpers.which-key-config"), { prefix = "<leader>" })
+        which_key.register({ g = { p = { name = "󰧑 GPT" } } })
     end,
     opts = {
         icons = {
