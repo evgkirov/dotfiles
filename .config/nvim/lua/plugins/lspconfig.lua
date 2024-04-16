@@ -32,16 +32,18 @@ return {
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
             opts.desc = "Info (hover)"
-            vim.keymap.set("n", "<leader>ci", vim.lsp.buf.hover, opts)
+            -- vim.keymap.set("n", "<leader>ci", vim.lsp.buf.hover, opts)
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
             opts.desc = "Go to definition"
-            vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, opts)
+            -- vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, opts)
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 
-            opts.desc = "Go to definition (horizontal split)"
-            vim.keymap.set("n", "<leader>ch", "<cmd>belowright split | lua vim.lsp.buf.definition()<cr>", opts)
-
-            opts.desc = "Go to definition (vertical split)"
-            vim.keymap.set("n", "<leader>cv", "<cmd>belowright vsplit | lua vim.lsp.buf.definition()<cr>", opts)
+            -- opts.desc = "Go to definition (horizontal split)"
+            -- vim.keymap.set("n", "<leader>ch", "<cmd>belowright split | lua vim.lsp.buf.definition()<cr>", opts)
+            --
+            -- opts.desc = "Go to definition (vertical split)"
+            -- vim.keymap.set("n", "<leader>cv", "<cmd>belowright vsplit | lua vim.lsp.buf.definition()<cr>", opts)
         end
 
         local capabilities = cmp_nvim_lsp.default_capabilities()

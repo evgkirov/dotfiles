@@ -1,11 +1,14 @@
 require("helpers.which-key-config").o = { name = "󰇈 Obsidian..." }
 
+local notes_glob = vim.fn.expand("~") .. "/Obsidian/**.md"
+vim.cmd("autocmd BufNewFile,BufRead " .. notes_glob .. " set conceallevel=1")
+
 return {
     "epwalsh/obsidian.nvim",
     -- version = "*", -- recommended, use latest release instead of latest commit
     event = {
-        "BufReadPre " .. vim.fn.expand("~") .. "/Obsidian/**.md",
-        "BufNewFile " .. vim.fn.expand("~") .. "/Obsidian/**.md",
+        "BufReadPre " .. notes_glob,
+        "BufNewFile " .. notes_glob,
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
@@ -42,7 +45,7 @@ return {
             }
             -- `note.metadata` contains any manually added fields in the frontmatter.
             -- So here we just make sure those fields are kept in the frontmatter.
-            if note.metadata ~= nil and require("obsidian").util.table_length(note.metadata) > 0 then
+            if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
                 for k, v in pairs(note.metadata) do
                     out[k] = v
                 end

@@ -17,13 +17,15 @@ config.default_cwd = "/Users/evgkirov/Projects/"
 -- config.color_scheme = "Everforest Light (Gogh)"
 config.font_size = 14.0
 config.font = wezterm.font({
+    -- family = "DaddyTimeMono Nerd Font",
     family = "JetBrainsMono Nerd Font",
     stretch = "ExtraExpanded",
     weight = "Regular",
 })
 config.line_height = 1.01
+-- config.line_height = 1.3
 config.cell_width = 0.9
-config.freetype_load_target = "Light"
+-- config.freetype_load_target = "Light"
 
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"

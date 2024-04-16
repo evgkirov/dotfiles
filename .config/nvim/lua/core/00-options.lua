@@ -2,6 +2,7 @@ vim.o.relativenumber = true
 vim.cmd("set number relativenumber")
 vim.o.title = true
 vim.o.clipboard = "unnamedplus"
+-- vim.o.conceallevel = 1
 vim.g.mapleader = " "
 vim.o.fillchars = table.concat({ "eob: ", "vert:▏", "verthoriz:╬", "vertleft:▏", "vertright:▏" }, ",")
 
