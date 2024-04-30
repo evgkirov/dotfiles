@@ -25,6 +25,7 @@ get_app_icon() {
     "Day One") echo 󰃀 ;;
     "Dictionary") echo 󰗊 ;;
     "Discord") echo 󰙯 ;;
+    "Docker") echo 󰡨 ;;
     "Docker Desktop") echo 󰡨 ;;
     "FaceTime") echo 󰕧 ;;
     "Find My") echo 󰐷 ;;
@@ -37,8 +38,9 @@ get_app_icon() {
     "Home") echo 󰋜 ;;
     "IINA") echo 󰐊 ;;
     "Keynote") echo 󰐨 ;;
-    "Mail") echo 󰇮 ;;
     "MacDown") echo  ;;
+    "Macs Fan Control") echo 󰈐 ;;
+    "Mail") echo 󰇮 ;;
     "Maps") echo 󰦂 ;;
     "Messages") echo 󰭹 ;;
     "MindNode") echo 󰌪 ;;
@@ -61,6 +63,7 @@ get_app_icon() {
     "Safari") echo 󰀹 ;;
     "Session") echo 󰁫 ;;
     "Shortcuts") echo  ;;
+    "Slack") echo 󰒱 ;;
     "Spotify") echo 󰓇 ;;
     "Stocks") echo 󰄪 ;;
     "Sublime Text") echo 󰰡 ;;

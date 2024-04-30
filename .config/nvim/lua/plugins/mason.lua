@@ -24,7 +24,7 @@ return {
                 "pyright",
                 "tsserver",
             },
-            automatic_installation = true,
+            automatic_installation = false,
         })
 
         mason_tool_installer.setup({

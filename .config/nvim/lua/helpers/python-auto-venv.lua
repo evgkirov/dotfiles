@@ -1,6 +1,7 @@
 local M = {}
 
 local venvs_root = os.getenv("HOME") .. "/.local/share/python-envs"
+local poetry_lookup_paths = { "", "agbackend/" }
 
 local function exists(file)
     local ok, err, code = os.rename(file, file)
@@ -14,7 +15,10 @@ local function exists(file)
 end
 
 -- Function to check if a string is present in a file
-local function isStringPresentInFile(filename, searchString)
+local function is_string_presented_in_file(filename, searchString)
+    if not exists(filename) then
+        return false
+    end
     -- Open the file in read mode
     local file = io.open(filename, "r")
 
@@ -34,19 +38,15 @@ local function isStringPresentInFile(filename, searchString)
     return false
 end
 
-local function executeCommand(command)
+local function execute_command(command)
     local file = io.popen(command)
     local output = file:read("*a")
     file:close()
     return output
 end
 
-local function has_poetry()
-    local has_pyproject = exists("pyproject.toml")
-    if not has_pyproject then
-        return false
-    end
-    return isStringPresentInFile("pyproject.toml", "%[tool%.poetry%]")
+local function has_poetry(dir)
+    return is_string_presented_in_file(dir .. "pyproject.toml", "%[tool%.poetry%]")
 end
 
 local function venv_path()
@@ -56,8 +56,10 @@ local function venv_path()
 end
 
 function M.python_path()
-    if has_poetry() then
-        return executeCommand("poetry run which python")
+    for _, path in ipairs(poetry_lookup_paths) do
+        if has_poetry(path) then
+            return execute_command("poetry -C '".. path .. "' run which python")
+        end
     end
     return venv_path() .. "/bin/python"
 end
@@ -68,7 +70,7 @@ end
 
 function M.create_venv()
     local dir = venv_path()
-    if has_poetry() then
+    if has_poetry("") then
         return true
     end
 
@@ -91,11 +93,11 @@ function M.create_venv()
     return false
 end
 
-function M.create_pyright_config()
+--[[ function M.create_pyright_config()
     if has_poetry() then
         os.execute(
             'jq --null-input --arg venv "$(basename $(poetry env info -p))" --arg venvPath "$(dirname $(poetry env info -p))" \'{ "venv": $venv, "venvPath": $venvPath }\' > pyrightconfig.json'
         )
     end
-end
+end ]]
 return M

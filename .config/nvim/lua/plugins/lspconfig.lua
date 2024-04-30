@@ -7,7 +7,7 @@ return {
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         "folke/neodev.nvim",
-        { "antosha417/nvim-lsp-file-operations", config = true },
+        -- { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
         local neodev = require("neodev")
@@ -15,6 +15,7 @@ return {
 
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
+        local python_auto_venv = require("helpers.python-auto-venv")
 
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
@@ -81,14 +82,26 @@ return {
         })
 
         -- python
-        -- require("helpers.python-auto-venv").create_pyright_config()
-        require("helpers.python-auto-venv").create_venv()
+        python_auto_venv.create_venv()
+        local python_path = python_auto_venv.python_path()
+        -- print("Python path: " .. python_path)
+        -- vim.lsp.set_log_level("debug")
         lspconfig["pyright"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            on_init = function(client)
+                -- Workaround for when the Python path is ignored for some reason
+                vim.defer_fn(function()
+                    local attached_buffers = vim.lsp.get_buffers_by_client_id(client.id)
+                    vim.cmd("split")
+                    vim.cmd("b " .. attached_buffers[1])
+                    vim.cmd("PyrightSetPythonPath " .. python_path)
+                    vim.cmd("q")
+                end, 1000)
+            end,
             settings = {
                 python = {
-                    pythonPath = require("helpers.python-auto-venv").python_path(),
+                    pythonPath = python_path,
                 },
             },
         })
