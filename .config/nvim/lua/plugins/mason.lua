@@ -31,10 +31,10 @@ return {
             ensure_installed = {
                 "black",
                 "isort",
-                "prettier",
+                "prettierd",
                 "shfmt",
                 "stylua",
-                -- "eslint_d",
+                "eslint_d",
                 -- "pylint",
             },
         })

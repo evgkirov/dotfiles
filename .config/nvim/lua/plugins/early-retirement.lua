@@ -4,6 +4,6 @@ return {
     event = "VeryLazy",
     opts = {
         retirementAgeMins = 60,
-        minimumBufferNum = 4,
+        minimumBufferNum = 10,
     },
 }

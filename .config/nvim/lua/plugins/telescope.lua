@@ -1,5 +1,12 @@
 require("helpers.which-key-config").f = { name = "󰍉 Find..." }
 
+local function workspace_symbols_picker(filter) -- luacheck: ignore
+    return function()
+        require("telescope.builtin").lsp_dynamic_workspace_symbols({
+            symbols = filter,
+        })
+    end
+end
 return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
@@ -35,12 +42,12 @@ return {
                     file_ignore_patterns = { "node_modules", "\\.git" },
                     hidden = true,
                 },
-                lsp_dynamic_workspace_symbols = {
+                --[[ lsp_dynamic_workspace_symbols = {
                     ignore_symbols = { "variable" },
                 },
                 lsp_document_symbols = {
                     ignore_symbols = { "variable" },
-                },
+                }, ]]
             },
             extensions = {
                 aerial = {
@@ -59,8 +66,10 @@ return {
         { "<F1>", "<cmd>Telescope help_tags<cr>", desc = "Help" },
         { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
-        { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
+        -- { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
         { "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace symbols" },
+        { "<leader>fc", workspace_symbols_picker({"class"}), desc = "Class" },
+        { "<leader>fn", workspace_symbols_picker({"function"}), desc = "Function" },
         -- { "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
         { "<leader>fd", "<cmd>Telescope aerial<cr>", desc = "Document symbols" },
         { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "References" },

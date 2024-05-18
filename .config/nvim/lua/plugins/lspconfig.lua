@@ -33,12 +33,12 @@ return {
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
             opts.desc = "Info (hover)"
-            -- vim.keymap.set("n", "<leader>ci", vim.lsp.buf.hover, opts)
-            vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+            vim.keymap.set("n", "<leader>ci", vim.lsp.buf.hover, opts)
+            -- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
-            opts.desc = "Go to definition"
+            opts.desc = "Open definition"
             -- vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, opts)
-            vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+            vim.keymap.set("n", "go", vim.lsp.buf.definition, opts)
 
             -- opts.desc = "Go to definition (horizontal split)"
             -- vim.keymap.set("n", "<leader>ch", "<cmd>belowright split | lua vim.lsp.buf.definition()<cr>", opts)

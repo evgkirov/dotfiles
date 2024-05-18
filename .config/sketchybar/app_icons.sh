@@ -22,12 +22,14 @@ get_app_icon() {
     "ChatGPT") echo 󰧑 ;;
     "Clock") echo 󰥔 ;;
     "Contacts") echo 󰛋 ;;
+    "Dash") echo D ;;
     "Day One") echo 󰃀 ;;
     "Dictionary") echo 󰗊 ;;
     "Discord") echo 󰙯 ;;
     "Docker") echo 󰡨 ;;
     "Docker Desktop") echo 󰡨 ;;
     "FaceTime") echo 󰕧 ;;
+    "Fantastical") echo 󰸗 ;;
     "Find My") echo 󰐷 ;;
     "Finder") echo 󰀶 ;;
     "GitHub Desktop") echo 󰊤 ;;
@@ -80,6 +82,7 @@ get_app_icon() {
     "WezTerm") echo 󰞷 ;;
     "WhatsApp (old)") echo 󰖣 ;;
     "WhatsApp") echo 󰖣 ;;
+    "X") echo 󰕄 ;;
     "iTerm2") echo 󰞷 ;;
     # *) echo 󰘔 ;;
     *) echo  ;;

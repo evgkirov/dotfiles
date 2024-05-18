@@ -41,6 +41,46 @@ keymap("n", "<leader>sh", "<cmd>belowright split<cr>", opts)
 opts.desc = " Split vertically"
 keymap("n", "<leader>sv", "<cmd>belowright vsplit<cr>", opts)
 
+-- tabs
+
+wkc.t = { name = "󰓩 Tabs..." }
+
+opts.desc = "Toggle tabline"
+keymap("n", "<leader>tl", ":execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>", opts)
+
+opts.desc = "󰅗 Close tab"
+keymap("n", "<leader>tx", "<cmd>tabclose<cr>", opts)
+
+opts.desc = "󰐕 New tab"
+keymap("n", "<leader>tn", "<cmd>tabnew<cr>", opts)
+
+opts.desc = "Tab 1"
+keymap("n", "<leader>1", "1gt", opts)
+
+opts.desc = "Tab 2"
+keymap("n", "<leader>2", "2gt", opts)
+
+opts.desc = "Tab 3"
+keymap("n", "<leader>3", "3gt", opts)
+
+opts.desc = "Tab 4"
+keymap("n", "<leader>4", "4gt", opts)
+
+opts.desc = "Tab 5"
+keymap("n", "<leader>5", "5gt", opts)
+
+opts.desc = "Tab 6"
+keymap("n", "<leader>6", "6gt", opts)
+
+opts.desc = "Tab 7"
+keymap("n", "<leader>7", "7gt", opts)
+
+opts.desc = "Tab 8"
+keymap("n", "<leader>8", "8gt", opts)
+
+opts.desc = "Tab 9"
+keymap("n", "<leader>9", "9gt", opts)
+
 -- docker
 
 wkc.d = { name = "󰡨 Docker..." }

@@ -1,4 +1,4 @@
-require("helpers.which-key-config").h = { name = "󰃀 Harpoon..." }
+require("helpers.which-key-config")[" "] = { name = "󰃀 Harpoon..." }
 
 return {
     "ThePrimeagen/harpoon",
@@ -10,9 +10,9 @@ return {
             sync_on_ui_close = true,
         },
     },
-    keys = {
+    --[[ keys = {
         {
-            "<leader>hh",
+            "<leader><space>",
             function()
                 local harpoon = require("harpoon")
                 harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -20,15 +20,15 @@ return {
             desc = "Harpoon UI",
         },
         {
-            "<leader>ha",
+            "<leader>=",
             function()
                 local harpoon = require("harpoon")
-                harpoon:list():append()
+                harpoon:list():add()
             end,
             desc = "Append to Harpoon list",
         },
         {
-            "<leader>hi",
+            "<leader>+",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():prepend()
@@ -36,92 +36,77 @@ return {
             desc = "Prepend to Harpoon list",
         },
         {
-            "<leader>j",
-            function()
-                local harpoon = require("harpoon")
-                harpoon:list():next()
-            end,
-            desc = "󰒭 Next in Harpoon list",
-        },
-        {
-            "<leader>k",
-            function()
-                local harpoon = require("harpoon")
-                harpoon:list():prev()
-            end,
-            desc = "󰒮 Previous in Harpoon list",
-        },
-        {
-            "<leader>h1",
+            "<leader>1",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():select(1)
             end,
-            desc = "Item 1",
+            desc = "Harpoon: Item 1",
         },
         {
-            "<leader>h2",
+            "<leader>2",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():select(2)
             end,
-            desc = "Item 2",
+            desc = "Harpoon: Item 2",
         },
         {
-            "<leader>h3",
+            "<leader>3",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():select(3)
             end,
-            desc = "Item 3",
+            desc = "Harpoon: Item 3",
         },
         {
-            "<leader>h4",
+            "<leader>4",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():select(4)
             end,
-            desc = "Item 4",
+            desc = "Harpoon: Item 4",
         },
         {
-            "<leader>h5",
+            "<leader>5",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():select(5)
             end,
-            desc = "Item 5",
+            desc = "Harpoon: Item 5",
         },
         {
-            "<leader>h6",
+            "<leader>6",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():select(6)
             end,
-            desc = "Item 6",
+            desc = "Harpoon: Item 6",
         },
         {
-            "<leader>h7",
+            "<leader>7",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():select(7)
             end,
-            desc = "Item 7",
+            desc = "Harpoon: Item 7",
         },
         {
-            "<leader>h8",
+            "<leader>8",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():select(8)
             end,
-            desc = "Item 8",
+            desc = "Harpoon: Item 8",
         },
         {
-            "<leader>h9",
+            "<leader>9",
             function()
                 local harpoon = require("harpoon")
                 harpoon:list():select(9)
             end,
-            desc = "Item 9",
+            desc = "Harpoon: Item 9",
         },
     },
+    ]]
 }
