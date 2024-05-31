@@ -23,6 +23,7 @@ return {
                 "lua_ls",
                 "pyright",
                 "tsserver",
+                "eslint",
             },
             automatic_installation = false,
         })
