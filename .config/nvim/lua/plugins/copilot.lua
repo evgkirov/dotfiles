@@ -1,7 +1,7 @@
 return {
     "github/copilot.vim",
     cmd = { "Copilot" },
-    event = "InsertEnter",
+    -- event = "InsertEnter",
     config = function()
         vim.cmd("Copilot enable")
         vim.cmd([[

@@ -4,8 +4,6 @@
 :: inc @ : yabai -m config active_window_border_color 0xffffff00 ; yabai -m config normal_window_opacity 0.4
 :: dec @ : yabai -m config active_window_border_color 0xff00ffff ; yabai -m config normal_window_opacity 0.4
 :: ins @ : yabai -m config active_window_border_color 0xffff0000; yabai -m config normal_window_opacity 0.4 ; sleep 2 ; skhd -k "escape"
-:: app_switcher_1 : skhd -k "ctrl - f3" && im-select org.sil.ukelele.keyboardlayout.t.english-ilyabirmantypography
-:: app_switcher_2
 
 lalt - s : set has_window (yabai -m query --windows --space | jq 'any(.app == "Safari")') ; if not $has_window ; osascript -e 'tell application "Safari" to make new document'; end; osascript -e 'tell application "Safari" to activate'
 # lalt - i : set has_window (yabai -m query --windows --space | jq 'any(.app == "iTerm2")') ; if not $has_window ; osascript -e 'tell application "iTerm" to set new_window to (create window with default profile)'; end; osascript -e 'tell application "iTerm" to activate'
@@ -14,65 +12,6 @@ lalt - i : set has_window (yabai -m query --windows --space | jq 'any(.app == "W
 lalt - f : set has_window (yabai -m query --windows --space | jq 'any(.app == "Finder")') ; if not $has_window ; osascript -e 'tell application "Finder" to make new Finder window'; end; osascript -e 'tell application "Finder" to activate'
 
 cmd - space -> : im-select org.sil.ukelele.keyboardlayout.t.keylayout.English-IlyaBirmanTypography 
-
-lalt - space ; app_switcher_1
-# hyper - a ; app_switcher_1
-app_switcher_1 < escape -> ; default
-app_switcher_1 < return -> ; default
-app_switcher_1 < q -> ; app_switcher_2
-app_switcher_1 < w -> ; app_switcher_2
-app_switcher_1 < e -> ; app_switcher_2
-app_switcher_1 < r -> ; app_switcher_2
-app_switcher_1 < t -> ; app_switcher_2
-app_switcher_1 < y -> ; app_switcher_2
-app_switcher_1 < u -> ; app_switcher_2
-app_switcher_1 < i -> ; app_switcher_2
-app_switcher_1 < o -> ; app_switcher_2
-app_switcher_1 < p -> ; app_switcher_2
-app_switcher_1 < a -> ; app_switcher_2
-app_switcher_1 < s -> ; app_switcher_2
-app_switcher_1 < d -> ; app_switcher_2
-app_switcher_1 < f -> ; app_switcher_2
-app_switcher_1 < g -> ; app_switcher_2
-app_switcher_1 < h -> ; app_switcher_2
-app_switcher_1 < j -> ; app_switcher_2
-app_switcher_1 < k -> ; app_switcher_2
-app_switcher_1 < l -> ; app_switcher_2
-app_switcher_1 < z -> ; app_switcher_2
-app_switcher_1 < x -> ; app_switcher_2
-app_switcher_1 < c -> ; app_switcher_2
-app_switcher_1 < v -> ; app_switcher_2
-app_switcher_1 < b -> ; app_switcher_2
-app_switcher_1 < n -> ; app_switcher_2
-app_switcher_1 < m -> ; app_switcher_2
-app_switcher_2 < escape -> ; default
-app_switcher_2 < return -> ; default
-app_switcher_2 < q -> : skhd -k "return"
-app_switcher_2 < w -> : skhd -k "return"
-app_switcher_2 < e -> : skhd -k "return"
-app_switcher_2 < r -> : skhd -k "return"
-app_switcher_2 < t -> : skhd -k "return"
-app_switcher_2 < y -> : skhd -k "return"
-app_switcher_2 < u -> : skhd -k "return"
-app_switcher_2 < i -> : skhd -k "return"
-app_switcher_2 < o -> : skhd -k "return"
-app_switcher_2 < p -> : skhd -k "return"
-app_switcher_2 < a -> : skhd -k "return"
-app_switcher_2 < s -> : skhd -k "return"
-app_switcher_2 < d -> : skhd -k "return"
-app_switcher_2 < f -> : skhd -k "return"
-app_switcher_2 < g -> : skhd -k "return"
-app_switcher_2 < h -> : skhd -k "return"
-app_switcher_2 < j -> : skhd -k "return"
-app_switcher_2 < k -> : skhd -k "return"
-app_switcher_2 < l -> : skhd -k "return"
-app_switcher_2 < z -> : skhd -k "return"
-app_switcher_2 < x -> : skhd -k "return"
-app_switcher_2 < c -> : skhd -k "return"
-app_switcher_2 < v -> : skhd -k "return"
-app_switcher_2 < b -> : skhd -k "return"
-app_switcher_2 < n -> : skhd -k "return"
-app_switcher_2 < m -> : skhd -k "return"
 
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
 
@@ -87,6 +26,7 @@ default < hyper - l : set is_nvim (yabai -m query --windows --window | jq '.titl
 default < hyper - 0x21 : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 default < hyper - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
+default < hyper - o : brew services restart sketchybar
 # default < hyper - a  : yabai -m display --focus recent
 # default < hyper - q : yabai -m window --display recent; yabai -m display --focus recent
 

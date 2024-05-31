@@ -12,7 +12,7 @@ return {
             "NvimTreeOpen",
         },
         post_restore_cmds = {
-            "NvimTreeOpen",
+            -- "NvimTreeOpen",
         },
     },
 }
