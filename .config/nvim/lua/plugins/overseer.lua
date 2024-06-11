@@ -7,6 +7,7 @@ return {
     },
     config = true,
     opts = {
+        strategy = { "jobstart", use_terminal = false }, -- https://github.com/stevearc/overseer.nvim/issues/202
         templates = {
             "builtin",
             "docker_compose.up",

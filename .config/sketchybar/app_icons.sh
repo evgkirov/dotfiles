@@ -58,6 +58,7 @@ get_app_icon() {
     "Pixelmator Pro") echo 󰃣 ;;
     "Podcasts") echo 󰦔 ;;
     "Poedit") echo 󰗊 ;;
+    "Postico") echo 󰟆 ;;
     "Preview") echo 󰋩 ;;
     "Rakuten Viber") echo 󰖣 ;;
     "Reminders") echo 󰝖 ;;
