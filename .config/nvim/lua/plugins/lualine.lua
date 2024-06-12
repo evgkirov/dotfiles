@@ -4,6 +4,10 @@ return {
     event = "VeryLazy",
     config = true,
     opts = {
+        --[[ options = {
+            disabled_filetypes = { "NvimTree" },
+            -- globalstatus = true,
+        }, ]]
         inactive_sections = {
             lualine_a = {},
             lualine_b = {},
