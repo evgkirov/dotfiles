@@ -9,6 +9,7 @@ return {
         "saadparwaiz1/cmp_luasnip", -- for autocompletion
         "rafamadriz/friendly-snippets", -- useful snippets
         "onsails/lspkind.nvim", -- vs-code like pictograms
+        "zbirenbaum/copilot-cmp",
     },
     config = function()
         local cmp = require("cmp")
@@ -16,6 +17,13 @@ return {
         local luasnip = require("luasnip")
 
         local lspkind = require("lspkind")
+        lspkind.init({
+            symbol_map = {
+                Copilot = "",
+            },
+        })
+
+        vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { link = "String" })
 
         -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
         require("luasnip.loaders.from_vscode").lazy_load()
@@ -55,6 +63,7 @@ return {
             }),
             -- sources for autocompletion
             sources = cmp.config.sources({
+                { name = "copilot" },
                 { name = "nvim_lsp" },
                 { name = "luasnip" }, -- snippets
                 { name = "buffer" }, -- text within current buffer

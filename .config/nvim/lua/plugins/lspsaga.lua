@@ -33,7 +33,7 @@ return {
         { "K", ":Lspsaga diagnostic_jump_next<CR>", desc = "Show diagnostics" },
         { "[d", ":Lspsaga diagnostic_jump_prev<CR>", desc = "Previous diagnostic" },
         { "]d", ":Lspsaga diagnostic_jump_next<CR>", desc = "Next diagnostic" },
-        { "<space>cu", ":Lspsaga finder<CR>", desc = "Usages" },
+        { "gr", ":Lspsaga finder<CR>", desc = "Find references" },
     },
     init = function()
         vim.diagnostic.config({
