@@ -72,6 +72,7 @@ local function set_light_mode()
     vim.cmd("colorscheme " .. current_theme.light)
     vim.api.nvim_set_hl(0, "EyelinerPrimary", { bold = true, underline = true })
     vim.api.nvim_set_hl(0, "EyelinerSecondary", { underline = true })
+    vim.api.nvim_set_hl(0, "OverseerTaskBorder", { link = "VertSplit" })
 end
 
 local function set_dark_mode()
