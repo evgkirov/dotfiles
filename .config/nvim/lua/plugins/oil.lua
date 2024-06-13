@@ -1,3 +1,9 @@
+local function close_oil()
+    local oil = require("oil")
+    oil.save()
+    oil.close()
+end
+
 return {
     "stevearc/oil.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -6,24 +12,17 @@ return {
     opts = {
         -- skip_confirm_for_simple_edits = true,
         keymaps = {
-            ["<leader>x"] = "actions.close",
-            ["q"] = "actions.close",
-            ["<C-h>"] = function()
-                local oil = require("oil")
-                oil.select({ horizontal = true })
-                oil.close()
-            end,
-            ["<C-v>"] = function()
-                local oil = require("oil")
-                oil.select({ vertical = true })
-                oil.close()
-            end,
+            ["<leader>x"] = close_oil,
+            ["q"] = close_oil,
+            ["<C-h>"] = { "actions.select", opts = { horizontal = true, close = true } },
+            ["<C-v>"] = { "actions.select", opts = { vertical = true, close = true } },
+            ["<C-s>"] = false,
         },
         view_options = {
             show_hidden = true,
-        },
-        sort = {
-            { "name", "asc" }, -- should work macos-like
+            --[[ sort = {
+                { "name", "asc" }, -- should work macos-like
+            }, ]]
         },
     },
     keys = {

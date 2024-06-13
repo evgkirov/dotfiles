@@ -4,7 +4,8 @@ return {
         quit = false,
     },
     keys = {
-        { "<leader>x", "<cmd>BufDel<cr>", desc = "Close buffer" },
-        { "<leader>ex", "<cmd>BufDelAll<cr><cmd>NvimTreeCollapse<cr>", desc = "Clear context" },
+        -- { "<leader>x", "<cmd>BufDel<cr>", desc = "Close buffer" },
+        { "<leader>x", "<cmd>bd<cr>", desc = "Close buffer" },
+        { "<leader>X", "<cmd>BufDelAll<cr>", desc = "Clear context" },
     },
 }
