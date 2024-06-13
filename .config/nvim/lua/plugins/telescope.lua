@@ -24,6 +24,8 @@ return {
                 mappings = {
                     i = {
                         ["<esc>"] = actions.close,
+                        ["<C-h>"] = actions.select_horizontal,
+                        ["<C-v>"] = actions.select_vertical,
                     },
                 },
                 vimgrep_arguments = {
@@ -68,8 +70,8 @@ return {
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
         -- { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
         { "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace symbols" },
-        { "<leader>fc", workspace_symbols_picker({"class"}), desc = "Class" },
-        { "<leader>fn", workspace_symbols_picker({"function"}), desc = "Function" },
+        { "<leader>fc", workspace_symbols_picker({ "class" }), desc = "Class" },
+        { "<leader>fn", workspace_symbols_picker({ "function" }), desc = "Function" },
         -- { "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
         { "<leader>fd", "<cmd>Telescope aerial<cr>", desc = "Document symbols" },
         { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
