@@ -83,11 +83,11 @@ keymap("n", "<leader>9", "9gt", opts)
 
 -- docker
 
-wkc.d = { name = "󰡨 Docker..." }
+-- wkc.d = { name = "󰡨 Docker..." }
 
-keymap("n", "<leader>du", "<cmd>! docker compose up -d<cr>", {})
-keymap("n", "<leader>dU", "<cmd>! docker compose up --build -d<cr>", {})
-keymap("n", "<leader>dd", "<cmd>! docker compose down<cr>", {})
+-- keymap("n", "<leader>du", "<cmd>! docker compose up -d<cr>", {})
+-- keymap("n", "<leader>dU", "<cmd>! docker compose up --build -d<cr>", {})
+-- keymap("n", "<leader>dd", "<cmd>! docker compose down<cr>", {})
 
 -- terminal
 
