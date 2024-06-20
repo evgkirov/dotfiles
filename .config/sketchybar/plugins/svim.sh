@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "/Users/evgkirov/.config/sketchybar/colors.sh"
+source $CONFIG_DIR/colors.sh
 
 DRAW_CMD="off"
 if [ "$MODE" = "C" ]; then

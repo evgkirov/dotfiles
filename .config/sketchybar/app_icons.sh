@@ -26,8 +26,8 @@ get_app_icon() {
     "Day One") echo 󰃀 ;;
     "Dictionary") echo 󰗊 ;;
     "Discord") echo 󰙯 ;;
-    "Docker") echo 󰡨 ;;
     "Docker Desktop") echo 󰡨 ;;
+    "Docker") echo 󰡨 ;;
     "FaceTime") echo 󰕧 ;;
     "Fantastical") echo 󰸗 ;;
     "Find My") echo 󰐷 ;;
@@ -35,6 +35,7 @@ get_app_icon() {
     "GitHub Desktop") echo 󰊤 ;;
     "Google Chrome Canary") echo 󰊯 ;;
     "Google Chrome") echo 󰊯 ;;
+    "Google Meet") echo 󰕧 ;;
     "Hand Mirror") echo 󱇽 ;;
     "Home Assistant") echo 󰟐 ;;
     "Home") echo 󰋜 ;;
@@ -48,6 +49,7 @@ get_app_icon() {
     "MindNode") echo 󰌪 ;;
     "MultiViewer for F1") echo 󰶓 ;;
     "Music") echo 󰝚 ;;
+    "Neovide") echo  ;;
     "Notes") echo 󰎞 ;;
     "Numbers") echo 󰄨 ;;
     "OBS Studio") echo  ;;

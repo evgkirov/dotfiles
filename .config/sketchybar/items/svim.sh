@@ -1,5 +1,5 @@
 svim_mode=(
-    background.color=$SVIM_NORMAL
+    background.color=$DATA_SVIM_NORMAL
     icon=
     popup.align=right
     script="sketchybar --set svim.mode popup.drawing=off"

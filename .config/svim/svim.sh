@@ -2,6 +2,8 @@
 
 # This script is executed when either the mode changes,
 # or the commandline changes
+#
 
- ~/.config/sketchybar/plugins/svim.sh
+export CONFIG_DIR="$HOME/.config/sketchybar"
 
+~/.config/sketchybar/plugins/svim.sh
