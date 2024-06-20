@@ -21,6 +21,13 @@ return {
 
         telescope.setup({
             defaults = {
+                sorting_strategy = "ascending",
+                layout_config = {
+                    prompt_position = "top",
+                },
+                preview = {
+                    filesize_limit = 0.1,
+                },
                 mappings = {
                     i = {
                         ["<esc>"] = actions.close,
@@ -31,6 +38,9 @@ return {
                 vimgrep_arguments = {
                     "rg",
                     "--color=never",
+                    "--hidden",
+                    "--glob=!**/.git/**",
+                    "--glob=!**/node_modules/**",
                     "--no-heading",
                     "--with-filename",
                     "--line-number",
@@ -40,9 +50,16 @@ return {
             },
             pickers = {
                 find_files = {
-                    find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
-                    file_ignore_patterns = { "node_modules", "\\.git" },
-                    hidden = true,
+                    -- find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
+                    find_command = {
+                        "rg",
+                        "--files",
+                        "--color=never",
+                        "--hidden",
+                        "--glob=!**/.git/**",
+                        "--glob=!**/node_modules/**",
+                    },
+                    -- file_ignore_patterns = { "node_modules", "\\.git" },
                 },
                 --[[ lsp_dynamic_workspace_symbols = {
                     ignore_symbols = { "variable" },
@@ -75,5 +92,24 @@ return {
         -- { "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
         { "<leader>fd", "<cmd>Telescope aerial<cr>", desc = "Document symbols" },
         { "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+        {
+            "<leader>fo",
+            function()
+                require("telescope.builtin").find_files({
+                    find_command = {
+                        "fd",
+                        "--type",
+                        "d",
+                        "--hidden",
+                        "--no-ignore",
+                        "--exclude",
+                        ".git",
+                        "--exclude",
+                        "node_modules",
+                    },
+                })
+            end,
+            desc = "Open directory in Oil",
+        },
     },
 }
