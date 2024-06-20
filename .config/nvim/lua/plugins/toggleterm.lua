@@ -16,14 +16,14 @@ return {
             function()
                 require("helpers.lazygit"):toggle()
             end,
-            desc = "Status (LazyGit)",
+            desc = "Git Status (LazyGit)",
         },
         {
             "<leader>ds",
             function()
                 require("helpers.lazydocker"):toggle()
             end,
-            desc = "Status (LazyDocker)",
+            desc = "Docker Status (LazyDocker)",
         },
     },
 }
