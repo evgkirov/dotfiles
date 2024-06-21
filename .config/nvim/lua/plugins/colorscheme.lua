@@ -66,21 +66,25 @@ local available_themes = {
 
 local current_theme = available_themes[current_theme_name]
 
+local function overrides()
+    vim.api.nvim_set_hl(0, "EyelinerPrimary", { bold = true, underline = true })
+    vim.api.nvim_set_hl(0, "EyelinerSecondary", { underline = true })
+    vim.api.nvim_set_hl(0, "OverseerTaskBorder", { link = "VertSplit" })
+    -- vim.api.nvim_set_hl(0, "GlanceListNormal", { link = "TroubleSource" })
+end
+
 local function set_light_mode()
     vim.api.nvim_set_option("background", "light")
     vim.cmd('let ayucolor="light"')
     vim.cmd("colorscheme " .. current_theme.light)
-    vim.api.nvim_set_hl(0, "EyelinerPrimary", { bold = true, underline = true })
-    vim.api.nvim_set_hl(0, "EyelinerSecondary", { underline = true })
-    vim.api.nvim_set_hl(0, "OverseerTaskBorder", { link = "VertSplit" })
+    overrides()
 end
 
 local function set_dark_mode()
     vim.api.nvim_set_option("background", "dark")
     vim.cmd('let ayucolor="dark"')
     vim.cmd("colorscheme " .. current_theme.dark)
-    vim.api.nvim_set_hl(0, "EyelinerPrimary", { bold = true, underline = true })
-    vim.api.nvim_set_hl(0, "EyelinerSecondary", { underline = true })
+    overrides()
 end
 
 return {
