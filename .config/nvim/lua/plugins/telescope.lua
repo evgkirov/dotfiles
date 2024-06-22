@@ -90,6 +90,13 @@ return {
                     layout_strategy = "vertical",
                     path_display = { "smart" },
                 },
+                buffers = {
+                    mappings = {
+                        i = {
+                            ["<C-x>"] = actions.delete_buffer,
+                        },
+                    },
+                },
                 --[[ lsp_dynamic_workspace_symbols = {
                     ignore_symbols = { "variable" },
                 },
@@ -119,8 +126,8 @@ return {
         { "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace symbols" },
         { "<leader>fc", workspace_symbols_picker({ "class" }), desc = "Class" },
         { "<leader>fn", workspace_symbols_picker({ "function" }), desc = "Function" },
-        -- { "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
         { "<leader>fd", "<cmd>Telescope aerial<cr>", desc = "Document symbols" },
+        { "<leader>fD", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
         { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Definitions" },
         { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
         { "<leader>cd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
