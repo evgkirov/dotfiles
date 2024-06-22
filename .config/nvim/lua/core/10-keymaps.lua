@@ -51,9 +51,6 @@ keymap("n", "<leader>X", "<cmd>bufdo bd<cr>", opts)
 
 wkc.t = { name = "󰓩 Tabs..." }
 
-opts.desc = "Toggle tabline"
-keymap("n", "<leader>tl", ":execute 'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>", opts)
-
 opts.desc = "󰅗 Close tab"
 keymap("n", "<leader>tx", "<cmd>tabclose<cr>", opts)
 
@@ -87,23 +84,15 @@ keymap("n", "<leader>8", "8gt", opts)
 opts.desc = "Tab 9"
 keymap("n", "<leader>9", "9gt", opts)
 
--- docker
-
--- wkc.d = { name = "󰡨 Docker..." }
-
--- keymap("n", "<leader>du", "<cmd>! docker compose up -d<cr>", {})
--- keymap("n", "<leader>dU", "<cmd>! docker compose up --build -d<cr>", {})
--- keymap("n", "<leader>dd", "<cmd>! docker compose down<cr>", {})
-
 -- terminal
 
-wkc.t = { name = " Terminal..." }
+wkc.e = { name = " Terminal..." }
 
 opts.desc = "New terminal"
-keymap("n", "<leader>tt", "<cmd>terminal<cr>", opts)
+keymap("n", "<leader>en", "<cmd>terminal<cr>", opts)
 
 opts.desc = "New terminal (horizonal split)"
-keymap("n", "<leader>th", "<cmd>belowright split | terminal<cr>", opts)
+keymap("n", "<leader>eh", "<cmd>belowright split | terminal<cr>", opts)
 
 opts.desc = "New terminal (vertical split)"
-keymap("n", "<leader>tv", "<cmd>belowright vsplit | terminal<cr>", opts)
+keymap("n", "<leader>ev", "<cmd>belowright vsplit | terminal<cr>", opts)
