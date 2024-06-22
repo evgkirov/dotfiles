@@ -31,7 +31,7 @@ return {
             local opts = { buffer = bufnr, silent = true }
 
             opts.desc = "Rename"
-            vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+            vim.keymap.set("n", "<leader>cn", vim.lsp.buf.rename, opts)
 
             opts.desc = "Action..."
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
@@ -95,9 +95,9 @@ return {
         -- python
         python_auto_venv.create_venv()
         local python_path = python_auto_venv.python_path()
-        -- print("Python path: " .. python_path)
-        -- vim.lsp.set_log_level("debug")
-        lspconfig["pyright"].setup({
+        local venv_path = python_auto_venv.venv_path()
+        local pyright_restarted = false
+        lspconfig["basedpyright"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
             on_init = function(client)
@@ -108,13 +108,34 @@ return {
                     vim.cmd("b " .. attached_buffers[1])
                     vim.cmd("PyrightSetPythonPath " .. python_path)
                     vim.cmd("q")
+                    if not pyright_restarted then
+                        pyright_restarted = true
+                        vim.cmd("LspRestart basedpyright")
+                    end
                 end, 1000)
             end,
             settings = {
+                basedpyright = {
+                    -- ["off", "basic", "standard", "strict", "all"]:
+                    typeCheckingMode = "standard",
+                },
                 python = {
                     pythonPath = python_path,
                 },
             },
         })
+        --[[ lspconfig["pylsp"].setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                pylsp = {
+                    plugins = {
+                        rope_autoimport = {
+                            enabled = true,
+                        },
+                    },
+                },
+            },
+        }) ]]
     end,
 }
