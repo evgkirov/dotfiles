@@ -80,6 +80,16 @@ return {
                     prompt_prefix = " ",
                     -- file_ignore_patterns = { "node_modules", "\\.git" },
                 },
+                lsp_definitions = {
+                    -- layout_strategy = "vertical",
+                    jump_type = "never",
+                    theme = "cursor",
+                    path_display = { "smart" },
+                },
+                lsp_references = {
+                    layout_strategy = "vertical",
+                    path_display = { "smart" },
+                },
                 --[[ lsp_dynamic_workspace_symbols = {
                     ignore_symbols = { "variable" },
                 },
@@ -111,9 +121,8 @@ return {
         { "<leader>fn", workspace_symbols_picker({ "function" }), desc = "Function" },
         -- { "<leader>fd", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
         { "<leader>fd", "<cmd>Telescope aerial<cr>", desc = "Document symbols" },
-        -- { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
-        { "gR", "<cmd>Telescope lsp_references<cr>", desc = "References" },
-        { "gD", "<cmd>Telescope lsp_definitions jump_type=never theme=cursor<cr>", desc = "Definitions" },
+        { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Definitions" },
+        { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
         {
             "<leader>fo",
             function()

@@ -22,6 +22,7 @@ get_app_icon() {
     "ChatGPT") echo 󰧑 ;;
     "Clock") echo 󰥔 ;;
     "Contacts") echo 󰛋 ;;
+    "Cyberduck") echo 󰇥 ;;
     "Dash") echo D ;;
     "Day One") echo 󰃀 ;;
     "Dictionary") echo 󰗊 ;;

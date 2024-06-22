@@ -30,16 +30,19 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 
 -- splits
 
-wkc.s = { name = "󰝘 Splits..." }
+-- wkc.s = { name = "󰝘 Splits..." }
+--
+-- opts.desc = "󰅗 Close window"
+-- keymap("n", "<leader>sx", "<cmd>close<cr>", opts)
+--
+-- opts.desc = " Split horizontally"
+-- keymap("n", "<leader>sh", "<cmd>belowright split<cr>", opts)
+--
+-- opts.desc = " Split vertically"
+-- keymap("n", "<leader>sv", "<cmd>belowright vsplit<cr>", opts)
 
 opts.desc = "󰅗 Close window"
-keymap("n", "<leader>sx", "<cmd>close<cr>", opts)
-
-opts.desc = " Split horizontally"
-keymap("n", "<leader>sh", "<cmd>belowright split<cr>", opts)
-
-opts.desc = " Split vertically"
-keymap("n", "<leader>sv", "<cmd>belowright vsplit<cr>", opts)
+keymap("n", "<leader>x", "<cmd>close<cr>", opts)
 
 -- tabs
 
