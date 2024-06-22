@@ -23,9 +23,9 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
-        -- vim.diagnostic.config({
-        --     virtual_text = false,
-        -- })
+        vim.diagnostic.config({
+            virtual_text = false,
+        })
 
         local on_attach = function(client, bufnr)
             local opts = { buffer = bufnr, silent = true }

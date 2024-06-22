@@ -4,6 +4,15 @@ return {
     main = "nvim-treesitter.configs",
     config = true,
     opts = {
+        incremental_selection = {
+            enable = true,
+            keymaps = {
+                init_selection = "<CR>",
+                node_incremental = "<CR>",
+                scope_incremental = "<S-CR>",
+                node_decremental = "<BS>",
+            },
+        },
         ensure_installed = {
             "bash",
             "comment",
@@ -46,6 +55,6 @@ return {
         },
         highlight = {
             enable = true,
-        }
+        },
     },
 }
