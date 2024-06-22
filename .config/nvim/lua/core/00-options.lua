@@ -5,6 +5,8 @@ vim.o.clipboard = "unnamedplus"
 vim.o.splitbelow = true
 vim.o.splitright = true
 -- vim.o.conceallevel = 1
+vim.o.signcolumn = "auto:3"
+
 vim.g.mapleader = " "
 -- vim.o.fillchars = table.concat({ "eob:~", "vert:▏", "verthoriz:╬", "vertleft:▏", "vertright:▏" }, ",")
 -- vim.o.fillchars = table.concat({ "eob: ", "vert:▏", "verthoriz:╬", "vertleft:▏", "vertright:▏" }, ",")

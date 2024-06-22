@@ -4,13 +4,7 @@ return {
     "lewis6991/gitsigns.nvim",
     event = "BufEnter",
     config = true,
-    opts = {
-        signs = {
-            add = { text = "▎" },
-            change = { text = "▎" },
-            untracked = { text = "" },
-        },
-    },
+    opts = {},
     keys = {
         {
             "]c",

@@ -123,6 +123,7 @@ return {
         { "<leader>fd", "<cmd>Telescope aerial<cr>", desc = "Document symbols" },
         { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Definitions" },
         { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+        { "<leader>cd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
         {
             "<leader>fo",
             function()

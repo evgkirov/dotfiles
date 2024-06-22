@@ -23,6 +23,10 @@ return {
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
 
+        -- vim.diagnostic.config({
+        --     virtual_text = false,
+        -- })
+
         local on_attach = function(client, bufnr)
             local opts = { buffer = bufnr, silent = true }
 
@@ -31,20 +35,23 @@ return {
 
             opts.desc = "Action..."
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+            vim.keymap.set("n", "?", vim.lsp.buf.code_action, opts)
 
-            opts.desc = "Info (hover)"
-            vim.keymap.set("n", "<leader>ci", vim.lsp.buf.hover, opts)
-            -- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+            opts.desc = "Hover"
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
             opts.desc = "Open definition"
-            -- vim.keymap.set("n", "<leader>cd", vim.lsp.buf.definition, opts)
             vim.keymap.set("n", "go", vim.lsp.buf.definition, opts)
 
-            -- opts.desc = "Go to definition (horizontal split)"
-            -- vim.keymap.set("n", "<leader>ch", "<cmd>belowright split | lua vim.lsp.buf.definition()<cr>", opts)
-            --
-            -- opts.desc = "Go to definition (vertical split)"
-            -- vim.keymap.set("n", "<leader>cv", "<cmd>belowright vsplit | lua vim.lsp.buf.definition()<cr>", opts)
+            opts.desc = "Previous diagnostic"
+            vim.keymap.set("n", "[d", function()
+                vim.diagnostic.goto_prev({ float = true })
+            end, opts)
+
+            opts.desc = "Next diagnostic"
+            vim.keymap.set("n", "]d", function()
+                vim.diagnostic.goto_next({ float = true })
+            end, opts)
         end
 
         local capabilities = cmp_nvim_lsp.default_capabilities()
