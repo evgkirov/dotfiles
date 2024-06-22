@@ -44,6 +44,9 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 opts.desc = "󰅗 Close window"
 keymap("n", "<leader>x", "<cmd>close<cr>", opts)
 
+opts.desc = "󰱝 Clear context"
+keymap("n", "<leader>X", "<cmd>bufdo bd<cr>", opts)
+
 -- tabs
 
 wkc.t = { name = "󰓩 Tabs..." }
