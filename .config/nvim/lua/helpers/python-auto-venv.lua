@@ -49,7 +49,7 @@ local function has_poetry(dir)
     return is_string_presented_in_file(dir .. "pyproject.toml", "%[tool%.poetry%]")
 end
 
-function M.venv_path()
+local function venv_path()
     local cwd = vim.fn.getcwd()
     local cwd_name = string.match(cwd, ".+/([^/]+)$") or "NONE"
     return venvs_root .. "/" .. cwd_name
@@ -58,18 +58,18 @@ end
 function M.python_path()
     for _, path in ipairs(poetry_lookup_paths) do
         if has_poetry(path) then
-            return execute_command("poetry -C '" .. path .. "' run which python")
+            return execute_command("poetry -C '".. path .. "' run which python")
         end
     end
-    return M.venv_path() .. "/bin/python"
+    return venv_path() .. "/bin/python"
 end
 
 local function pip_path()
-    return M.venv_path() .. "/bin/pip"
+    return venv_path() .. "/bin/pip"
 end
 
 function M.create_venv()
-    local dir = M.venv_path()
+    local dir = venv_path()
     if has_poetry("") then
         return true
     end

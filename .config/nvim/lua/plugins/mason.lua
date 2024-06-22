@@ -18,7 +18,6 @@ return {
 
         mason_lspconfig.setup({
             ensure_installed = {
-                "basedpyright",
                 "cssls@4.8.0",
                 "eslint@4.8.0",
                 "html@4.8.0",
