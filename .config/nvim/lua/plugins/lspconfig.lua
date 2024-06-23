@@ -31,11 +31,12 @@ return {
             local opts = { buffer = bufnr, silent = true }
 
             opts.desc = "Rename"
-            vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
+            vim.keymap.set("n", "<leader>cn", vim.lsp.buf.rename, opts)
 
             opts.desc = "Action..."
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
             vim.keymap.set("n", "?", vim.lsp.buf.code_action, opts)
+            vim.keymap.set("v", "?", vim.lsp.buf.code_action, opts)
 
             opts.desc = "Hover"
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -57,30 +58,30 @@ return {
         local capabilities = cmp_nvim_lsp.default_capabilities()
 
         -- CSS, SCSS, LESS
-        lspconfig["cssls"].setup({
+        lspconfig.cssls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
         -- javascript and typescript w/react
-        lspconfig["tsserver"].setup({
+        lspconfig.tsserver.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
-        lspconfig["eslint"].setup({
+        lspconfig.eslint.setup({
             capabilities = capabilities,
             on_attach = on_attach,
         })
 
         -- html
-        lspconfig["html"].setup({
+        lspconfig.html.setup({
             capabilities = capabilities,
             on_attach = on_attach,
             filetypes = { "html", "htmldjango" },
         })
 
         -- lua
-        lspconfig["lua_ls"].setup({
+        lspconfig.lua_ls.setup({
             capabilities = capabilities,
             on_attach = on_attach,
             settings = { -- custom settings for lua
@@ -95,14 +96,13 @@ return {
         -- python
         python_auto_venv.create_venv()
         local python_path = python_auto_venv.python_path()
-        -- print("Python path: " .. python_path)
-        -- vim.lsp.set_log_level("debug")
         local lsp_restarted = false
-        lspconfig["basedpyright"].setup({
+
+        lspconfig.basedpyright.setup({
             capabilities = capabilities,
             on_attach = on_attach,
             on_init = function(client)
-                -- Workaround for when the Python path is ignored for some reason
+                -- Ugly hack because pyright/basedpyright for some reason doesn't pick up the python path
                 vim.defer_fn(function()
                     local attached_buffers = vim.lsp.get_buffers_by_client_id(client.id)
                     vim.cmd("split")
@@ -119,12 +119,48 @@ return {
                 basedpyright = {
                     analysis = {
                         typeCheckingMode = "standard",
+                        -- typeCheckingMode = "off",
                     },
                 },
                 python = {
                     pythonPath = python_path,
                 },
             },
+        })
+        vim.highlight.priorities.semantic_tokens = 95 -- https://github.com/DetachHead/basedpyright/issues/176#issuecomment-2016608736
+
+        lspconfig.pylsp.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            settings = {
+                pylsp = {
+                    plugins = {
+                        rope = { enabled = true },
+                        autopep8 = { enabled = false },
+                        flake8 = { enabled = false },
+                        jedi_completion = { enabled = false },
+                        jedi_definition = { enabled = false },
+                        jedi_hover = { enabled = false },
+                        jedi_references = { enabled = false },
+                        jedi_signature_help = { enabled = false },
+                        jedi_symbols = { enabled = false },
+                        mccabe = { enabled = false },
+                        preload = { enabled = false },
+                        pycodestyle = { enabled = false },
+                        pydocstyle = { enabled = false },
+                        pyflakes = { enabled = false },
+                        pylint = { enabled = false },
+                        rope_autoimport = { enabled = false },
+                        rope_completion = { enabled = false },
+                        yapf = { enabled = false },
+                    },
+                },
+            },
+        })
+
+        lspconfig.ruff.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
         })
     end,
 }

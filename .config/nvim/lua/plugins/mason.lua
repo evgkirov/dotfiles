@@ -18,12 +18,17 @@ return {
 
         mason_lspconfig.setup({
             ensure_installed = {
-                "basedpyright",
-                "cssls@4.8.0",
-                "eslint@4.8.0",
-                "html@4.8.0",
+
                 "lua_ls",
+
+                "html@4.8.0",
+                "cssls@4.8.0",
                 "tsserver",
+                "eslint@4.8.0",
+
+                "basedpyright", -- autocompletions
+                "pylsp", -- refactorings (with rope - see below)
+                "ruff", -- diagnostics
             },
             automatic_installation = false,
         })
@@ -39,5 +44,27 @@ return {
                 -- "pylint",
             },
         })
+
+        local pylsp = require("mason-registry").get_package("python-lsp-server")
+        pylsp:on("install:success", function()
+            local function mason_package_path(package)
+                local path = vim.fn.resolve(vim.fn.stdpath("data") .. "/mason/packages/" .. package)
+                return path
+            end
+
+            local path = mason_package_path("python-lsp-server")
+            local command = path .. "/venv/bin/pip"
+            local args = {
+                "install",
+                "pylsp-rope",
+            }
+            require("plenary.job")
+                :new({
+                    command = command,
+                    args = args,
+                    cwd = path,
+                })
+                :start()
+        end)
     end,
 }
