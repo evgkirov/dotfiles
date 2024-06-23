@@ -31,7 +31,7 @@ return {
             local opts = { buffer = bufnr, silent = true }
 
             opts.desc = "Rename"
-            vim.keymap.set("n", "<leader>cn", vim.lsp.buf.rename, opts)
+            vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
 
             opts.desc = "Action..."
             vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
