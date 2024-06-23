@@ -97,7 +97,8 @@ return {
         local python_path = python_auto_venv.python_path()
         -- print("Python path: " .. python_path)
         -- vim.lsp.set_log_level("debug")
-        lspconfig["pyright"].setup({
+        local lsp_restarted = false
+        lspconfig["basedpyright"].setup({
             capabilities = capabilities,
             on_attach = on_attach,
             on_init = function(client)
@@ -108,9 +109,18 @@ return {
                     vim.cmd("b " .. attached_buffers[1])
                     vim.cmd("PyrightSetPythonPath " .. python_path)
                     vim.cmd("q")
-                end, 1000)
+                    if not lsp_restarted then
+                        lsp_restarted = true
+                        vim.cmd("LspRestart basedpyright")
+                    end
+                end, 100)
             end,
             settings = {
+                basedpyright = {
+                    analysis = {
+                        typeCheckingMode = "standard",
+                    },
+                },
                 python = {
                     pythonPath = python_path,
                 },
