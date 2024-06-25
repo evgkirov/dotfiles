@@ -7,6 +7,23 @@ local function workspace_symbols_picker(filter) -- luacheck: ignore
         })
     end
 end
+
+local function flash_to_telescope(picker)
+    return function()
+        require("flash").jump({
+            -- jump = {
+            --     autojump = true,
+            -- },
+            action = function(match, state)
+                vim.api.nvim_win_call(match.win, function()
+                    vim.api.nvim_win_set_cursor(match.win, match.pos)
+                    vim.cmd("Telescope " .. picker)
+                end)
+            end,
+        })
+    end
+end
+
 return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
@@ -128,8 +145,10 @@ return {
         { "<leader>fn", workspace_symbols_picker({ "function" }), desc = "Function" },
         { "<leader>fd", "<cmd>Telescope aerial<cr>", desc = "Document symbols" },
         { "<leader>fD", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
-        { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "Definitions" },
-        { "gr", "<cmd>Telescope lsp_references<cr>", desc = "References" },
+        { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "View definition" },
+        { "gsd", flash_to_telescope("lsp_definitions"), desc = "Flash to definition" },
+        { "gr", "<cmd>Telescope lsp_references<cr>", desc = "Find references" },
+        { "gsr", flash_to_telescope("lsp_references"), desc = "Flash to references" },
         { "<leader>cd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
         {
             "<leader>fo",
