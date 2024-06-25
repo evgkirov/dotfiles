@@ -1,9 +1,9 @@
 :: default : yabai -m config normal_window_opacity 0.8
-:: swap @ : yabai -m config active_window_border_color 0xff0000ff ; yabai -m config normal_window_opacity 0.4
-:: warp @ : yabai -m config active_window_border_color 0xffff00ff ; yabai -m config normal_window_opacity 0.4
-:: inc @ : yabai -m config active_window_border_color 0xffffff00 ; yabai -m config normal_window_opacity 0.4
-:: dec @ : yabai -m config active_window_border_color 0xff00ffff ; yabai -m config normal_window_opacity 0.4
-:: ins @ : yabai -m config active_window_border_color 0xffff0000; yabai -m config normal_window_opacity 0.4 ; sleep 2 ; skhd -k "escape"
+:: swap @ : yabai -m config normal_window_opacity 0.4
+:: warp @ : yabai -m config normal_window_opacity 0.4
+:: inc @ : yabai -m config normal_window_opacity 0.4
+:: dec @ : yabai -m config normal_window_opacity 0.4
+:: ins @ : yabai -m config normal_window_opacity 0.4 ; sleep 2 ; skhd -k "escape"
 
 lalt - s : set has_window (yabai -m query --windows --space | jq 'any(.app == "Safari")') ; if not $has_window ; osascript -e 'tell application "Safari" to make new document'; end; osascript -e 'tell application "Safari" to activate'
 # lalt - i : set has_window (yabai -m query --windows --space | jq 'any(.app == "iTerm2")') ; if not $has_window ; osascript -e 'tell application "iTerm" to set new_window to (create window with default profile)'; end; osascript -e 'tell application "iTerm" to activate'
@@ -95,7 +95,8 @@ ins < hyper - l : yabai -m window --insert east ; skhd -k "escape"
 ## # change layout of desktop
 hyper - z : sh ~/.config/yabai/yabairc set_space_to_stack
 hyper - x : sh ~/.config/yabai/yabairc set_space_to_bsp
-hyper - c : yabai -m space --layout float
+hyper - c : sh ~/.config/yabai/yabairc set_space_to_webdev
+hyper - v : yabai -m space --layout float
 
 # balance size of windows
 hyper - b : yabai -m space --balance

@@ -14,5 +14,8 @@ vim.g.mapleader = " "
 vim.cmd("autocmd BufNewFile,BufRead *.variables setfiletype less")
 vim.cmd("autocmd BufNewFile,BufRead *.overrides setfiletype less")
 
+-- auto resize windows when vim is resized
+vim.cmd("autocmd VimResized * tabdo wincmd =")
+
 -- https://github.com/rmagatti/auto-session#recommended-sessionoptions-config
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,globals,winsize,winpos,terminal,localoptions"

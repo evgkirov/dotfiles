@@ -42,6 +42,19 @@ set_space_to_bsp() {
     yabai -m space $1 --padding abs:0:0:0:0
 }
 
+set_space_to_webdev() {
+    set_space_to_bsp $1
+    echo "Setting space $1 to webdev layout"
+    wezterm_id=$(yabai -m query --windows --space $1 | jq '.[] | select(.app == "WezTerm") | .id')
+    yabai -m space $1 --balance
+    yabai -m window $wezterm_id --swap first
+    yabai -m window $wezterm_id --focus
+    yabai -m window $wezterm_id --ratio abs:0.75
+    yabai -m window $wezterm_id --focus
+    # skhd -k "ctrl - w"
+    # skhd -k "0x18"
+}
+
 set_space_to_stack() {
     echo "Setting space $1 to stacked layout"
     yabai -m space $1 --layout stack
@@ -77,6 +90,8 @@ if [ $1 = "update_all_spaces" ]; then
     update_all_spaces
 elif [ $1 = "set_space_to_bsp" ]; then
     set_space_to_bsp $2
+elif [ $1 = "set_space_to_webdev" ]; then
+    set_space_to_webdev $2
 elif [ $1 = "set_space_to_stack" ]; then
     set_space_to_stack $2
 else
