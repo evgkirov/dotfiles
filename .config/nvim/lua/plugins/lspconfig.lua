@@ -120,6 +120,7 @@ return {
                     analysis = {
                         typeCheckingMode = "standard",
                         -- typeCheckingMode = "off",
+                        diagnosticMode = "openFilesOnly",
                     },
                 },
                 python = {

@@ -39,10 +39,10 @@ return {
             disabled_filetypes = { "NvimTree" },
             globalstatus = true,
         }, ]]
-        --[[ options = {
+        options = {
             section_separators = { left = "", right = "" },
             component_separators = { left = "", right = "" },
-        }, ]]
+        },
         -- options = { section_separators = "", component_separators = "" },
         sections = {
             lualine_a = { "mode" },

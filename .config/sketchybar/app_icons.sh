@@ -87,6 +87,7 @@ get_app_icon() {
     "WhatsApp (old)") echo 󰖣 ;;
     "WhatsApp") echo 󰖣 ;;
     "X") echo 󰕄 ;;
+    "Zed") echo 󰰶 ;;
     "iTerm2") echo 󰞷 ;;
     # *) echo 󰘔 ;;
     *) echo  ;;
