@@ -41,9 +41,6 @@ return {
             opts.desc = "Hover"
             vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
-            opts.desc = "Open definition"
-            vim.keymap.set("n", "go", vim.lsp.buf.definition, opts)
-
             opts.desc = "Previous diagnostic"
             vim.keymap.set("n", "[d", function()
                 vim.diagnostic.goto_prev({ float = true })

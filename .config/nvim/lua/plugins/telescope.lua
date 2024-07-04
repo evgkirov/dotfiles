@@ -99,7 +99,6 @@ return {
                 },
                 lsp_definitions = {
                     -- layout_strategy = "vertical",
-                    jump_type = "never",
                     theme = "cursor",
                     path_display = { "smart" },
                 },
@@ -145,7 +144,8 @@ return {
         { "<leader>fn", workspace_symbols_picker({ "function" }), desc = "Function" },
         { "<leader>fd", "<cmd>Telescope aerial<cr>", desc = "Document symbols" },
         { "<leader>fD", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
-        { "gd", "<cmd>Telescope lsp_definitions<cr>", desc = "View definition" },
+        { "gd", "<cmd>Telescope lsp_definitions jump_type=never<cr>", desc = "View definition" },
+        { "go", "<cmd>Telescope lsp_definitions<cr>", desc = "View definition" },
         { "gsd", flash_to_telescope("lsp_definitions"), desc = "Flash to definition" },
         { "gr", "<cmd>Telescope lsp_references<cr>", desc = "Find references" },
         { "gsr", flash_to_telescope("lsp_references"), desc = "Flash to references" },
