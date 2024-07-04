@@ -15,16 +15,24 @@ end
 config.automatically_reload_config = true
 config.default_cwd = "/Users/evgkirov/Projects/"
 -- config.color_scheme = "Everforest Light (Gogh)"
+
+-- my old default
 config.font_size = 14.0
+
+-- might work for Dell 2880x....
+config.font_size = 13.0
+
+-- might work for Dell 2560x....
+config.font_size = 12.0
+
 config.font = wezterm.font({
     -- family = "DaddyTimeMono Nerd Font",
     family = "JetBrainsMono Nerd Font",
     stretch = "ExtraExpanded",
     weight = "Regular",
 })
-config.line_height = 1.01
--- config.line_height = 1.3
-config.cell_width = 0.9
+-- config.line_height = 1.01
+-- config.cell_width = 0.9
 -- config.freetype_load_target = "Light"
 
 config.hide_tab_bar_if_only_one_tab = true

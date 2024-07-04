@@ -2,7 +2,7 @@
 
 common_settings() {
     echo "Setting common settings for Yabai"
-    yabai -m config external_bar all:48:0
+    yabai -m config external_bar all:38:0
     # yabai -m config window_gap 20
     yabai -m config window_gap 5
     yabai -m config mouse_follows_focus on

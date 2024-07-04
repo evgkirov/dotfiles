@@ -21,8 +21,7 @@ source "$CONFIG_DIR/colors.sh"
 bar=(
     blur_radius=0
     color=$BAR_BACKGROUND
-    height=48
-    # height=38
+    height=38
     padding_left=8
     padding_right=8
     position=top
@@ -36,9 +35,8 @@ sketchybar --bar "${bar[@]}"
 # https://felixkratz.github.io/SketchyBar/config/items
 
 defaults=(
-    background.corner_radius=5
-    # background.height=24
-    background.height=26
+    background.corner_radius=4
+    background.height=24
     icon.color=$BLACK
     icon.font="$ICON_FONT"
     icon.padding_left=8
