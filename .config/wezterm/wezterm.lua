@@ -11,16 +11,15 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-
 config.automatically_reload_config = true
 config.default_cwd = "/Users/evgkirov/Projects/"
--- config.color_scheme = "Everforest Light (Gogh)"
+-- config.color_scheme = "Ev    erforest Light (Gogh)"
 
 -- my old default
-config.font_size = 14.0
+-- config.font_size = 14.0
 
 -- might work for Dell 2880x....
-config.font_size = 13.0
+-- config.font_size = 13.0
 
 -- might work for Dell 2560x....
 config.font_size = 12.0
@@ -34,6 +33,7 @@ config.font = wezterm.font({
 -- config.line_height = 1.01
 -- config.cell_width = 0.9
 -- config.freetype_load_target = "Light"
+-- config.freetype_load_flags = "FORCE_AUTOHINT"
 
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"

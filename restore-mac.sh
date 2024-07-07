@@ -1,19 +1,19 @@
-#!/bin/bash 
+#!/bin/bash
 
-cd `dirname $0`
-SRC=`pwd`
+cd $(dirname $0)
+SRC=$(pwd)
 
 function relink {
     dst_file="$HOME/$1"
     rm -rf "$dst_file"
-    mkdir -p "`dirname \"$dst_file\"`"
+    mkdir -p "$(dirname \"$dst_file\")"
     ln -svf "$SRC/$1" "$HOME/$1"
 }
 
 function copy {
     dst_file="$HOME/$1"
     rm -rf "$dst_file"
-    mkdir -p "`dirname \"$dst_file\"`"
+    mkdir -p "$(dirname \"$dst_file\")"
     cp -v "$SRC/$1" "$HOME/$1"
 }
 
@@ -29,6 +29,8 @@ relink .config/skhd
 relink .config/svim
 relink .config/wezterm
 relink .config/yabai
+relink .ideavimrc
+relink .vimrc
 
 copy "Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application Support/userSettings.json"
-cp -r "Applications/Neovim.app" /Applications 
+cp -r "Applications/Neovim.app" /Applications

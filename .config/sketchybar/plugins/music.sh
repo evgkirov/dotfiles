@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [ "$SENDER" = "media_change" ]; then
     state=$(jq -r '.state' <<<"$INFO")
