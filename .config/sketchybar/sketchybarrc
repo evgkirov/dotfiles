@@ -41,7 +41,7 @@ defaults=(
     icon.font="$ICON_FONT"
     icon.padding_left=8
     icon.padding_right=4
-    icon.y_offset=1
+    icon.y_offset=0
     label.color=$BLACK
     label.font="$TEXT_FONT"
     label.padding_left=4
@@ -90,6 +90,7 @@ source "$ITEMS_DIR/battery.sh"
 source "$ITEMS_DIR/keyboard.sh"
 source "$ITEMS_DIR/svim.sh"
 source "$ITEMS_DIR/session.sh"
+source "$ITEMS_DIR/music.sh"
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to

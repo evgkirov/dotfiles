@@ -14,10 +14,11 @@ for i in "${!SPACE_ICONS[@]}"; do
         icon.color=$SPACE_FG
         icon.highlight_color=$SPACE_ACTIVE_FG
         icon.padding_right=8
+        icon.y_offset=1
         label.color=$SPACE_FG
         label.drawing=off
         label.highlight_color=$SPACE_ACTIVE_FG
-        label.y_offset=1
+        label.y_offset=0
         script="$PLUGIN_DIR/space.sh"
         space=$sid
     )

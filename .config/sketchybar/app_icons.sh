@@ -16,6 +16,7 @@ get_app_icon() {
     "App Store") echo  ;;
     "Arq") echo  ;;
     "Banktivity") echo 󰁰 ;;
+    "BetterDisplay") echo 󰨇 ;;
     "Books") echo 󱓷 ;;
     "Calculator") echo 󰃬 ;;
     "Calendar") echo 󰸗 ;;
@@ -34,6 +35,7 @@ get_app_icon() {
     "Find My") echo 󰐷 ;;
     "Finder") echo 󰀶 ;;
     "GitHub Desktop") echo 󰊤 ;;
+    "GitKraken") echo  ;;
     "Google Chrome Canary") echo 󰊯 ;;
     "Google Chrome") echo 󰊯 ;;
     "Google Meet") echo 󰕧 ;;
@@ -63,6 +65,8 @@ get_app_icon() {
     "Poedit") echo 󰗊 ;;
     "Postico") echo 󰟆 ;;
     "Preview") echo 󰋩 ;;
+    "PyCharm CE") echo 󰌠 ;;
+    "PyCharm") echo 󰌠 ;;
     "Rakuten Viber") echo 󰖣 ;;
     "Reminders") echo 󰝖 ;;
     "Rocket.Chat") echo 󱓞 ;;
@@ -79,6 +83,7 @@ get_app_icon() {
     "Telegram Desktop") echo  ;;
     "Telegram") echo  ;;
     "Things") echo 󰄲 ;;
+    "Tower") echo 󰴾 ;;
     "Transmission") echo 󰇚 ;;
     "Twitter") echo 󰕄 ;;
     "Upwork") echo 󰰨 ;;
