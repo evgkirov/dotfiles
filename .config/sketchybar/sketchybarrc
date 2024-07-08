@@ -89,8 +89,8 @@ source "$ITEMS_DIR/volume.sh"
 source "$ITEMS_DIR/battery.sh"
 source "$ITEMS_DIR/keyboard.sh"
 source "$ITEMS_DIR/svim.sh"
-source "$ITEMS_DIR/session.sh"
 source "$ITEMS_DIR/music.sh"
+source "$ITEMS_DIR/session.sh"
 
 ##### Finalizing Setup #####
 # The below command is only needed at the end of the initial configuration to

@@ -1,9 +1,12 @@
 music=(
     background.color=$DATA_MUSIC
-    label.max_chars="20"
+    drawing=off
+    label.max_chars=20
     script="$PLUGIN_DIR/music.sh"
-    scroll_texts="on"
+    updates=on
+    scroll_texts=on
 )
+
 sketchybar \
     --add item music right \
     --set music "${music[@]}" \
