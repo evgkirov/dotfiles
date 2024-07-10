@@ -67,6 +67,7 @@ get_app_icon() {
     "Preview") echo 󰋩 ;;
     "PyCharm CE") echo 󰌠 ;;
     "PyCharm") echo 󰌠 ;;
+    "QuickTime Player") echo  ;;
     "Rakuten Viber") echo 󰖣 ;;
     "Reminders") echo 󰝖 ;;
     "Rocket.Chat") echo 󱓞 ;;
@@ -92,6 +93,7 @@ get_app_icon() {
     "WhatsApp (old)") echo 󰖣 ;;
     "WhatsApp") echo 󰖣 ;;
     "X") echo 󰕄 ;;
+    "YouTube") echo 󰗃 ;;
     "Zed") echo 󰰶 ;;
     "iTerm2") echo 󰞷 ;;
     # *) echo 󰘔 ;;
