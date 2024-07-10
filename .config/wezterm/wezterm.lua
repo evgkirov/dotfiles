@@ -1,19 +1,13 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- This table will hold the configuration.
 local config = {}
 
--- In newer versions of wezterm, use the config_builder which will
--- help provide clearer error messages
 if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
--- This is where you actually apply your config choices
 config.automatically_reload_config = true
 config.default_cwd = "/Users/evgkirov/Projects/"
--- config.color_scheme = "Ev    erforest Light (Gogh)"
 
 -- my old default
 -- config.font_size = 14.0
@@ -25,7 +19,6 @@ config.default_cwd = "/Users/evgkirov/Projects/"
 config.font_size = 12.0
 
 config.font = wezterm.font({
-    -- family = "DaddyTimeMono Nerd Font",
     family = "JetBrainsMono Nerd Font",
     stretch = "ExtraExpanded",
     weight = "Regular",
@@ -76,5 +69,5 @@ wezterm.on("window-config-reloaded", function(window, pane)
         window:set_config_overrides(overrides)
     end
 end)
--- and finally, return the configuration to wezterm
+
 return config
