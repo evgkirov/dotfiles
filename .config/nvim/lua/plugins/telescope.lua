@@ -8,7 +8,24 @@ local function workspace_symbols_picker(filter) -- luacheck: ignore
     end
 end
 
-local function flash_to_telescope(picker)
+local function action_open_in_window(direction, select_target, float)
+    return function(prompt_bufnr)
+        -- Use nvim-window-picker to choose the window by dynamically attaching a function
+        local action_set = require("telescope.actions.set")
+        local action_state = require("telescope.actions.state")
+        local picker = action_state.get_current_picker(prompt_bufnr)
+
+        picker.get_selection_window = function(picker, entry)
+            local selected_window = require("helpers.opener").open_in_window(nil, direction, select_target, float)
+            picker.get_selection_window = nil
+            return selected_window
+        end
+
+        return action_set.edit(prompt_bufnr, "edit")
+    end
+end
+
+local function action_flash_to_telescope(picker)
     return function()
         require("flash").jump({
             -- jump = {
@@ -47,28 +64,11 @@ return {
                     filesize_limit = 0.1,
                 },
                 mappings = {
-                    i = {
+                    i = require("helpers.opener").create_mappings(action_open_in_window, {
                         ["<esc>"] = actions.close,
-                        ["<C-h>"] = actions.select_horizontal,
-                        ["<C-v>"] = actions.select_vertical,
                         ["<C-t>"] = actions.select_tab,
-                        ["<C-o>"] = function(prompt_bufnr)
-                            -- Use nvim-window-picker to choose the window by dynamically attaching a function
-                            local action_set = require("telescope.actions.set")
-                            local action_state = require("telescope.actions.state")
-
-                            local picker = action_state.get_current_picker(prompt_bufnr)
-                            picker.get_selection_window = function(picker, entry)
-                                local picked_window_id = require("window-picker").pick_window()
-                                    or vim.api.nvim_get_current_win()
-                                -- Unbind after using so next instance of the picker acts normally
-                                picker.get_selection_window = nil
-                                return picked_window_id
-                            end
-
-                            return action_set.edit(prompt_bufnr, "edit")
-                        end,
-                    },
+                    }),
+                    n = require("helpers.opener").create_mappings(action_open_in_window),
                 },
                 vimgrep_arguments = {
                     "rg",
@@ -106,6 +106,10 @@ return {
                     layout_strategy = "vertical",
                     path_display = { "smart" },
                 },
+                lsp_dynamic_workspace_symbols = {
+                    -- layout_strategy = "vertical",
+                    path_display = { "smart" },
+                },
                 buffers = {
                     mappings = {
                         i = {
@@ -113,12 +117,6 @@ return {
                         },
                     },
                 },
-                --[[ lsp_dynamic_workspace_symbols = {
-                    ignore_symbols = { "variable" },
-                },
-                lsp_document_symbols = {
-                    ignore_symbols = { "variable" },
-                }, ]]
             },
             extensions = {
                 aerial = {
@@ -138,7 +136,7 @@ return {
         { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
         -- { "<leader>fq", "<cmd>Telescope quickfix<cr>", desc = "Quickfix" },
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
-        -- { "<leader>fc", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
+        { "<leader>f*", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
         { "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace symbols" },
         { "<leader>fc", workspace_symbols_picker({ "class" }), desc = "Class" },
         { "<leader>fn", workspace_symbols_picker({ "function" }), desc = "Function" },
@@ -146,9 +144,9 @@ return {
         { "<leader>fD", "<cmd>Telescope lsp_document_symbols<cr>", desc = "Document symbols" },
         { "gd", "<cmd>Telescope lsp_definitions jump_type=never<cr>", desc = "View definition" },
         { "go", "<cmd>Telescope lsp_definitions<cr>", desc = "View definition" },
-        { "gsd", flash_to_telescope("lsp_definitions"), desc = "Flash to definition" },
+        { "gsd", action_flash_to_telescope("lsp_definitions"), desc = "Flash to definition" },
         { "gr", "<cmd>Telescope lsp_references<cr>", desc = "Find references" },
-        { "gsr", flash_to_telescope("lsp_references"), desc = "Flash to references" },
+        { "gsr", action_flash_to_telescope("lsp_references"), desc = "Flash to references" },
         { "<leader>cd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
         {
             "<leader>fo",

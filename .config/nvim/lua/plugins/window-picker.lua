@@ -7,6 +7,10 @@ return {
         require("window-picker").setup({
             -- hint = "floating-big-letter",
             hint = "statusline-winbar",
+            filter_rules = {
+                autoselect_one = false,
+                include_current_win = true,
+            },
         })
     end,
 }

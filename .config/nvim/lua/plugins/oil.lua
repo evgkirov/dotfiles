@@ -1,7 +1,21 @@
-local function close_oil()
+local function action_close_oil()
     local oil = require("oil")
     oil.save()
     oil.close()
+end
+
+local function action_open_in_window(direction, select_target, float)
+    return function()
+        local oil = require("oil")
+        local dir = oil.get_current_dir()
+        local entry = oil.get_cursor_entry()
+        local filepath = dir .. entry.name
+        local oil_window_id = vim.api.nvim_get_current_win()
+        local file_window_id = require("helpers.opener").open_in_window(filepath, direction, select_target, float)
+        vim.api.nvim_set_current_win(oil_window_id)
+        oil.close()
+        vim.api.nvim_set_current_win(file_window_id)
+    end
 end
 
 return {
@@ -11,24 +25,8 @@ return {
     config = true,
     opts = {
         -- skip_confirm_for_simple_edits = true,
-        keymaps = {
-            ["<leader>x"] = close_oil,
-            ["q"] = close_oil,
-            ["<C-h>"] = { "actions.select", opts = { horizontal = true, close = true } },
-            ["<C-v>"] = { "actions.select", opts = { vertical = true, close = true } },
-            ["<C-o>"] = function()
-                local oil = require("oil")
-                local dir = oil.get_current_dir()
-                local entry = oil.get_cursor_entry()
-                local filepath = dir .. entry.name
-                local oil_window_id = vim.api.nvim_get_current_win()
-                local picked_window_id = require("window-picker").pick_window() or vim.api.nvim_get_current_win()
-                vim.api.nvim_set_current_win(picked_window_id)
-                vim.cmd.edit(filepath)
-                vim.api.nvim_set_current_win(oil_window_id)
-                oil.close()
-                vim.api.nvim_set_current_win(picked_window_id)
-            end,
+        keymaps = require("helpers.opener").create_mappings(action_open_in_window, {
+            ["q"] = action_close_oil,
             ["<C-s>"] = false,
             ["s"] = function()
                 require("flash").jump({
@@ -46,7 +44,7 @@ return {
             ["S"] = function()
                 require("flash").jump()
             end,
-        },
+        }),
         view_options = {
             show_hidden = true,
             --[[ sort = {
