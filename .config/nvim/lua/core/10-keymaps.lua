@@ -19,6 +19,11 @@ keymap("n", "<leader>q", "<cmd>:qa<cr>", opts)
 opts.desc = "Hide search"
 keymap("n", "<esc>", ":noh<CR>", opts)
 
+opts.desc = "Break line and insert"
+-- keymap("n", "<leader>o", "cib<cr><esc>O", opts)
+keymap("n", "<leader>o", "i<cr><esc>O", opts)
+keymap("v", "<leader>o", "c<cr><esc>O", opts)
+
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = "*",
     callback = function(args)
