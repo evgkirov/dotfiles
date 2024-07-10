@@ -12,18 +12,7 @@ local custom_oil_extension = {
             end,
         },
         lualine_x = {
-            function()
-                local handle = io.popen(
-                    "git symbolic-ref --short HEAD 2>/dev/null || git describe --tags --exact-match 2>/dev/null"
-                )
-                if not handle then
-                    return ""
-                end
-                local result = handle:read("*a")
-                handle:close()
-                result = result:gsub("%s+", "") -- remove any trailing newline or spaces
-                return result
-            end,
+            "branch",
         },
     },
     filetypes = { "oil" },
