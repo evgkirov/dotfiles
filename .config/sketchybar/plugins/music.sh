@@ -2,13 +2,16 @@
 
 if [ "$SENDER" = "media_change" ]; then
     state=$(jq -r '.state' <<<"$INFO")
-    echo $state
     if [ "$state" = "playing" ]; then
         app=$(jq -r '.app' <<<"$INFO")
         title=$(jq -r '.title' <<<"$INFO")
         artist=$(jq -r '.artist' <<<"$INFO")
+
+        label="${title} by ${artist}"
+        [ -z "$artist" ] && label="$title"
+
         sketchybar --set $NAME \
-            label="$title by $artist" \
+            label="$label" \
             drawing=on \
             icon=$($CONFIG_DIR/app_icons.sh "$app") \
             click_script="osascript -e 'tell application \"$app\" to activate'"

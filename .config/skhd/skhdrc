@@ -27,6 +27,7 @@ default < hyper - 0x21 : yabai -m window --focus stack.prev || yabai -m window -
 default < hyper - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 default < hyper - o : brew services restart sketchybar
+default < hyper - m : sketchybar --set music drawing=off
 # default < hyper - a  : yabai -m display --focus recent
 # default < hyper - q : yabai -m window --display recent; yabai -m display --focus recent
 
