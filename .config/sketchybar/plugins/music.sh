@@ -7,7 +7,7 @@ if [ "$SENDER" = "media_change" ]; then
         title=$(jq -r '.title' <<<"$INFO")
         artist=$(jq -r '.artist' <<<"$INFO")
 
-        label="${title} by ${artist}"
+        label="${artist} – ${title}"
         [ -z "$artist" ] && label="$title"
 
         sketchybar --set $NAME \

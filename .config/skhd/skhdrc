@@ -5,12 +5,9 @@
 :: dec @ : yabai -m config normal_window_opacity 0.4
 :: ins @ : yabai -m config normal_window_opacity 0.4 ; sleep 2 ; skhd -k "escape"
 
-lalt - s : set has_window (yabai -m query --windows --space | jq 'any(.app == "Safari")') ; if not $has_window ; osascript -e 'tell application "Safari" to make new document'; end; osascript -e 'tell application "Safari" to activate'
-# lalt - i : set has_window (yabai -m query --windows --space | jq 'any(.app == "iTerm2")') ; if not $has_window ; osascript -e 'tell application "iTerm" to set new_window to (create window with default profile)'; end; osascript -e 'tell application "iTerm" to activate'
-# lalt - i -> : set has_window (yabai -m query --windows --space | jq 'any(.app == "WezTerm")') ; if not $has_window; wezterm cli spawn --new-window ; end; yabai -m window --focus (yabai -m query --windows --space | jq -s 'map(.[] | select(.app == "WezTerm")) | first | .id')
-lalt - i : set has_window (yabai -m query --windows --space | jq 'any(.app == "WezTerm")') ; set is_running (yabai -m query --windows | jq 'any(.app == "WezTerm")') ; if $is_running; and not $has_window; WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window ; end; osascript -e 'tell application "WezTerm" to activate'
-lalt - f : set has_window (yabai -m query --windows --space | jq 'any(.app == "Finder")') ; if not $has_window ; osascript -e 'tell application "Finder" to make new Finder window'; end; osascript -e 'tell application "Finder" to activate'
-
+lalt - s : has_window=$(yabai -m query --windows --space | jq 'any(.app == "Safari")'); if [ "$has_window" = "false" ]; then osascript -e 'tell application "Safari" to make new document'; fi; osascript -e 'tell application "Safari" to activate'
+lalt - i : has_window=$(yabai -m query --windows --space | jq 'any(.app == "WezTerm")'); is_running=$(yabai -m query --windows | jq 'any(.app == "WezTerm")'); if [ "$is_running" = "true" ] && [ "$has_window" = "false" ]; then WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window; fi; osascript -e 'tell application "WezTerm" to activate'
+lalt - f : has_window=$(yabai -m query --windows --space | jq 'any(.app == "Finder")'); if [ "$has_window" = "false" ]; then osascript -e 'tell application "Finder" to make new Finder window'; fi; osascript -e 'tell application "Finder" to activate'
 cmd - space -> : im-select org.sil.ukelele.keyboardlayout.t.keylayout.English-IlyaBirmanTypography 
 
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
@@ -19,10 +16,10 @@ cmd - w -> : sleep 1 && yabai -m window --focus mouse
 # default < hyper - j : yabai -m window --focus south
 # default < hyper - k : yabai -m window --focus north
 # default < hyper - l : yabai -m window --focus east
-default < hyper - h : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "f7"; else; yabai -m window --focus west; end
-default < hyper - j : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "f8"; else; yabai -m window --focus south; end
-default < hyper - k : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "f9"; else; yabai -m window --focus north; end
-default < hyper - l : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; skhd -k "f10"; else; yabai -m window --focus east; end
+default < hyper - h : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f7"; else; yabai -m window --focus west; fi
+default < hyper - j : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f8"; else; yabai -m window --focus south; fi
+default < hyper - k : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f9"; else; yabai -m window --focus north; fi
+default < hyper - l : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f10"; else; yabai -m window --focus east; fi
 default < hyper - 0x21 : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 default < hyper - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
