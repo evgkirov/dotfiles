@@ -1,5 +1,3 @@
-require("helpers.which-key-config").m = { name = "󰍔 Markdown..." }
-
 return {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },

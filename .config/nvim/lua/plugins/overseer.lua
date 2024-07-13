@@ -1,6 +1,3 @@
-require("helpers.which-key-config").r = { name = "󱤵 Run..." }
-require("helpers.which-key-config").d = { name = "󰡨 Docker..." }
-
 return {
     "stevearc/overseer.nvim",
     dependencies = {

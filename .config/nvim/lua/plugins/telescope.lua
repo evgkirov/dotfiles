@@ -1,5 +1,3 @@
-require("helpers.which-key-config").f = { name = "󰍉 Find..." }
-
 local function workspace_symbols_picker(filter) -- luacheck: ignore
     return function()
         require("telescope.builtin").lsp_dynamic_workspace_symbols({

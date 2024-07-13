@@ -5,13 +5,25 @@ return {
         vim.o.timeout = true
         vim.o.timeoutlen = 300
         local which_key = require("which-key")
-        which_key.register(require("helpers.which-key-config"), { prefix = "<leader>" })
-        which_key.register({ g = { p = { name = "󰧑 GPT" } } })
+        which_key.add({
+            { "<leader>c", group = "󰅩 Code..." },
+            { "<leader>d", group = "󰡨 Docker..." },
+            { "<leader>f", group = "󰍉 Find..." },
+            { "<leader>g", group = "󰊢 Git..." },
+            { "<leader>m", group = "󰍔 Markdown..." },
+            { "<leader>n", group = " Terminal..." },
+            { "<leader>r", group = "󱤵 Run..." },
+            { "<leader>t", group = "󰓩 Tabs..." },
+        })
     end,
     opts = {
         icons = {
             breadcrumb = "",
             group = "",
+            rules = false,
+        },
+        disable = {
+            ft = { "toggleterm" },
         },
     },
 }

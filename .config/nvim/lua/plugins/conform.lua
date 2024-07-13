@@ -1,5 +1,3 @@
-require("helpers.which-key-config").c = { name = "󰅩 Code..." }
-
 local slow_format_filetypes = {}
 
 return {

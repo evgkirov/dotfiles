@@ -1,4 +1,3 @@
-require("helpers.which-key-config").c = { name = "󰅩 Code..." }
 -- loosely based on https://raw.githubusercontent.com/josean-dev/dev-environment-files/1bcf8bfd532c1fe549798a0f4a3ab351970de3d3/.config/nvim/lua/josean/plugins/lsp/lspconfig.lua
 
 return {

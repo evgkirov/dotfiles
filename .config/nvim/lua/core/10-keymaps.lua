@@ -1,4 +1,3 @@
-local wkc = require("helpers.which-key-config")
 local keymap = vim.keymap.set
 local opts = { silent = true }
 
@@ -54,8 +53,6 @@ keymap("n", "<leader>X", "<cmd>bufdo bd<cr>", opts)
 
 -- tabs
 
-wkc.t = { name = "󰓩 Tabs..." }
-
 opts.desc = "󰅗 Close tab"
 keymap("n", "<leader>tx", "<cmd>tabclose<cr>", opts)
 
@@ -91,13 +88,17 @@ keymap("n", "<leader>9", "9gt", opts)
 
 -- terminal
 
-wkc.e = { name = " Terminal..." }
-
 opts.desc = "New terminal"
-keymap("n", "<leader>en", "<cmd>terminal<cr>", opts)
+keymap("n", "<leader>nn", "<cmd>terminal<cr>", opts)
 
-opts.desc = "New terminal (horizonal split)"
-keymap("n", "<leader>eh", "<cmd>belowright split | terminal<cr>", opts)
+opts.desc = "New terminal (west)"
+keymap("n", "<leader>nh", "<cmd>aboveleft vsplit | terminal<cr>", opts)
 
-opts.desc = "New terminal (vertical split)"
-keymap("n", "<leader>ev", "<cmd>belowright vsplit | terminal<cr>", opts)
+opts.desc = "New terminal (south)"
+keymap("n", "<leader>nj", "<cmd>belowright split | terminal<cr>", opts)
+
+opts.desc = "New terminal (north)"
+keymap("n", "<leader>nk", "<cmd>aboveleft split | terminal<cr>", opts)
+
+opts.desc = "New terminal (east)"
+keymap("n", "<leader>nl", "<cmd>belowright vsplit | terminal<cr>", opts)
