@@ -25,6 +25,7 @@ return {
                 "cssls@4.8.0",
                 "tsserver",
                 "eslint@4.8.0",
+                "jsonls",
 
                 "basedpyright", -- autocompletions
                 "pylsp", -- refactorings (with rope - see below)
