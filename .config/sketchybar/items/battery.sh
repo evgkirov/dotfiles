@@ -1,5 +1,5 @@
 battery=(
-    background.color=$DATA_BATTERY
+    background.color=$DATA_BATTERY_BG
     script="$PLUGIN_DIR/battery.sh"
     click_script="open -a AlDente.app"
     update_freq=120

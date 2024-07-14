@@ -1,5 +1,5 @@
 session=(
-    background.color=$DATA_SESSION
+    background.color=$DATA_SESSION_BG
     drawing=off
     icon=
     label=0

@@ -1,5 +1,5 @@
 volume=(
-    background.color=$DATA_VOLUME
+    background.color=$DATA_VOLUME_BG
     script="$PLUGIN_DIR/volume.sh"
 )
 

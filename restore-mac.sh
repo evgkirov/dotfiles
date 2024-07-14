@@ -26,11 +26,14 @@ relink .config/karabiner/karabiner.json
 relink .config/nvim
 relink .config/sketchybar
 relink .config/skhd
+relink .config/starship.toml
 relink .config/svim
+relink .config/themes
 relink .config/wezterm
 relink .config/yabai
 relink .ideavimrc
 relink .vimrc
+relink .zshrc
 
 copy "Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application Support/userSettings.json"
-cp -r "Applications/Neovim.app" /Applications
+# cp -r "Applications/Neovim.app" /Applications

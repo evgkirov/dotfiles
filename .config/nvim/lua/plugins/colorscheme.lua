@@ -1,70 +1,26 @@
 -- set theme here
-local current_theme_name = "everforest"
 
-local available_themes = {
-    adwaita = {
-        repo = "Mofiqul/adwaita.nvim",
-        light = "adwaita",
-        dark = "adwaita",
-    },
-    alabaster = {
-        repo = "p00f/alabaster.nvim",
-        light = "alabaster",
-        dark = "alabaster",
-    },
-    catppuccin = { -- great
-        repo = "catppuccin/nvim",
-        light = "catppuccin-latte",
-        dark = "catppuccin-macchiato",
-    },
-    edge = { -- great
-        repo = "sainnhe/edge",
-        light = "edge",
-        dark = "edge",
-    },
-    everforest = { -- great
+local function get_current_theme_config()
+    local themes_dir = vim.fn.expand("$HOME/.config/themes/")
+    local fallback_theme = {
         repo = "sainnhe/everforest",
         light = "everforest",
         dark = "everforest",
-    },
-    fox = { -- good
-        repo = "EdenEast/nightfox.nvim",
-        light = "dawnfox",
-        dark = "nightfox",
-    },
-    github = {
-        repo = "projekt0n/github-nvim-theme",
-        light = "github_light",
-        dark = "github_dark",
-    },
-    gruvbox = { -- great
-        repo = "sainnhe/gruvbox-material",
-        light = "gruvbox-material",
-        dark = "gruvbox-material",
-    },
-    one = {
-        repo = "olimorris/onedarkpro.nvim",
-        light = "onelight",
-        dark = "onedark",
-    },
-    rosepine = { -- good?
-        repo = "rose-pine/neovim",
-        light = "rose-pine",
-        dark = "rose-pine",
-    },
-    tokyonight = {
-        repo = "folke/tokyonight.nvim",
-        light = "tokyonight-day",
-        dark = "tokyonight",
-    },
-    xcode = {
-        repo = "arzg/vim-colors-xcode",
-        light = "xcode",
-        dark = "xcode",
-    },
-}
+    }
+    local f = io.open(themes_dir .. "current")
+    if f == nil then
+        return fallback_theme
+    end
+    local current_theme_name = f:read()
+    f:close()
+    local current_theme = loadfile(themes_dir .. current_theme_name .. "/neovim.lua")
+    if current_theme == nil then
+        return fallback_theme
+    end
+    return current_theme()
+end
 
-local current_theme = available_themes[current_theme_name]
+local theme_config = get_current_theme_config()
 
 local function overrides()
     vim.api.nvim_set_hl(0, "EyelinerPrimary", { bold = true, underline = true })
@@ -76,21 +32,21 @@ end
 local function set_light_mode()
     vim.api.nvim_set_option("background", "light")
     vim.cmd('let ayucolor="light"')
-    vim.cmd("colorscheme " .. current_theme.light)
+    vim.cmd("colorscheme " .. theme_config.light)
     overrides()
 end
 
 local function set_dark_mode()
     vim.api.nvim_set_option("background", "dark")
     vim.cmd('let ayucolor="dark"')
-    vim.cmd("colorscheme " .. current_theme.dark)
+    vim.cmd("colorscheme " .. theme_config.dark)
     overrides()
 end
 
 return {
     "f-person/auto-dark-mode.nvim",
     dependencies = {
-        { current_theme.repo, name = "colorscheme-" .. current_theme_name },
+        theme_config.repo,
     },
     lazy = false,
     priority = 1000,

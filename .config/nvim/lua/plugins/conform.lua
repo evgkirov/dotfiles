@@ -20,6 +20,7 @@ return {
             typescript = { "prettierd", "eslint_d" },
             typescriptreact = { "prettierd", "eslint_d" },
             yaml = { "prettierd" },
+            zsh = { "beautysh" },
         },
         -- https://github.com/stevearc/conform.nvim/blob/master/doc/recipes.md#automatically-run-slow-formatters-async
         format_on_save = function(bufnr)

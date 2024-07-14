@@ -14,6 +14,7 @@ return {
             { "<leader>n", group = " Terminal..." },
             { "<leader>r", group = "󱤵 Run..." },
             { "<leader>t", group = "󰓩 Tabs..." },
+            { "gp", group = "󰧑 GPT..." },
         })
     end,
     opts = {

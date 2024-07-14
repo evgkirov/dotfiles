@@ -1,5 +1,5 @@
 date=(
-    background.color=$DATA_DATE
+    background.color=$DATA_DATE_BG
     icon=󰃭
     script="$PLUGIN_DIR/date.sh"
     click_script="yabai -m space --focus 2 && open -a Calendar.app"
