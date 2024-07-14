@@ -4,9 +4,6 @@
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
 
-# Welcome screen
-# which nerdfetch &> /dev/null || brew install nerdfetch
-# nerdfetch
 
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -87,6 +84,7 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Neovim (btw)
+export EDITOR=nvim
 e() {
   if [ -n "$1" ]
   then
@@ -121,3 +119,28 @@ select_theme() {
 
 # must be at the end
 zinit light zsh-users/zsh-syntax-highlighting
+
+# Welcome screen
+
+# 1. fortune + cowsay
+# which fortune &> /dev/null || brew install fortune
+# which cowsay &> /dev/null || brew install cowsay
+# fortune -s | cowsay
+#
+# 2. cutefetch
+# if [ ! -f $HOME/.local/opt/cutefetch/cutefetch ]; then
+#     git clone https://github.com/cybardev/cutefetch.git $HOME/.local/opt/cutefetch
+#     cd $HOME/.local/opt/cutefetch
+#     git checkout 9ed7cd87a89ab8f0f4b2b51fb8b4dd1ee64e46bf
+#     chmod +x $HOME/.local/opt/cutefetch/cutefetch
+# fi
+# $HOME/.local/opt/cutefetch/cutefetch
+#
+# 3. pfetch
+# which pfetch &> /dev/null || brew install pfetch
+# PF_COL2=0 PF_INFO="ascii title os host uptime pkgs memory shell wm de" pfetch
+# PF_COL2=0 PF_INFO="ascii title os host kernel uptime pkgs memory shell wm de" pfetch
+#
+# 4. fastfetch
+which fastfetch &> /dev/null || brew install fastfetch
+fastfetch

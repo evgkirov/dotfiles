@@ -1,8 +1,6 @@
 tap "daipeihust/tap"
 tap "felixkratz/formulae"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
 brew "act"
@@ -12,6 +10,7 @@ brew "python@3.11"
 brew "awscli"
 brew "bat"
 brew "btop"
+brew "cowsay"
 brew "exiftool"
 brew "eza"
 brew "fastfetch"
@@ -19,6 +18,7 @@ brew "fd"
 brew "unbound"
 brew "tesseract"
 brew "ffmpeg"
+brew "fortune"
 brew "fzf"
 brew "git"
 brew "git-flow"
@@ -27,14 +27,15 @@ brew "hyperfine"
 brew "jq"
 brew "lazydocker"
 brew "lazygit"
+brew "lolcat"
 brew "mas"
 brew "midnight-commander"
 brew "ncdu"
-brew "neofetch"
 brew "neovim"
 brew "nnn"
 brew "node"
 brew "openjdk"
+brew "pfetch"
 brew "pipx"
 brew "pngpaste"
 brew "poppler"
@@ -45,10 +46,9 @@ brew "ripgrep"
 brew "sox"
 brew "speedtest-cli"
 brew "starship"
-brew "virtualenv", link: false
+brew "virtualenv"
 brew "watch"
 brew "wget"
-brew "youtube-dl"
 brew "zoxide"
 brew "daipeihust/tap/im-select"
 brew "felixkratz/formulae/borders"
@@ -61,7 +61,6 @@ cask "aethersx2"
 cask "aldente"
 cask "anki"
 cask "arq"
-cask "betterdisplay"
 cask "blackhole-2ch"
 cask "clipy"
 cask "cyberduck"
@@ -127,18 +126,17 @@ mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Banktivity", id: 1480779512
 mas "Converter", id: 1457309557
-mas "Curve", id: 1219074514
 mas "Dark Reader for Safari", id: 1438243180
 mas "Day One", id: 1055511498
 mas "Disk Speed Test", id: 425264550
 mas "DjVu Reader", id: 733144595
 mas "Documents Translator", id: 1566993561
+mas "GarageBand", id: 682658836
 mas "Hand Mirror", id: 1502839586
 mas "Home Assistant", id: 1099568401
 mas "Keynote", id: 409183694
 mas "LanScan", id: 472226235
 mas "Linearity Curve", id: 1219074514
-mas "Microsoft PowerPoint", id: 462062816
 mas "MindNode", id: 1289197285
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
@@ -150,5 +148,6 @@ mas "Speedtest", id: 1153157709
 mas "Stitcher", id: 1492912652
 mas "Streaks", id: 963034692
 mas "Things", id: 904280696
+mas "TV Remote", id: 1535056536
 mas "Vimari", id: 1480933944
 mas "Xcode", id: 497799835
