@@ -16,14 +16,6 @@ common_settings() {
     yabai -m config window_shadow float
 }
 
-set_space_labels() {
-    echo "Settings labels for spaces"
-    yabai -m space 1 --label web
-    yabai -m space 2 --label mnge
-    yabai -m space 3 --label comm
-    yabai -m space 4 --label dev
-}
-
 signals() {
     yabai -m signal --add event=display_added action="sh ~/.yabairc update_all_spaces"
     yabai -m signal --add event=display_removed action="sh ~/.yabairc update_all_spaces"
@@ -32,7 +24,7 @@ signals() {
     yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
     yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
     yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
-    sudo yabai --load-sa
+    sudo /opt/homebrew/bin/yabai --load-sa
 }
 
 set_space_to_bsp() {
@@ -67,13 +59,13 @@ update_all_spaces() {
     display_count=$(echo $display_list | jq ". | length")
     echo d_count $display_count
     for ((d = 0; d < $display_count; d++)); do
-        display_width=$(echo $display_list | jq ".[$d].frame.w")
+        display_width=$(echo $display_list | jq ".[$d].frame.w" | awk '{printf("%d\n", $0)}')
         space_list=$(echo $display_list | jq ".[$d].spaces")
         space_count=$(echo $space_list | jq ". | length")
         echo s_count $space_count
         for ((s = 0; s < $space_count; s++)); do
             space_number=$(echo $space_list | jq ".[$s]")
-            if [ $display_width -gt 1800 ]; then
+            if [ "$display_width" -gt 1800 ]; then
                 # External monitor
                 set_space_to_bsp $space_number
             else
@@ -86,18 +78,17 @@ update_all_spaces() {
 
 }
 
-if [ $1 = "update_all_spaces" ]; then
+if [ "$1" = "update_all_spaces" ]; then
     update_all_spaces
-elif [ $1 = "set_space_to_bsp" ]; then
-    set_space_to_bsp $2
-elif [ $1 = "set_space_to_webdev" ]; then
-    set_space_to_webdev $2
-elif [ $1 = "set_space_to_stack" ]; then
-    set_space_to_stack $2
+elif [ "$1" = "set_space_to_bsp" ]; then
+    set_space_to_bsp "$2"
+elif [ "$1" = "set_space_to_webdev" ]; then
+    set_space_to_webdev "$2"
+elif [ "$1" = "set_space_to_stack" ]; then
+    set_space_to_stack "$2"
 else
     echo "Loading full Yabai configuration"
     common_settings
-    set_space_labels
     update_all_spaces
     signals
 fi

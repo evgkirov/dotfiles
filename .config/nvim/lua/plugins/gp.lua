@@ -3,6 +3,7 @@ return {
     config = true,
     opts = {
         toggle_target = "popup",
+        openai_api_key = { "cat", vim.fn.expand("~/.local/share/nvim/openai-api-key") },
     },
     keys = {
         { "gpt", "<cmd>GpChatToggle<cr>", desc = "Open GPT chat" },

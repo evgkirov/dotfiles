@@ -74,6 +74,8 @@ config.window_padding = {
     bottom = 0,
 }
 
+config.use_fancy_tab_bar = false
+
 wezterm.on("window-config-reloaded", function(window, pane)
     local overrides = window:get_config_overrides() or {}
     local appearance = window:get_appearance()

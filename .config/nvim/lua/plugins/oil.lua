@@ -6,6 +6,7 @@ end
 
 local function action_open_in_window(direction, select_target, float)
     return function()
+        vim.cmd.write()
         local oil = require("oil")
         local dir = oil.get_current_dir()
         local entry = oil.get_cursor_entry()

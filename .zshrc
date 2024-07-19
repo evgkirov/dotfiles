@@ -100,6 +100,7 @@ e() {
     nvim
   fi
 }
+alias ei="cdi && e"
 
 # Other aliases
 alias web="docker compose run --rm web"
@@ -123,10 +124,10 @@ zinit light zsh-users/zsh-syntax-highlighting
 # Welcome screen
 
 # 1. fortune + cowsay
-# which fortune &> /dev/null || brew install fortune
-# which cowsay &> /dev/null || brew install cowsay
-# fortune -s | cowsay
-#
+which fortune &> /dev/null || brew install fortune
+which cowsay &> /dev/null || brew install cowsay
+fortune -s | cowsay
+
 # 2. cutefetch
 # if [ ! -f $HOME/.local/opt/cutefetch/cutefetch ]; then
 #     git clone https://github.com/cybardev/cutefetch.git $HOME/.local/opt/cutefetch
@@ -142,5 +143,5 @@ zinit light zsh-users/zsh-syntax-highlighting
 # PF_COL2=0 PF_INFO="ascii title os host kernel uptime pkgs memory shell wm de" pfetch
 #
 # 4. fastfetch
-which fastfetch &> /dev/null || brew install fastfetch
-fastfetch
+# which fastfetch &> /dev/null || brew install fastfetch
+# fastfetch
