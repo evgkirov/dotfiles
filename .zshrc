@@ -54,6 +54,10 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 zinit light zsh-users/zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=247"
 
+# GitHub
+eval "$(gh copilot alias -- zsh)"
+alias \?=ghcs
+
 # Zoxide
 which zoxide &>/dev/null || brew install zoxide
 eval "$(zoxide init --cmd cd zsh)"
