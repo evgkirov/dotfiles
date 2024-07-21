@@ -11,6 +11,28 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 source "${ZINIT_HOME}/zinit.zsh"
 
+# Change cursor shape for different vi modes.
+# https://unix.stackexchange.com/a/614203
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[2 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[6 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[6 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
 # Prompt
 which starship &>/dev/null || brew install starship
 eval "$(starship init zsh)"
@@ -35,6 +57,7 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=247"
 # Zoxide
 which zoxide &>/dev/null || brew install zoxide
 eval "$(zoxide init --cmd cd zsh)"
+alias ..="cd .."
 
 # Eza
 which eza &>/dev/null || brew install eza
@@ -52,23 +75,19 @@ which fzf &>/dev/null || brew install fzf
 eval "$(fzf --zsh)"
 CURRENT_THEME=$(cat $HOME/.config/themes/current)
 source "$HOME/.config/themes/$CURRENT_THEME/fzf.sh"
-# export FZF_DEFAULT_OPTS=" \
-#  --color=bg:0,fg:7,hl:3\
-#  --color=bg+:8,fg+:15,hl+:11\
-#  --color=info:3,border:3,prompt:4,query:15\
-#  --color=pointer:0,marker:9,spinner:9,header:1\
-#  --layout=reverse"
 
 # Keybindings
-bindkey -e  # C-a, C-e
+# bindkey -e  # C-a, C-e
+bindkey -v
+bindkey -M viins 'jk' vi-cmd-mode
 # bindkey '^p' history-search-backward
 # bindkey '^n' history-search-forward
-autoload -U up-line-or-beginning-search
-autoload -U down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
+# autoload -U up-line-or-beginning-search
+# autoload -U down-line-or-beginning-search
+# zle -N up-line-or-beginning-search
+# zle -N down-line-or-beginning-search
+# bindkey "^[[A" up-line-or-beginning-search # Up
+# bindkey "^[[B" down-line-or-beginning-search # Down
 
 # History
 HISTSIZE=10000
@@ -105,6 +124,16 @@ alias ei="cdi && e"
 # Other aliases
 alias web="docker compose run --rm web"
 alias af1="ssh -t dokku@af1"
+alias yabai_post_update='echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai'
+function ql() {
+    if [[ "$1" == '-v' ]]; then
+    shift
+        qlmanage -p -d 4 "$@"  # -d : debug level (1-4)
+    else
+        qlmanage -p "$@" &>/dev/null  # silence
+    fi
+}
+
 
 # Theming
 select_theme() {

@@ -27,8 +27,8 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = "*",
     callback = function(args)
         opts.desc = nil
-        vim.api.nvim_buf_set_keymap(args.buf, "i", "jk", "<esc>", opts)
-        vim.api.nvim_buf_set_keymap(args.buf, "t", "jk", "<C-\\><C-n>", opts)
+        vim.api.nvim_buf_set_keymap(args.buf, "i", "kj", "<esc>", opts)
+        vim.api.nvim_buf_set_keymap(args.buf, "t", "kj", "<C-\\><C-n>", opts)
     end,
 })
 
