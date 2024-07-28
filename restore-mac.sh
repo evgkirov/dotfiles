@@ -22,6 +22,7 @@ function copy {
 # brew bundle
 
 relink .config/borders
+relink .config/fastfetch
 relink .config/karabiner/karabiner.json
 relink .config/nvim
 relink .config/sketchybar
@@ -35,5 +36,5 @@ relink .ideavimrc
 relink .vimrc
 relink .zshrc
 
-copy "Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application Support/userSettings.json"
+# copy "Library/Containers/net.televator.Vimari.SafariExtension/Data/Library/Application Support/userSettings.json"
 # cp -r "Applications/Neovim.app" /Applications
