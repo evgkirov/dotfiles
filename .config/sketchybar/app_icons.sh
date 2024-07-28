@@ -57,6 +57,7 @@ get_app_icon() {
     "Numbers") echo 󰄨 ;;
     "OBS Studio") echo  ;;
     "Obsidian") echo 󰇈 ;;
+    "OrbStack") echo 󰡨 ;;
     "Pages") echo 󰏪 ;;
     "Phanpy") echo 󰫑 ;;
     "Photos") echo  ;;
@@ -69,6 +70,7 @@ get_app_icon() {
     "PyCharm") echo 󰌠 ;;
     "QuickTime Player") echo  ;;
     "Rakuten Viber") echo 󰖣 ;;
+    "Raycast") echo 󰍉 ;;
     "Reminders") echo 󰝖 ;;
     "Rocket.Chat") echo 󱓞 ;;
     "Safari") echo 󰀹 ;;
@@ -87,6 +89,7 @@ get_app_icon() {
     "Tower") echo 󰴾 ;;
     "Transmission") echo 󰇚 ;;
     "Twitter") echo 󰕄 ;;
+    "Ukelele") echo  ;;
     "Upwork") echo 󰰨 ;;
     "Weather") echo 󰖕 ;;
     "WezTerm") echo 󰞷 ;;
