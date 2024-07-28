@@ -38,5 +38,6 @@ return {
         -- { "<leader>uh", "<cmd>Gitsigns undo_stage_hunk<cr>", desc = "Unstage Hunk" },
         { "<leader>gr", "<cmd>Gitsigns reset_hunk<cr>", desc = "Reset hunk" },
         { "<leader>gb", "<cmd>Gitsigns blame_line<cr>", desc = "Blame" },
+        { "<leader>gh", "<cmd>!gh browse<cr>", desc = "Browse on GitHub" },
     },
 }
