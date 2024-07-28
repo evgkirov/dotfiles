@@ -3,7 +3,7 @@
 # Essentials
 export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
-
+export PATH="$HOME/.local/bin:$PATH"
 
 # Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -106,6 +106,69 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
+# Python
+venv_create() {
+    venv_deactivate
+    if [ -f "requirements.txt" ]; then
+        rm -rf .venv
+        python3 -m venv .venv
+        source .venv/bin/activate
+        pip install --upgrade pip
+        pip install -r requirements.txt
+    elif [ -f "pyproject.toml" ]; then
+        poetry install
+    elif [ -f "agbackend/pyproject.toml" ]; then
+        poetry -C agbackend install
+    fi
+}
+
+venv_activate() {
+    venv_deactivate
+    if [ -f ".venv/bin/activate" ]; then
+        source .venv/bin/activate
+    elif [ -f "pyproject.toml" ]; then
+        source $(poetry env info --path)/bin/activate
+    elif [ -f "agbackend/pyproject.toml" ]; then
+        source $(poetry -C agbackend env info --path)/bin/activate
+    fi
+}
+
+venv_deactivate() {
+    deactivate 2>/dev/null || true
+}
+
+venv_upgrade() {
+    venv_activate
+    if [ -f "requirements.txt" ]; then
+        pip install --upgrade pip
+        pip install --upgrade -r requirements.txt
+    elif [ -f "pyproject.toml" ]; then
+        poetry update
+    elif [ -f "agbackend/pyproject.toml" ]; then
+        poetry -C agbackend update
+    fi
+}
+
+venv_sync() {
+    venv_activate
+    if [ -f "requirements.txt" ]; then
+        pip install -r requirements.txt
+    elif [ -f "pyproject.toml" ]; then
+        poetry install --sync
+    elif [ -f "agbackend/pyproject.toml" ]; then
+        poetry -C agbackend install --sync
+    fi
+}
+
+venv_activate
+
+# cd (uzing zoxide and python venv)
+cd() {
+    __zoxide_z $1
+    venv_activate
+}
+builtin zle -N __zoxide_z_complete_helper
+
 # Neovim (btw)
 export EDITOR=nvim
 e() {
@@ -115,8 +178,8 @@ e() {
     then
       nvim $1
     else
-      eval "$(zoxide init zsh)"
-      z $1
+      __zoxide_z $1
+      venv_activate
       nvim
     fi
   else
@@ -155,6 +218,7 @@ select_theme() {
 zinit light zsh-users/zsh-syntax-highlighting
 
 # Welcome screen
+clear
 
 # 1. fortune + cowsay
 which fortune &> /dev/null || brew install fortune

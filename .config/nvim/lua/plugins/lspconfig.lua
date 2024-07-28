@@ -14,7 +14,6 @@ return {
 
         local lspconfig = require("lspconfig")
         local cmp_nvim_lsp = require("cmp_nvim_lsp")
-        local python_auto_venv = require("helpers.python-auto-venv")
 
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
@@ -96,27 +95,10 @@ return {
         })
 
         -- python
-        python_auto_venv.create_venv()
-        local python_path = python_auto_venv.python_path()
-        local lsp_restarted = false
 
         lspconfig.basedpyright.setup({
             capabilities = capabilities,
             on_attach = on_attach,
-            on_init = function(client)
-                -- Ugly hack because pyright/basedpyright for some reason doesn't pick up the python path
-                vim.defer_fn(function()
-                    local attached_buffers = vim.lsp.get_buffers_by_client_id(client.id)
-                    vim.cmd("split")
-                    vim.cmd("b " .. attached_buffers[1])
-                    vim.cmd("PyrightSetPythonPath " .. python_path)
-                    vim.cmd("q")
-                    if not lsp_restarted then
-                        lsp_restarted = true
-                        vim.cmd("LspRestart basedpyright")
-                    end
-                end, 100)
-            end,
             settings = {
                 basedpyright = {
                     analysis = {
@@ -124,9 +106,6 @@ return {
                         -- typeCheckingMode = "off",
                         diagnosticMode = "openFilesOnly",
                     },
-                },
-                python = {
-                    pythonPath = python_path,
                 },
             },
         })
