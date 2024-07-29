@@ -69,7 +69,6 @@ cask "blackhole-2ch"
 cask "clipy"
 cask "cyberduck"
 cask "daisydisk"
-cask "dash"
 cask "dictionaries"
 cask "discord"
 cask "fliqlo"
@@ -83,7 +82,6 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-victor-mono-nerd-font"
 cask "fontsmoothingadjuster"
 cask "google-chrome"
-cask "handbrake"
 cask "iina"
 cask "imageoptim"
 cask "imazing"
@@ -111,7 +109,6 @@ cask "setapp"
 cask "sf-symbols"
 cask "slack"
 cask "spotify"
-cask "tableplus"
 cask "telegram"
 cask "telegram-desktop"
 cask "the-unarchiver"
@@ -132,17 +129,14 @@ mas "Dark Reader for Safari", id: 1438243180
 mas "Disk Speed Test", id: 425264550
 mas "DjVu Reader", id: 733144595
 mas "Documents Translator", id: 1566993561
-mas "Hand Mirror", id: 1502839586
 mas "Home Assistant", id: 1099568401
 mas "Keynote", id: 409183694
 mas "LanScan", id: 472226235
 mas "Linearity Curve", id: 1219074514
-mas "MindNode", id: 1289197285
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
 mas "rcmd", id: 1596283165
-mas "Session", id: 1521432881
 mas "Shortery", id: 1594183810
 mas "Speedtest", id: 1153157709
 mas "Stitcher", id: 1492912652
