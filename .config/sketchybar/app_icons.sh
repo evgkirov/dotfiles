@@ -75,6 +75,7 @@ get_app_icon() {
     "Rocket.Chat") echo 󱓞 ;;
     "Safari") echo 󰀹 ;;
     "Session") echo 󰁫 ;;
+    "Setapp") echo 󰣏 ;;
     "Shortcuts") echo  ;;
     "Slack") echo 󰒱 ;;
     "Spotify") echo 󰓇 ;;
