@@ -35,6 +35,11 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # Prompt
 which starship &>/dev/null || brew install starship
+function set_win_title(){
+    title=$PWD:t
+    echo -ne "\033]0;${PWD/#$HOME/~}\007"
+}
+precmd_functions+=(set_win_title)
 eval "$(starship init zsh)"
 
 # Completions
@@ -167,7 +172,6 @@ cd() {
     __zoxide_z $1
     venv_activate
 }
-builtin zle -N __zoxide_z_complete_helper
 
 # Neovim (btw)
 export EDITOR=nvim
@@ -192,6 +196,7 @@ alias ei="cdi && e"
 alias web="docker compose run --rm web"
 alias af1="ssh -t dokku@af1"
 alias yabai_post_update='echo "$(whoami) ALL=(root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | cut -d " " -f 1) $(which yabai) --load-sa" | sudo tee /private/etc/sudoers.d/yabai'
+alias restart_sound="sudo ps auxc | grep audio | awk {'print $2'} | xargs sudo kill"
 function ql() {
     if [[ "$1" == '-v' ]]; then
     shift
@@ -200,7 +205,6 @@ function ql() {
         qlmanage -p "$@" &>/dev/null  # silence
     fi
 }
-
 
 # Theming
 select_theme() {

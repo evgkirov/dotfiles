@@ -22,8 +22,8 @@ bar=(
     blur_radius=0
     color=$BAR_BG
     height=38
-    padding_left=8
-    padding_right=8
+    padding_left=4
+    padding_right=4
     position=top
 )
 

@@ -53,28 +53,28 @@ end
 -- config.font_size = 13.0
 
 -- might work for Dell 2560x....
-config.font_size = 12.0
+config.font_size = 12
 
 config.font = wezterm.font({
     family = "JetBrainsMono Nerd Font",
-    stretch = "ExtraExpanded",
-    weight = "Regular",
 })
--- config.line_height = 1.01
 -- config.cell_width = 0.9
--- config.freetype_load_target = "Light"
--- config.freetype_load_flags = "FORCE_AUTOHINT"
+config.freetype_load_target = "Light"
+-- config.freetype_load_flags = "NO_HINTING|MONOCHROME"
 
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
+local x_pad = 5
+local y_pad = 8
 config.window_padding = {
-    left = 0,
-    right = 0,
-    top = 0,
-    bottom = 0,
+    left = x_pad,
+    right = x_pad,
+    top = y_pad,
+    bottom = y_pad,
 }
 
 config.use_fancy_tab_bar = false
+config.tab_max_width = 48
 
 wezterm.on("window-config-reloaded", function(window, pane)
     local overrides = window:get_config_overrides() or {}

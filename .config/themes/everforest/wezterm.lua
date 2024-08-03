@@ -6,6 +6,7 @@ return {
                 cursor_bg = "#5C6A72",
                 cursor_fg = "#FDF6E3",
                 cursor_border = "#5C6A72",
+                background = "#FFFBEF",
             },
         },
     },
@@ -18,5 +19,5 @@ return {
                 cursor_border = "#9DA9A0",
             },
         },
-    }
+    },
 }

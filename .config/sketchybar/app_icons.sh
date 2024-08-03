@@ -86,6 +86,7 @@ get_app_icon() {
     "TablePlus") echo 󰟆 ;;
     "Telegram Desktop") echo  ;;
     "Telegram") echo  ;;
+    "Timing") echo 󰥔 ;;
     "Things") echo 󰄲 ;;
     "Tower") echo 󰴾 ;;
     "Transmission") echo 󰇚 ;;
