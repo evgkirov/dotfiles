@@ -1,4 +1,4 @@
-:: default : yabai -m config normal_window_opacity 0.8
+:: default : yabai -m config normal_window_opacity 0.9
 :: swap @ : yabai -m config normal_window_opacity 0.4
 :: warp @ : yabai -m config normal_window_opacity 0.4
 :: inc @ : yabai -m config normal_window_opacity 0.4
