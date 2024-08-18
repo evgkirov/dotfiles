@@ -189,6 +189,7 @@ e() {
   else
     nvim
   fi
+  echo "Теперь питание компьютера можно отключить"
 }
 alias ei="cdi && e"
 
@@ -225,9 +226,9 @@ zinit light zsh-users/zsh-syntax-highlighting
 clear
 
 # 1. fortune + cowsay
-which fortune &> /dev/null || brew install fortune
-which cowsay &> /dev/null || brew install cowsay
-fortune -s | cowsay
+# which fortune &> /dev/null || brew install fortune
+# which cowsay &> /dev/null || brew install cowsay
+# fortune -s | cowsay
 
 # 2. cutefetch
 # if [ ! -f $HOME/.local/opt/cutefetch/cutefetch ]; then
@@ -246,3 +247,10 @@ fortune -s | cowsay
 # 4. fastfetch
 # which fastfetch &> /dev/null || brew install fastfetch
 # fastfetch
+#
+# 5. Pitanie
+# wezterm imgcat $HOME/Projects/dotfiles/pitanie.jpg
+#
+# 6. Windows XP
+echo "Microsoft Windows XP [Version 5.1.2600]"
+echo "(C) Copyright 1985-2001 Microsoft Corp."
