@@ -1,9 +1,9 @@
-:: default : yabai -m config normal_window_opacity 0.9
-:: swap @ : yabai -m config normal_window_opacity 0.4
-:: warp @ : yabai -m config normal_window_opacity 0.4
-:: inc @ : yabai -m config normal_window_opacity 0.4
-:: dec @ : yabai -m config normal_window_opacity 0.4
-:: ins @ : yabai -m config normal_window_opacity 0.4 ; sleep 2 ; skhd -k "escape"
+:: default : yabai -m window current --opacity 0.0
+:: swap @ : yabai -m window current --opacity 0.2
+:: warp @ : yabai -m window current --opacity 0.2
+:: inc @ : yabai -m window current --opacity 0.2
+:: dec @ : yabai -m window current --opacity 0.2
+:: ins @ : yabai -m window current --opacity 0.2 ; sleep 2 ; skhd -k "escape"
 
 lalt - s : has_window=$(yabai -m query --windows --space | jq 'any(.app == "Safari")'); if [ "$has_window" = "false" ]; then osascript -e 'tell application "Safari" to make new document'; fi; osascript -e 'tell application "Safari" to activate'
 lalt - i : has_window=$(yabai -m query --windows --space | jq 'any(.app == "WezTerm")'); is_running=$(yabai -m query --windows | jq 'any(.app == "WezTerm")'); if [ "$is_running" = "true" ] && [ "$has_window" = "false" ]; then WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window; fi; osascript -e 'tell application "WezTerm" to activate'
@@ -11,22 +11,21 @@ lalt - f : has_window=$(yabai -m query --windows --space | jq 'any(.app == "Find
 cmd - space -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
 
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
+cmd - q -> : sleep 1 && yabai -m window --focus mouse
+f18 : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "escape"; skhd -k "s"; else; skhd -k "alt-f18"; fi
+f13 : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR; sketchybar --set keyboard label=EN
+f16 : im-select com.evgkirov.keyboardlayout.custom.keylayout.RUSR; sketchybar --set keyboard label=RU
 
-# default < hyper - h : yabai -m window --focus west
-# default < hyper - j : yabai -m window --focus south
-# default < hyper - k : yabai -m window --focus north
-# default < hyper - l : yabai -m window --focus east
-default < hyper - h : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f7"; else; yabai -m window --focus west; fi
+
+default < hyper - h : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f7"; else; yabai -m window --focus west || yabai -m display --focus 2; fi
 default < hyper - j : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f8"; else; yabai -m window --focus south; fi
 default < hyper - k : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f9"; else; yabai -m window --focus north; fi
-default < hyper - l : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f10"; else; yabai -m window --focus east; fi
+default < hyper - l : is_nvim=$(yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if $is_nvim; then skhd -k "f10"; else; yabai -m window --focus east || yabai -m display --focus 1; fi
 default < hyper - 0x21 : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 default < hyper - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 default < hyper - o : brew services restart sketchybar
 default < hyper - m : sketchybar --set music drawing=off
-# default < hyper - a  : yabai -m display --focus recent
-# default < hyper - q : yabai -m window --display recent; yabai -m display --focus recent
 
 hyper - s ; swap
 swap < escape ; default
@@ -41,14 +40,14 @@ swap < hyper - l : yabai -m window --swap east ; skhd -k "escape"
 
 hyper - w ; warp
 warp < escape ; default
-warp < h : yabai -m window --warp west ; skhd -k "escape"
+warp < h : yabai -m window --warp west || yabai -m window --display 2 ; skhd -k "escape"
 warp < j : yabai -m window --warp south ; skhd -k "escape"
 warp < k : yabai -m window --warp north ; skhd -k "escape"
-warp < l : yabai -m window --warp east ; skhd -k "escape"
-warp < hyper - h : yabai -m window --warp west ; skhd -k "escape"
+warp < l : yabai -m window --warp east || yabai -m window --display 1; skhd -k "escape"
+warp < hyper - h : yabai -m window --warp west || yabai -m window --display 2 ; skhd -k "escape"
 warp < hyper - j : yabai -m window --warp south ; skhd -k "escape"
 warp < hyper - k : yabai -m window --warp north ; skhd -k "escape"
-warp < hyper - l : yabai -m window --warp east ; skhd -k "escape"
+warp < hyper - l : yabai -m window --warp east || yabai -m window --display 1 ; skhd -k "escape"
 
 hyper - e ; inc
 inc < escape ; default
