@@ -17,6 +17,7 @@ return {
                 cursor_bg = "#9DA9A0",
                 cursor_fg = "#2D353B",
                 cursor_border = "#9DA9A0",
+                background = "#252E34",
             },
         },
     },

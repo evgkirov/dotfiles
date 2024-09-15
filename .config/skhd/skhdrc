@@ -1,9 +1,9 @@
-:: default : yabai -m window current --opacity 0.0
-:: swap @ : yabai -m window current --opacity 0.2
-:: warp @ : yabai -m window current --opacity 0.2
-:: inc @ : yabai -m window current --opacity 0.2
-:: dec @ : yabai -m window current --opacity 0.2
-:: ins @ : yabai -m window current --opacity 0.2 ; sleep 2 ; skhd -k "escape"
+:: default : yabai -m config normal_window_opacity 1.0
+:: swap @ : yabai -m config normal_window_opacity 0.4
+:: warp @ : yabai -m config normal_window_opacity 0.4
+:: inc @ : yabai -m config normal_window_opacity 0.4
+:: dec @ : yabai -m config normal_window_opacity 0.4
+:: ins @ : yabai -m config normal_window_opacity 0.4 ; sleep 2 ; skhd -k "escape"
 
 lalt - s : has_window=$(yabai -m query --windows --space | jq 'any(.app == "Safari")'); if [ "$has_window" = "false" ]; then osascript -e 'tell application "Safari" to make new document'; fi; osascript -e 'tell application "Safari" to activate'
 lalt - i : has_window=$(yabai -m query --windows --space | jq 'any(.app == "WezTerm")'); is_running=$(yabai -m query --windows | jq 'any(.app == "WezTerm")'); if [ "$is_running" = "true" ] && [ "$has_window" = "false" ]; then WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window; fi; osascript -e 'tell application "WezTerm" to activate'

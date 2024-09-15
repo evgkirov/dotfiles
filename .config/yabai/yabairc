@@ -10,10 +10,10 @@ common_settings() {
     yabai -m config window_placement second_child
     yabai -m config window_opacity on
     yabai -m config active_window_opacity 1.0
-    yabai -m config normal_window_opacity 0.8
+    yabai -m config normal_window_opacity 1.0
     yabai -m config window_opacity_duration 0.1
     # yabai -m config window_animation_duration 0.2
-    yabai -m config window_shadow float
+    yabai -m config window_shadow on
 }
 
 signals() {
@@ -24,7 +24,7 @@ signals() {
     yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
     yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
     # https://github.com/koekeishiya/yabai/issues/1916
-    yabai -m signal --add event=window_focused action="yabai -m window recent --opacity 0.8; yabai -m window --opacity 0.0"
+    # yabai -m signal --add event=window_focused action="yabai -m window recent --opacity 0.8; yabai -m window --opacity 0.0"
     yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
     sudo /opt/homebrew/bin/yabai --load-sa
 }
@@ -39,12 +39,16 @@ set_space_to_bsp() {
 set_space_to_webdev() {
     set_space_to_bsp $1
     echo "Setting space $1 to webdev layout"
-    wezterm_id=$(yabai -m query --windows --space $1 | jq '.[] | select(.app == "WezTerm") | .id')
+    browser_id=$(yabai -m query --windows --space $1 | jq '.[] | select(.app == "Safari") | .id')
+    nvim_id=$(yabai -m query --windows --space $1 | jq '.[] | select(.title|endswith("NVIM")) | .id')
+    if [ -z "$nvim_id" ]; then
+        nvim_id="first"
+    fi
     yabai -m space $1 --balance
-    yabai -m window $wezterm_id --swap first
-    yabai -m window $wezterm_id --focus
-    yabai -m window $wezterm_id --ratio abs:0.75
-    yabai -m window $wezterm_id --focus
+    yabai -m window $browser_id --swap last
+    yabai -m window $nvim_id --focus
+    yabai -m window $nvim_id --ratio abs:0.80
+    yabai -m window $browser_id --ratio abs:0.75
 }
 
 set_space_to_stack() {
