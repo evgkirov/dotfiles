@@ -23,7 +23,7 @@ return {
 
                 "html@4.8.0",
                 "cssls@4.8.0",
-                "tsserver",
+                "ts_ls",
                 "eslint@4.8.0",
                 "jsonls",
 
