@@ -37,12 +37,12 @@ return {
         mason_tool_installer.setup({
             ensure_installed = {
                 "black",
+                "djlint",
+                "eslint_d",
                 "isort",
                 "prettierd",
                 "shfmt",
                 "stylua",
-                "eslint_d",
-                -- "pylint",
             },
         })
 

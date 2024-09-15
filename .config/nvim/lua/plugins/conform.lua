@@ -9,6 +9,7 @@ return {
             css = { "prettierd" },
             graphql = { "prettierd" },
             html = { "prettierd" },
+            htmldjango = { "djlint" },
             javascript = { "prettierd", "eslint_d" },
             javascriptreact = { "prettierd", "eslint_d" },
             json = { "prettierd" },
