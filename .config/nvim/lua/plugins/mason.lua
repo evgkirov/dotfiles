@@ -21,10 +21,10 @@ return {
 
                 "lua_ls",
 
-                "html@4.8.0",
-                "cssls@4.8.0",
+                "html",
+                "cssls",
                 "ts_ls",
-                "eslint@4.8.0",
+                "eslint",
                 "jsonls",
 
                 "basedpyright", -- autocompletions
