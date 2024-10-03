@@ -129,10 +129,10 @@ return {
         telescope.load_extension("fzf")
     end,
     keys = {
-        { "<Tab>", "<cmd>Telescope buffers sort_lastused=true<cr>", desc = "Buffers" },
+        { "<leader><space>", "<cmd>Telescope buffers sort_lastused=true<cr>", desc = "Buffers" },
         { "<F1>", "<cmd>Telescope help_tags<cr>", desc = "Help" },
         { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
-        -- { "<leader>fq", "<cmd>Telescope quickfix<cr>", desc = "Quickfix" },
+        { "<leader>fq", "<cmd>Telescope quickfix<cr>", desc = "Quickfix" },
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
         { "<leader>f*", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
         { "<leader>fs", "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", desc = "Workspace symbols" },

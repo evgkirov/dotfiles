@@ -32,6 +32,9 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
     end,
 })
 
+keymap("n", "[q", "<cmd>cprev<CR>", opts)
+keymap("n", "]q", "<cmd>cnext<CR>", opts)
+
 -- splits
 
 -- wkc.s = { name = "󰝘 Splits..." }
