@@ -148,9 +148,9 @@ venv_upgrade() {
         pip install --upgrade pip
         pip install --upgrade -r requirements.txt
     elif [ -f "pyproject.toml" ]; then
-        poetry update
+        poetry install --sync
     elif [ -f "agbackend/pyproject.toml" ]; then
-        poetry -C agbackend update
+        poetry -C agbackend install --sync
     fi
 }
 
@@ -189,7 +189,6 @@ e() {
   else
     nvim
   fi
-  echo "Теперь питание компьютера можно отключить"
 }
 alias ei="cdi && e"
 
