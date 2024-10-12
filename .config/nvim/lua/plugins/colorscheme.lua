@@ -29,6 +29,11 @@ local function overrides()
     vim.api.nvim_set_hl(0, "AvanteTitle", { link = "lualine_a_command" })
     vim.api.nvim_set_hl(0, "AvanteSubtitle", { link = "lualine_a_replace" })
     vim.api.nvim_set_hl(0, "AvanteThirdTitle", { link = "lualine_a_insert" })
+    vim.api.nvim_set_hl(0, "AvanteConflictCurrent", { link = "DiffDelete" })
+    vim.api.nvim_set_hl(0, "AvanteConflictCurrentLabel", { link = "lualine_a_insert" })
+    vim.api.nvim_set_hl(0, "AvanteInlineHint", { link = "AvanteConflictCurrentLabel" })
+    vim.api.nvim_set_hl(0, "AvanteConflictIncoming", { link = "DiffAdd" })
+    vim.api.nvim_set_hl(0, "AvanteConflictIncomingLabel", { link = "lualine_a_insert" })
 end
 
 local function set_light_mode()
