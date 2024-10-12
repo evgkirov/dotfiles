@@ -26,7 +26,9 @@ local function overrides()
     vim.api.nvim_set_hl(0, "EyelinerPrimary", { bold = true, underline = true })
     vim.api.nvim_set_hl(0, "EyelinerSecondary", { underline = true })
     vim.api.nvim_set_hl(0, "OverseerTaskBorder", { link = "VertSplit" })
-    -- vim.api.nvim_set_hl(0, "GlanceListNormal", { link = "TroubleSource" })
+    vim.api.nvim_set_hl(0, "AvanteTitle", { link = "lualine_a_command" })
+    vim.api.nvim_set_hl(0, "AvanteSubtitle", { link = "lualine_a_replace" })
+    vim.api.nvim_set_hl(0, "AvanteThirdTitle", { link = "lualine_a_insert" })
 end
 
 local function set_light_mode()

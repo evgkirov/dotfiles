@@ -24,11 +24,8 @@ return {
     event = "VeryLazy",
     config = true,
     opts = {
-        --[[ options = {
-            disabled_filetypes = { "NvimTree" },
-            globalstatus = true,
-        }, ]]
         options = {
+            disabled_filetypes = { "Avante", "AvanteInput" },
             section_separators = { left = "", right = "" },
             component_separators = { left = "", right = "" },
         },
