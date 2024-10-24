@@ -5,9 +5,9 @@
 :: dec @ : yabai -m config normal_window_opacity 0.4
 :: ins @ : yabai -m config normal_window_opacity 0.4 ; sleep 2 ; skhd -k "escape"
 
-lalt - s : has_window=$(yabai -m query --windows --space | jq 'any(.app == "Safari")'); if [ "$has_window" = "false" ]; then osascript -e 'tell application "Safari" to make new document'; fi; osascript -e 'tell application "Safari" to activate'
-lalt - i : has_window=$(yabai -m query --windows --space | jq 'any(.app == "WezTerm")'); is_running=$(yabai -m query --windows | jq 'any(.app == "WezTerm")'); if [ "$is_running" = "true" ] && [ "$has_window" = "false" ]; then WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window; fi; osascript -e 'tell application "WezTerm" to activate'
-lalt - f : has_window=$(yabai -m query --windows --space | jq 'any(.app == "Finder")'); if [ "$has_window" = "false" ]; then osascript -e 'tell application "Finder" to make new Finder window'; fi; osascript -e 'tell application "Finder" to activate'
+# lalt - s : has_window=$(yabai -m query --windows --space | jq 'any(.app == "Safari")'); if [ "$has_window" = "false" ]; then osascript -e 'tell application "Safari" to make new document'; fi; osascript -e 'tell application "Safari" to activate'
+# lalt - i : has_window=$(yabai -m query --windows --space | jq 'any(.app == "WezTerm")'); is_running=$(yabai -m query --windows | jq 'any(.app == "WezTerm")'); if [ "$is_running" = "true" ] && [ "$has_window" = "false" ]; then WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window; fi; osascript -e 'tell application "WezTerm" to activate'
+# lalt - f : has_window=$(yabai -m query --windows --space | jq 'any(.app == "Finder")'); if [ "$has_window" = "false" ]; then osascript -e 'tell application "Finder" to make new Finder window'; fi; osascript -e 'tell application "Finder" to activate'
 cmd - space -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
 
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
