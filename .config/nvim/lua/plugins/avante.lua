@@ -6,8 +6,11 @@ return {
     lazy = false,
     -- version = false, -- set this if you want to always pull the latest change
     opts = {
-        provider = "openai",
-        auto_suggestions_provider = "openai",
+        provider = "claude",
+        auto_suggestions_provider = "claude",
+        claude = {
+            api_key_name = "cmd:cat " .. vim.fn.expand("~/.local/share/nvim/claude-api-key"),
+        },
         openai = {
             api_key_name = "cmd:cat " .. vim.fn.expand("~/.local/share/nvim/openai-api-key"),
         },
@@ -15,7 +18,7 @@ return {
             auto_suggestions = false,
         },
         hints = {
-            -- enabled = false,
+            enabled = false,
         },
         windows = {
             sidebar_header = {
@@ -51,13 +54,5 @@ return {
         --         },
         --     },
         -- },
-        {
-            -- Make sure to set this up properly if you have lazy=true
-            "MeanderingProgrammer/render-markdown.nvim",
-            opts = {
-                file_types = { "markdown", "Avante" },
-            },
-            ft = { "markdown", "Avante" },
-        },
     },
 }

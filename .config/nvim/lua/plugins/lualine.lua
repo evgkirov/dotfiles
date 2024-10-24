@@ -18,6 +18,18 @@ local custom_oil_extension = {
     filetypes = { "oil" },
 }
 
+local custom_avante_extension = {
+    sections = {
+        lualine_a = { "mode" },
+        lualine_x = { "filetype" },
+    },
+    inactive_sections = {
+        lualine_a = {},
+        lualine_x = { "filetype" },
+    },
+    filetypes = { "Avante", "AvanteInput" },
+}
+
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -25,7 +37,7 @@ return {
     config = true,
     opts = {
         options = {
-            disabled_filetypes = { "Avante", "AvanteInput" },
+            -- disabled_filetypes = { "Avante", "AvanteInput" },
             section_separators = { left = "", right = "" },
             component_separators = { left = "", right = "" },
         },
@@ -51,6 +63,7 @@ return {
             "lazy",
             "mason",
             custom_oil_extension,
+            custom_avante_extension,
             -- "oil",
             "overseer",
             "quickfix",
