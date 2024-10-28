@@ -51,5 +51,13 @@ return {
             end,
             desc = "docker compose down",
         },
+        {
+            "<leader>dD",
+            function()
+                vim.cmd("OverseerOpen! bottom")
+                vim.cmd("OverseerRunCmd docker compose down && docker compose up -d")
+            end,
+            desc = "docker compose down & up",
+        },
     },
 }

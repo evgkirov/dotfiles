@@ -25,7 +25,7 @@ return {
     lazy = false,
     config = true,
     opts = {
-        -- skip_confirm_for_simple_edits = true,
+        skip_confirm_for_simple_edits = true,
         keymaps = require("helpers.opener").create_mappings(action_open_in_window, {
             ["q"] = action_close_oil,
             ["<C-s>"] = false,
