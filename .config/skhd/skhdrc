@@ -27,6 +27,8 @@ default < hyper - 0x1E : yabai -m window --focus stack.next || yabai -m window -
 default < hyper - o : brew services restart sketchybar
 default < hyper - m : sketchybar --set music drawing=off
 
+hyper - q : yabai -m window --display recent ; yabai -m window --focus recent
+
 hyper - s ; swap
 swap < escape ; default
 swap < h : yabai -m window --swap west ; skhd -k "escape"
