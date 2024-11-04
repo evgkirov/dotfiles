@@ -1,3 +1,4 @@
+tap "cloudflare/cloudflare"
 tap "daipeihust/tap"
 tap "felixkratz/formulae"
 tap "homebrew/bundle"
@@ -7,6 +8,8 @@ brew "act"
 brew "xz"
 brew "jpeg-xl"
 brew "aom"
+brew "glib"
+brew "harfbuzz"
 brew "openjdk"
 brew "apktool"
 brew "awscli"
@@ -140,7 +143,6 @@ mas "Documents Translator", id: 1566993561
 mas "Home Assistant", id: 1099568401
 mas "Keynote", id: 409183694
 mas "LanScan", id: 472226235
-mas "Linearity Curve", id: 1219074514
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
@@ -151,4 +153,4 @@ mas "Stitcher", id: 1492912652
 mas "Streaks", id: 963034692
 mas "Things", id: 904280696
 mas "TV Remote", id: 1535056536
-mas "Vimari", id: 1480933944
+mas "Velja", id: 1607635845
