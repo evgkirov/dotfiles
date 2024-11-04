@@ -25,6 +25,11 @@ return {
                 rounded = false,
             },
         },
+        mappings = {
+            sidebar = {
+                switch_windows = "<Hyper-hjkl>",
+            },
+        },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
