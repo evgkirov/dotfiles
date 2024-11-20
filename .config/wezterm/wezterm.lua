@@ -46,21 +46,20 @@ local function get_current_theme_config()
     return current_theme()
 end
 
--- my old default
--- config.font_size = 14.0
-
--- might work for Dell 2880x....
--- config.font_size = 13.0
-
--- might work for Dell 2560x....
-config.font_size = 12
-
+-- local font_family = "JetBrainsMono Nerd Font"
+local font_family = "Iosevka Nerd Font"
 config.font = wezterm.font({
-    family = "JetBrainsMono Nerd Font",
+    family = font_family,
 })
+config.font_size = 12.0
+
+if font_family == "Iosevka Nerd Font" then
+    config.font_size = 14.0
+end
+
 -- config.cell_width = 0.9
-config.freetype_load_target = "Light"
--- config.freetype_load_flags = "NO_HINTING|MONOCHROME"
+-- config.freetype_load_target = "Light"
+config.freetype_load_flags = "NO_HINTING"
 
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "RESIZE"
