@@ -113,10 +113,11 @@ setopt hist_find_no_dups
 
 # Python
 venv_create() {
+    local python_exec=${1:-python3}
     venv_deactivate
     if [ -f "requirements.txt" ]; then
         rm -rf .venv
-        python3 -m venv .venv
+        $python_exec -m venv .venv
         source .venv/bin/activate
         pip install --upgrade pip
         pip install -r requirements.txt
