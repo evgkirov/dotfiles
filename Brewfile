@@ -117,6 +117,7 @@ cask "raycast"
 cask "setapp"
 cask "sf-symbols"
 cask "slack"
+cask "sonos"
 cask "spotify"
 cask "swiftdefaultappsprefpane"
 cask "telegram"
@@ -146,11 +147,9 @@ mas "LanScan", id: 472226235
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
-mas "rcmd", id: 1596283165
 mas "Shortery", id: 1594183810
 mas "Speedtest", id: 1153157709
 mas "Stitcher", id: 1492912652
 mas "Streaks", id: 963034692
 mas "Things", id: 904280696
 mas "TV Remote", id: 1535056536
-mas "Velja", id: 1607635845
