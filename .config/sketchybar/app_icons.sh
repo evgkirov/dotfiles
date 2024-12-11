@@ -100,6 +100,7 @@ get_app_icon() {
     "X") echo 󰕄 ;;
     "YouTube") echo 󰗃 ;;
     "Zed") echo 󰰶 ;;
+    "iPhone Mirroring") echo  ;;
     "iTerm2") echo 󰞷 ;;
     # *) echo 󰘔 ;;
     *) echo  ;;

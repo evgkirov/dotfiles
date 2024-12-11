@@ -223,7 +223,6 @@ select_theme() {
 zinit light zsh-users/zsh-syntax-highlighting
 
 # Welcome screen
-clear
 
 # 1. fortune + cowsay
 # which fortune &> /dev/null || brew install fortune

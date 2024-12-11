@@ -46,19 +46,28 @@ local function get_current_theme_config()
     return current_theme()
 end
 
--- local font_family = "JetBrainsMono Nerd Font"
-local font_family = "Iosevka Nerd Font"
+local font_family = ""
+font_family = "JetBrainsMono Nerd Font"
+-- font_family = "Iosevka Nerd Font"
+-- font_family = "Pragmata Pro Mono"
 config.font = wezterm.font({
     family = font_family,
 })
 config.font_size = 12.0
 
+if font_family == "JetBrainsMono Nerd Font" then
+    config.font_size = 12.0
+    config.cell_width = 0.9
+end
 if font_family == "Iosevka Nerd Font" then
-    config.font_size = 14.0
+    config.font_size = 13.0
 end
 
--- config.cell_width = 0.9
--- config.freetype_load_target = "Light"
+if font_family == "Pragmata Pro Mono" then
+    config.font_size = 13.0
+    config.line_height = 1.2
+end
+
 config.freetype_load_flags = "NO_HINTING"
 
 config.hide_tab_bar_if_only_one_tab = true
