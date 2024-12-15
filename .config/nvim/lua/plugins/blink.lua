@@ -2,7 +2,10 @@ return {
     "saghen/blink.cmp",
     lazy = false, -- lazy loading handled internally
     -- optional: provides snippets for the snippet source
-    dependencies = "rafamadriz/friendly-snippets",
+    dependencies = {
+        "rafamadriz/friendly-snippets",
+        "giuxtaposition/blink-cmp-copilot",
+    },
 
     -- use a release tag to download pre-built binaries
     version = "v0.*",
@@ -34,11 +37,66 @@ return {
         -- default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, via `opts_extend`
         sources = {
-            default = { "lsp", "path", "snippets", "buffer" },
-            -- optionally disable cmdline completions
-            -- cmdline = {},
+            -- default = { "lsp", "path", "snippets", "buffer" },
+
+            completion = {
+                enabled_providers = { "lsp", "path", "snippets", "buffer", "copilot" },
+            },
+            default = { "lsp", "path", "snippets", "buffer", "copilot" },
+            providers = {
+                copilot = {
+                    name = "copilot",
+                    module = "blink-cmp-copilot",
+                },
+            },
         },
-        completion = { documentation = { auto_show = true } },
+        completion = {
+            list = {
+                selection = "manual",
+                -- selection = "auto_insert",
+            },
+            menu = {
+                draw = {
+                    -- columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
+                    components = {
+                        kind_icon = {
+                            text = function(ctx)
+                                if ctx.source_name == "copilot" then
+                                    return "" .. ctx.icon_gap
+                                end
+                                return ctx.kind_icon .. ctx.icon_gap
+                            end,
+                            highlight = function(ctx)
+                                if ctx.source_name == "copilot" then
+                                    return "BlinkCmpKindSnippet"
+                                end
+                                return require("blink.cmp.completion.windows.render.tailwind").get_hl(ctx)
+                                    or "BlinkCmpKind" .. ctx.kind
+                            end,
+                        },
+
+                        kind = {
+                            text = function(ctx)
+                                if ctx.source_name == "copilot" then
+                                    return "Copilot"
+                                end
+                                return ctx.kind
+                            end,
+                            highlight = function(ctx)
+                                if ctx.source_name == "copilot" then
+                                    return "BlinkCmpKindSnippet"
+                                end
+                                return require("blink.cmp.completion.windows.render.tailwind").get_hl(ctx)
+                                    or "BlinkCmpKind" .. ctx.kind
+                            end,
+                        },
+                    },
+                },
+            },
+            documentation = {
+                auto_show = true,
+            },
+        },
 
         -- experimental signature help support
         signature = { enabled = true },
