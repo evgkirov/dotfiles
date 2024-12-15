@@ -1,10 +1,9 @@
 return {
     "saghen/blink.cmp",
     lazy = false, -- lazy loading handled internally
-    -- optional: provides snippets for the snippet source
     dependencies = {
         "rafamadriz/friendly-snippets",
-        "giuxtaposition/blink-cmp-copilot",
+        -- "giuxtaposition/blink-cmp-copilot",
     },
 
     -- use a release tag to download pre-built binaries
@@ -37,18 +36,18 @@ return {
         -- default list of enabled providers defined so that you can extend it
         -- elsewhere in your config, without redefining it, via `opts_extend`
         sources = {
-            -- default = { "lsp", "path", "snippets", "buffer" },
+            default = { "lsp", "path", "snippets", "buffer" },
+            -- default = { "lsp", "path", "snippets", "buffer", "copilot" },
 
-            completion = {
-                enabled_providers = { "lsp", "path", "snippets", "buffer", "copilot" },
-            },
-            default = { "lsp", "path", "snippets", "buffer", "copilot" },
-            providers = {
-                copilot = {
-                    name = "copilot",
-                    module = "blink-cmp-copilot",
-                },
-            },
+            -- completion = {
+            --     enabled_providers = { "lsp", "path", "snippets", "buffer", "copilot" },
+            -- },
+            -- providers = {
+            --     copilot = {
+            --         name = "copilot",
+            --         module = "blink-cmp-copilot",
+            --     },
+            -- },
         },
         completion = {
             list = {
