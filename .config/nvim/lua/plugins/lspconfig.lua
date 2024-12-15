@@ -4,23 +4,18 @@ return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
-        "hrsh7th/cmp-nvim-lsp",
-        "folke/neodev.nvim",
+        "saghen/blink.cmp",
         -- { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
-        local neodev = require("neodev")
-        neodev.setup({})
-
         local lspconfig = require("lspconfig")
-        local cmp_nvim_lsp = require("cmp_nvim_lsp")
+        local capabilities = require("blink.cmp").get_lsp_capabilities()
 
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
         for type, icon in pairs(signs) do
             local hl = "DiagnosticSign" .. type
             vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
         end
-
         vim.diagnostic.config({
             virtual_text = false,
         })
@@ -49,8 +44,6 @@ return {
                 vim.diagnostic.goto_next({ float = true })
             end, opts)
         end
-
-        local capabilities = cmp_nvim_lsp.default_capabilities()
 
         -- CSS, SCSS, LESS
         lspconfig.cssls.setup({
