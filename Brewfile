@@ -4,6 +4,7 @@ tap "felixkratz/formulae"
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "koekeishiya/formulae"
+tap "nikitabobko/tap"
 brew "act"
 brew "xz"
 brew "jpeg-xl"
@@ -49,6 +50,7 @@ brew "pre-commit"
 brew "python@3.11"
 brew "ranger", args: ["HEAD"]
 brew "ripgrep"
+brew "rustup"
 brew "sevenzip"
 brew "sox"
 brew "speedtest-cli"
@@ -128,13 +130,15 @@ cask "ukelele"
 cask "utm"
 cask "viber"
 cask "vnc-viewer"
-cask "wezterm"
+cask "wezterm@nightly"
 cask "whisky"
 cask "zed"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Apple Configurator", id: 1037126344
 mas "Banktivity", id: 1480779512
+mas "Bee DICOM Viewer", id: 1590273176
+mas "Clic", id: 6451395577
 mas "Converter", id: 1457309557
 mas "Dark Reader for Safari", id: 1438243180
 mas "Diffusers", id: 1666309574
@@ -144,6 +148,7 @@ mas "Documents Translator", id: 1566993561
 mas "Home Assistant", id: 1099568401
 mas "Keynote", id: 409183694
 mas "LanScan", id: 472226235
+mas "Menu Bar Controller for Sonos", id: 1357379892
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
