@@ -119,6 +119,7 @@ return {
             extensions = {
                 aerial = {
                     show_lines = false,
+                    show_columns = "symbols",
                     -- Display symbols as <root>.<parent>.<symbol>
                     show_nesting = {
                         ["_"] = true, -- This key will be the default
