@@ -1,1 +1,3 @@
-Everforest https://github.com/metalelf0/everforest.ghostty
+Everforest* https://github.com/metalelf0/everforest.ghostty:
+
+*) Marks slightly modified themes.
