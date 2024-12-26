@@ -31,6 +31,7 @@ relink .config/starship.toml
 relink .config/svim
 relink .config/themes
 relink .config/wezterm
+relink .config/ghostty
 relink .config/yabai
 relink .ideavimrc
 relink .vimrc

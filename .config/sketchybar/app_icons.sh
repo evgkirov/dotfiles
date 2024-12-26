@@ -36,6 +36,7 @@ get_app_icon() {
     "Finder") echo 󰀶 ;;
     "GitHub Desktop") echo 󰊤 ;;
     "GitKraken") echo  ;;
+    "Ghostty") echo 󰊠 ;;
     "Google Chrome Canary") echo 󰊯 ;;
     "Google Chrome") echo 󰊯 ;;
     "Google Meet") echo 󰕧 ;;

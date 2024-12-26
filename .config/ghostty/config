@@ -1,0 +1,11 @@
+theme = Builtin Solarized Light
+font-family = TX-02-Trial
+# font-family = "JetBrainsMono Nerd Font Propo"
+font-size = 12
+adjust-cell-width = -10%
+macos-titlebar-style = hidden
+window-padding-balance = true
+window-padding-color = extend
+adjust-underline-thickness = -5
+quick-terminal-position = bottom
+keybind = global:alt+q=toggle_quick_terminal
