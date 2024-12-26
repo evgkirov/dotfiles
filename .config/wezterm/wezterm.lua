@@ -46,26 +46,28 @@ local function get_current_theme_config()
     return current_theme()
 end
 
-local font_family = ""
-font_family = "JetBrainsMono Nerd Font"
+local font_family = nil
+-- font_family = "FiraCode Nerd Font"
+-- font_family = "Inconsolata Nerd Font"
 -- font_family = "Iosevka Nerd Font"
--- font_family = "Pragmata Pro Mono"
-config.font = wezterm.font({
-    family = font_family,
+font_family = "JetBrainsMono Nerd Font"
+-- font_family = "TX-02-Trial"
+-- font_family = { family = "VictorMono Nerd Font", weight = "Medium" }
+
+config.font = wezterm.font_with_fallback({
+    font_family,
+    "Symbols Nerd Font Mono",
+    "Apple Color Emoji",
 })
+
 config.font_size = 12.0
 
-if font_family == "JetBrainsMono Nerd Font" then
-    config.font_size = 12.0
-    config.cell_width = 0.9
-end
-if font_family == "Iosevka Nerd Font" then
-    config.font_size = 13.0
+if font_family == "Inconsolata Nerd Font" then
+    config.font_size = 14.0
 end
 
-if font_family == "Pragmata Pro Mono" then
+if font_family == "Iosevka Nerd Font" then
     config.font_size = 13.0
-    config.line_height = 1.2
 end
 
 config.freetype_load_flags = "NO_HINTING"
