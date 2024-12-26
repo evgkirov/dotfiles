@@ -44,7 +44,6 @@ return {
     branch = "0.1.x",
     dependencies = {
         "nvim-lua/plenary.nvim",
-        "stevearc/aerial.nvim",
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
     config = function()
@@ -89,6 +88,7 @@ return {
                         "--files",
                         "--color=never",
                         "--hidden",
+                        "--sortr=modified",
                         "--glob=!**/.git/**",
                         "--glob=!**/node_modules/**",
                     },
@@ -125,6 +125,9 @@ return {
                         ["_"] = true, -- This key will be the default
                     },
                 },
+                smart_open = {
+                    match_algorithm = "fzf",
+                },
             },
         })
         telescope.load_extension("fzf")
@@ -132,7 +135,7 @@ return {
     keys = {
         { "<leader><space>", "<cmd>Telescope buffers sort_lastused=true<cr>", desc = "Buffers" },
         { "<F1>", "<cmd>Telescope help_tags<cr>", desc = "Help" },
-        { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
+        -- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
         { "<leader>fq", "<cmd>Telescope quickfix<cr>", desc = "Quickfix" },
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
         { "<leader>f*", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
