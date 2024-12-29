@@ -6,7 +6,7 @@
 :: ins @ : yabai -m config normal_window_opacity 0.4 ; sleep 2 ; skhd -k "escape"
 
 lalt - b : osascript -e 'tell application "Safari" to make new document' ; osascript -e 'tell application "Safari" to activate'
-lalt - t : WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window ; osascript -e 'tell application "WezTerm" to activate'
+# lalt - t : WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window ; osascript -e 'tell application "WezTerm" to activate'
 lalt - f : osascript -e 'tell application "Finder" to make new Finder window' ; osascript -e 'tell application "Finder" to activate'
 cmd - space -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
 
@@ -85,6 +85,7 @@ hyper - u : yabai -m window --stack sibling
 hyper - i ; ins
 ins < escape ; default
 ins < hyper - s : yabai -m window --insert stack ; skhd -k "escape"
+ins < hyper - i : yabai -m window --insert stack ; skhd -k "escape"
 ins < hyper - h : yabai -m window --insert west ; skhd -k "escape"
 ins < hyper - j : yabai -m window --insert south ; skhd -k "escape"
 ins < hyper - k : yabai -m window --insert north ; skhd -k "escape"
