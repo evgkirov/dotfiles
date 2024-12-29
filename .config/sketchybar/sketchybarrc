@@ -46,7 +46,7 @@ defaults=(
     label.font="$TEXT_FONT"
     label.padding_left=4
     label.padding_right=8
-    label.y_offset=0
+    label.y_offset=0.75
     padding_left=3
     padding_right=3
     popup.background.border_width=2
@@ -71,6 +71,7 @@ sketchybar --default "${defaults[@]}"
 
 source "$ITEMS_DIR/spaces.sh"
 source "$ITEMS_DIR/front_app.sh"
+source "$ITEMS_DIR/stack.sh"
 
 ##### Adding Right Items #####
 # In the same way as the left items we can add items to the right side.

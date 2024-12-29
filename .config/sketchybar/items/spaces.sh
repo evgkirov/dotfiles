@@ -29,15 +29,8 @@ for i in "${!SPACE_ICONS[@]}"; do
         icon.font="$TEXT_FONT" \
         label.font="$ICON_FONT" \
         click_script="yabai -m config mouse_follows_focus off && yabai -m space --focus $sid && sleep 1 && yabai -m config mouse_follows_focus on" \
-        --subscribe space.$sid window_focus \
+        --subscribe space.$sid window_focus space_windows_change \
         space_change \
         windows_on_spaces
 
 done
-
-# sketchybar --add item space_separator left                         \
-#            --set space_separator icon=                            \
-# 	   			icon.color=$GREY0    \
-#                                  padding_left=10                   \
-#                                  padding_right=10                  \
-#                                  label.drawing=off
