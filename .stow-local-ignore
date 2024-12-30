@@ -1,0 +1,10 @@
+\.DS_Store
+\.editorconfig
+\.git
+\.gitignore
+\.stow-local-ignore
+^/Brewfile
+^/Brewfile\.lock\.json
+^/README\.md
+^/screenshots
+^/scripts
