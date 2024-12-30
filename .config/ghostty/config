@@ -1,3 +1,6 @@
+# Temporary 
+command = "/opt/homebrew/bin/fish"
+
 font-family = TX-02
 font-size = 12
 adjust-cell-width = -10%
