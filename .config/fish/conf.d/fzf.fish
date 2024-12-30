@@ -4,7 +4,7 @@ if status is-interactive
         brew install fzf
     end
 
-    fzf --fish | source
+    # fzf --fish | source
 
 end
 
