@@ -1,5 +1,5 @@
 return {
     repo = "EdenEast/nightfox.nvim",
-    light = "dawnfox",
+    light = "dayfox",
     dark = "nightfox",
 }

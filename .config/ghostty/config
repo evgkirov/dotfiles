@@ -1,21 +1,20 @@
-theme = light:everforest-light-hard.ghostty,dark:everforest-dark-hard.ghostty
-# font-family = "VictorMono Nerd Font"
-# font-style = medium
-# font-style-italic = "medium italic"
-# JetBrains Mono is the default, no need to specify
 font-family = TX-02
 font-size = 12
 adjust-cell-width = -10%
-# font-family = "Iosevka Nerd Font"
-# font-size = 13
-# adjust-cell-width = 0
+
 macos-titlebar-style = hidden
 window-padding-balance = true
 window-padding-color = extend
 adjust-underline-thickness = -5
+
 quick-terminal-position = bottom
 quick-terminal-animation-duration = 0
-keybind = global:alt+a=toggle_quick_terminal
-keybind = all:global:alt+t=new_window
+
 initial-window = false
 mouse-hide-while-typing = true
+
+keybind = cmd+r=reload_config
+keybind = global:alt+a=toggle_quick_terminal
+keybind = all:global:alt+t=new_window
+
+config-file = "current_theme.conf"

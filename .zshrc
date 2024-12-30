@@ -216,6 +216,9 @@ select_theme() {
         source $HOME/.zshrc
         touch $HOME/.config/wezterm/wezterm.lua
         touch $HOME/.config/sketchybar/sketchybarrc
+        cp $HOME/.config/themes/$choice/ghostty.conf $HOME/.config/ghostty/current_theme.conf
+        osascript -e 'tell application "Ghostty" to activate'
+        skhd -k 'cmd-r'
     fi
 }
 

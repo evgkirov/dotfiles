@@ -1,4 +1,4 @@
 return {
-    light = { name = "dawnfox" },
+    light = { name = "dayfox" },
     dark = { name = "nightfox" },
 }
