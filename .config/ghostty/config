@@ -1,6 +1,8 @@
-font-family = TX-02
+font-family = TX-02 SemiCondensed
+font-family-italic = TX-02 SemiCondensed Oblique
+font-family-bold = TX-02 SemiBold SemiCondensed
+font-family-bold-italic = TX-02 SemiBold SemiCondensed Oblique
 font-size = 12
-adjust-cell-width = -10%
 
 macos-titlebar-style = hidden
 window-padding-balance = true
