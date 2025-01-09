@@ -17,6 +17,9 @@ return {
         panel = {
             enabled = false,
         },
+        filetypes = {
+            yaml = true,
+        },
     },
 }
 
