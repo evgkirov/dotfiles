@@ -108,7 +108,6 @@ cask "ukelele"
 cask "utm"
 cask "viber"
 cask "vnc-viewer"
-cask "wezterm@nightly"
 cask "whisky"
 cask "zed"
 mas "1Password for Safari", id: 1569813296
