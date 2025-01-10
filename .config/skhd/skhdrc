@@ -12,6 +12,7 @@ cmd - space -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
 
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
 cmd - q -> : sleep 1 && yabai -m window --focus mouse
+ctrl - d -> : sleep 1 && yabai -m window --focus mouse
 f18 : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if test "$is_nvim" = "true"; skhd -k "escape"; skhd -k "s"; else; skhd -k "alt-f18"; end
 f13 : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR ; sketchybar --set keyboard label=EN
 f16 : im-select com.evgkirov.keyboardlayout.custom.keylayout.RUSR ; sketchybar --set keyboard label=RU
@@ -103,19 +104,16 @@ hyper - v : yabai -m space --layout float
 hyper - b : yabai -m space --balance
 
 # fast focus desktop
-cmd + alt - x : yabai -m space --focus recent
-cmd + alt - z : yabai -m space --focus prev
-cmd + alt - c : yabai -m space --focus next
-cmd + alt - 1 : yabai -m space --focus 1
-cmd + alt - 2 : yabai -m space --focus 2
-cmd + alt - 3 : yabai -m space --focus 3
-cmd + alt - 4 : yabai -m space --focus 4
-cmd + alt - 5 : yabai -m space --focus 5
-cmd + alt - 6 : yabai -m space --focus 6
-cmd + alt - 7 : yabai -m space --focus 7
-cmd + alt - 8 : yabai -m space --focus 8
-cmd + alt - 9 : yabai -m space --focus 9
-cmd + alt - 0 : yabai -m space --focus 10
+alt - 1 : yabai -m space --focus 1
+alt - 2 : yabai -m space --focus 2
+alt - 3 : yabai -m space --focus 3
+alt - 4 : yabai -m space --focus 4
+alt - 5 : yabai -m space --focus 5
+alt - 6 : yabai -m space --focus 6
+alt - 7 : yabai -m space --focus 7
+alt - 8 : yabai -m space --focus 8
+alt - 9 : yabai -m space --focus 9
+alt - 0 : yabai -m space --focus 10
 
 hyper - f : yabai -m window --toggle zoom-fullscreen
 
