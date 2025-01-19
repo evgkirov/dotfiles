@@ -103,8 +103,8 @@ get_app_icon() {
     "Zed") echo 󰰶 ;;
     "iPhone Mirroring") echo  ;;
     "iTerm2") echo 󰞷 ;;
-    # *) echo 󰘔 ;;
-    *) echo  ;;
+    "zoom.us") echo 󰕧 ;;
+    *) echo 󰘔 ;;
     esac
 }
 
