@@ -17,7 +17,7 @@ if status is-interactive
         end
     end
 
-    function venv_activate
+    function venv_activate --on-variable PWD
         venv_deactivate
         if test -f ".venv/bin/activate.fish"
             source .venv/bin/activate.fish

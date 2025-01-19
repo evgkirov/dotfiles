@@ -6,9 +6,5 @@ if status is-interactive
 
     zoxide init fish --cmd cd | source
 
-    function cd
-        __zoxide_z $argv
-        venv_activate  # From python.fish
-    end
 end
 
