@@ -9,13 +9,15 @@ lalt - b : osascript -e 'tell application "Safari" to make new document' ; osasc
 # lalt - t : WEZTERM_UNIX_SOCKET=~/.local/share/wezterm/default-org.wezfurlong.wezterm wezterm cli spawn --new-window ; osascript -e 'tell application "WezTerm" to activate'
 lalt - f : osascript -e 'tell application "Finder" to make new Finder window' ; osascript -e 'tell application "Finder" to activate'
 cmd - space -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
+lalt - a -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
+lalt - t -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
 
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
 cmd - q -> : sleep 1 && yabai -m window --focus mouse
 ctrl - d -> : sleep 1 && yabai -m window --focus mouse
 f18 : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if test "$is_nvim" = "true"; skhd -k "escape"; skhd -k "s"; else; skhd -k "alt-f18"; end
-f13 : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR ; sketchybar --set keyboard label=EN
-f16 : im-select com.evgkirov.keyboardlayout.custom.keylayout.RUSR ; sketchybar --set keyboard label=RU
+f13 : nice -n -20 im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR ; sketchybar --set keyboard label=EN
+f16 : nice -n -20 im-select com.evgkirov.keyboardlayout.custom.keylayout.RUSR ; sketchybar --set keyboard label=RU
 
 
 default < hyper - h : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if test "$is_nvim" = "true"; skhd -k "f7"; else; yabai -m window --focus west || yabai -m display --focus 2; end
