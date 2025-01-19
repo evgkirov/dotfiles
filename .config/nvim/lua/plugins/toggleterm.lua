@@ -1,7 +1,9 @@
 return {
     "akinsho/toggleterm.nvim",
     version = "*",
-    config = true,
+    opts = {
+        shade_terminals = false,
+    },
     init = function()
         vim.api.nvim_create_autocmd("VimLeavePre", {
             callback = function()
