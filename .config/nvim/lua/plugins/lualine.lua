@@ -29,7 +29,16 @@ local custom_avante_extension = {
     },
     filetypes = { "Avante", "AvanteInput" },
 }
-
+local disable_autoformat_status = {
+    function()
+        if vim.g.disable_autoformat or vim.b.disable_autoformat then
+            return "Autoformat: OFF"
+        else
+            return ""
+        end
+    end,
+    color = 'lualine_c_diagnostics_error_normal'
+}
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -45,7 +54,7 @@ return {
         sections = {
             lualine_a = { "mode" },
             lualine_b = { { "filename", path = 4 } },
-            lualine_c = { "diff", "diagnostics" },
+            lualine_c = { "diff", "diagnostics", disable_autoformat_status },
             lualine_x = { "encoding", "fileformat", "filetype" },
             lualine_y = { "progress" },
             lualine_z = { "location" },
