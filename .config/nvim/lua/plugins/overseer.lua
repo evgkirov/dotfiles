@@ -24,7 +24,9 @@ return {
             end,
             desc = "󰐊 Run task",
         },
-        { "<leader>re", "<cmd>OverseerToggle bottom<cr>", desc = "󰐑 Toggle Overseer" },
+        { "<leader>re", "<cmd>echo 'RT!!'<cr>" },
+        { "<leader>rt", "<cmd>OverseerToggle bottom<cr>", desc = "󰐑 Toggle Overseer" },
+        -- { "<leader>rt", "<cmd>OverseerTaskAction<cr>", desc = "󰐑 Toggle Overseer" },
         -- { "<leader>rw", "<cmd>OverseerSaveBundle<cr>", desc = "󰆓 Save Bundle" },
         -- { "<leader>rl", "<cmd>OverseerLoadBundle!<cr>", desc = " Load Bundle" },
         {
