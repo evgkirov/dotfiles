@@ -6,8 +6,8 @@ return {
     lazy = false,
     -- version = false, -- set this if you want to always pull the latest change
     opts = {
-        provider = "claude",
-        auto_suggestions_provider = "claude",
+        provider = "openai",
+        auto_suggestions_provider = "openai",
         claude = {
             api_key_name = "cmd:cat " .. vim.fn.expand("~/.local/share/nvim/claude-api-key"),
         },
