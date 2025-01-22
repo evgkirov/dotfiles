@@ -10,6 +10,10 @@ if [ "$SENDER" = "media_change" ]; then
         label="${artist} – ${title}"
         [ -z "$artist" ] && label="$title"
 
+        if [ "$app" = "Endel" ]; then
+            label="$title"
+        fi
+
         sketchybar --set $NAME \
             label="$label" \
             drawing=on \

@@ -30,6 +30,7 @@ get_app_icon() {
     "Discord") echo 󰙯 ;;
     "Docker Desktop") echo 󰡨 ;;
     "Docker") echo 󰡨 ;;
+    "Endel") echo 󰥛 ;;
     "FaceTime") echo 󰕧 ;;
     "Fantastical") echo 󰸗 ;;
     "Find My") echo 󰐷 ;;
@@ -79,6 +80,7 @@ get_app_icon() {
     "Setapp") echo 󰣏 ;;
     "Shortcuts") echo  ;;
     "Slack") echo 󰒱 ;;
+    "Sonos") echo 󰓃 ;;
     "Spotify") echo 󰓇 ;;
     "Stocks") echo 󰄪 ;;
     "Sublime Text") echo 󰰡 ;;
