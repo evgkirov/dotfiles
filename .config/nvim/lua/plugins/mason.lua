@@ -19,6 +19,8 @@ return {
         mason_lspconfig.setup({
             ensure_installed = {
 
+                "typos_lsp",
+
                 "lua_ls",
 
                 "html",

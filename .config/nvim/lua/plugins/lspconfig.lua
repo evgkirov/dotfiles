@@ -45,6 +45,15 @@ return {
             end, opts)
         end
 
+        -- Spell checking
+        lspconfig.typos_lsp.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+            init_options = {
+                diagnosticSeverity = "Warning",
+            },
+        })
+
         -- CSS, SCSS, LESS
         lspconfig.cssls.setup({
             capabilities = capabilities,
