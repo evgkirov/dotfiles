@@ -37,7 +37,7 @@ local disable_autoformat_status = {
             return ""
         end
     end,
-    color = 'lualine_c_diagnostics_error_normal'
+    color = "lualine_c_diagnostics_error_normal",
 }
 return {
     "nvim-lualine/lualine.nvim",
@@ -46,11 +46,9 @@ return {
     config = true,
     opts = {
         options = {
-            -- disabled_filetypes = { "Avante", "AvanteInput" },
-            section_separators = { left = "", right = "" },
-            component_separators = { left = "", right = "" },
+            section_separators = "",
+            component_separators = "",
         },
-        -- options = { section_separators = "", component_separators = "" },
         sections = {
             lualine_a = { "mode" },
             lualine_b = { { "filename", path = 4 } },
