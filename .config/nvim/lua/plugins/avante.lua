@@ -25,9 +25,15 @@ return {
                 rounded = false,
             },
         },
+        file_selector = {
+            provider = "telescope",
+        },
         mappings = {
             sidebar = {
                 switch_windows = "<Hyper-hjkl>",
+                reverse_switch_windows = "<Hyper-hjkl>",
+                add_file = "o",
+                remove_file = "dd",
             },
         },
     },
