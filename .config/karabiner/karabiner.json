@@ -73,6 +73,12 @@
                         "description": "SpaceFN: Space enables SpaceFN mode (see: https://geekhack.org/index.php?topic=51069.0)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "vendor_id": 7504 }],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "spacebar",
                                     "modifiers": { "optional": ["any"] }
@@ -102,6 +108,12 @@
                         "description": "Fn → F18 (Homerow.app)",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "vendor_id": 7504 }],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "fn",
                                     "modifiers": { "optional": ["caps_lock"] }
@@ -116,6 +128,12 @@
                         "description": "CapsLock to Hyper/Escape",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "vendor_id": 7504 }],
+                                        "type": "device_unless"
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "caps_lock",
                                     "modifiers": { "optional": ["any"] }
@@ -169,23 +187,23 @@
                         ]
                     },
                     {
-                        "description": "Left Shift → F13 (EN)",
+                        "description": "Left Shift → EN",
                         "manipulators": [
                             {
                                 "from": { "key_code": "left_shift" },
                                 "to": [{ "key_code": "left_shift" }],
-                                "to_if_alone": [{ "key_code": "f13" }],
+                                "to_if_alone": [{ "select_input_source": { "input_source_id": "en\\+sr$" } }],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
-                        "description": "Right Shift → F16 (RU)",
+                        "description": "Right Shift → RU",
                         "manipulators": [
                             {
                                 "from": { "key_code": "right_shift" },
                                 "to": [{ "key_code": "right_shift" }],
-                                "to_if_alone": [{ "key_code": "f16" }],
+                                "to_if_alone": [{ "select_input_source": { "input_source_id": "ru\\+sr$" } }],
                                 "type": "basic"
                             }
                         ]
@@ -207,7 +225,7 @@
                         "product_id": 24926,
                         "vendor_id": 7504
                     },
-                    "ignore": true
+                    "manipulate_caps_lock_led": false
                 },
                 {
                     "identifiers": {
