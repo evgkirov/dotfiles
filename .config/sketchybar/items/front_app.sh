@@ -1,4 +1,5 @@
 front_app=(
+    display=active
     label.color=$DATA_FRONT_APP_FG
     icon.color=$DATA_FRONT_APP_FG
     script="$PLUGIN_DIR/front_app.sh"
