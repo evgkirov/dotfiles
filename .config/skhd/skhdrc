@@ -28,9 +28,9 @@ lalt - s : open -a "Things3"
 # HACKS
 #
 
-cmd - space -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
-lalt - a -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
-lalt - t -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR
+cmd - space -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR ; sh ~/.config/sketchybar/plugins/keyboard.sh
+lalt - a -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR ; sh ~/.config/sketchybar/plugins/keyboard.sh
+lalt - t -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR ; sh ~/.config/sketchybar/plugins/keyboard.sh
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
 cmd - q -> : sleep 1 && yabai -m window --focus mouse
 ctrl - d -> : sleep 1 && yabai -m window --focus mouse
