@@ -6,7 +6,6 @@ return function(name, cmd)
         display_name = name,
         hidden = true,
         direction = "float",
-        -- direction = "tab",
         on_open = function(term)
             vim.cmd("startinsert!")
             vim.api.nvim_buf_del_keymap(term.bufnr, "t", "kj")
@@ -17,6 +16,12 @@ return function(name, cmd)
                 "<cmd>close<CR>",
                 { noremap = true, silent = true }
             )
+            vim.api.nvim_create_autocmd("VimResized", {
+                buffer = term.bufnr,
+                callback = function()
+                    vim.cmd("cal cursor(0, 0)")
+                end,
+            })
         end,
     })
 end
