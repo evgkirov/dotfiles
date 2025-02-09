@@ -16,6 +16,11 @@ common_settings() {
     yabai -m config window_shadow on
 }
 
+rules() {
+    echo "Setting rules for Yabai"
+    yabai -m rule --add app=Endel manage=off
+}
+
 signals() {
     yabai -m signal --add event=display_added action="sh ~/.config/yabai/yabairc update_all_spaces"
     yabai -m signal --add event=display_removed action="sh ~/.config/yabai/yabairc update_all_spaces"
@@ -93,6 +98,7 @@ elif [ "$1" = "set_space_to_stack" ]; then
 else
     echo "Loading full Yabai configuration"
     common_settings
+    rules
     update_all_spaces
     signals
 fi

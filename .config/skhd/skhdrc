@@ -19,7 +19,7 @@ lalt - d : open -a "Discord"
 lalt - e : open -a "Endel"
 lalt - f : osascript -e 'tell application "Finder" to make new Finder window' ; osascript -e 'tell application "Finder" to activate'
 lalt - h : open -a "Home Assistant"
-lalt - m : open -a "Mail"
+lalt - m : open -a "Spotify"
 lalt - p : open -a "1Password"
 lalt - s : open -a "Things3"
 # "lalt - t" is handled by Ghostty
@@ -36,6 +36,17 @@ cmd - q -> : sleep 1 && yabai -m window --focus mouse
 ctrl - d -> : sleep 1 && yabai -m window --focus mouse
 default < hyper - o : brew services restart sketchybar
 default < hyper - m : sketchybar --set music drawing=off
+
+#
+# SYSTEM
+# Involves Menu Bar Controller for Sonos and m-cli
+#
+
+# =/+
+hyper - 0x18 : system_profiler SPAudioDataType -json | jq -r '.SPAudioDataType[]._items[] | select(._name=="REIYIN Audio") | .coreaudio_default_audio_output_device' | grep -q 'spaudio_yes'; and osascript -e 'tell application "Menu Bar Controller for Sonos" to increaseVolume of (first group whose name contains "Office")'; or m volume up; sleep 0.2; sketchybar --trigger volume_change 
+# -/_
+hyper - 0x1B : system_profiler SPAudioDataType -json | jq -r '.SPAudioDataType[]._items[] | select(._name=="REIYIN Audio") | .coreaudio_default_audio_output_device' | grep -q 'spaudio_yes'; and osascript -e 'tell application "Menu Bar Controller for Sonos" to decreaseVolume of (first group whose name contains "Office")'; or m volume down; sleep 0.2; sketchybar --trigger volume_change
+cmd + ctrl - q : m sleep
 
 #
 # LAYOUTS
@@ -60,7 +71,6 @@ default < hyper - k : set is_nvim (yabai -m query --windows --window | jq '.titl
 default < hyper - l : set is_nvim (yabai -m query --windows --window | jq '.title|endswith("- NVIM")'); if test "$is_nvim" = "true"; skhd -k "f10"; else; yabai -m window --focus east || yabai -m display --focus 1; end
 default < hyper - 0x21 : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 default < hyper - 0x1E : yabai -m window --focus stack.next || yabai -m window --focus stack.first
-
 
 #
 # SWITCH SPACES
@@ -91,7 +101,8 @@ lalt + shift - 0 : yabai -m window --space 10; yabai -m space --focus 10
 # SWITCH DISPLAYS
 #
 
-hyper - q : yabai -m window --display recent ; yabai -m window --focus recent
+lalt - q : yabai -m display --focus recent
+lalt + shift - q : yabai -m window --display recent ; yabai -m window --focus recent
 
 #
 # SWAP WINDOWS
