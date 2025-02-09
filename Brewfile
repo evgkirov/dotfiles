@@ -14,12 +14,13 @@ brew "bat"
 brew "btop"
 brew "python@3.13"
 brew "glib"
+brew "harfbuzz"
+brew "tesseract"
+brew "djvu2pdf"
 brew "eza"
 brew "fastfetch"
 brew "fd"
 brew "unbound"
-brew "harfbuzz"
-brew "tesseract"
 brew "ffmpeg"
 brew "fzf"
 brew "gh"
@@ -30,6 +31,7 @@ brew "hyperfine"
 brew "jq"
 brew "lazydocker"
 brew "lazygit"
+brew "m-cli"
 brew "mas"
 brew "ncdu"
 brew "neovim"
@@ -110,11 +112,13 @@ cask "viber"
 cask "vnc-viewer"
 cask "whisky"
 cask "zed"
+cask "zoom"
 mas "1Password for Safari", id: 1569813296
 mas "Amphetamine", id: 937984704
 mas "Apple Configurator", id: 1037126344
 mas "Banktivity", id: 1480779512
 mas "Bee DICOM Viewer", id: 1590273176
+mas "CapCut", id: 1500855883
 mas "Clic", id: 6451395577
 mas "Converter", id: 1457309557
 mas "Dark Reader for Safari", id: 1438243180
@@ -122,6 +126,8 @@ mas "Diffusers", id: 1666309574
 mas "Disk Speed Test", id: 425264550
 mas "DjVu Reader", id: 733144595
 mas "Documents Translator", id: 1566993561
+mas "Endel", id: 1346247457
+mas "GarageBand", id: 682658836
 mas "Home Assistant", id: 1099568401
 mas "Keynote", id: 409183694
 mas "LanScan", id: 472226235
