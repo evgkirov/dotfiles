@@ -1,4 +1,5 @@
 stack=(
+    display=active
     label.color=$DATA_STACK_FG
     script="$PLUGIN_DIR/stack.sh"
     icon.drawing=off
