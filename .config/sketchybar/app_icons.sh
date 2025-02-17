@@ -52,6 +52,7 @@ get_app_icon() {
     "Maps") echo 󰦂 ;;
     "Messages") echo 󰭹 ;;
     "MindNode") echo 󰌪 ;;
+    "Menu Bar Controller for Sonos") echo 󰐎 ;;
     "MultiViewer for F1") echo 󰶓 ;;
     "Music") echo 󰝚 ;;
     "Neovide") echo  ;;
