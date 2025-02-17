@@ -1,5 +1,6 @@
 return {
     "lewis6991/gitsigns.nvim",
+    version = "*",
     event = "BufEnter",
     config = true,
     opts = {},

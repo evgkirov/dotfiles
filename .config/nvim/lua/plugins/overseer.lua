@@ -1,5 +1,6 @@
 return {
     "stevearc/overseer.nvim",
+    version = "*",
     dependencies = {
         "stevearc/dressing.nvim",
     },

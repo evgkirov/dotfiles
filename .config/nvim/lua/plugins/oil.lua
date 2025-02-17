@@ -21,6 +21,7 @@ end
 
 return {
     "stevearc/oil.nvim",
+    version = "*",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     lazy = false,
     config = true,

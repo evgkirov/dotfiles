@@ -13,6 +13,7 @@ end, {
 
 return {
     "stevearc/conform.nvim",
+    version = "*",
     event = "BufWritePre",
     opts = {
         formatters_by_ft = {
