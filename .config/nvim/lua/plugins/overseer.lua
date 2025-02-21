@@ -25,11 +25,12 @@ return {
             end,
             desc = "󰐊 Run task",
         },
-        { "<leader>re", "<cmd>echo 'RT!!'<cr>" },
-        { "<leader>rt", "<cmd>OverseerToggle bottom<cr>", desc = "󰐑 Toggle Overseer" },
-        -- { "<leader>rt", "<cmd>OverseerTaskAction<cr>", desc = "󰐑 Toggle Overseer" },
-        -- { "<leader>rw", "<cmd>OverseerSaveBundle<cr>", desc = "󰆓 Save Bundle" },
-        -- { "<leader>rl", "<cmd>OverseerLoadBundle!<cr>", desc = " Load Bundle" },
+        { "<leader>rt", "<cmd>OverseerToggle bottom<cr>", desc = " Toggle Overseer" },
+        { "<leader>rs", "<cmd>OverseerQuickAction restart<cr>", desc = " Restart Task" },
+        { "<leader>rf", "<cmd>OverseerQuickAction open float<cr>", desc = " Open - Float" },
+        { "<leader>rq", "<cmd>OverseerQuickAction<cr>", desc = " Quick Action (for current task)" },
+        { "<leader>ra", "<cmd>OverseerTaskAction<cr>", desc = " Task Action (select task and run action)" },
+
         {
             "<leader>du",
             function()
