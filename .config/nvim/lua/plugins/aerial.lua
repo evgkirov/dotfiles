@@ -2,6 +2,7 @@ return {
     "stevearc/aerial.nvim",
     version = "*",
     opts = {
+        show_guides = true,
         on_attach = function(bufnr)
             -- Jump forwards/backwards with '{' and '}'
             vim.keymap.set("n", "{", "<cmd>AerialPrev<CR>", { buffer = bufnr })

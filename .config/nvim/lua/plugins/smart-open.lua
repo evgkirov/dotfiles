@@ -12,6 +12,6 @@ return {
         -- { "nvim-telescope/telescope-fzy-native.nvim" },
     },
     keys = {
-        { "<leader>ff", "<cmd>Telescope smart_open cwd_only=true<cr>", desc = "Smart Open file" },
+        { "<leader>ff", "<cmd>Telescope smart_open cwd_only=true filename_first=false<cr>", desc = "Smart Open file" },
     },
 }

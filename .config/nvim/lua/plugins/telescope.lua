@@ -49,6 +49,7 @@ return {
     config = function()
         local telescope = require("telescope")
         local actions = require("telescope.actions")
+        local themes = require("telescope.themes")
 
         telescope.setup({
             defaults = {
@@ -96,17 +97,21 @@ return {
                     -- file_ignore_patterns = { "node_modules", "\\.git" },
                 },
                 lsp_definitions = {
-                    -- layout_strategy = "vertical",
-                    theme = "cursor",
-                    path_display = { "smart" },
+                    layout_strategy = "vertical",
+                    layout_config = {
+                        vertical = {
+                            preview_height = 0.9,
+                        },
+                    },
+                    -- path_display = { "smart" },
                 },
                 lsp_references = {
                     layout_strategy = "vertical",
-                    path_display = { "smart" },
+                    -- path_display = { "smart" },
                 },
                 lsp_dynamic_workspace_symbols = {
                     -- layout_strategy = "vertical",
-                    path_display = { "smart" },
+                    -- path_display = { "smart" },
                 },
                 buffers = {
                     mappings = {
@@ -118,8 +123,8 @@ return {
             },
             extensions = {
                 aerial = {
-                    show_lines = false,
-                    show_columns = "symbols",
+                    -- show_columns = "symbols",
+                    col2_width = 400,
                     -- Display symbols as <root>.<parent>.<symbol>
                     show_nesting = {
                         ["_"] = true, -- This key will be the default
@@ -127,6 +132,7 @@ return {
                 },
                 smart_open = {
                     match_algorithm = "fzf",
+                    result_limit = 100,
                 },
             },
         })
@@ -136,6 +142,7 @@ return {
         { "<leader><space>", "<cmd>Telescope buffers sort_lastused=true<cr>", desc = "Buffers" },
         { "<F1>", "<cmd>Telescope help_tags<cr>", desc = "Help" },
         -- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
+        { "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Resume" },
         { "<leader>fq", "<cmd>Telescope quickfix<cr>", desc = "Quickfix" },
         { "<leader>fg", "<cmd>Telescope live_grep<cr>", desc = "Grep" },
         { "<leader>f*", "<cmd>Telescope grep_string<cr>", desc = "Grep string under cursor" },
