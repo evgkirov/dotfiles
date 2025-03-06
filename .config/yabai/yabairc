@@ -2,6 +2,7 @@
 
 common_settings() {
     echo "Setting common settings for Yabai"
+    yabai -m config layout stack
     yabai -m config external_bar all:38:0
     # yabai -m config window_gap 20
     yabai -m config window_gap 5
@@ -22,9 +23,6 @@ rules() {
 }
 
 signals() {
-    yabai -m signal --add event=display_added action="sh ~/.config/yabai/yabairc update_all_spaces"
-    yabai -m signal --add event=display_removed action="sh ~/.config/yabai/yabairc update_all_spaces"
-    yabai -m signal --add event=display_resized action="sh ~/.config/yabaiyabairc update_all_spaces"
     yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
     yabai -m signal --add event=window_created action="sketchybar --trigger windows_on_spaces"
     yabai -m signal --add event=window_destroyed action="sketchybar --trigger windows_on_spaces"
@@ -62,34 +60,7 @@ set_space_to_stack() {
     yabai -m space $1 --padding abs:0:0:0:0
 }
 
-update_all_spaces() {
-    echo "Updating all spaces on all displays"
-    display_list=$(yabai -m query --displays)
-    display_count=$(echo $display_list | jq ". | length")
-    echo d_count $display_count
-    for ((d = 0; d < $display_count; d++)); do
-        display_width=$(echo $display_list | jq ".[$d].frame.w" | awk '{printf("%d\n", $0)}')
-        space_list=$(echo $display_list | jq ".[$d].spaces")
-        space_count=$(echo $space_list | jq ". | length")
-        echo s_count $space_count
-        for ((s = 0; s < $space_count; s++)); do
-            space_number=$(echo $space_list | jq ".[$s]")
-            if [ "$display_width" -gt 1800 ]; then
-                # External monitor
-                set_space_to_bsp $space_number
-            else
-                # Laptop screen
-                set_space_to_stack $space_number
-            fi
-        done
-
-    done
-
-}
-
-if [ "$1" = "update_all_spaces" ]; then
-    update_all_spaces
-elif [ "$1" = "set_space_to_bsp" ]; then
+if [ "$1" = "set_space_to_bsp" ]; then
     set_space_to_bsp "$2"
 elif [ "$1" = "set_space_to_webdev" ]; then
     set_space_to_webdev "$2"
@@ -99,6 +70,5 @@ else
     echo "Loading full Yabai configuration"
     common_settings
     rules
-    update_all_spaces
     signals
 fi
