@@ -1,5 +1,6 @@
 return {
     "rmagatti/auto-session",
+    version = "*",
     lazy = false,
     priority = 800,
     init = function()
