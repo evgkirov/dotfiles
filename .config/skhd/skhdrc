@@ -46,7 +46,7 @@ default < hyper - m : sketchybar --set music drawing=off
 hyper - 0x18 : system_profiler SPAudioDataType -json | jq -r '.SPAudioDataType[]._items[] | select(._name=="REIYIN Audio") | .coreaudio_default_audio_output_device' | grep -q 'spaudio_yes'; and osascript -e 'tell application "Menu Bar Controller for Sonos" to increaseVolume of (first group whose name contains "Office")'; or m volume up; sleep 0.2; sketchybar --trigger volume_change 
 # -/_
 hyper - 0x1B : system_profiler SPAudioDataType -json | jq -r '.SPAudioDataType[]._items[] | select(._name=="REIYIN Audio") | .coreaudio_default_audio_output_device' | grep -q 'spaudio_yes'; and osascript -e 'tell application "Menu Bar Controller for Sonos" to decreaseVolume of (first group whose name contains "Office")'; or m volume down; sleep 0.2; sketchybar --trigger volume_change
-cmd + ctrl - q : m sleep
+# cmd + ctrl - q : m sleep
 
 #
 # LAYOUTS
