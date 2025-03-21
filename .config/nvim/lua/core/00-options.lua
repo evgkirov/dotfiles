@@ -6,6 +6,7 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.textwidth = 0
 -- vim.o.conceallevel = 1
 -- vim.o.signcolumn = "auto:3"
 
