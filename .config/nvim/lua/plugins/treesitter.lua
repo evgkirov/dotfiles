@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
     event = "BufEnter",
     main = "nvim-treesitter.configs",
     config = true,
