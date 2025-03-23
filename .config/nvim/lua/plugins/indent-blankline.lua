@@ -1,5 +1,6 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
+    version = "*",
     event = "BufEnter",
     main = "ibl",
     ---@module "ibl"
