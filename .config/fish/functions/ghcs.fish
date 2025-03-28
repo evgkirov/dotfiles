@@ -1,16 +1,73 @@
-# https://gist.github.com/fourthdimension/b9c0b80c60d57406f602fde12fa6470a
+# https://github.com/rcny/gh-copilot-cli-alias.fish
 
-function ghcs --description 'Wrapper around `gh copilot suggest` to suggest a command based on a natural language description of the desired output effort. Supports executing suggested commands if applicable.'
-    # Check if any arguments were provided
-    if not set -q argv[1]
-        echo "Please provide a description of the desired output."
-        return 1
+function ghcs
+    set -l TARGET "shell"
+    set GH_DEBUG $GH_DEBUG
+
+    set -l __USAGE "Wrapper around 'gh copilot suggest' to suggest a command based on a natural language description of the desired output effort.
+Supports executing suggested commands if applicable.
+
+USAGE
+  ghcs [flags] <prompt>
+
+FLAGS
+  -d, --debug              Enable debugging
+  -h, --help               Display help usage
+  -t, --target target      Target for suggestion; must be shell, gh, git
+                           default: '$TARGET'
+
+EXAMPLES
+
+- Guided experience
+  ghcs
+
+- Git use cases
+  ghcs -t git 'Undo the most recent local commits'
+  ghcs -t git 'Clean up local branches'
+  ghcs -t git 'Setup LFS for images'
+
+- Working with the GitHub CLI in the terminal
+  ghcs -t gh 'Create pull request'
+  ghcs -t gh 'List pull requests waiting for my review'
+  ghcs -t gh 'Summarize work I have done in issues and pull requests for promotion'
+
+- General use cases
+  ghcs 'Kill processes holding onto deleted files'
+  ghcs 'Test whether there are SSL/TLS issues with github.com'
+  ghcs 'Convert SVG to PNG and resize'
+  ghcs 'Convert MOV to animated PNG'"
+
+    argparse d/debug h/help t/target= -- $argv
+    or return
+
+    if set -q _flag_help
+        echo $__USAGE
+        return 0
     end
 
-    # Combine all arguments into a single query string
-    set -l query (string join " " $argv)
+    if set -q _flag_debug
+        set GH_DEBUG api
+    end
 
-    # Call gh copilot suggest with the provided query
-    gh copilot suggest -t shell "$query"
+    if set -q _flag_target
+        set TARGET $_flag_target
+    end
+
+    set TMPFILE (mktemp -t gh-copilotXXX)
+    function cleanup
+        rm -f $TMPFILE
+    end
+    trap cleanup EXIT
+
+    if GH_DEBUG="$GH_DEBUG" gh copilot suggest -t "$TARGET" $argv --shell-out $TMPFILE
+        if test -s $TMPFILE
+            set FIXED_CMD (cat $TMPFILE)
+            history merge
+            history add "$FIXED_CMD"
+            echo
+            eval $FIXED_CMD
+        end
+    else
+        return 1
+    end
 end
- 

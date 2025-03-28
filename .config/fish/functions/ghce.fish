@@ -1,11 +1,11 @@
-function ghce --description 'Wrapper around `gh copilot explain` to explain a given input command in natural language.'
-    set -l debug_mode $GH_DEBUG
+# https://github.com/rcny/gh-copilot-cli-alias.fish
 
-    argparse 'd/debug' 'h/help' -- $argv
-    or return
+function ghce
+    set GH_DEBUG $GH_DEBUG
 
-    if set -q _flag_help
-        echo "USAGE
+    set -l __USAGE "Wrapper around 'gh copilot explain' to explain a given input command in natural language.
+
+USAGE
   ghce [flags] <command>
 
 FLAGS
@@ -22,13 +22,18 @@ ghce 'git log --oneline --graph --decorate --all'
 
 # Remove binary objects larger than 50 megabytes from git history
 ghce 'bfg --strip-blobs-bigger-than 50M'"
-        return
+
+    argparse d/debug h/help -- $argv
+    or return
+
+    if set -q _flag_help
+        echo $__USAGE
+        return 0
     end
 
     if set -q _flag_debug
-        set debug_mode 'api'
+        set GH_DEBUG api
     end
 
-    set -lx GH_DEBUG $debug_mode
-    gh copilot explain $argv
+    GH_DEBUG="$GH_DEBUG" gh copilot explain $argv
 end
