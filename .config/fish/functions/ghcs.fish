@@ -63,7 +63,7 @@ EXAMPLES
         if test -s $TMPFILE
             set FIXED_CMD (cat $TMPFILE)
             history merge
-            history add "$FIXED_CMD"
+            history append "$FIXED_CMD"
             echo
             eval $FIXED_CMD
         end
