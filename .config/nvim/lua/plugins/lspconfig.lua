@@ -106,42 +106,12 @@ return {
                 basedpyright = {
                     analysis = {
                         typeCheckingMode = "standard",
-                        -- typeCheckingMode = "off",
-                        diagnosticMode = "openFilesOnly",
+                        -- diagnosticMode = "workspace",
                     },
                 },
             },
         })
-        vim.highlight.priorities.semantic_tokens = 95 -- https://github.com/DetachHead/basedpyright/issues/176#issuecomment-2016608736
-
-        lspconfig.pylsp.setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = {
-                pylsp = {
-                    plugins = {
-                        rope = { enabled = true },
-                        autopep8 = { enabled = false },
-                        flake8 = { enabled = false },
-                        jedi_completion = { enabled = false },
-                        jedi_definition = { enabled = false },
-                        jedi_hover = { enabled = false },
-                        jedi_references = { enabled = false },
-                        jedi_signature_help = { enabled = false },
-                        jedi_symbols = { enabled = false },
-                        mccabe = { enabled = false },
-                        preload = { enabled = false },
-                        pycodestyle = { enabled = false },
-                        pydocstyle = { enabled = false },
-                        pyflakes = { enabled = false },
-                        pylint = { enabled = false },
-                        rope_autoimport = { enabled = false },
-                        rope_completion = { enabled = false },
-                        yapf = { enabled = false },
-                    },
-                },
-            },
-        })
+        -- vim.highlight.priorities.semantic_tokens = 95 -- https://github.com/DetachHead/basedpyright/issues/176#issuecomment-2016608736
 
         lspconfig.ruff.setup({
             capabilities = capabilities,
