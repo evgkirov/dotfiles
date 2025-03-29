@@ -1,6 +1,6 @@
 #!/bin/sh
 
-brew install stow
+brew bundle --cleanup
 
 echo
 
