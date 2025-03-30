@@ -1,107 +1,64 @@
-local keymap = vim.keymap.set
-local opts = { silent = true }
-
--- editor
+local keys = require("helpers.keymaps").keys
 
 vim.o.langmap =
     "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 
-opts.desc = "󰆔 Write all"
-keymap("n", "<leader>w", "<cmd>:wa<cr>", opts)
+-- remove default mappings (0.11), I dont't like them
 
-opts.desc = "󰆓 Write one"
-keymap("n", "<leader>W", "<cmd>:w<cr>", opts)
+vim.keymap.del("n", "gra")
+vim.keymap.del("n", "gri")
+vim.keymap.del("n", "grr")
+vim.keymap.del("n", "grn")
 
-opts.desc = "󰩈 Quit"
-keymap("n", "<leader>q", "<cmd>:qa<cr>", opts)
+-- editors
 
-opts.desc = "Hide search"
-keymap("n", "<esc>", ":noh<CR>", opts)
-
-opts.desc = "Break line and insert"
--- keymap("n", "<leader>o", "cib<cr><esc>O", opts)
-keymap("n", "<leader>o", "i<cr><esc>O", opts)
-keymap("v", "<leader>o", "c<cr><esc>O", opts)
+keys({
+    { "<leader>w", "<cmd>:wa<cr>", desc = "󰆔 Write all" },
+    { "<leader>W", "<cmd>:w<cr>", desc = "󰆓 Write one" },
+    { "<leader>q", "<cmd>:qa<cr>", desc = "󰩈 Quit" },
+    { "<leader>x", "<cmd>close<cr>", desc = "󰅗 Close window" },
+    { "<leader>X", "<cmd>bufdo bd<cr>", desc = "󰱝 Clear context" },
+    { "<esc>", ":noh<cr>", desc = "Hide search" },
+})
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
     pattern = "*",
     callback = function(args)
-        opts.desc = nil
-        vim.api.nvim_buf_set_keymap(args.buf, "i", "kj", "<esc>", opts)
-        vim.api.nvim_buf_set_keymap(args.buf, "t", "kj", "<C-\\><C-n>", opts)
+        vim.api.nvim_buf_set_keymap(args.buf, "i", "kj", "<esc>", { silent = true })
+        vim.api.nvim_buf_set_keymap(args.buf, "t", "kj", "<C-\\><C-n>", { silent = true })
     end,
 })
 
-keymap("n", "[q", "<cmd>cprev<CR>", opts)
-keymap("n", "]q", "<cmd>cnext<CR>", opts)
+-- code
 
--- splits
-
--- wkc.s = { name = "󰝘 Splits..." }
---
--- opts.desc = "󰅗 Close window"
--- keymap("n", "<leader>sx", "<cmd>close<cr>", opts)
---
--- opts.desc = " Split horizontally"
--- keymap("n", "<leader>sh", "<cmd>belowright split<cr>", opts)
---
--- opts.desc = " Split vertically"
--- keymap("n", "<leader>sv", "<cmd>belowright vsplit<cr>", opts)
-
-opts.desc = "󰅗 Close window"
-keymap("n", "<leader>x", "<cmd>close<cr>", opts)
-
-opts.desc = "󰱝 Clear context"
-keymap("n", "<leader>X", "<cmd>bufdo bd<cr>", opts)
+keys({
+    { "<leader>ca", vim.lsp.buf.code_action, desc = "Code action" },
+    { "?", vim.lsp.buf.code_action, desc = "Code action" },
+    { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
+})
 
 -- tabs
 
-opts.desc = "󰅗 Close tab"
-keymap("n", "<leader>tx", "<cmd>tabclose<cr>", opts)
-
-opts.desc = "󰐕 New tab"
-keymap("n", "<leader>tn", "<cmd>tabnew<cr>", opts)
-
-opts.desc = "Tab 1"
-keymap("n", "<leader>1", "1gt", opts)
-
-opts.desc = "Tab 2"
-keymap("n", "<leader>2", "2gt", opts)
-
-opts.desc = "Tab 3"
-keymap("n", "<leader>3", "3gt", opts)
-
-opts.desc = "Tab 4"
-keymap("n", "<leader>4", "4gt", opts)
-
-opts.desc = "Tab 5"
-keymap("n", "<leader>5", "5gt", opts)
-
-opts.desc = "Tab 6"
-keymap("n", "<leader>6", "6gt", opts)
-
-opts.desc = "Tab 7"
-keymap("n", "<leader>7", "7gt", opts)
-
-opts.desc = "Tab 8"
-keymap("n", "<leader>8", "8gt", opts)
-
-opts.desc = "Tab 9"
-keymap("n", "<leader>9", "9gt", opts)
+keys({
+    { "<leader>tx", "<cmd>tabclose<cr>", desc = "󰅗 Close tab" },
+    { "<leader>tn", "<cmd>tabnew<cr>", desc = "󰐕 New tab" },
+    { "<leader>1", "1gt", desc = "Tab 1" },
+    { "<leader>2", "2gt", desc = "Tab 2" },
+    { "<leader>3", "3gt", desc = "Tab 3" },
+    { "<leader>4", "4gt", desc = "Tab 4" },
+    { "<leader>5", "5gt", desc = "Tab 5" },
+    { "<leader>6", "6gt", desc = "Tab 6" },
+    { "<leader>7", "7gt", desc = "Tab 7" },
+    { "<leader>8", "8gt", desc = "Tab 8" },
+    { "<leader>9", "9gt", desc = "Tab 9" },
+})
 
 -- terminal
 
-opts.desc = "New terminal"
-keymap("n", "<leader>nn", "<cmd>terminal<cr>", opts)
-
-opts.desc = "New terminal (west)"
-keymap("n", "<leader>nh", "<cmd>aboveleft vsplit | terminal<cr>", opts)
-
-opts.desc = "New terminal (south)"
-keymap("n", "<leader>nj", "<cmd>belowright split | terminal<cr>", opts)
-
-opts.desc = "New terminal (north)"
-keymap("n", "<leader>nk", "<cmd>aboveleft split | terminal<cr>", opts)
-
-opts.desc = "New terminal (east)"
-keymap("n", "<leader>nl", "<cmd>belowright vsplit | terminal<cr>", opts)
+keys({
+    { "<leader>nn", "<cmd>terminal<cr>", desc = "New terminal" },
+    { "<leader>nh", "<cmd>aboveleft vsplit | terminal<cr>", desc = "New terminal (west)" },
+    { "<leader>nj", "<cmd>belowright split | terminal<cr>", desc = "New terminal (south)" },
+    { "<leader>nk", "<cmd>aboveleft split | terminal<cr>", desc = "New terminal (north)" },
+    { "<leader>nl", "<cmd>belowright vsplit | terminal<cr>", desc = "New terminal (east)" },
+})

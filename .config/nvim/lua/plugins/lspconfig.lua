@@ -18,76 +18,52 @@ return {
                     [vim.diagnostic.severity.WARN] = " ",
                     [vim.diagnostic.severity.INFO] = "󰋽 ",
                     [vim.diagnostic.severity.HINT] = " ",
-                    -- [vim.diagnostic.severity.ERROR] = "",
-                    -- [vim.diagnostic.severity.WARN] = "",
-                    -- [vim.diagnostic.severity.INFO] = "",
-                    -- [vim.diagnostic.severity.HINT] = "",
                 },
+            },
+            jump = {
+                float = true,
             },
         })
 
-        local on_attach = function(client, bufnr)
-            local opts = { buffer = bufnr, silent = true }
-
-            opts.desc = "Rename"
-            vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
-
-            opts.desc = "Action..."
-            vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-            vim.keymap.set("n", "?", vim.lsp.buf.code_action, opts)
-            vim.keymap.set("v", "?", vim.lsp.buf.code_action, opts)
-
-            opts.desc = "Hover"
-            vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-
-            opts.desc = "Previous diagnostic"
-            vim.keymap.set("n", "[d", function()
-                vim.diagnostic.goto_prev({ float = true })
-            end, opts)
-
-            opts.desc = "Next diagnostic"
-            vim.keymap.set("n", "]d", function()
-                vim.diagnostic.goto_next({ float = true })
-            end, opts)
-        end
-
         -- Spell checking
         lspconfig.typos_lsp.setup({
-            on_attach = on_attach,
             init_options = {
                 diagnosticSeverity = "Warning",
             },
         })
 
         -- CSS, SCSS, LESS
-        lspconfig.cssls.setup({
-            on_attach = on_attach,
-        })
+        lspconfig.cssls.setup({})
 
         -- javascript and typescript w/react
-        lspconfig.ts_ls.setup({
-            on_attach = on_attach,
-        })
-        lspconfig.eslint.setup({
-            on_attach = on_attach,
-        })
+        lspconfig.ts_ls.setup({})
+        lspconfig.eslint.setup({})
 
         -- html
         lspconfig.html.setup({
-            on_attach = on_attach,
             filetypes = { "html", "htmldjango" },
         })
 
         -- json
-        lspconfig.jsonls.setup({
-            on_attach = on_attach,
+        lspconfig.jsonls.setup({})
+
+        -- python
+        lspconfig.basedpyright.setup({
+            settings = {
+                basedpyright = {
+                    analysis = {
+                        typeCheckingMode = "standard",
+                        -- diagnosticMode = "workspace",
+                    },
+                },
+            },
         })
+        lspconfig.ruff.setup({})
 
         -- lua
         -- "If you primarily use lua-language-server for Neovim"
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
         lspconfig.lua_ls.setup({
-            on_attach = on_attach,
             on_init = function(client)
                 if client.workspace_folders then
                     local path = client.workspace_folders[1].name
@@ -122,25 +98,6 @@ return {
             settings = {
                 Lua = {},
             },
-        })
-
-        -- python
-
-        lspconfig.basedpyright.setup({
-            on_attach = on_attach,
-            settings = {
-                basedpyright = {
-                    analysis = {
-                        typeCheckingMode = "standard",
-                        -- diagnosticMode = "workspace",
-                    },
-                },
-            },
-        })
-        -- vim.highlight.priorities.semantic_tokens = 95 -- https://github.com/DetachHead/basedpyright/issues/176#issuecomment-2016608736
-
-        lspconfig.ruff.setup({
-            on_attach = on_attach,
         })
     end,
 }

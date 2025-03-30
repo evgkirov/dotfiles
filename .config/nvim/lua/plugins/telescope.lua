@@ -23,22 +23,6 @@ local function action_open_in_window(direction, select_target, float)
     end
 end
 
-local function action_flash_to_telescope(picker)
-    return function()
-        require("flash").jump({
-            -- jump = {
-            --     autojump = true,
-            -- },
-            action = function(match, state)
-                vim.api.nvim_win_call(match.win, function()
-                    vim.api.nvim_win_set_cursor(match.win, match.pos)
-                    vim.cmd("Telescope " .. picker)
-                end)
-            end,
-        })
-    end
-end
-
 return {
     "nvim-telescope/telescope.nvim",
     branch = "master",
@@ -155,10 +139,8 @@ return {
         { "<leader>gl", "<cmd>Telescope git_commits<cr>", desc = "Git Log" },
         { "<leader>gL", "<cmd>Telescope git_bcommits<cr>", desc = "Git Log (Current file)" },
         { "gd", "<cmd>Telescope lsp_definitions jump_type=never<cr>", desc = "View definition" },
-        { "go", "<cmd>Telescope lsp_definitions<cr>", desc = "View definition" },
-        { "gsd", action_flash_to_telescope("lsp_definitions"), desc = "Flash to definition" },
+        { "go", "<cmd>Telescope lsp_definitions<cr>", desc = "Go to definition" },
         { "gr", "<cmd>Telescope lsp_references<cr>", desc = "Find references" },
-        { "gsr", action_flash_to_telescope("lsp_references"), desc = "Flash to references" },
         { "<leader>cd", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" },
         {
             "<leader>fo",
