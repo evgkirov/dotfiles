@@ -6,6 +6,7 @@ vim.o.langmap =
 -- remove default mappings (0.11), I dont't like them
 
 vim.keymap.del("n", "gra")
+vim.keymap.del("v", "gra")
 vim.keymap.del("n", "gri")
 vim.keymap.del("n", "grr")
 vim.keymap.del("n", "grn")
@@ -32,8 +33,8 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 -- code
 
 keys({
-    { "<leader>ca", vim.lsp.buf.code_action, desc = "Code action" },
-    { "?", vim.lsp.buf.code_action, desc = "Code action" },
+    { "<leader>ca", mode = { "n", "v" }, vim.lsp.buf.code_action, desc = "Code action" },
+    { "?", mode = { "n", "v" }, vim.lsp.buf.code_action, desc = "Code action" },
     { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
 })
 
