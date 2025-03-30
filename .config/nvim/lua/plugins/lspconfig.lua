@@ -10,7 +10,6 @@ return {
     },
     config = function()
         local lspconfig = require("lspconfig")
-        local capabilities = require("blink.cmp").get_lsp_capabilities()
 
         vim.diagnostic.config({
             signs = {
@@ -54,7 +53,6 @@ return {
 
         -- Spell checking
         lspconfig.typos_lsp.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
             init_options = {
                 diagnosticSeverity = "Warning",
@@ -63,30 +61,25 @@ return {
 
         -- CSS, SCSS, LESS
         lspconfig.cssls.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
         })
 
         -- javascript and typescript w/react
         lspconfig.ts_ls.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
         })
         lspconfig.eslint.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
         })
 
         -- html
         lspconfig.html.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
             filetypes = { "html", "htmldjango" },
         })
 
         -- json
         lspconfig.jsonls.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
         })
 
@@ -94,7 +87,6 @@ return {
         -- "If you primarily use lua-language-server for Neovim"
         -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
         lspconfig.lua_ls.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
             on_init = function(client)
                 if client.workspace_folders then
@@ -135,7 +127,6 @@ return {
         -- python
 
         lspconfig.basedpyright.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
             settings = {
                 basedpyright = {
@@ -149,7 +140,6 @@ return {
         -- vim.highlight.priorities.semantic_tokens = 95 -- https://github.com/DetachHead/basedpyright/issues/176#issuecomment-2016608736
 
         lspconfig.ruff.setup({
-            capabilities = capabilities,
             on_attach = on_attach,
         })
     end,
