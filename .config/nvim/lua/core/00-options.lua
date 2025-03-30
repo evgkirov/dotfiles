@@ -8,7 +8,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.textwidth = 0
 -- vim.o.conceallevel = 1
--- vim.o.signcolumn = "auto:3"
+vim.o.signcolumn = "auto:2"
 
 vim.g.mapleader = " "
 -- vim.o.fillchars = table.concat({ "eob:~", "vert:▏", "verthoriz:╬", "vertleft:▏", "vertright:▏" }, ",")

@@ -2,8 +2,25 @@ return {
     "lewis6991/gitsigns.nvim",
     version = "*",
     event = "BufEnter",
-    config = true,
-    opts = {},
+    opts = {
+        signs = {
+            add = { text = "░" },
+            change = { text = "░" },
+            delete = { text = "▄" },
+            topdelete = { text = "▀" },
+            changedelete = { text = "▓" },
+            untracked = { text = "┆" },
+        },
+        signs_staged = {
+            add = { text = "░" },
+            change = { text = "░" },
+            delete = { text = "▄" },
+            topdelete = { text = "▀" },
+            changedelete = { text = "▓" },
+            untracked = { text = "┆" },
+        },
+        sign_priority = 10,
+    },
     keys = {
         {
             "]c",
