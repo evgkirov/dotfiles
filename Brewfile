@@ -20,6 +20,7 @@ brew "eza"
 brew "fish"
 brew "starship"
 brew "zoxide"
+brew "fzf"
 
 # Formulae: Dev tools
 brew "awscli"
