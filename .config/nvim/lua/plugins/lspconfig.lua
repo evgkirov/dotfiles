@@ -58,6 +58,7 @@ return {
                 },
             },
         })
+        vim.highlight.priorities.semantic_tokens = 95 -- https://github.com/DetachHead/basedpyright/issues/176#issuecomment-2016608736
         lspconfig.ruff.setup({})
 
         -- lua
