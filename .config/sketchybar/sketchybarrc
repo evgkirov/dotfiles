@@ -103,7 +103,7 @@ borders_options=(
     style=square
     width=6.0
     active_color=$BAR_BG
-    background_color=$BAR_BG
+    # background_color=$BAR_BG
     inactive_color=$BAR_BG
     blacklist="iPhone Mirroring,Endel"
 )
