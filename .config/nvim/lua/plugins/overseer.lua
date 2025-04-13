@@ -6,7 +6,7 @@ return {
     },
     config = true,
     opts = {
-        -- strategy = { "jobstart", use_terminal = false }, -- https://github.com/stevearc/overseer.nvim/issues/202
+        strategy = { "jobstart", use_terminal = false }, -- https://github.com/stevearc/overseer.nvim/issues/202
         bundles = {
             autostart_on_load = false,
         },
