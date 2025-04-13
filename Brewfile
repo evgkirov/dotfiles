@@ -33,6 +33,7 @@ brew "ripgrep"
 
 # Formulae: Languages & libraries
 brew "node"
+brew "python@3.12", link: true
 brew "python@3.13", link: true
 # brew "postgresql@14"
 
@@ -110,6 +111,7 @@ cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Banktivity", id: 1480779512
 mas "Documents Translator", id: 1566993561
+mas "Dark Reader for Safari", id: 1438243180
 mas "Endel", id: 1346247457
 mas "Home Assistant", id: 1099568401
 mas "Keynote", id: 409183694
