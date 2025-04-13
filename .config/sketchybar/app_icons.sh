@@ -8,7 +8,7 @@ get_app_icon() {
     fi
 
     case $1 in
-    "1Password") echo 󰌆 ;;
+    "1Password") echo 󱉼 ;;
     "Activity Monitor") echo 󱕎 ;;
     "AetherSX2") echo  ;;
     "AlDente") echo 󱅠 ;;
@@ -21,6 +21,7 @@ get_app_icon() {
     "Calculator") echo 󰃬 ;;
     "Calendar") echo 󰸗 ;;
     "ChatGPT") echo 󰧑 ;;
+    "CleanMyMac") echo 󰃢 ;;
     "Clock") echo 󰥔 ;;
     "Contacts") echo 󰛋 ;;
     "Cyberduck") echo 󰇥 ;;
@@ -37,7 +38,7 @@ get_app_icon() {
     "Finder") echo 󰀶 ;;
     "GitHub Desktop") echo 󰊤 ;;
     "GitKraken") echo  ;;
-    "Ghostty") echo 󰊠 ;;
+    "Ghostty") echo 󰞷 ;;
     "Google Chrome Canary") echo 󰊯 ;;
     "Google Chrome") echo 󰊯 ;;
     "Google Meet") echo 󰕧 ;;
@@ -46,6 +47,7 @@ get_app_icon() {
     "Home") echo 󰋜 ;;
     "IINA") echo 󰐊 ;;
     "Keynote") echo 󰐨 ;;
+    "Ledger Live") echo 󰖄 ;;
     "MacDown") echo  ;;
     "Macs Fan Control") echo 󰈐 ;;
     "Mail") echo 󰇮 ;;
