@@ -34,6 +34,7 @@ get_app_icon() {
     "Endel") echo 󰥛 ;;
     "FaceTime") echo 󰕧 ;;
     "Fantastical") echo 󰸗 ;;
+    "Figma") echo  ;;
     "Find My") echo 󰐷 ;;
     "Finder") echo 󰀶 ;;
     "GitHub Desktop") echo 󰊤 ;;
