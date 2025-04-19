@@ -73,6 +73,7 @@ cask "cyberduck"
 cask "daisydisk"
 cask "dictionaries"
 cask "discord"
+cask "figma"
 cask "firefox"
 cask "fliqlo"
 cask "font-jetbrains-mono-nerd-font"
@@ -115,6 +116,7 @@ mas "Documents Translator", id: 1566993561
 mas "Dark Reader for Safari", id: 1438243180
 mas "Endel", id: 1346247457
 mas "Home Assistant", id: 1099568401
+mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 409183694
 mas "LanScan", id: 472226235
 mas "Menu Bar Controller for Sonos", id: 1357379892
