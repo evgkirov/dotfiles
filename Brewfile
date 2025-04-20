@@ -112,8 +112,8 @@ cask "zoom"
 # Mac App Store: All
 mas "Amphetamine", id: 937984704
 mas "Banktivity", id: 1480779512
-mas "Documents Translator", id: 1566993561
 mas "Dark Reader for Safari", id: 1438243180
+mas "Documents Translator", id: 1566993561
 mas "Endel", id: 1346247457
 mas "Home Assistant", id: 1099568401
 mas "Kagi for Safari", id: 1622835804
@@ -123,5 +123,6 @@ mas "Menu Bar Controller for Sonos", id: 1357379892
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
+mas "Raycast Companion", id: 6738274497
 mas "Speedtest", id: 1153157709
 mas "Things", id: 904280696
