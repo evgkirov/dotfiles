@@ -84,9 +84,8 @@ return {
         })
 
         for server, opts in pairs(servers) do
-            require("lspconfig")[server].setup(opts)
-            -- vim.lsp.config(server, opts)
-            -- vim.lsp.enable(server)
+            vim.lsp.config(server, opts)
+            vim.lsp.enable(server)
         end
     end,
 }
