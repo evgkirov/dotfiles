@@ -1,6 +1,6 @@
 return {
     "yetone/avante.nvim",
-    version = "*",
+    version = false, -- Never set this value to "*"! Never!
     event = "VeryLazy",
     opts = {
         provider = "openai",
