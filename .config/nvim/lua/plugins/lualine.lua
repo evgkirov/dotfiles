@@ -19,16 +19,23 @@ local custom_oil_extension = {
 }
 
 local custom_avante_extension = {
-    sections = {
-        lualine_a = { "mode" },
-        lualine_x = { "filetype" },
-    },
-    inactive_sections = {
-        lualine_a = {},
-        lualine_x = { "filetype" },
-    },
-    filetypes = { "Avante", "AvanteInput" },
+    sections = {},
+    inactive_sections = {},
+    filetypes = { "Avante", "AvanteInput", "AvanteSelectedFiles" },
 }
+
+-- local custom_avante_extension = {
+--     sections = {
+--         lualine_a = { "mode" },
+--         lualine_x = { "filetype" },
+--     },
+--     inactive_sections = {
+--         lualine_a = {},
+--         lualine_x = { "filetype" },
+--     },
+--     filetypes = { "Avante", "AvanteInput", "AvanteSelectedFiles" },
+-- }
+
 local disable_autoformat_status = {
     function()
         if vim.g.disable_autoformat or vim.b.disable_autoformat then
@@ -48,6 +55,9 @@ return {
         options = {
             section_separators = "",
             component_separators = "",
+            -- disabled_filetypes = {
+            --     statusline = { "Avante", "AvanteInput", "AvanteSelectedFiles" },
+            -- },
         },
         sections = {
             lualine_a = { "mode" },

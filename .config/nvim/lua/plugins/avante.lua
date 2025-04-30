@@ -1,15 +1,18 @@
 return {
     "yetone/avante.nvim",
     version = false, -- Never set this value to "*"! Never!
-    event = "VeryLazy",
+    -- event = "VeryLazy",
     opts = {
         provider = "openai",
         auto_suggestions_provider = "openai",
+        -- mode = "legacy", -- XXX
         claude = {
             api_key_name = "cmd:cat " .. vim.fn.expand("~/.local/share/nvim/claude-api-key"),
         },
         openai = {
             api_key_name = "cmd:cat " .. vim.fn.expand("~/.local/share/nvim/openai-api-key"),
+            model = "gpt-4.1",
+            -- disable_tools = true,
         },
         behaviour = {
             auto_suggestions = false,
@@ -22,7 +25,8 @@ return {
                 rounded = false,
             },
         },
-        file_selector = {
+        -- file_selector = {
+        selector = {
             provider = "telescope",
         },
         mappings = {
@@ -61,5 +65,10 @@ return {
         --         },
         --     },
         -- },
+    },
+    keys = {
+        { "<leader>aa", ":AvanteAsk<cr>", desc = "Ask", mode = { "n", "v" } },
+        { "<leader>at", ":AvanteToggle<cr>", desc = "Toggle" },
+        { "<leader>ae", ":AvanteEdit<cr>", desc = "Edit", mode = { "v" } },
     },
 }
