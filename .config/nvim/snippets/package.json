@@ -1,0 +1,14 @@
+{
+    "contributes": {
+        "snippets": [
+            {
+                "language": [
+                    "typescript",
+                    "typescriptreact"
+                ],
+                "path": "./ag-react.json"
+            }
+        ]
+    },
+    "name": "my-snippets"
+}

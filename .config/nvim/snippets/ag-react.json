@@ -1,0 +1,73 @@
+{
+    "ag-react-component-index": {
+        "prefix": "ag-react-component-index",
+        "body": [
+            "import React from \"react\";",
+            "",
+            "import { ${1:ComponentName}Props } from \"./interfaces\";",
+            "import { useProps } from \"./utils\";",
+            "",
+            "export function ${1:ComponentName}(props: ${1:ComponentName}Props) {",
+            "  const {} = useProps(props);",
+            "  return <h1>${1:ComponentName}</h1>;",
+            "}"
+        ],
+        "description": "React component with props and interfaces"
+    },
+    "ag-react-component-index-observeable": {
+        "prefix": "ag-react-component-index-observeable",
+        "body": [
+            "import React from \"react\";",
+            "",
+            "import { observer } from \"mobx-react\";",
+            "",
+            "import { ${1:ComponentName}Props } from \"./interfaces\";",
+            "import { useProps } from \"./utils\";",
+            "",
+            "function ${1:ComponentName}Component(props: ${1:ComponentName}Props) {",
+            "  const {} = useProps(props);",
+            "  return <h1>${1:ComponentName}</h1>;",
+            "}",
+            "",
+            "export const ${1:ComponentName} = observer(${1:ComponentName}Component);"
+        ],
+        "description": "React component with props and interfaces and observer"
+    },
+    "ag-react-component-index-basic": {
+        "prefix": "ag-react-component-index-basic",
+        "body": [
+            "import React from \"react\";",
+            "",
+            "export function ${1:ComponentName}() {",
+            "  return <h1>${1:ComponentName}</h1>;",
+            "}"
+        ],
+        "description": "Basic React component"
+    },
+    "ag-react-component-interfaces": {
+        "prefix": "ag-react-component-interfaces",
+        "body": [
+            "export interface ${1:ComponentName}Props {",
+            "  ${2:propName}: ${3:propType};",
+            "}",
+            "",
+            "export interface Extended${1:ComponentName}Props extends ${1:ComponentName}Props {",
+            "  ${4:extendedPropName}: ${5:extendedPropType};",
+            "}"
+        ],
+        "description": "React component interfaces"
+    },
+    "ag-react-component-utils": {
+        "prefix": "ag-react-component-utils",
+        "body": [
+            "import { ${1:ComponentName}Props, Extended${1:ComponentName}Props } from \"./interfaces\";",
+            "",
+            "export function useProps(props: ${1:ComponentName}Props): Extended${1:ComponentName}Props {",
+            "  return {",
+            "    ...props,",
+            "  };",
+            "}"
+        ],
+        "description": "React component utils"
+    }
+}
