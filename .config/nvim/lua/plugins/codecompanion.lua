@@ -1,5 +1,6 @@
 return {
     "olimorris/codecompanion.nvim",
+    version = "*",
     event = "VeryLazy",
     opts = {
         adapters = {
