@@ -27,14 +27,14 @@ local function overrides()
 end
 
 local function set_light_mode()
-    vim.api.nvim_set_option("background", "light")
+    vim.o.background = "light"
     vim.cmd('let ayucolor="light"')
     vim.cmd("colorscheme " .. theme_config.light)
     overrides()
 end
 
 local function set_dark_mode()
-    vim.api.nvim_set_option("background", "dark")
+    vim.o.background = "dark"
     vim.cmd('let ayucolor="dark"')
     vim.cmd("colorscheme " .. theme_config.dark)
     overrides()
