@@ -239,7 +239,7 @@
                         "product_id": 866,
                         "vendor_id": 10730
                     },
-                    "ignore": true
+                    "manipulate_caps_lock_led": false
                 }
             ],
             "name": "Default profile",
