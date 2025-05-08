@@ -1,9 +1,6 @@
 return {
     "stevearc/overseer.nvim",
     version = "*",
-    dependencies = {
-        "stevearc/dressing.nvim",
-    },
     config = true,
     opts = {
         strategy = { "jobstart", use_terminal = false }, -- https://github.com/stevearc/overseer.nvim/issues/202
