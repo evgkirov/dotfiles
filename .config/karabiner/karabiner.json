@@ -75,7 +75,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "identifiers": [{ "vendor_id": 7504 }],
+                                        "identifiers": [
+                                            { "vendor_id": 7504 },
+                                            { "vendor_id": 10730 }
+                                        ],
                                         "type": "device_unless"
                                     }
                                 ],
@@ -110,7 +113,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "identifiers": [{ "vendor_id": 7504 }],
+                                        "identifiers": [
+                                            { "vendor_id": 7504 },
+                                            { "vendor_id": 10730 }
+                                        ],
                                         "type": "device_unless"
                                     }
                                 ],
@@ -130,7 +136,10 @@
                             {
                                 "conditions": [
                                     {
-                                        "identifiers": [{ "vendor_id": 7504 }],
+                                        "identifiers": [
+                                            { "vendor_id": 7504 },
+                                            { "vendor_id": 10730 }
+                                        ],
                                         "type": "device_unless"
                                     }
                                 ],
@@ -239,7 +248,7 @@
                         "product_id": 866,
                         "vendor_id": 10730
                     },
-                    "ignore": true
+                    "manipulate_caps_lock_led": false
                 }
             ],
             "name": "Default profile",
