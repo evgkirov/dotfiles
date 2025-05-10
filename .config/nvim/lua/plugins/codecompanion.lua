@@ -1,35 +1,50 @@
+local function read_secret(uri)
+    local handle = io.popen("op read '" .. uri .. "' --no-newline")
+    if handle == nil then
+        vim.notify("Failed to run command to retrieve " .. uri, vim.log.levels.ERROR)
+        return nil
+    end
+    local api_key = handle:read("*a")
+    handle:close()
+    return api_key
+end
+
 return {
     "olimorris/codecompanion.nvim",
     version = "*",
-    opts = {
-        adapters = {
-            openai = function()
-                return require("codecompanion.adapters").extend("openai", {
-                    env = {
-                        api_key = "cmd:op read 'op://Private/OpenAI API KEY/credential' --no-newline",
-                    },
-                })
-            end,
-        },
-        strategies = {
-            chat = {
-                adapter = "openai",
+    config = function()
+        require("codecompanion").setup({
+            adapters = {
+                openai = function()
+                    return require("codecompanion.adapters").extend("openai", {
+                        env = {
+                            api_key = read_secret("op://Private/OpenAI API KEY/credential"),
+                        },
+                    })
+                end,
             },
-            inline = {
-                adapter = "openai",
-            },
-        },
-        display = {
-            chat = {
-                start_in_insert_mode = true,
-                show_settings = true,
-                window = {
-                    layout = "float",
+            strategies = {
+                chat = {
+                    adapter = "openai",
+                },
+                inline = {
+                    adapter = "openai",
                 },
             },
-        },
-    },
-    init = function()
+            display = {
+                diff = {
+                    close_chat_at = 1000000,
+                },
+                chat = {
+                    -- start_in_insert_mode = true,
+                    show_settings = true,
+                    window = {
+                        layout = "float",
+                    },
+                },
+            },
+        })
+
         vim.api.nvim_create_autocmd({ "User" }, {
             pattern = "CodeCompanionDiffAttached",
             callback = function(request)
@@ -45,7 +60,8 @@ return {
     },
     keys = {
         { "<leader>ce", ":CodeCompanion<CR>", desc = "Code Companion Edit", mode = { "n", "v" } },
-        { "<leader>cc", ":CodeCompanionChat<CR>", desc = "Code Companion Chat", mode = { "n", "v" } },
+        { "<leader>cc", ":CodeCompanionChat<CR>i", desc = "Code Companion Chat New", mode = { "n", "v" } },
+        { "<leader>ct", ":CodeCompanionChat Toggle<CR>", desc = "Code Companion Chat Toggle", mode = { "n", "v" } },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",
