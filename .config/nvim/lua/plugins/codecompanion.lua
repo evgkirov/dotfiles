@@ -37,7 +37,7 @@ return {
                 },
                 chat = {
                     -- start_in_insert_mode = true,
-                    show_settings = true,
+                    -- show_settings = true,
                     window = {
                         layout = "float",
                     },
@@ -60,7 +60,7 @@ return {
     },
     keys = {
         { "<leader>ce", ":CodeCompanion<CR>", desc = "Code Companion Edit", mode = { "n", "v" } },
-        { "<leader>cc", ":CodeCompanionChat<CR>i", desc = "Code Companion Chat New", mode = { "n", "v" } },
+        { "<leader>cc", ":CodeCompanionChat<CR>o", desc = "Code Companion Chat New", mode = { "n", "v" } },
         { "<leader>ct", ":CodeCompanionChat Toggle<CR>", desc = "Code Companion Chat Toggle", mode = { "n", "v" } },
     },
     dependencies = {
