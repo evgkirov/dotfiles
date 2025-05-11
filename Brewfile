@@ -47,6 +47,7 @@ brew "basedpyright"
 brew "djlint"
 brew "eslint_d"
 brew "lua-language-server"
+brew "markdown-oxide"
 brew "prettierd"
 brew "ruff"
 brew "stylua"
@@ -61,6 +62,8 @@ brew "stow"
 brew "watch"
 brew "wget"
 brew "yt-dlp"
+brew "imagemagick"  # required by snacks.nvim/image
+brew "pngpaste"  # required by obsidian.nvim
 
 # Casks: All
 cask "1password"

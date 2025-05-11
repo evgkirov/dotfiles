@@ -11,12 +11,13 @@ return {
 
         local servers = {
 
-            -- Common
+            -- Text
             typos_lsp = {
                 init_options = {
                     diagnosticSeverity = "Warning",
                 },
             },
+            markdown_oxide = {},
 
             -- Web
             html = {

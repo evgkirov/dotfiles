@@ -7,13 +7,13 @@ return {
         vim.o.timeoutlen = 300
         local which_key = require("which-key")
         which_key.add({
-            { "<leader>a", group = "󰧑 AI..." },
             { "<leader>c", group = "󰅩 Code..." },
             { "<leader>d", group = "󰡨 Docker..." },
             { "<leader>f", group = "󰍉 Find..." },
             { "<leader>g", group = "󰊢 Git..." },
             { "<leader>m", group = "󰍔 Markdown..." },
             { "<leader>n", group = " Terminal..." },
+            { "<leader>o", group = "󰇈 Obsidian..." },
             { "<leader>r", group = "󱤵 Run..." },
             { "<leader>t", group = "󰓩 Tabs..." },
         })
