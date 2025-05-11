@@ -22,6 +22,7 @@ lalt - h : open -a "Home Assistant"
 lalt - m : open -a "Spotify"
 lalt - p : open -a "1Password"
 lalt - s : open -a "Things3"
+lalt - n : set wezterm_focus (yabai -m query --windows | jq '.[] | select(.app=="WezTerm") | ."has-focus"'); if test "$wezterm_focus" = "true"; skhd -k "cmd - h"; else; open -a "WezTerm"; end
 # "lalt - t" is handled by Ghostty
 
 #

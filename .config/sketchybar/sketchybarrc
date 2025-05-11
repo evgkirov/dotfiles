@@ -105,7 +105,7 @@ borders_options=(
     active_color=$BAR_BG
     # background_color=$BAR_BG
     inactive_color=$BAR_BG
-    blacklist="iPhone Mirroring,Endel"
+    blacklist="iPhone Mirroring,Endel,wezterm-gui"
 )
 
 borders "${borders_options[@]}"

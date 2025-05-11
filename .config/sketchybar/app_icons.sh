@@ -101,7 +101,7 @@ get_app_icon() {
     "Ukelele") echo  ;;
     "Upwork") echo 󰰨 ;;
     "Weather") echo 󰖕 ;;
-    "WezTerm") echo 󰞷 ;;
+    "WezTerm") echo  ;;
     "WhatsApp (old)") echo 󰖣 ;;
     "WhatsApp") echo 󰖣 ;;
     "X") echo 󰕄 ;;

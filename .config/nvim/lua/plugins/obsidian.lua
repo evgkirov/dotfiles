@@ -71,7 +71,7 @@ return {
         },
         use_advanced_uri = true,
         open_app_foreground = true,
-        open_notes_in = "vsplit",
+        open_notes_in = vim.g.is_skitty and "current" or "vsplit",
     },
     keys = {
         { "<leader>oa", ":Obsidian<cr>", desc = "Action..." },

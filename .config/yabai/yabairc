@@ -21,6 +21,7 @@ common_settings() {
 rules() {
     echo "Setting rules for Yabai"
     yabai -m rule --add app=Endel manage=off
+    yabai -m rule --add app=WezTerm manage=off
 }
 
 signals() {

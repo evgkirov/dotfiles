@@ -111,7 +111,7 @@ cask "the-unarchiver"
 cask "transmission"
 cask "ukelele"
 cask "viber"
-cask "wezterm"
+cask "wezterm@nightly"
 cask "zed"
 cask "zoom"
 
