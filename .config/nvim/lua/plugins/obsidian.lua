@@ -37,13 +37,19 @@ return {
             return os.date("%Y-%m-%d") .. " " .. title
         end,
         note_frontmatter_func = function(note)
-            return {
+            if note.id == "Sticky Note" then
+                return {}
+            end
+            local existing_metadata = note.metadata or {}
+            local default_metadata = {
                 day = "[[" .. os.date("%Y-%m-%d") .. "]]",
                 area = "",
                 type = "",
                 project = "",
                 person = {},
             }
+            local merged_metadata = vim.tbl_extend("force", default_metadata, existing_metadata)
+            return merged_metadata
         end,
         completion = { -- disable: markdown-oxide handles this
             nvim_cmp = false,
