@@ -4,6 +4,7 @@
 \.gitignore
 \.stow-local-ignore
 ^/Brewfile
+^/Makefile
 ^/README\.md
 ^/screenshots
 ^/scripts
