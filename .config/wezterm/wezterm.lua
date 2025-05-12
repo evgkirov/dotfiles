@@ -7,7 +7,8 @@ if wezterm.config_builder then
 end
 
 config.default_cwd = "/Users/evgkirov/Obsidian/Personal"
-config.default_prog = { "/opt/homebrew/bin/fish", "-c", "NEOVIM_MODE=skitty nvim 'Inbox/Sticky Note.md'" }
+config.default_prog =
+    { "/opt/homebrew/bin/fish", "-c", "NEOVIM_MODE=quick_notes nvim (date +'Inbox/%Y-%m-%d %H%M Quick Note.md')" }
 
 local function get_current_theme_config()
     local themes_dir = wezterm.home_dir .. "/.config/themes/"
@@ -31,13 +32,12 @@ config.font_size = 12.0
 
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "TITLE|MACOS_USE_BACKGROUND_COLOR_AS_TITLEBAR_COLOR|RESIZE"
-local x_pad = 5
-local y_pad = 8
+config.use_resize_increments = true
 config.window_padding = {
-    left = x_pad,
-    right = x_pad,
-    top = y_pad,
-    bottom = y_pad,
+    left = 0,
+    right = 0,
+    top = 0,
+    bottom = 0,
 }
 
 wezterm.on("window-config-reloaded", function(window, pane)
