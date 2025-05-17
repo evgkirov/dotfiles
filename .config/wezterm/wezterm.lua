@@ -7,8 +7,7 @@ if wezterm.config_builder then
 end
 
 config.default_cwd = "/Users/evgkirov/Obsidian/Personal"
-config.default_prog =
-    { "/opt/homebrew/bin/fish", "-c", "NEOVIM_MODE=quick_notes nvim (date +'Inbox/%Y-%m-%d %H%M Quick Note.md')" }
+config.default_prog = { "/opt/homebrew/bin/fish", "-c", "NEOVIM_MODE=quick_notes nvim" }
 
 local function get_current_theme_config()
     local themes_dir = wezterm.home_dir .. "/.config/themes/"
@@ -20,7 +19,15 @@ local function get_current_theme_config()
 end
 
 config.font = wezterm.font_with_fallback({
-    "TX-02",
+    -- "TX-02",
+    -- "Iosevka Custom",
+    -- "Iosevka Term",
+    -- "Iosevka Term SS05",
+    -- "Iosevka Term SS08",
+    -- "Iosevka Term SS09",
+    -- "Iosevka Term SS14",
+    -- "Iosevka Term SS18",
+    -- "VictorMono NFM Medium",
     "JetBrainsMono Nerd Font",
     "Symbols Nerd Font Mono",
     "Apple Color Emoji",

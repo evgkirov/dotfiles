@@ -1,4 +1,13 @@
-# font-family = "FiraCode Nerd Font Mono"
+# font-family = "Iosevka Custom"
+# font-family = "Iosevka Term"
+# font-family = "Iosevka Term SS05"
+# font-family = "Iosevka Term SS08"
+# font-family = "Iosevka Term SS09"
+# font-family = "Iosevka Term SS14"
+# font-family = "Iosevka Term SS18"
+# font-size = 13
+
+# font-family = "VictorMono NFM Medium"
 # font-family = "JetBrainsMono Nerd Font Mono"
 font-family = TX-02 SemiCondensed
 font-family-italic = TX-02 SemiCondensed Oblique
