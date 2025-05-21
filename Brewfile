@@ -130,7 +130,6 @@ cask "font-iosevka-term-nerd-font"
 mas "Amphetamine", id: 937984704
 mas "Banktivity", id: 1480779512
 mas "Dark Reader for Safari", id: 1438243180
-mas "Documents Translator", id: 1566993561
 mas "Endel", id: 1346247457
 mas "Home Assistant", id: 1099568401
 mas "Kagi for Safari", id: 1622835804
