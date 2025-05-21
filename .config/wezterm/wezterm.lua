@@ -21,19 +21,20 @@ end
 config.font = wezterm.font_with_fallback({
     -- "TX-02",
     -- "Iosevka Custom",
-    -- "Iosevka Term",
+    "Iosevka Term",
     -- "Iosevka Term SS05",
     -- "Iosevka Term SS08",
     -- "Iosevka Term SS09",
     -- "Iosevka Term SS14",
     -- "Iosevka Term SS18",
+    -- "Pragmasevka Nerd Font",
     -- "VictorMono NFM Medium",
     "JetBrainsMono Nerd Font",
     "Symbols Nerd Font Mono",
     "Apple Color Emoji",
 })
 
-config.font_size = 12.0
+config.font_size = 13.0
 
 -- config.freetype_load_flags = "NO_HINTING"
 
