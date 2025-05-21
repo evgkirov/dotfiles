@@ -21,6 +21,7 @@ lalt - f : osascript -e 'tell application "Finder" to make new Finder window' ; 
 lalt - h : open -a "Home Assistant"
 lalt - m : open -a "Spotify"
 lalt - n : set wezterm_focused (yabai -m query --windows --window | jq '.app=="WezTerm"'); if test "$wezterm_focused" = "true"; skhd -k "cmd - h"; else; open -a "WezTerm"; end
+lalt - o : open -a "Obsidian"
 lalt - p : open -a "1Password"
 lalt - s : open -a "Things3"
 # "lalt - t" is handled by Ghostty
