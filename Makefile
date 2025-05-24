@@ -2,6 +2,7 @@
 
 brew:
 	brew bundle --cleanup
+	brew upgrade
 
 stow_check:
 	stow --simulate -v -t $$HOME .
