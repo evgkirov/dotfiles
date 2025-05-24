@@ -6,10 +6,10 @@
 # font-family = "Iosevka Term SS14"
 # font-family = "Iosevka Term SS18"
 # font-family = "Pragmasevka Nerd Font"
-# font-size = 13
+# font-size = 14
 
 # font-family = "VictorMono NFM Medium"
-# font-family = "JetBrainsMono Nerd Font Mono"
+# font-family = "JetBrainsMono Nerd Font"
 font-family = TX-02 SemiCondensed
 font-family-italic = TX-02 SemiCondensed Oblique
 font-family-bold = TX-02 SemiBold SemiCondensed
