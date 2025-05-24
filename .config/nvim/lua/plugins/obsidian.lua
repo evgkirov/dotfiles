@@ -42,7 +42,7 @@ return {
             local default_metadata = {
                 day = "[[" .. os.date("%Y-%m-%d") .. "]]",
                 area = {},
-                type = {},
+                type = "",
                 project = {},
                 person = {},
             }

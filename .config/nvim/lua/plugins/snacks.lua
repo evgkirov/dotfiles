@@ -1,3 +1,4 @@
+-- Used modules: image
 return {
     "folke/snacks.nvim",
     version = "*",
