@@ -1,27 +1,16 @@
-# font-family = "Iosevka Custom"
-# font-family = "Iosevka Term"
-# font-family = "Iosevka Term SS05"
-# font-family = "Iosevka Term SS08"
-# font-family = "Iosevka Term SS09"
-# font-family = "Iosevka Term SS14"
-# font-family = "Iosevka Term SS18"
-# font-family = "Pragmasevka Nerd Font"
-# font-size = 14
+# Main font (Berkeley Mono)
+font-family = TX-02
+font-style = SemiCondensed
+font-style-bold = SemiBold SemiCondensed
+font-style-italic = SemiCondensed Oblique
+font-style-bold-italic = SemiBold SemiCondensed Oblique
 
-# font-family = "VictorMono NFM Medium"
-# font-family = "JetBrainsMono Nerd Font"
-font-family = TX-02 SemiCondensed
-font-family-italic = TX-02 SemiCondensed Oblique
-font-family-bold = TX-02 SemiBold SemiCondensed
-font-family-bold-italic = TX-02 SemiBold SemiCondensed Oblique
-font-size = 12
-
-# If JetBrains Mono or Fira Code is selected:
+# An alternative if I get bored:
+# font-family = "JetBrainsMono Nerd Font Mono"
 # adjust-cell-width = -10%
 # adjust-cell-height = -10%
 
-# If Pragmasevka is selected:
-# adjust-cell-height = +5%
+font-size = 12
 
 macos-titlebar-style = hidden
 window-padding-balance = true
@@ -41,4 +30,4 @@ keybind = cmd+t=unbind
 keybind = performable:cmd+k=jump_to_prompt:-1
 keybind = performable:cmd+j=jump_to_prompt:1
 
-config-file = "current_theme.conf"
+config-file = current_theme.conf

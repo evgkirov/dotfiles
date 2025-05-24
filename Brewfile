@@ -79,7 +79,7 @@ cask "discord"
 cask "figma"
 cask "firefox"
 cask "fliqlo"
-cask "fontsmoothingadjuster"
+cask "fontsmoothingadjuster"  # TODO: replace with shell command
 cask "font-jetbrains-mono-nerd-font"
 cask "font-symbols-only-nerd-font"
 cask "ghostty"
@@ -114,17 +114,6 @@ cask "viber"
 cask "wezterm@nightly"
 cask "zed"
 cask "zoom"
-
-# Casks: Fonts - Experimental
-cask "font-victor-mono-nerd-font"
-cask "font-iosevka"
-cask "font-iosevka-nerd-font"
-cask "font-iosevka-ss05"
-cask "font-iosevka-ss08"
-cask "font-iosevka-ss09"
-cask "font-iosevka-ss14"
-cask "font-iosevka-ss18"
-cask "font-iosevka-term-nerd-font"
 
 # Mac App Store: All
 mas "Amphetamine", id: 937984704
