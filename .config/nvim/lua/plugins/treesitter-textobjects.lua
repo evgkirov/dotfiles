@@ -14,6 +14,7 @@ return {
     "nvim-treesitter/nvim-treesitter-textobjects",
     branch = "main",
     -- event = "BufEnter",
+    enabled = false,
     opts = {
         select = {
             -- Automatically jump forward to textobj, similar to targets.vim
