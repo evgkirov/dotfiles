@@ -22,6 +22,7 @@ rules() {
     echo "Setting rules for Yabai"
     yabai -m rule --add app=Endel manage=off
     yabai -m rule --add app=WezTerm manage=off
+    yabai -m rule --add app=Step\ Two manage=off
 }
 
 signals() {
