@@ -1,8 +1,8 @@
 # Main font (Berkeley Mono)
 font-family = TX-02
-font-style = SemiCondensed
+font-style = Retina SemiCondensed
 font-style-bold = SemiBold SemiCondensed
-font-style-italic = SemiCondensed Oblique
+font-style-italic = Retina SemiCondensed Oblique
 font-style-bold-italic = SemiBold SemiCondensed Oblique
 
 # An alternative if I get bored:
