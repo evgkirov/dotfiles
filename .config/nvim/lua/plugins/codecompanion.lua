@@ -13,12 +13,13 @@ return {
     "olimorris/codecompanion.nvim",
     version = "*",
     config = function()
+        local openai_api_key = read_secret("op://Private/OpenAI API KEY/credential")
         require("codecompanion").setup({
             adapters = {
                 openai = function()
                     return require("codecompanion.adapters").extend("openai", {
                         env = {
-                            api_key = read_secret("op://Private/OpenAI API KEY/credential"),
+                            api_key = openai_api_key,
                         },
                     })
                 end,
@@ -36,8 +37,7 @@ return {
                     close_chat_at = 1000000,
                 },
                 chat = {
-                    -- start_in_insert_mode = true,
-                    -- show_settings = true,
+                    show_settings = true,
                     window = {
                         layout = "float",
                     },
