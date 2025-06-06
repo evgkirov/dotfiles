@@ -20,12 +20,13 @@ end
 
 config.font = wezterm.font_with_fallback({
     -- "TX-02",
+    "PragmataPro Liga",
     "JetBrainsMono Nerd Font Mono",
     "Symbols Nerd Font Mono",
     "Apple Color Emoji",
 })
 
-config.font_size = 12.0
+config.font_size = 13.0
 
 -- config.freetype_load_flags = "NO_HINTING"
 
