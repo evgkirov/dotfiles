@@ -2,4 +2,4 @@
 .DS_Store
 .config/fish/completions/docker.fish
 .config/fish/completions/kubectl.fish
-
+.config/fish/completions/orbctl.fish
