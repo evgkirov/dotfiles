@@ -49,6 +49,8 @@ get_app_icon() {
     "IINA") echo 󰐊 ;;
     "Keynote") echo 󰐨 ;;
     "Ledger Live") echo 󰖄 ;;
+    "Little Snitch") echo 󰈐 ;;
+    "Little Snitch Network Monitor") echo 󰈐 ;;
     "MacDown") echo  ;;
     "Macs Fan Control") echo 󰈐 ;;
     "Mail") echo 󰇮 ;;

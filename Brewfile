@@ -92,6 +92,7 @@ cask "karabiner-elements"
 cask "keyboardcleantool"
 cask "latest"
 cask "ledger-live"
+cask "little-snitch"
 cask "monitorcontrol"
 cask "obs"
 cask "obsidian"
@@ -122,6 +123,7 @@ mas "Banktivity", id: 1480779512
 mas "Dark Reader for Safari", id: 1438243180
 mas "Endel", id: 1346247457
 mas "Home Assistant", id: 1099568401
+mas "Internet Access Policy Viewer", id: 1482630322
 mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 409183694
 mas "LanScan", id: 472226235

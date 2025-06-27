@@ -24,7 +24,11 @@ return {
                 filetypes = { "html", "htmldjango" },
             },
             cssls = {},
-            ts_ls = {},
+            ts_ls = {
+                init_options = {
+                    disableAutomaticTypingAcquisition = true,
+                },
+            },
             eslint = {},
             jsonls = {},
 
