@@ -88,6 +88,8 @@ get_app_icon() {
     "Slack") echo 󰒱 ;;
     "Sonos") echo 󰓃 ;;
     "Spotify") echo 󰓇 ;;
+    "Steam") echo 󰓓 ;;
+    "Steam Helper") echo 󰓓 ;;
     "Stocks") echo 󰄪 ;;
     "Sublime Text") echo 󰰡 ;;
     "System Settings") echo 󰒓 ;;
