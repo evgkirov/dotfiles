@@ -60,5 +60,21 @@ return {
             end,
             desc = "docker compose down & up",
         },
+        {
+            "<leader>deu",
+            function()
+                vim.cmd("OverseerOpen! bottom")
+                vim.cmd("OverseerRunCmd orbctl start")
+            end,
+            desc = "orbctl start",
+        },
+        {
+            "<leader>ded",
+            function()
+                vim.cmd("OverseerOpen! bottom")
+                vim.cmd("OverseerRunCmd orbctl stop")
+            end,
+            desc = "orbctl stop",
+        },
     },
 }

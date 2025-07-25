@@ -9,6 +9,7 @@ return {
         which_key.add({
             { "<leader>c", group = "󰅩 Code..." },
             { "<leader>d", group = "󰡨 Docker..." },
+            { "<leader>de", group = "󰡨 Docker Engine (OrbStack)..." },
             { "<leader>f", group = "󰍉 Find..." },
             { "<leader>g", group = "󰊢 Git..." },
             { "<leader>m", group = "󰍔 Markdown..." },
