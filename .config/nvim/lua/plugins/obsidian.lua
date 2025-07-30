@@ -1,6 +1,6 @@
 return {
     "obsidian-nvim/obsidian.nvim",
-    version = "*",
+    version = "3.11.0",
     event = {
         "BufReadPre " .. vim.fn.expand("~") .. "/Obsidian/*.md",
         "BufNewFile " .. vim.fn.expand("~") .. "/Obsidian/*.md",
@@ -67,11 +67,12 @@ return {
         ui = {
             enable = false,
         },
-        use_advanced_uri = true,
         open = {
-            func = function(uri)
-                vim.ui.open(uri, { cmd = { "open", "-a", "/Applications/Obsidian.app" } })
-            end,
+            use_advanced_uri = true,
+            func = vim.ui.open,
+            -- func = function(uri)
+            --     vim.ui.open(uri, { cmd = { "open", "-a", "/Applications/Obsidian.app" } })
+            -- end,
         },
         open_notes_in = vim.g.is_quick_notes and "current" or "vsplit",
         legacy_commands = false,
