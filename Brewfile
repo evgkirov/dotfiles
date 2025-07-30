@@ -41,6 +41,7 @@ brew "python@3.13", link: true
 brew "lazydocker"
 brew "lazygit"
 brew "neovim"
+brew "tree-sitter-cli"
 
 # Formulae: LSPs
 brew "basedpyright"
