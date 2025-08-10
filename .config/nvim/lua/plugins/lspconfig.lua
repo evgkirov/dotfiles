@@ -17,7 +17,6 @@ return {
                     diagnosticSeverity = "Warning",
                 },
             },
-            markdown_oxide = {},
 
             -- Web
             html = {
