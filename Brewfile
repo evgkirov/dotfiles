@@ -122,14 +122,16 @@ cask "zoom"
 mas "Amphetamine", id: 937984704
 mas "Banktivity", id: 1480779512
 mas "Dark Reader for Safari", id: 1438243180
+mas "DjVu Reader", id: 733144595
 mas "Endel", id: 1346247457
 mas "Home Assistant", id: 1099568401
 mas "Internet Access Policy Viewer", id: 1482630322
 mas "Kagi for Safari", id: 1622835804
 mas "Keynote", id: 409183694
 mas "LanScan", id: 472226235
-mas "Menu Bar Controller for Sonos", id: 1357379892
+mas "Menu Bar Controller for Sonos", id: 6749351423
 mas "Numbers", id: 409203825
+mas "Obsidian Web Clipper", id: 6720708363
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
 mas "Raycast Companion", id: 6738274497
