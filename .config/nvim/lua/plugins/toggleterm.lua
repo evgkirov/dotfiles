@@ -9,6 +9,7 @@ return {
             callback = function()
                 require("helpers.lazygit"):shutdown()
                 require("helpers.lazydocker"):shutdown()
+                require("helpers.codex"):shutdown()
             end,
         })
     end,
@@ -26,6 +27,13 @@ return {
                 require("helpers.lazydocker"):toggle()
             end,
             desc = "Docker Status (LazyDocker)",
+        },
+        {
+            "<leader>cc",
+            function()
+                require("helpers.codex"):toggle()
+            end,
+            desc = "OpenAI Codex",
         },
     },
 }
