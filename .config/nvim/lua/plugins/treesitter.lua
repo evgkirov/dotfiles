@@ -4,17 +4,16 @@ return {
     branch = "main",
     -- build = ":TSUpdate",
     build = {
-        -- XXX: What's wrong with this?
         ":TSInstall all",
         ":TSUpdate",
     },
     init = function()
-        vim.api.nvim_create_autocmd("VimEnter", {
-            callback = function()
-                vim.cmd.TSInstall("all")
-                vim.cmd.TSUpdate()
-            end,
-        })
+        -- vim.api.nvim_create_autocmd("VimEnter", {
+        --     callback = function()
+        --         vim.cmd.TSInstall("all")
+        --         vim.cmd.TSUpdate()
+        --     end,
+        -- })
         vim.api.nvim_create_autocmd("FileType", {
             callback = function(args)
                 local ok, parser = pcall(vim.treesitter.get_parser, args.buf)
