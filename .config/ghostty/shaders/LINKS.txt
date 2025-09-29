@@ -1,0 +1,5 @@
+cursor_synesthaxia(tweened).glsl
+https://github.com/Crackerfracks/Synesthaxia.glsl/tree/main
+
+cursor_smear.glsl
+https://github.com/KroneCorylus/ghostty-shader-playground/tree/main/public/shaders
