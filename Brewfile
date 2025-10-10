@@ -136,6 +136,7 @@ mas "Numbers", id: 409203825
 mas "Obsidian Web Clipper", id: 6720708363
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
+mas "Quick Camera", id: 598853070
 mas "Raycast Companion", id: 6738274497
 mas "Speedtest", id: 1153157709
 mas "Things", id: 904280696
