@@ -125,7 +125,6 @@ mas "Amphetamine", id: 937984704
 mas "Banktivity", id: 1480779512
 mas "Dark Reader for Safari", id: 1438243180
 mas "DjVu Reader", id: 733144595
-mas "Endel", id: 1346247457
 mas "Home Assistant", id: 1099568401
 mas "Internet Access Policy Viewer", id: 1482630322
 mas "Kagi for Safari", id: 1622835804
