@@ -1,5 +1,6 @@
 .PHONY: brew
 brew:
+	brew update
 	brew upgrade
 	brew bundle --cleanup
 
