@@ -24,7 +24,7 @@ brew "fzf"
 
 # Formulae: Dev tools
 brew "awscli"
-brew "codex"
+cask "codex"
 brew "fd"
 brew "gh"
 brew "git"
