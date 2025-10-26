@@ -16,6 +16,8 @@ font-size = 13
 # adjust-cell-width = -10%
 # adjust-cell-height = -10%
 
+font-feature = cv04
+
 macos-titlebar-style = hidden
 window-padding-balance = true
 window-padding-color = extend
