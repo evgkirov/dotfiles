@@ -23,8 +23,7 @@ window-padding-balance = true
 window-padding-color = extend
 adjust-underline-thickness = -5
 
-quick-terminal-position = bottom
-# quick-terminal-animation-duration = 0
+quick-terminal-space-behavior = remain
 
 initial-window = false
 mouse-hide-while-typing = true
