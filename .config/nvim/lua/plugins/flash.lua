@@ -5,6 +5,10 @@ return {
     opts = {
         label = {
             uppercase = false,
+            rainbow = {
+                enabled = true,
+                shade = 9,
+            },
         },
         modes = {
             char = {
@@ -12,12 +16,65 @@ return {
             },
         },
     },
-  -- stylua: ignore
-  keys = {
-    { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-    { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-    { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-    { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-    { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
-  },
+    keys = {
+        {
+            "s",
+            mode = { "n" },
+            function()
+                require("flash").jump()
+            end,
+            desc = "Flash Go",
+        },
+        {
+            "s",
+            mode = { "x", "o" },
+            function()
+                require("flash").treesitter()
+            end,
+            desc = "Flash Select",
+        },
+        {
+            "S",
+            mode = { "n", "x", "o" },
+            function()
+                require("flash").jump()
+                require("flash").treesitter()
+            end,
+            desc = "Flash Go+Select",
+        },
+        {
+            "<cr>",
+            mode = { "n" },
+            function()
+                require("flash").jump()
+                require("flash").treesitter()
+                vim.api.nvim_feedkeys("c", "v", true)
+            end,
+            desc = "Flash Go+Change",
+        },
+        {
+            "r",
+            mode = "o",
+            function()
+                require("flash").remote()
+            end,
+            desc = "Remote Flash",
+        },
+        {
+            "R",
+            mode = { "o", "x" },
+            function()
+                require("flash").treesitter_search()
+            end,
+            desc = "Treesitter Search",
+        },
+        {
+            "<c-s>",
+            mode = { "c" },
+            function()
+                require("flash").toggle()
+            end,
+            desc = "Toggle Flash Search",
+        },
+    },
 }
