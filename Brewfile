@@ -65,8 +65,6 @@ brew "watch"
 brew "wget"
 brew "yt-dlp"
 brew "ffmpeg"  # required by yt-dlp
-brew "imagemagick"  # required by snacks.nvim/image
-brew "pngpaste"  # required by obsidian.nvim
 
 # Casks: All
 cask "1password"
