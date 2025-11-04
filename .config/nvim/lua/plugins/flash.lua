@@ -43,16 +43,6 @@ return {
             desc = "Flash Go+Select",
         },
         {
-            "<cr>",
-            mode = { "n" },
-            function()
-                require("flash").jump()
-                require("flash").treesitter()
-                vim.api.nvim_feedkeys("c", "v", true)
-            end,
-            desc = "Flash Go+Change",
-        },
-        {
             "r",
             mode = "o",
             function()
