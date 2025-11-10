@@ -33,9 +33,52 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
 
 -- code
 
+local function has_code_action()
+    if vim.bo.buftype == "quickfix" then
+        return false
+    end
+
+    local params = vim.lsp.util.make_range_params()
+    local diagnostics = vim.diagnostic.get(0, { lnum = params.range.start.line })
+    if diagnostics and #diagnostics > 0 then
+        -- If there are diagnostics, we can assume that there are code actions available.
+        -- This is a heuristic, but it speeds things up.
+        return true
+    end
+    params.context = {
+        diagnostics = diagnostics,
+    }
+
+    local responses = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 500)
+    if not responses then
+        return false
+    end
+
+    for _, response in pairs(responses) do
+        if response.result and next(response.result) ~= nil then
+            return true
+        end
+    end
+
+    return false
+end
+
 keys({
     { "<leader>ca", mode = { "n", "v" }, vim.lsp.buf.code_action, desc = "Code action" },
-    { "?", mode = { "n", "v" }, vim.lsp.buf.code_action, desc = "Code action" },
+    {
+        "<cr>",
+        mode = { "n", "v" },
+        function()
+            if has_code_action() then
+                vim.schedule(vim.lsp.buf.code_action)
+                return
+            end
+
+            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<cr>", true, false, true), "n", true)
+        end,
+        expr = true,
+        desc = "Code action",
+    },
     { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
 })
 
