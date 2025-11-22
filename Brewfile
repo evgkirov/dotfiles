@@ -9,7 +9,7 @@ brew "felixkratz/formulae/borders"
 brew "felixkratz/formulae/sketchybar"
 brew "felixkratz/formulae/svim" # XXX give it another shot or remove
 brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai"
+brew "koekeishiya/formulae/yabai", args: ["HEAD"]
 brew "m-cli"
 brew "mas"
 
