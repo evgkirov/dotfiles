@@ -12,6 +12,7 @@ return {
             overseer = {
                 autostart_on_load = false,
             },
+            tabby = {},
         },
     },
     init = function()

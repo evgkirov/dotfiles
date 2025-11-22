@@ -129,7 +129,7 @@ return {
         telescope.load_extension("ui-select")
     end,
     keys = {
-        { "<leader><space>", "<cmd>Telescope buffers sort_lastused=true<cr>", desc = "Buffers" },
+        { "<leader>fb", "<cmd>Telescope buffers sort_lastused=true<cr>", desc = "Buffers" },
         { "<F1>", "<cmd>Telescope help_tags<cr>", desc = "Help" },
         -- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Files" },
         { "<leader>fr", "<cmd>Telescope resume<cr>", desc = "Resume" },
