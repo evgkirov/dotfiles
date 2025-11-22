@@ -20,10 +20,11 @@ source "$CONFIG_DIR/colors.sh"
 
 bar=(
     blur_radius=0
-    color=$BAR_BG
-    height=38
-    padding_left=4
-    padding_right=4
+    # color=$BAR_BG
+    color=0x00000000  # transparent for Tahoe
+    height=44
+    padding_left=10
+    padding_right=10
     position=top
 )
 
@@ -35,7 +36,7 @@ sketchybar --bar "${bar[@]}"
 # https://felixkratz.github.io/SketchyBar/config/items
 
 defaults=(
-    background.corner_radius=4
+    background.corner_radius=10
     background.height=24
     icon.color=$DATA_FG
     icon.font="$ICON_FONT"
@@ -97,15 +98,3 @@ source "$ITEMS_DIR/session.sh"
 # force all scripts to run the first time, it should never be run in an item script.
 sketchybar --hotload on
 sketchybar --update
-
-##### Borders! #####
-borders_options=(
-    style=square
-    width=6.0
-    active_color=$BAR_BG
-    # background_color=$BAR_BG
-    inactive_color=$BAR_BG
-    blacklist="iPhone Mirroring,Endel,Step Two"
-)
-
-borders "${borders_options[@]}"
