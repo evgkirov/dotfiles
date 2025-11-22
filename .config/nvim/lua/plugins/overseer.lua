@@ -1,18 +1,8 @@
 return {
     "stevearc/overseer.nvim",
     version = "*",
+    lazy = false,
     config = true,
-    opts = {
-        strategy = { "jobstart", use_terminal = false }, -- https://github.com/stevearc/overseer.nvim/issues/202
-        bundles = {
-            autostart_on_load = false,
-        },
-        templates = {
-            "builtin",
-            "docker_compose.up",
-            "docker_compose.down",
-        },
-    },
     keys = {
         {
             "<leader>rr",
@@ -32,7 +22,7 @@ return {
             "<leader>du",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerRunCmd docker compose up -d")
+                vim.cmd("OverseerShell docker compose up -d")
             end,
             desc = "docker compose up -d",
         },
@@ -40,7 +30,7 @@ return {
             "<leader>dU",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerRunCmd docker compose up -d --build")
+                vim.cmd("OverseerShell docker compose up -d --build")
             end,
             desc = "docker compose up -d --build",
         },
@@ -48,7 +38,7 @@ return {
             "<leader>dd",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerRunCmd docker compose down")
+                vim.cmd("OverseerShell docker compose down")
             end,
             desc = "docker compose down",
         },
@@ -56,7 +46,7 @@ return {
             "<leader>dD",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerRunCmd docker compose down && docker compose up -d")
+                vim.cmd("OverseerShell docker compose down && docker compose up -d")
             end,
             desc = "docker compose down & up",
         },
@@ -64,7 +54,7 @@ return {
             "<leader>deu",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerRunCmd orbctl start")
+                vim.cmd("OverseerShell orbctl start")
             end,
             desc = "orbctl start",
         },
@@ -72,7 +62,7 @@ return {
             "<leader>ded",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerRunCmd orbctl stop")
+                vim.cmd("OverseerShell orbctl stop")
             end,
             desc = "orbctl stop",
         },
