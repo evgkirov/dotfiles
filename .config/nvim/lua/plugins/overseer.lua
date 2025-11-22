@@ -12,6 +12,15 @@ return {
             end,
             desc = "󰐊 Run task",
         },
+        {
+            "<leader>rR",
+            function()
+                vim.cmd("OverseerOpen! bottom")
+                vim.cmd("OverseerShell")
+            end,
+            desc = "󰐊 Run shell",
+        },
+
         { "<leader>rt", "<cmd>OverseerToggle bottom<cr>", desc = " Toggle Overseer" },
         { "<leader>rs", "<cmd>OverseerQuickAction restart<cr>", desc = " Restart Task" },
         { "<leader>rf", "<cmd>OverseerQuickAction open float<cr>", desc = " Open - Float" },
