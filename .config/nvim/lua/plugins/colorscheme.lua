@@ -46,7 +46,6 @@ return {
         theme_config.repo,
     },
     lazy = false,
-    priority = 1000,
     config = function()
         local auto_dark_mode = require("auto-dark-mode")
         vim.o.termguicolors = true
