@@ -5,6 +5,7 @@ tap "koekeishiya/formulae"
 
 # Formulae: OS / GUI
 brew "daipeihust/tap/im-select"
+brew "felixkratz/formulae/borders"
 brew "felixkratz/formulae/sketchybar"
 brew "felixkratz/formulae/svim" # XXX give it another shot or remove
 brew "koekeishiya/formulae/skhd"
