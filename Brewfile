@@ -33,7 +33,7 @@ brew "ripgrep"
 
 # Formulae: Languages & libraries
 brew "node"
-brew "yarn"
+brew "pnpm"
 brew "python@3.12", link: true
 brew "python@3.13", link: true
 brew "poetry"
