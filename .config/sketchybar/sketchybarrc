@@ -99,4 +99,3 @@ source "$ITEMS_DIR/session.sh"
 sketchybar --hotload on
 sketchybar --update
 
-# borders background_color=$BAR_BG width=0

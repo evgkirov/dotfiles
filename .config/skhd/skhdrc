@@ -2,12 +2,12 @@
 # MODES
 #
 
-:: default : yabai -m window --opacity 0.0
-:: swap @ : yabai -m window --opacity 0.8
-:: warp @ : yabai -m window --opacity 0.8
-:: inc @ : yabai -m window --opacity 0.8
-:: dec @ : yabai -m window --opacity 0.8
-:: ins @ : yabai -m window --opacity 0.8; sleep 2 ; skhd -k "escape"
+:: default : yabai -m config window_opacity off
+:: swap @ : yabai -m config window_opacity on
+:: warp @ : yabai -m config window_opacity on
+:: inc @ : yabai -m config window_opacity on
+:: dec @ : yabai -m config window_opacity on
+:: ins @ : yabai -m config window_opacity on; sleep 2 ; skhd -k "escape"
 
 #
 # APPS
