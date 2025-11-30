@@ -51,7 +51,6 @@ return {
         vim.o.termguicolors = true
         vim.g.gruvbox_material_background = "medium"
         vim.g.everforest_background = "hard"
-        -- vim.g.everforest_background = "medium"
         set_light_mode()
         auto_dark_mode.setup({
             set_dark_mode = set_dark_mode,
