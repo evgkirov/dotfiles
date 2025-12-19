@@ -1,1 +1,1 @@
-return require("helpers.tool-in-terminal")("Codex", "codex")
+return require("helpers.tool-in-terminal")("Codex", "codex resume")
