@@ -58,6 +58,11 @@ brew "typescript-language-server"
 brew "typos-lsp"
 brew "vscode-langservers-extracted"
 
+# Formulae: MCPs
+brew "chrome-devtools-mcp"
+brew "context7-mcp"
+brew "playwright-mcp"
+
 # Formulae: Misc
 brew "hyperfine"
 brew "ncdu"
