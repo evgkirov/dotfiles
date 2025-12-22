@@ -12,3 +12,4 @@ keybinding:
 
 git:
     autoFetch: false
+    overrideGpg: true
