@@ -1,14 +1,14 @@
 # Taps
 tap "daipeihust/tap"
 tap "felixkratz/formulae"
-tap "koekeishiya/formulae"
+tap "asmvik/formulae"
 
 # Formulae: OS / GUI
 brew "daipeihust/tap/im-select"
 brew "felixkratz/formulae/sketchybar"
 brew "felixkratz/formulae/svim" # XXX give it another shot or remove
-brew "koekeishiya/formulae/skhd"
-brew "koekeishiya/formulae/yabai", args: ["HEAD"]
+brew "asmvik/formulae/skhd"
+brew "asmvik/formulae/yabai", args: ["HEAD"]
 brew "m-cli"
 brew "mas"
 
@@ -47,7 +47,7 @@ brew "lazygit"
 brew "neovim"
 brew "tree-sitter-cli"
 
-# Formulae: LSPs
+# Formulae: LSPs, linters, formatters
 brew "basedpyright"
 brew "djlint"
 brew "eslint_d"
