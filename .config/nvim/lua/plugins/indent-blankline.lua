@@ -1,10 +1,8 @@
 return {
     "lukas-reineke/indent-blankline.nvim",
     version = "*",
-    event = "BufEnter",
+    event = "VeryLazy",
     main = "ibl",
-    ---@module "ibl"
-    ---@type ibl.config
     opts = {
         scope = {
             show_end = false,

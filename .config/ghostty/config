@@ -1,21 +1,6 @@
-# Berkeley Mono
-# font-family = TX-02
-# font-style = SemiCondensed
-# font-style-bold = SemiBold SemiCondensed
-# font-style-italic = SemiCondensed Oblique
-# font-style-bold-italic = SemiBold SemiCondensed Oblique
-# font-size = 12
-
 # PragmataPro
 font-family = PragmataPro Liga
 font-size = 13
-
-# JetBrains Mono
-# font-family = "JetBrainsMono Nerd Font Mono"
-# font-size = 12
-# adjust-cell-width = -10%
-# adjust-cell-height = -10%
-
 font-feature = cv04
 
 macos-titlebar-style = hidden
@@ -35,4 +20,4 @@ keybind = cmd+t=unbind
 keybind = performable:cmd+k=jump_to_prompt:-1
 keybind = performable:cmd+j=jump_to_prompt:1
 
-config-file = current_theme.conf
+theme = light:everforest-light-hard.ghostty,dark:everforest-dark-hard.ghostty
