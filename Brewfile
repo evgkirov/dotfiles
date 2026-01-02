@@ -28,6 +28,7 @@ brew "fd"
 brew "gh"
 brew "git"
 brew "jq"
+brew "opencode"
 brew "pre-commit"
 brew "ripgrep"
 
