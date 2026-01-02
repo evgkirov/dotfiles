@@ -1,0 +1,13 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "autoupdate": false,
+    "theme": "everforest",
+    "share": "disabled",
+    "mcp": {
+        "context7": {
+            "type": "local",
+            "enabled": true,
+            "command": ["context7-mcp"]
+        }
+    }
+}
