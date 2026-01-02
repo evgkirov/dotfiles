@@ -20,4 +20,4 @@ keybind = cmd+t=unbind
 keybind = performable:cmd+k=jump_to_prompt:-1
 keybind = performable:cmd+j=jump_to_prompt:1
 
-theme = light:everforest-light-hard.ghostty,dark:everforest-dark-hard.ghostty
+theme = light:everforest-light-medium.ghostty,dark:everforest-dark-medium.ghostty

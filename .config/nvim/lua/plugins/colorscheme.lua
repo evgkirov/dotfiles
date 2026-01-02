@@ -7,7 +7,7 @@ return {
     lazy = false,
     config = true,
     init = function()
-        vim.g.everforest_background = "hard"
+        vim.g.everforest_background = "medium"
         vim.cmd("colorscheme everforest")
         vim.o.termguicolors = true
     end,
