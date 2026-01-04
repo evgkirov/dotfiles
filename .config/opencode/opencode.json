@@ -8,6 +8,11 @@
             "type": "local",
             "enabled": true,
             "command": ["context7-mcp"]
+        },
+        "playwright": {
+            "type": "local",
+            "enabled": true,
+            "command": ["mcp-server-playwright"]
         }
     }
 }
