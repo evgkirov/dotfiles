@@ -40,7 +40,7 @@ set_space_to_bsp() {
 set_space_to_webdev() {
     set_space_to_bsp $1
     echo "Setting space $1 to webdev layout"
-    browser_id=$(yabai -m query --windows --space $1 | jq '.[] | select(.app == "Safari") | .id')
+    browser_id=$(yabai -m query --windows --space $1 | jq '.[] | select(.app == "Orion") | .id')
     nvim_id=$(yabai -m query --windows --space $1 | jq '.[] | select(.title|endswith("- Nvim")) | .id')
     if [ -z "$nvim_id" ]; then
         nvim_id="first"

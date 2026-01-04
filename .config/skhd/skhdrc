@@ -14,7 +14,7 @@
 #
 
 # "lalt - a" is handled by Ghostty
-lalt - b : osascript -e 'tell application "Safari" to make new document' ; osascript -e 'tell application "Safari" to activate'
+lalt - b : osascript -e 'tell application "Orion" to make new document' ; osascript -e 'tell application "Orion" to activate'
 lalt - d : open -a "Discord"
 lalt - f : osascript -e 'tell application "Finder" to make new Finder window' ; osascript -e 'tell application "Finder" to activate'
 lalt - h : open -a "Home Assistant"
