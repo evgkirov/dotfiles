@@ -64,6 +64,12 @@ brew "chrome-devtools-mcp"
 brew "context7-mcp"
 brew "playwright-mcp"
 
+# Formulae: PTA
+brew "beancount"
+brew "beancount-language-server"
+brew "beanquery"
+brew "fava"
+
 # Formulae: Misc
 brew "hyperfine"
 brew "ncdu"

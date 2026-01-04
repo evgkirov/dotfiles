@@ -43,6 +43,9 @@ return {
             },
             ruff = {},
 
+            -- Beancount
+            beancount = {},
+
             -- Lua (Neovim)
             -- "If you primarily use lua-language-server for Neovim"
             -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
