@@ -22,7 +22,7 @@ while read -r line; do
     for space in $line; do
         icon_strip=""
         label_drawing="on"
-        raw_apps=$(yabai -m query --windows --space $space | jq -r '.[] | select(.title != "") | .app' | sort)
+        raw_apps=$(yabai -m query --windows --space $space | jq -r '.[] | select(.title != "" and (.title | startswith("Orion Preview -") | not)) | .app' | sort)
         if [ "${raw_apps}" != "" ]; then
             while read -r app; do
                 if [ "$app" = "Emoji & Symbols" ] || [ "$app" = "Hand Mirror" ] || [ "$app" = "1Password" ] | [ "$app" = "Menu Bar Controller for Sonos" ]  ; then
