@@ -46,7 +46,7 @@ return {
             -- Beancount
             beancount = {
                 init_options = {
-                    journal_file = vim.fn.expand("~/Projects/finances/main.beancount"),
+                    journal_file = vim.fn.expand("~/Projects/finances/ledger/main.beancount"),
                 },
             },
 
