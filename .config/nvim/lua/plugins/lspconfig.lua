@@ -44,7 +44,11 @@ return {
             ruff = {},
 
             -- Beancount
-            beancount = {},
+            beancount = {
+                init_options = {
+                    journal_file = vim.fn.expand("~/Projects/finances/main.beancount"),
+                },
+            },
 
             -- Lua (Neovim)
             -- "If you primarily use lua-language-server for Neovim"
