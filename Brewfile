@@ -49,6 +49,7 @@ brew "tree-sitter-cli"
 
 # Formulae: LSPs, linters, formatters
 brew "basedpyright"
+brew "beancount-language-server"
 brew "djlint"
 brew "eslint_d"
 brew "lua-language-server"
@@ -63,12 +64,6 @@ brew "vscode-langservers-extracted"
 brew "chrome-devtools-mcp"
 brew "context7-mcp"
 brew "playwright-mcp"
-
-# Formulae: PTA
-brew "beancount"
-brew "beancount-language-server"
-brew "beanquery"
-brew "fava"
 
 # Formulae: Misc
 brew "hyperfine"
