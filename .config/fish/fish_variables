@@ -1,6 +1,5 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR EDITOR:nvim
 SETUVAR VIRTUAL_ENV_DISABLE_PROMPT:1
 SETUVAR __fish_initialized:4300
 SETUVAR fish_user_paths:/Users/evgkirov/\x2eorbstack/bin\x1e/Users/evgkirov/\x2elocal/bin\x1e/opt/homebrew/sbin\x1e/opt/homebrew/bin\x1e/Applications/Ghostty\x2eapp/Contents/MacOS
