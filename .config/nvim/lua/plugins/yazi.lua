@@ -12,6 +12,18 @@ return {
             grep_in_directory = "<c-p>pap",
             open_and_pick_window = "<S-CR>",
         },
+        hooks = {
+            on_yazi_ready = function(buffer, config, process_api)
+                vim.schedule(function()
+                    vim.api.nvim_create_autocmd("VimResized", {
+                        buffer = buffer,
+                        callback = function()
+                            vim.cmd("cal cursor(0, 0)")
+                        end,
+                    })
+                end)
+            end,
+        },
     },
     config = function(_, opts)
         require("yazi").setup(opts)
