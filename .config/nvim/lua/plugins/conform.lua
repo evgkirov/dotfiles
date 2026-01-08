@@ -18,6 +18,7 @@ return {
     opts = {
         formatters_by_ft = {
             bash = { "shfmt" },
+            beancount = { "bean-format" },
             css = { "prettierd" },
             graphql = { "prettierd" },
             html = { "prettierd" },
