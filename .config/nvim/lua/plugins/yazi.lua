@@ -15,6 +15,13 @@ return {
         hooks = {
             on_yazi_ready = function(buffer, config, process_api)
                 vim.schedule(function()
+                    vim.api.nvim_buf_set_keymap(
+                        buffer,
+                        "t",
+                        "<leader>x",
+                        "<cmd>close<CR>",
+                        { noremap = true, silent = true }
+                    )
                     vim.api.nvim_create_autocmd("VimResized", {
                         buffer = buffer,
                         callback = function()
