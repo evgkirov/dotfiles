@@ -8,7 +8,6 @@ return function(name, cmd)
         direction = "float",
         on_open = function(term)
             vim.cmd("startinsert!")
-            vim.api.nvim_buf_del_keymap(term.bufnr, "t", "kj")
             vim.api.nvim_buf_set_keymap(
                 term.bufnr,
                 "t",
