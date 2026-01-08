@@ -1,10 +1,24 @@
-[indicator]
+[mgr]
+# cwd = { bg = "red", fg = "green" }
 
-# padding = { open = "█", close = "" }
-padding = { open = "█", close = "█" }
+[mode]
+normal_main = { bg = "#93B259", fg = "#FDF6E3", bold = true }
+normal_alt = { bg = "#E6E2CC", fg = "#829181" }
+select_main = { bg = "red", fg = "white", bold = true }
+select_alt = { bg = "#E6E2CC", fg = "#829181" }
+unset_main = { bg = "red", fg = "white", bold = true }
+unset_alt = { bg = "#E6E2CC", fg = "#829181" }
+
+[indicator]
+padding = { open = "█", close = "" }
+# padding = { open = "█", close = "█" }
+
+[status]
+overall = { bg = "#F4F0D9", fg = "#939F91" }
+sep_left = { open = "", close ="" }
+sep_right = { open = "", close ="" }
 
 [filetype]
-
 rules = [
     # Hidden files
     { url = "*", is = "hidden", fg = "#9DA9A0" },
