@@ -21,6 +21,7 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
+truncation_length = 100
 truncate_to_repo = false
 
 [docker_context]
