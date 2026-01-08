@@ -17,9 +17,9 @@ brew "bat"
 brew "btop"
 brew "eza"
 brew "fish"
+brew "fzf"  # zoxide dependency
 brew "starship"
 brew "zoxide"
-brew "fzf"
 
 # Formulae: Dev tools
 brew "awscli"
@@ -31,6 +31,7 @@ brew "jq"
 brew "opencode"
 brew "pre-commit"
 brew "ripgrep"
+brew "yazi"
 
 # Formulae: Languages & libraries
 brew "node"
