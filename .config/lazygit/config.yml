@@ -1,15 +1,15 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/master/schema/config.json
 
 gui:
-    nerdFontsVersion: "3"
+  nerdFontsVersion: "3"
 
 os:
-    editPreset: nvim-remote
+  editPreset: nvim-remote
 
 keybinding:
-    universal:
-        quit: "<c-c>"
+  universal:
+    quit: "<c-c>"
 
 git:
-    autoFetch: false
-    overrideGpg: true
+  autoFetch: false
+  overrideGpg: true

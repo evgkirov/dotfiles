@@ -59,4 +59,3 @@ if status is-interactive
     venv_activate
 
 end
-

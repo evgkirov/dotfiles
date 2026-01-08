@@ -17,4 +17,3 @@ if status is-interactive
     alias ei="cdi && e"
 
 end
-

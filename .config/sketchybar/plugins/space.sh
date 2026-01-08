@@ -25,7 +25,7 @@ while read -r line; do
         raw_apps=$(yabai -m query --windows --space $space | jq -r '.[] | select(.title != "" and (.title | startswith("Orion Preview -") | not)) | .app' | sort)
         if [ "${raw_apps}" != "" ]; then
             while read -r app; do
-                if [ "$app" = "Emoji & Symbols" ] || [ "$app" = "Hand Mirror" ] || [ "$app" = "1Password" ] | [ "$app" = "Menu Bar Controller for Sonos" ]  ; then
+                if [ "$app" = "Emoji & Symbols" ] || [ "$app" = "Hand Mirror" ] || [ "$app" = "1Password" ] | [ "$app" = "Menu Bar Controller for Sonos" ]; then
                     continue
                 fi
                 icon_strip+="$($CONFIG_DIR/app_icons.sh "$app") "

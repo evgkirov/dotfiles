@@ -6,4 +6,3 @@ if status is-interactive
     alias tree='eza --tree --icons'
 
 end
-

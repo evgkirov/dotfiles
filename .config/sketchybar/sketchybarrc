@@ -21,7 +21,7 @@ source "$CONFIG_DIR/colors.sh"
 bar=(
     blur_radius=0
     # color=$BAR_BG
-    color=0x00000000  # transparent for Tahoe
+    color=0x00000000 # transparent for Tahoe
     height=44
     padding_left=10
     padding_right=10
@@ -99,4 +99,3 @@ source "$ITEMS_DIR/session.sh"
 # force all scripts to run the first time, it should never be run in an item script.
 sketchybar --hotload on
 sketchybar --update
-
