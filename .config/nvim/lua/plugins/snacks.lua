@@ -164,5 +164,21 @@ return {
             end,
             desc = "Diagnostics",
         },
+
+        -- picker: misc
+        {
+            "<f1>",
+            function()
+                Snacks.picker.help()
+            end,
+            desc = "Help",
+        },
+        {
+            "<leader>fp",
+            function()
+                Snacks.picker.pickers()
+            end,
+            desc = "Picker",
+        },
     },
 }
