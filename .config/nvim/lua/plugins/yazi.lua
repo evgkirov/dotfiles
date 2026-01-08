@@ -13,6 +13,10 @@ return {
             open_and_pick_window = "<S-CR>",
         },
     },
+    config = function(_, opts)
+        require("yazi").setup(opts)
+        vim.api.nvim_set_hl(0, "YaziFloatBorder", { link = "Grey" })
+    end,
     init = function()
         vim.g.loaded_netrwPlugin = 1
     end,
