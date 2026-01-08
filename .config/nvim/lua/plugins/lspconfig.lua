@@ -48,6 +48,12 @@ return {
                 init_options = {
                     journal_file = require("helpers.beancount").beancount_file,
                 },
+                on_attach = function(client)
+                    client.server_capabilities.documentFormattingProvider = false
+                    client.server_capabilities.documentRangeFormattingProvider = false
+                    client.server_capabilities.textDocumentSync.willSave = false
+                    client.server_capabilities.textDocumentSync.willSaveWaitUntil = false
+                end,
             },
 
             -- Lua (Neovim)
