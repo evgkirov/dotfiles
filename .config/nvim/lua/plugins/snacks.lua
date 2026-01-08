@@ -82,7 +82,18 @@ return {
         {
             "<leader>fo",
             function()
-                Snacks.picker.files({ hidden = true, args = { "--type", "d" } })
+                Snacks.picker({
+                    finder = "proc",
+                    cmd = "fd",
+                    args = { "--type", "d", "--hidden", "--color", "never", "-E", ".git" },
+                    transform = function(item, ctx)
+                        item.file = item.text:gsub("/$", "")
+                        item.dir = true
+                        item.cwd = ctx.picker:cwd()
+                    end,
+                    format = "file",
+                    title = "Directory",
+                })
             end,
             desc = "Directory",
         },
