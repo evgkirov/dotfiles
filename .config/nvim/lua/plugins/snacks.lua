@@ -34,21 +34,21 @@ return {
             function()
                 Snacks.picker.smart({ hidden = true, filter = { cwd = true } })
             end,
-            desc = "Files (Smart)",
+            desc = "File (Smart)",
         },
         {
             "<leader>fF",
             function()
                 Snacks.picker.files({ hidden = true, ignored = true })
             end,
-            desc = "Files (Dumb)",
+            desc = "File (Dumb)",
         },
         {
             "<leader>fb",
             function()
                 Snacks.picker.buffers()
             end,
-            desc = "Buffers",
+            desc = "Buffer",
         },
         {
             "<leader>fr",
@@ -78,6 +78,13 @@ return {
             end,
             desc = "Grep Word",
             mode = { "n", "x" },
+        },
+        {
+            "<leader>fo",
+            function()
+                Snacks.picker.files({ hidden = true, args = { "--type", "d" } })
+            end,
+            desc = "Directory",
         },
         {
             "<leader>fs",
