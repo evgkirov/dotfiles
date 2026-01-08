@@ -10,14 +10,6 @@ Description is coming soon (or maybe not)...
 
 ## Installation
 
-Kinda deprecated? I guess.
-
-```sh
-./scripts/restore-mac.sh
-```
-
-New method (with `make`)
-
 ```sh
 make brew
 make stow_check
