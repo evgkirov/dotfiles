@@ -1,0 +1,21 @@
+repos:
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v2.3.1
+    hooks:
+      - id: stylua
+
+  - repo: https://github.com/pre-commit/mirrors-prettier # TODO Deprecated, use something else
+    rev: v3.1.0
+    hooks:
+      - id: prettier
+
+  - repo: https://github.com/yujinyuz/pre-commit-fish.git
+    rev: v0.1.0
+    hooks:
+      - id: fish_syntax
+      - id: fish_format
+
+  - repo: https://github.com/scop/pre-commit-shfmt
+    rev: v3.12.0-2
+    hooks:
+      - id: shfmt
