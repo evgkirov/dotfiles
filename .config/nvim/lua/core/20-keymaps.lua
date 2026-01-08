@@ -92,11 +92,15 @@ local function has_code_action()
 end
 
 keys({
-    { "<leader>ca", mode = { "n", "v" }, vim.lsp.buf.code_action, desc = "Code action" },
     {
         "<cr>",
         mode = { "n", "v" },
         function()
+            if vim.bo.filetype == "beancount" then
+                require("helpers.beancount").beancount_action()
+                return
+            end
+
             if has_code_action() then
                 vim.schedule(vim.lsp.buf.code_action)
                 return
@@ -108,6 +112,15 @@ keys({
         desc = "Code action",
     },
     { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
+    {
+        "<S-CR>",
+        function()
+            if vim.bo.filetype == "beancount" then
+                require("helpers.beancount").toggle_transaction_flag()
+            end
+        end,
+        desc = "Toggle beancount flag",
+    },
 })
 
 -- tabs
