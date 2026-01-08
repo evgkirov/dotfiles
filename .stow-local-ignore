@@ -3,6 +3,7 @@
 \.git
 \.gitignore
 \.stow-local-ignore
+\.pre-commit-config\.yaml
 ^/Brewfile
 ^/Makefile
 ^/README\.md
