@@ -9,3 +9,5 @@ function Entity:icon()
         return ui.Line(icon.text .. "  "):style(icon.style)
     end
 end
+
+require("starship"):setup()
