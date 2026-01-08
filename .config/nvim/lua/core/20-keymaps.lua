@@ -14,13 +14,41 @@ vim.keymap.del("n", "grt")
 
 -- editors
 
+local function close_snacks_picker()
+    if vim.w.snacks_picker_preview then
+        local Snacks = require("snacks")
+        local pickers = Snacks.picker.get()
+        local picker = pickers[1]
+        if picker then
+            Snacks.picker.actions.cancel(picker)
+            return true
+        end
+    end
+    return false
+end
+
 keys({
     { "<leader>w", "<cmd>:wa<cr>", desc = "󰆔 Write all" },
     { "<leader>W", "<cmd>:w<cr>", desc = "󰆓 Write one" },
     { "<leader>q", "<cmd>:qa<cr>", desc = "󰩈 Quit" },
-    { "<leader>x", "<cmd>close<cr>", desc = "󰅗 Close window" },
+    {
+        "<leader>x",
+        function()
+            if not close_snacks_picker() then
+                vim.cmd("close")
+            end
+        end,
+        desc = "󰅗 Close window",
+    },
     { "<leader>X", "<cmd>bufdo bd<cr>", desc = "󰱝 Clear context" },
-    { "<esc>", ":noh<cr>", desc = "Hide search" },
+    {
+        "<esc>",
+        function()
+            close_snacks_picker()
+            -- vim.cmd("noh")
+        end,
+        desc = "Cancel Snacks picker",
+    },
 })
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
@@ -89,12 +117,16 @@ keys({
     { "<leader>tn", "<cmd>tabnew<cr>", desc = "󰐕 New tab" },
 })
 
--- terminal
-
+-- splits
 keys({
-    { "<leader>nn", "<cmd>terminal<cr>", desc = "New terminal" },
-    { "<leader>nh", "<cmd>aboveleft vsplit | terminal<cr>", desc = "New terminal (west)" },
-    { "<leader>nj", "<cmd>belowright split | terminal<cr>", desc = "New terminal (south)" },
-    { "<leader>nk", "<cmd>aboveleft split | terminal<cr>", desc = "New terminal (north)" },
-    { "<leader>nl", "<cmd>belowright vsplit | terminal<cr>", desc = "New terminal (east)" },
+    { "<leader>ss", "<cmd>split<cr>", desc = "Default Split Horizontally" },
+    { "<leader>sv", "<cmd>vsplit<cr>", desc = "Default Split Vertically" },
+    { "<leader>sh", "<cmd>aboveleft vsplit<cr>", desc = "Split to West" },
+    { "<leader>sj", "<cmd>belowright split<cr>", desc = "Split to South" },
+    { "<leader>sk", "<cmd>aboveleft split<cr>", desc = "Split to North" },
+    { "<leader>sl", "<cmd>belowright vsplit<cr>", desc = "Split to East" },
+    { "<leader>sH", "<cmd>topleft vsplit<cr>", desc = "Split to Far West" },
+    { "<leader>sJ", "<cmd>botright split<cr>", desc = "Split to Far South" },
+    { "<leader>sK", "<cmd>topleft split<cr>", desc = "Split to Far North" },
+    { "<leader>sL", "<cmd>botright vsplit<cr>", desc = "Split to Far East" },
 })

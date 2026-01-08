@@ -23,6 +23,7 @@ require("lazy").setup("plugins", {
         lazy = true,
     },
     ui = {
-        border = "single",
+        border = "bold",
+        backdrop = 100,
     },
 })

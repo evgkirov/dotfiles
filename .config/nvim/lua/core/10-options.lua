@@ -12,6 +12,8 @@ vim.o.signcolumn = "auto:2"
 
 vim.g.mapleader = " "
 
+vim.o.winborder = "bold"
+
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "*.variables", "*.overrides" },
     command = "setfiletype less",
