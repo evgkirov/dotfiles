@@ -1,23 +1,3 @@
-local custom_oil_extension = {
-    sections = {
-        lualine_a = { "mode" },
-        lualine_b = {
-            function()
-                local ok, oil = pcall(require, "oil")
-                if ok then
-                    return vim.fn.fnamemodify(oil.get_current_dir(), ":~")
-                else
-                    return ""
-                end
-            end,
-        },
-        lualine_x = {
-            "branch",
-        },
-    },
-    filetypes = { "oil" },
-}
-
 local disable_autoformat_status = {
     function()
         if vim.g.disable_autoformat or vim.b.disable_autoformat then
@@ -28,6 +8,7 @@ local disable_autoformat_status = {
     end,
     color = "lualine_c_diagnostics_error_normal",
 }
+
 return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -58,8 +39,6 @@ return {
             "aerial",
             "lazy",
             "mason",
-            custom_oil_extension,
-            -- "oil",
             "overseer",
             "quickfix",
             "toggleterm",
