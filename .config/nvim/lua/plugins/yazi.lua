@@ -9,7 +9,7 @@ return {
         open_for_directories = true,
         keymaps = {
             open_file_in_horizontal_split = "<c-s>",
-            grep_in_directory = "<c-p>pap",
+            grep_in_directory = "<c-p>pap", -- pen pineapple apple pen
             open_and_pick_window = "<S-CR>",
         },
         hooks = {
@@ -18,7 +18,7 @@ return {
                     vim.api.nvim_buf_set_keymap(
                         buffer,
                         "t",
-                        "<leader>x",
+                        "<esc><esc>",
                         "<cmd>close<CR>",
                         { noremap = true, silent = true }
                     )
