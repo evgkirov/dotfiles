@@ -1,24 +1,32 @@
--- Lazy.nvim bootstrap
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
-end
-vim.opt.rtp:prepend(lazypath)
-
--- load "core"
-for _, file in ipairs(vim.fn.readdir(vim.fn.stdpath("config") .. "/lua/core", [[v:val =~ '\.lua$']])) do
-    require("core." .. file:gsub("%.lua$", ""))
+local function load_modules(name)
+    -- Non-recursive module loader
+    local path = vim.fn.stdpath("config") .. "/lua/" .. name
+    local modules = {}
+    for _, file in ipairs(vim.fn.readdir(path, [[v:val =~ '\.lua$']])) do
+        table.insert(modules, require(name .. "." .. file:gsub("%.lua$", "")))
+    end
+    return modules
 end
 
--- load "plugins"
-require("lazy").setup("plugins", {
+local function bootstrap_lazy()
+    local path = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+    if not vim.loop.fs_stat(path) then
+        vim.fn.system({
+            "git",
+            "clone",
+            "--filter=blob:none",
+            "--branch=stable",
+            "https://github.com/folke/lazy.nvim.git",
+            path,
+        })
+    end
+    vim.opt.rtp:prepend(path)
+end
+
+bootstrap_lazy()
+load_modules("core")
+
+require("lazy").setup(load_modules("plugins"), {
     defaults = {
         lazy = true,
     },
