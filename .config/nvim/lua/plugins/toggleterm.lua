@@ -3,6 +3,9 @@ return {
     version = "*",
     opts = {
         shade_terminals = false,
+        float_opts = {
+            border = vim.o.winborder,
+        },
     },
     init = function()
         vim.api.nvim_create_autocmd("VimLeavePre", {
