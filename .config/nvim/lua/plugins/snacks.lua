@@ -5,6 +5,12 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
+        indent = {
+            enabled = true,
+            indent = { char = "⎸" },
+            scope = { char = "⎸" },
+            animate = { enabled = false },
+        },
         picker = {
             enabled = true,
             layout = {
