@@ -5,12 +5,16 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
+
+        -- modules
+        bigfile = { enabled = true, notify = false },
         indent = {
             enabled = true,
             indent = { char = "⎸" },
             scope = { char = "⎸" },
             animate = { enabled = false },
         },
+        image = { enabled = true, convert = { notify = true } },
         picker = {
             enabled = true,
             layout = {
@@ -31,6 +35,16 @@ return {
                     keys = {},
                 },
             },
+        },
+        quickfile = { enabled = true },
+        scratch = {
+            enabled = true,
+            win = { backdrop = false },
+        },
+
+        -- styles
+        styles = {
+            scratch = { wo = { winhighlight = "NormalFloat:NormalFloat" }, footer_keys = false },
         },
     },
     keys = {
@@ -196,6 +210,22 @@ return {
                 Snacks.picker.pickers()
             end,
             desc = "Picker",
+        },
+
+        -- scratch
+        {
+            "<leader>b",
+            function()
+                Snacks.scratch()
+            end,
+            desc = "Toggle Scratch Buffer",
+        },
+        {
+            "<leader>B",
+            function()
+                Snacks.scratch.select()
+            end,
+            desc = "Select Scratch Buffer",
         },
     },
 }
