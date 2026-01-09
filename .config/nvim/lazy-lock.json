@@ -99,10 +99,6 @@
         "branch": "main",
         "commit": "3c130e1fcb598ce39a9c292847e32d7c3987cf11"
     },
-    "toggleterm.nvim": {
-        "branch": "main",
-        "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c"
-    },
     "vimade": {
         "branch": "master",
         "commit": "266cb28a451448754eb8ae2a2a46d6ae526b33f8"

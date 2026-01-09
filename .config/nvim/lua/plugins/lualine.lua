@@ -36,13 +36,9 @@ return {
             lualine_z = {},
         },
         extensions = {
-            "aerial",
             "lazy",
-            "mason",
             "overseer",
             "quickfix",
-            "toggleterm",
-            "trouble",
         },
     },
 }

@@ -25,8 +25,5 @@ return {
             group = "",
             rules = false,
         },
-        disable = {
-            ft = { "toggleterm" },
-        },
     },
 }
