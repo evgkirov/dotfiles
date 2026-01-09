@@ -8,9 +8,7 @@ return {
         ":TSUpdate",
     },
     init = function()
-        local function ts_buf_enable(buf) end
-        -- vim.api.nvim_create_autocmd("FileType", {  -- for some reason, doesn't work for buffers loaded by resession
-        vim.api.nvim_create_autocmd("BufEnter", {
+        vim.api.nvim_create_autocmd("FileType", {
             callback = function(args)
                 local ok, parser = pcall(vim.treesitter.get_parser, args.buf)
                 if not ok or not parser then
