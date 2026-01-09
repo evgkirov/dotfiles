@@ -3,6 +3,7 @@
     "autoupdate": false,
     "theme": "everforest",
     "share": "disabled",
+    "plugin": ["@franlol/opencode-md-table-formatter@0.0.3"],
     "mcp": {
         "context7": {
             "type": "local",
