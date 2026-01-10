@@ -184,5 +184,13 @@ return {
             end,
             desc = "Picker",
         },
+        {
+            "<c-e>",
+            function()
+                Snacks.picker.icons({ layout = { preset = "dropdown", hidden = { "preview" } } })
+            end,
+            desc = "Icons",
+            mode = { "n", "i" },
+        },
     },
 }
