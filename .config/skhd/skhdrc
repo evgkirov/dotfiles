@@ -7,6 +7,7 @@
 :: warp @ : yabai -m window --opacity 0.5
 :: inc @ : yabai -m window --opacity 0.5
 :: dec @ : yabai -m window --opacity 0.5
+:: mov @ : yabai -m window --opacity 0.5
 :: ins @ : yabai -m window --opacity 0.5; sleep 2 ; skhd -k "escape"
 
 #
@@ -34,8 +35,8 @@ lalt - t -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR ; sh ~
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
 cmd - q -> : sleep 1 && yabai -m window --focus mouse
 ctrl - d -> : sleep 1 && yabai -m window --focus mouse
-default < hyper - o : brew services restart sketchybar
-default < hyper - m : sketchybar --set music drawing=off
+# default < hyper - o : brew services restart sketchybar
+# default < hyper - m : sketchybar --set music drawing=off
 
 #
 # SYSTEM
@@ -141,7 +142,6 @@ warp < hyper - l : yabai -m window --warp east || yabai -m window --display 1 ; 
 hyper - e ; inc
 inc < escape ; default
 inc < hyper - e ; default
-inc < space ; default
 inc < left : yabai -m window --resize left:-100:0
 inc < down : yabai -m window --resize bottom:0:100
 inc < up : yabai -m window --resize top:0:-100
@@ -154,7 +154,6 @@ inc < l : yabai -m window --resize right:100:0
 hyper - d ; dec
 dec < escape ; default
 dec < hyper - d ; default
-dec < space ; default
 dec < left : yabai -m window --resize left:100:0
 dec < down : yabai -m window --resize bottom:0:-100
 dec < up : yabai -m window --resize top:0:100
@@ -163,6 +162,18 @@ dec < h : yabai -m window --resize left:100:0
 dec < j : yabai -m window --resize bottom:0:-100
 dec < k : yabai -m window --resize top:0:100
 dec < l : yabai -m window --resize right:-100:0
+
+#
+# MOVE WINDOWS
+#
+
+hyper - m ; mov
+mov < escape ; default
+mov < hyper - m ; default
+mov < h : yabai -m window --move rel:-200:0
+mov < j : yabai -m window --move rel:0:200
+mov < k : yabai -m window --move rel:0:-200
+mov < l : yabai -m window --move rel:200:0
 
 #
 # STACKS
