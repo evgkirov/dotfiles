@@ -1,0 +1,14 @@
+[[mgr.prepend_keymap]]
+on = "o"
+run = "shell 'qlmanage -p %h'"
+desc = "Quick Look current file"
+
+[[mgr.prepend_keymap]]
+on = "-"
+run = "cd .."
+desc = "Go up one directory"
+
+[[mgr.prepend_keymap]]
+on = "_"
+run = "plugin go-project-root"
+desc = "Go to project root directory"

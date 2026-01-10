@@ -4,4 +4,5 @@
 .config/fish/completions/kubectl.fish
 .config/fish/completions/orbctl.fish
 .config/fish/functions/fin.fish
-.config/yazi/plugins/
+.config/yazi/plugins/*
+!.config/yazi/plugins/go-project-root.yazi/

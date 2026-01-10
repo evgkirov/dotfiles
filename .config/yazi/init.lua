@@ -10,4 +10,5 @@ function Entity:icon()
     end
 end
 
+require("go-project-root"):setup()
 require("starship"):setup()
