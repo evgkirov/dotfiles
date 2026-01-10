@@ -1,5 +1,6 @@
 return {
     bigfile = require((...) .. ".bigfile"),
+    gitbrowse = require((...) .. ".gitbrowse"),
     image = require((...) .. ".image"),
     indent = require((...) .. ".indent"),
     picker = require((...) .. ".picker"),
