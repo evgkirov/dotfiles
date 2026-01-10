@@ -13,7 +13,7 @@
     },
     "copilot.lua": {
         "branch": "master",
-        "commit": "c13f6f5147b80298301eb409991f28a991736cc3"
+        "commit": "5ace9ecd0db9a7a6c14064e4ce4ede5b800325f3"
     },
     "dash.vim": {
         "branch": "master",
@@ -117,6 +117,6 @@
     },
     "yazi.nvim": {
         "branch": "main",
-        "commit": "7c2a2c3511f8790b8de749a04d37563d77478c17"
+        "commit": "4a8bd3284708e11e48bcd865892902a46abdcce0"
     }
 }
