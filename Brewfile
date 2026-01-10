@@ -18,7 +18,6 @@ brew "bat"
 brew "btop"
 brew "eza"
 brew "fish"
-brew "fzf"  # zoxide dependency
 brew "starship"
 brew "zoxide"
 
@@ -76,7 +75,14 @@ brew "stow"
 brew "watch"
 brew "wget"
 brew "yt-dlp"
-brew "ffmpeg"  # required by yt-dlp
+
+# Formulae: Misc dependencies
+brew "ffmpeg"  # yazi, yt-dlp
+brew "fzf"  # yazi, zoxide
+brew "imagemagick"  # snacks.image, yazi
+brew "poppler"  # yazi
+brew "resvg"  # yazi
+brew "sevenzip"  # yazi
 
 # Casks: All
 cask "1password"
