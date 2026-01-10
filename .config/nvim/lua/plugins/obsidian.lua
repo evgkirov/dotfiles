@@ -14,6 +14,21 @@ return {
     ft = "markdown",
     cmd = { "Obsidian" },
 
+    init = function()
+        vim.api.nvim_create_augroup("ObsidianAutosave", { clear = true })
+        vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged", "FocusLost" }, {
+            group = "ObsidianAutosave",
+            pattern = vim.fn.expand("~") .. "/Obsidian/*.md",
+            callback = function(args)
+                if vim.bo[args.buf].modified then
+                    vim.api.nvim_buf_call(args.buf, function()
+                        vim.cmd("write")
+                    end)
+                end
+            end,
+        })
+    end,
+
     opts = {
 
         workspaces = {
