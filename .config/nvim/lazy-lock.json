@@ -15,6 +15,10 @@
         "branch": "master",
         "commit": "5ace9ecd0db9a7a6c14064e4ce4ede5b800325f3"
     },
+    "debugprint.nvim": {
+        "branch": "main",
+        "commit": "25bc7c2b1703050d14cfb2560974a8426febe08d"
+    },
     "everforest": {
         "branch": "master",
         "commit": "b90025cc84dbb9c46df5a2ae540d3f01cf85af74"

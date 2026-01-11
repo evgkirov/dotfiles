@@ -12,6 +12,7 @@ return {
             { "<leader>de", group = "󰡨 Docker Engine (OrbStack)..." },
             { "<leader>f", group = "󰍉 Find..." },
             { "<leader>g", group = "󰊢 Git..." },
+            { "<leader>l", group = "󰐪 Debug Prints..." },
             { "<leader>m", group = "󰍔 Markdown..." },
             { "<leader>o", group = "󰇈 Obsidian..." },
             { "<leader>r", group = "󱤵 Run..." },
