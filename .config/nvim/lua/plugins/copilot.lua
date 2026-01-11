@@ -21,6 +21,7 @@ return {
         filetypes = {
             yaml = true,
             markdown = true,
+            beancount = false,
         },
     },
 }
