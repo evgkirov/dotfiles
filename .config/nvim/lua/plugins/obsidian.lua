@@ -7,6 +7,8 @@ vim.api.nvim_create_user_command("ObsidianQuickNote", function()
         vim.cmd("startinsert")
     end)
 end, {})
+local OBSIDIAN_DIR = vim.fn.expand("~") .. "/Obsidian"
+local PERSONAL_VAULT_DIR = OBSIDIAN_DIR .. "/Personal"
 
 return {
     "obsidian-nvim/obsidian.nvim",
@@ -18,7 +20,7 @@ return {
         vim.api.nvim_create_augroup("ObsidianAutosave", { clear = true })
         vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged", "FocusLost" }, {
             group = "ObsidianAutosave",
-            pattern = vim.fn.expand("~") .. "/Obsidian/*.md",
+            pattern = OBSIDIAN_DIR .. "/**/*.md",
             callback = function(args)
                 if vim.bo[args.buf].modified then
                     vim.api.nvim_buf_call(args.buf, function()
@@ -34,7 +36,7 @@ return {
         workspaces = {
             {
                 name = "Personal",
-                path = "~/Obsidian/Personal",
+                path = PERSONAL_VAULT_DIR,
             },
         },
 
@@ -96,12 +98,14 @@ return {
     --     vim.o.conceallevel = 2
     -- end,
     keys = {
-        { "<leader>oo", "<cmd>Obsidian quick_switch<cr>", desc = "Quick Switch" },
-        { "<leader>oa", "<cmd>Obsidian<cr>", desc = "Actions" },
         { "<leader>on", "<cmd>ObsidianQuickNote<cr>", desc = "New Note" },
         { "<leader>ox", "<cmd>Obsidian open<cr>", desc = "Open in Obsidian.app" },
+        { "<leader>oo", ":Obsidian quick_switch<cr>", desc = "Quick Switch" },
+        { "<leader>oa", ":Obsidian<cr>", desc = "Actions" },
+        { "<leader>ox", ":Obsidian open<cr>", desc = "Open in Obsidian.app" },
         { "<leader>od", ":Obsidian dailies<cr>", desc = "This week" },
         { "<leader>ot", ":Obsidian today<cr>", desc = "Today" },
         { "<leader>ob", ":Obsidian backlinks<cr>", desc = "Backlinks" },
+        { "<leader>oi", ":e " .. PERSONAL_VAULT_DIR .. "/Inbox/<cr>", desc = "Inbox" },
     },
 }

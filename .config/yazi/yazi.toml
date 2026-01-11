@@ -1,7 +1,7 @@
 [mgr]
-ratio = [ 2, 4, 4]
+ratio = [2, 4, 4]
 sort_dir_first = false
-show_hidden = true
+# show_hidden = true
 
 [preview]
 max_width = 1080

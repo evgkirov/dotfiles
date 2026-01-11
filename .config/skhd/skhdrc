@@ -35,7 +35,7 @@ lalt - t -> : im-select com.evgkirov.keyboardlayout.custom.keylayout.ENSR ; sh ~
 cmd - w -> : sleep 1 && yabai -m window --focus mouse
 cmd - q -> : sleep 1 && yabai -m window --focus mouse
 ctrl - d -> : sleep 1 && yabai -m window --focus mouse
-# default < hyper - o : brew services restart sketchybar
+default < hyper - o : brew services restart sketchybar
 # default < hyper - m : sketchybar --set music drawing=off
 
 #
