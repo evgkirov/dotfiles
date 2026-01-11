@@ -1,9 +1,10 @@
+\.claude
 \.DS_Store
 \.editorconfig
 \.git
 \.gitignore
-\.stow-local-ignore
 \.pre-commit-config\.yaml
+\.stow-local-ignore
 ^/Brewfile
 ^/Makefile
 ^/README\.md
