@@ -1,12 +1,3 @@
-vim.api.nvim_create_user_command("ObsidianQuickNote", function()
-    local title = os.date("%H%M") .. " Quick Note"
-    require("obsidian").api.new_from_template(title, "Unique Note Template", function(note)
-        note:open({ sync = true })
-        vim.cmd("normal! Go")
-        vim.cmd("normal! o")
-        vim.cmd("startinsert")
-    end)
-end, {})
 local OBSIDIAN_DIR = vim.fn.expand("~") .. "/Obsidian"
 local PERSONAL_VAULT_DIR = OBSIDIAN_DIR .. "/Personal"
 
@@ -98,10 +89,21 @@ return {
     --     vim.o.conceallevel = 2
     -- end,
     keys = {
-        { "<leader>on", "<cmd>ObsidianQuickNote<cr>", desc = "New Note" },
-        { "<leader>ox", "<cmd>Obsidian open<cr>", desc = "Open in Obsidian.app" },
         { "<leader>oo", ":Obsidian quick_switch<cr>", desc = "Quick Switch" },
         { "<leader>oa", ":Obsidian<cr>", desc = "Actions" },
+        {
+            "<leader>on",
+            function()
+                local title = os.date("%H%M") .. " Quick Note"
+                require("obsidian").api.new_from_template(title, "Unique Note Template", function(note)
+                    note:open({ sync = true })
+                    vim.cmd("normal! Go")
+                    vim.cmd("normal! o")
+                    vim.cmd("startinsert")
+                end)
+            end,
+            desc = "New Note",
+        },
         { "<leader>ox", ":Obsidian open<cr>", desc = "Open in Obsidian.app" },
         { "<leader>od", ":Obsidian dailies<cr>", desc = "This week" },
         { "<leader>ot", ":Obsidian today<cr>", desc = "Today" },

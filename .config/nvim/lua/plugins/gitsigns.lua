@@ -1,5 +1,6 @@
 return {
     "lewis6991/gitsigns.nvim",
+    enabled = not vim.g.is_quick_notes_mode,
     version = "*",
     event = "BufEnter",
     opts = {
