@@ -6,10 +6,6 @@ gui:
 os:
   editPreset: nvim-remote
 
-keybinding:
-  universal:
-    quit: "<c-c>"
-
 git:
   autoFetch: false
   overrideGpg: true
