@@ -1,6 +1,7 @@
 .PHONY: brew
 brew:
 	brew update
+	brew upgrade
 	brew bundle --cleanup
 
 .PHONY: stow_check
