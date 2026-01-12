@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ACTIVE_WINDOW_OPACITY=1.0
-NORMAL_WINDOW_OPACITY=0.8
+NORMAL_WINDOW_OPACITY=0.5
 
 common_settings() {
     echo "Setting common settings for Yabai"
