@@ -32,15 +32,7 @@ return {
             jsonls = {},
 
             -- Python
-            basedpyright = {
-                settings = {
-                    basedpyright = {
-                        analysis = {
-                            typeCheckingMode = "standard",
-                        },
-                    },
-                },
-            },
+            ty = {},
             ruff = {},
 
             -- Beancount
