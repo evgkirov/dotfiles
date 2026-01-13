@@ -113,6 +113,8 @@ keys({
         end,
         desc = "Toggle beancount flag",
     },
+    { "<leader>cl", 'viW"cc<C-r>=<C-r>c<cr><esc>', desc = "Calculate" },
+    { "<leader>cl", '"cc<C-r>=<C-r>c<cr><esc>', desc = "Calculate", mode = "v" },
 })
 
 -- tabs
