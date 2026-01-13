@@ -91,14 +91,21 @@ return {
             desc = "Directory",
         },
         {
-            "<leader>fs",
+            "<leader>fd",
             function()
                 Snacks.picker.lsp_symbols({ keep_parents = true, layout = "ivy_split" })
             end,
             desc = "Document Symbols",
         },
         {
-            "<leader>fS",
+            "<leader>fD",
+            function()
+                Snacks.picker.treesitter({ layout = "ivy_split" })
+            end,
+            desc = "Treesitter Symbols",
+        },
+        {
+            "<leader>fs",
             function()
                 Snacks.picker.lsp_workspace_symbols()
             end,
