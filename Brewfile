@@ -128,19 +128,16 @@ cask "slack"
 cask "sonos"
 cask "spotify"
 cask "steam"
-cask "telegram-desktop"
 cask "telegram"
 cask "the-unarchiver"
 cask "transmission"
 cask "ukelele"
 cask "viber"
 cask "wezterm@nightly"
-cask "zed"
 cask "zoom"
 
 # Mac App Store: All
 mas "Amphetamine", id: 937984704
-mas "Banktivity", id: 1480779512  # TODO: delete
 mas "Dark Reader for Safari", id: 1438243180  # TODO: delete
 mas "DjVu Reader", id: 733144595
 mas "Home Assistant", id: 1099568401
