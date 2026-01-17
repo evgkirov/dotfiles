@@ -5,11 +5,12 @@ tap "daipeihust/tap"
 tap "felixkratz/formulae"
 
 # Formulae: OS / GUI
-brew "daipeihust/tap/im-select"
-brew "felixkratz/formulae/sketchybar"
-brew "felixkratz/formulae/svim" # XXX give it another shot or remove
 brew "asmvik/formulae/skhd"
 brew "asmvik/formulae/yabai", args: ["HEAD"]
+brew "daipeihust/tap/im-select"
+brew "felixkratz/formulae/borders"
+brew "felixkratz/formulae/sketchybar"
+brew "felixkratz/formulae/svim" # XXX give it another shot or remove
 brew "m-cli"
 brew "mas"
 

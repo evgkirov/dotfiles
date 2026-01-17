@@ -3,12 +3,12 @@
 #
 
 :: default : yabai -m window --opacity 0.0
-:: swap @ : yabai -m window --opacity 0.8
-:: warp @ : yabai -m window --opacity 0.8
-:: inc @ : yabai -m window --opacity 0.8
-:: dec @ : yabai -m window --opacity 0.8
-:: mov @ : yabai -m window --opacity 0.8
-:: ins @ : yabai -m window --opacity 0.8; sleep 2 ; skhd -k "escape"
+:: swap @ : yabai -m window --opacity 0.5
+:: warp @ : yabai -m window --opacity 0.5
+:: inc @ : yabai -m window --opacity 0.5
+:: dec @ : yabai -m window --opacity 0.5
+:: mov @ : yabai -m window --opacity 0.5
+:: ins @ : yabai -m window --opacity 0.5; sleep 2 ; skhd -k "escape"
 
 #
 # APPS
