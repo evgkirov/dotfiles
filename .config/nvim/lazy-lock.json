@@ -13,7 +13,7 @@
     },
     "copilot.lua": {
         "branch": "master",
-        "commit": "5ace9ecd0db9a7a6c14064e4ce4ede5b800325f3"
+        "commit": "0ab400d547814b04b39a069208ff7b40ab22dfb5"
     },
     "debugprint.nvim": {
         "branch": "main",
@@ -65,7 +65,7 @@
     },
     "nvim-treesitter": {
         "branch": "main",
-        "commit": "5a7e5638e7d220575b1c22c8a2e099b52231886e"
+        "commit": "d19def46c112c26c17adeef88dd1253cc6d623a1"
     },
     "nvim-treesitter-context": {
         "branch": "master",
@@ -73,7 +73,7 @@
     },
     "nvim-web-devicons": {
         "branch": "master",
-        "commit": "6788013bb9cb784e606ada44206b0e755e4323d7"
+        "commit": "803353450c374192393f5387b6a0176d0972b848"
     },
     "obsidian.nvim": {
         "branch": "main",
@@ -81,7 +81,7 @@
     },
     "overseer.nvim": {
         "branch": "master",
-        "commit": "2fe35c4282c35179fb615acbf52881f22924e7ad"
+        "commit": "95b1099c043e4231a1204abd9a394d379e69f029"
     },
     "plenary.nvim": {
         "branch": "master",
