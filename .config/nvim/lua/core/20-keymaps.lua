@@ -109,9 +109,11 @@ keys({
         function()
             if vim.bo.filetype == "beancount" then
                 require("helpers.beancount").toggle_transaction_flag()
+            elseif vim.bo.filetype == "markdown" then
+                require("helpers.markdown").toggle_checkbox()
             end
         end,
-        desc = "Toggle beancount flag",
+        desc = "Toggle Markdown checkbox / Beancount flag",
     },
     { "<leader>cl", 'viW"cc<C-r>=<C-r>c<cr><esc>', desc = "Calculate" },
     { "<leader>cl", '"cc<C-r>=<C-r>c<cr><esc>', desc = "Calculate", mode = "v" },
