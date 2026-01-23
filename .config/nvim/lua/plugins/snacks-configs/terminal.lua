@@ -47,7 +47,7 @@ return {
             function()
                 local cwd = vim.fn.getcwd()
                 if string.find(cwd, "/agvend") then
-                    Snacks.terminal.toggle("codex resume")
+                    Snacks.terminal.toggle("codex")
                 else
                     Snacks.terminal.toggle("claude")
                 end
