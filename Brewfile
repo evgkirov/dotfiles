@@ -139,21 +139,15 @@ cask "zoom"
 
 # Mac App Store: All
 mas "Amphetamine", id: 937984704
-mas "Dark Reader for Safari", id: 1438243180  # TODO: delete
 mas "DjVu Reader", id: 733144595
 mas "Home Assistant", id: 1099568401
-mas "Hush", id: 1544743900  # TODO: delete
 mas "Internet Access Policy Viewer", id: 1482630322
-mas "Kagi for Safari", id: 1622835804  # TODO: delete
 mas "Keynote", id: 409183694
 mas "LanScan", id: 472226235
 mas "Menu Bar Controller for Sonos", id: 6749351423
 mas "Numbers", id: 409203825
-mas "Obsidian Web Clipper", id: 6720708363  # TODO: delete
 mas "Pages", id: 409201541
 mas "Pixelmator Pro", id: 1289583905
-mas "Quick Camera", id: 598853070  # TODO: delete
-mas "Raycast Companion", id: 6738274497  # TODO: delete
 mas "Speedtest", id: 1153157709
 mas "Streaks", id: 963034692
 mas "Things", id: 904280696
