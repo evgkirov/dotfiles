@@ -142,11 +142,11 @@ mas "Amphetamine", id: 937984704
 mas "DjVu Reader", id: 733144595
 mas "Home Assistant", id: 1099568401
 mas "Internet Access Policy Viewer", id: 1482630322
-mas "Keynote", id: 409183694
+mas "Keynote", id: 361285480
 mas "LanScan", id: 472226235
 mas "Menu Bar Controller for Sonos", id: 6749351423
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+mas "Numbers", id: 361304891
+mas "Pages", id: 361309726
 mas "Pixelmator Pro", id: 1289583905
 mas "Speedtest", id: 1153157709
 mas "Streaks", id: 963034692
