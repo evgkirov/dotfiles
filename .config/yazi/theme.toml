@@ -30,3 +30,26 @@ rules = [
     { url = "*/", fg = "green", bold = true},
 
 ]
+
+# https://raw.githubusercontent.com/sxyazi/yazi/refs/heads/main/yazi-config/preset/theme-light.toml
+[icon]
+prepend_dirs  = [
+	{ name = ".config", text = "", fg = "#9DA9A0" },
+	{ name = ".git", text = "", fg = "#9DA9A0" },
+	{ name = ".github", text = "", fg = "#9DA9A0"},
+	{ name = ".npm", text = "", fg = "#9DA9A0" },
+	{ name = "Desktop", text = "", fg = "green" },
+	{ name = "Development", text = "", fg = "green" },
+	{ name = "Documents", text = "", fg = "green" },
+	{ name = "Downloads", text = "", fg = "green" },
+	{ name = "Library", text = "", fg = "green" },
+	{ name = "Movies", text = "", fg = "green" },
+	{ name = "Music", text = "", fg = "green" },
+	{ name = "Pictures", text = "", fg = "green" },
+	{ name = "Public", text = "", fg = "green" },
+	{ name = "Videos", text = "", fg = "green" },
+]
+
+prepend_conds = [
+	{ if = "dir", text = "", fg = "green" },
+]
