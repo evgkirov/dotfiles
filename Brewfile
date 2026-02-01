@@ -149,5 +149,4 @@ mas "Numbers", id: 361304891
 mas "Pages", id: 361309726
 mas "Pixelmator Pro", id: 1289583905
 mas "Speedtest", id: 1153157709
-mas "Streaks", id: 963034692
 mas "Things", id: 904280696
