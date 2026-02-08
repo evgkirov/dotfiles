@@ -14,7 +14,6 @@ return {
             { "<leader>g", group = "󰊢 Git..." },
             { "<leader>l", group = "󰐪 Debug Prints..." },
             { "<leader>m", group = "󰍔 Markdown..." },
-            { "<leader>o", group = "󰇈 Obsidian..." },
             { "<leader>r", group = "󱤵 Run..." },
             { "<leader>s", group = " Splits..." },
             { "<leader>t", group = "󰓩 Tabs..." },

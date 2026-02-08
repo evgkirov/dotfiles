@@ -133,7 +133,6 @@ cask "the-unarchiver"
 cask "transmission"
 cask "ukelele"
 cask "viber"
-cask "wezterm@nightly"
 cask "zoom"
 
 # Mac App Store: All

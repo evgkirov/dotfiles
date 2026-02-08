@@ -75,10 +75,6 @@
         "branch": "master",
         "commit": "746ffbb17975ebd6c40142362eee1b0249969c5c"
     },
-    "obsidian.nvim": {
-        "branch": "main",
-        "commit": "8ab5bb9b58edafce994f8c8e709d82c37e3257e0"
-    },
     "overseer.nvim": {
         "branch": "master",
         "commit": "95b1099c043e4231a1204abd9a394d379e69f029"
