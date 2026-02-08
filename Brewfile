@@ -32,7 +32,6 @@ brew "jq"
 brew "pre-commit"
 brew "ripgrep"
 brew "yazi"
-cask "claude-code"
 cask "codex"
 
 # Formulae: Languages & libraries

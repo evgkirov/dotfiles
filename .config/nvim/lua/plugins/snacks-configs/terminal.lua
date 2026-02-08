@@ -49,10 +49,10 @@ return {
                 if string.find(cwd, "/agvend") then
                     Snacks.terminal.toggle("codex")
                 else
-                    Snacks.terminal.toggle("claude")
+                    Snacks.terminal.toggle("opencode")
                 end
             end,
-            desc = "Code Assistant (Codex / Claude)",
+            desc = "Code Assistant (Codex / OpenCode)",
         },
     },
 }
