@@ -13,7 +13,7 @@
         "playwright": {
             "type": "local",
             "enabled": true,
-            "command": ["mcp-server-playwright"]
+            "command": ["playwright-mcp"]
         }
     }
 }
