@@ -20,5 +20,10 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
 })
 
 vim.api.nvim_create_autocmd("VimResized", {
-    command = "tabdo wincmd =",
+    pattern = "*",
+    callback = function()
+        local current_tab = vim.api.nvim_get_current_tabpage()
+        vim.cmd("tabdo wincmd =")
+        vim.api.nvim_set_current_tabpage(current_tab)
+    end,
 })
