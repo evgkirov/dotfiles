@@ -22,9 +22,9 @@ if status is-interactive
         if test -f ".venv/bin/activate.fish"
             source .venv/bin/activate.fish
         else if test -f "pyproject.toml"
-            source (poetry env info --path)/bin/activate.fish
+            eval (poetry env activate)
         else if test -f "agbackend/pyproject.toml"
-            source (poetry -C agbackend env info --path)/bin/activate.fish
+            eval (poetry -C agbackend env activate)
         end
     end
 
