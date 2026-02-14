@@ -17,7 +17,7 @@
     },
     "debugprint.nvim": {
         "branch": "main",
-        "commit": "25bc7c2b1703050d14cfb2560974a8426febe08d"
+        "commit": "4f29196c5fe32752bb7a3e8bc83d4a4d2f3b7922"
     },
     "everforest": {
         "branch": "master",
@@ -61,11 +61,11 @@
     },
     "nvim-lspconfig": {
         "branch": "master",
-        "commit": "5bfcc89fd155b4ffc02d18ab3b7d19c2d4e246a7"
+        "commit": "44acfe887d4056f704ccc4f17513ed41c9e2b2e6"
     },
     "nvim-treesitter": {
         "branch": "main",
-        "commit": "45a07f869b0cffba342276f2c77ba7c116d35db8"
+        "commit": "4d9466677a5ceadef104eaa0fe08d60d91c4e9a7"
     },
     "nvim-treesitter-context": {
         "branch": "master",
