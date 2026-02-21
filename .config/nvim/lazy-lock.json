@@ -13,7 +13,7 @@
     },
     "copilot.lua": {
         "branch": "master",
-        "commit": "3faffefbd6ddeb52578535ec6b730e0b72d7fd1a"
+        "commit": "dd3e345d59051464573d821b042f0a0c82410b5d"
     },
     "debugprint.nvim": {
         "branch": "main",
@@ -65,7 +65,7 @@
     },
     "nvim-treesitter": {
         "branch": "main",
-        "commit": "4d9466677a5ceadef104eaa0fe08d60d91c4e9a7"
+        "commit": "dc42c209f3820bdfaae0956f15de29689aa6b451"
     },
     "nvim-treesitter-context": {
         "branch": "master",
