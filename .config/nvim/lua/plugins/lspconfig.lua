@@ -74,6 +74,9 @@ return {
                     Lua = {},
                 },
             },
+
+            -- System (nix)
+            nil_ls = {},
         }
 
         vim.highlight.priorities.semantic_tokens = 95 -- https://github.com/DetachHead/basedpyright/issues/176#issuecomment-2016608736

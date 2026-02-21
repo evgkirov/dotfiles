@@ -23,6 +23,7 @@
           environment.systemPackages = with pkgs; [
             vim
             nixfmt
+            nil
           ];
 
           # Necessary for using flakes on this system.
@@ -46,7 +47,9 @@
           security.pam.services.sudo_local.touchIdAuth = true;
 
           system.defaults = {
-            dock.autohide = true;
+            dock = {
+              autohide = true;
+            };
           };
 
         };
