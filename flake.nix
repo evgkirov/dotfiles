@@ -42,13 +42,46 @@
           # The platform the configuration will be used on.
           nixpkgs.hostPlatform = "aarch64-darwin";
 
+          nix.package = pkgs.lix;
+
           system.primaryUser = "evgkirov";
 
           security.pam.services.sudo_local.touchIdAuth = true;
 
+          # TODO: power.*
+
           system.defaults = {
+            NSGlobalDomain = {
+              # _HIHideMenuBar = true;
+              AppleFontSmoothing = 0;
+              ApplePressAndHoldEnabled = false;
+              AppleShowAllExtensions = true;
+              InitialKeyRepeat = 20;
+              KeyRepeat = 2;
+              NSAutomaticCapitalizationEnabled = false;
+              NSAutomaticDashSubstitutionEnabled = false;
+              NSAutomaticPeriodSubstitutionEnabled = false;
+              NSAutomaticQuoteSubstitutionEnabled = false;
+              NSAutomaticSpellingCorrectionEnabled = false;
+              NSNavPanelExpandedStateForSaveMode = true;
+              NSNavPanelExpandedStateForSaveMode2 = true;
+            };
             dock = {
+              # TODO: persistent-apps
               autohide = true;
+              mineffect = "scale";
+              minimize-to-application = true;
+              mru-spaces = false;
+              show-recents = false;
+            };
+            finder = {
+              FXDefaultSearchScope = "SCcf";
+              FXPreferredViewStyle = "clmv";
+              FXRemoveOldTrashItems = true;
+              NewWindowTarget = "Home";
+            };
+            screencapture = {
+              location = "~/Library/Mobile Documents/com~apple~CloudDocs/Screen Shots/";
             };
           };
 
