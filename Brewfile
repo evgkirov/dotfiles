@@ -6,7 +6,7 @@ tap "felixkratz/formulae"
 
 # Formulae: OS / GUI
 brew "asmvik/formulae/skhd"
-brew "asmvik/formulae/yabai", args: ["HEAD"]
+brew "asmvik/formulae/yabai"
 brew "daipeihust/tap/im-select"
 brew "felixkratz/formulae/borders"
 brew "felixkratz/formulae/sketchybar"
