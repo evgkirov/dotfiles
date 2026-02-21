@@ -10,8 +10,7 @@ Description is coming soon (or maybe not)...
 
 ## Installation
 
-```sh
-make brew
-make stow_check
-make stow
+```
+make install
+make rebuild
 ```
