@@ -28,6 +28,7 @@ return {
             json = { "prettierd" },
             lua = { "stylua" },
             markdown = { "prettierd" },
+            nix = { "nixfmt" },
             python = { "isort", "black" },
             -- python = { "ruff_organize_imports", "ruff_format" },
             sh = { "shfmt" },

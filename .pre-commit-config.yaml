@@ -20,3 +20,11 @@ repos:
     rev: v3.12.0-2
     hooks:
       - id: shfmt
+
+  - repo: local
+    hooks:
+      - id: nixfmt
+        name: nixfmt
+        entry: nixfmt
+        language: system
+        types: [nix]
