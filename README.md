@@ -11,6 +11,6 @@ Description is coming soon (or maybe not)...
 ## Installation
 
 ```
-make install
-make rebuild
+# TODO: replace branch name (experimental/nix → master) once merged
+curl -sSf -L https://raw.githubusercontent.com/evgkirov/dotfiles/refs/heads/experimental/nix/install.sh | sh -s --
 ```

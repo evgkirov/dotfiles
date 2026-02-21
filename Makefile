@@ -1,6 +1,7 @@
 .PHONY: install
 install:
-	curl -sSf -L https://install.lix.systems/lix | sh -s -- install
+	# TODO: replace branch name (experimental/nix → master) once merged
+	curl -sSf -L https://raw.githubusercontent.com/evgkirov/dotfiles/refs/heads/experimental/nix/install.sh | sh -s --
 
 .PHONY: rebuild
 rebuild:
