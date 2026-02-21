@@ -3,9 +3,14 @@ install:
 	# TODO: replace branch name (experimental/nix → master) once merged
 	curl -sSf -L https://raw.githubusercontent.com/evgkirov/dotfiles/refs/heads/experimental/nix/install.sh | sh -s --
 
-.PHONY: rebuild
-rebuild:
-	sudo /nix/var/nix/profiles/default/bin/nix run nix-darwin -- switch --flake .#mac
+.PHONY: build
+build:
+	sudo darwin-rebuild switch --flake .#mac
+
+.PHONY: upgrade
+upgrade:
+	nix flake update --commit-lock-file
+	$(MAKE) build
 
 # OLD:
 
