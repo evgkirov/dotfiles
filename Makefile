@@ -1,13 +1,20 @@
-.PHONY: brew
-brew:
-	brew update
-	brew upgrade
-	brew bundle --cleanup
+.PHONY: bootstrap
+bootstrap:
+	sh scripts/bootstrap.sh
 
-.PHONY: stow_check
-stow_check:
-	stow --simulate -v -t $$HOME .
+.PHONY: install
+install:
+	sh scripts/install.sh
 
-.PHONY: stow
-stow:
-	stow -v -t $$HOME .
+.PHONY: post_install
+post_install:
+	sh scripts/post_install.sh
+
+.PHONY: upgrade
+upgrade:
+	sh scripts/upgrade.sh
+
+.PHONY: check_stow
+check_stow:
+	stow --simulate -vv -t $$HOME .
+

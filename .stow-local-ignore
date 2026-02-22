@@ -5,7 +5,7 @@
 \.gitignore
 \.pre-commit-config\.yaml
 \.stow-local-ignore
-^/Brewfile
+^/macos
 ^/Makefile
 ^/README\.md
 ^/screenshots

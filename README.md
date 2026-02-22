@@ -11,7 +11,14 @@ Description is coming soon (or maybe not)...
 ## Installation
 
 ```sh
-make brew
-make stow_check
-make stow
+/bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/evgkirov/dotfiles/refs/heads/master/scripts/bootstrap.sh)"
+make install
+make post_install
+```
+
+## Other commands
+
+```sh
+make upgrade
+make check_stow
 ```
