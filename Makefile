@@ -14,6 +14,10 @@ post_install:
 upgrade:
 	sh scripts/upgrade.sh
 
+.PHONY: dump_config
+dump_config:
+	sh scripts/dump_config.sh
+
 .PHONY: check_stow
 check_stow:
 	stow --simulate -vv -t $$HOME .

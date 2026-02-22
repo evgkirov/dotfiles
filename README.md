@@ -12,7 +12,13 @@ Description is coming soon (or maybe not)...
 
 ```sh
 /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/evgkirov/dotfiles/refs/heads/master/scripts/bootstrap.sh)"
+```
+
+```sh
 make install
+```
+
+```sh
 make post_install
 ```
 
@@ -20,5 +26,12 @@ make post_install
 
 ```sh
 make upgrade
+```
+
+```sh
 make check_stow
+```
+
+```sh
+make dump_configs
 ```
