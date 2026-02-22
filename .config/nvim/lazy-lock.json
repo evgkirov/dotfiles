@@ -13,7 +13,7 @@
     },
     "copilot.lua": {
         "branch": "master",
-        "commit": "dd3e345d59051464573d821b042f0a0c82410b5d"
+        "commit": "5c01badd42049a63ac9e5d6c8ea85aaf66cb940f"
     },
     "debugprint.nvim": {
         "branch": "main",
@@ -57,7 +57,7 @@
     },
     "nvim-colorizer.lua": {
         "branch": "master",
-        "commit": "338409dd8a6ed74767bad3eb5269f1b903ffb3cf"
+        "commit": "171ee669fbc5e547531e28a5bf0e76fce0799355"
     },
     "nvim-lspconfig": {
         "branch": "master",
