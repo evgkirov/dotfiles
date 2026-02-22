@@ -116,7 +116,6 @@ cask "nvidia-geforce-now"
 cask "obs"
 cask "obsidian"
 cask "orbstack"
-cask "orion"
 cask "pearcleaner"
 cask "poedit"
 cask "pycharm"
@@ -135,7 +134,7 @@ cask "ukelele"
 cask "viber"
 cask "zoom"
 
-# Mac App Store: All
+# Mac App Store: Apps
 mas "Amphetamine", id: 937984704
 mas "DjVu Reader", id: 733144595
 mas "Home Assistant", id: 1099568401
@@ -148,3 +147,10 @@ mas "Pages", id: 361309726
 mas "Pixelmator Pro", id: 1289583905
 mas "Speedtest", id: 1153157709
 mas "Things", id: 904280696
+
+# Mac App Store: Safari extensions
+mas "Kagi for Safari", id: 1622835804
+# mas "Noir", id: 1592917505
+# mas "Dark Reader for Safari", id: 1438243180
+# mas "Hush", id: 1544743900
+# mas "Obsidian Web Clipper", id: 6720708363
