@@ -32,7 +32,11 @@ return {
             "<leader>du",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerShell docker compose up -d")
+                if vim.fn.filereadable("bin/dev-up.sh") == 1 then
+                    vim.cmd("OverseerShell ./bin/dev-up.sh --app -d")
+                else
+                    vim.cmd("OverseerShell docker compose up -d")
+                end
             end,
             desc = "docker compose up -d",
         },
@@ -40,7 +44,11 @@ return {
             "<leader>dU",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerShell docker compose up -d --build")
+                if vim.fn.filereadable("bin/dev-up.sh") == 1 then
+                    vim.cmd("OverseerShell ./bin/dev-up.sh --app -d")
+                else
+                    vim.cmd("OverseerShell docker compose up -d --build")
+                end
             end,
             desc = "docker compose up -d --build",
         },
@@ -48,7 +56,11 @@ return {
             "<leader>dd",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerShell docker compose down")
+                if vim.fn.filereadable("bin/dev-down.sh") == 1 then
+                    vim.cmd("OverseerShell ./bin/dev-down.sh")
+                else
+                    vim.cmd("OverseerShell docker compose down")
+                end
             end,
             desc = "docker compose down",
         },
@@ -56,7 +68,18 @@ return {
             "<leader>dD",
             function()
                 vim.cmd("OverseerOpen! bottom")
-                vim.cmd("OverseerShell docker compose down && docker compose up -d")
+                local down_cmd = "docker compose down"
+                local up_cmd = "docker compose up -d"
+
+                if vim.fn.filereadable("bin/dev-down.sh") == 1 then
+                    down_cmd = "./bin/dev-down.sh"
+                end
+
+                if vim.fn.filereadable("bin/dev-up.sh") == 1 then
+                    up_cmd = "./bin/dev-up.sh --app -d"
+                end
+
+                vim.cmd("OverseerShell " .. down_cmd .. " && " .. up_cmd)
             end,
             desc = "docker compose down & up",
         },
