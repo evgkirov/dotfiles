@@ -1,6 +1,5 @@
 return {
     "andrewferrier/debugprint.nvim",
-    enabled = not vim.g.is_quick_notes_mode,
     config = true,
     lazy = false,
     version = "*",

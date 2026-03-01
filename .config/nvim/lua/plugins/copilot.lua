@@ -1,6 +1,5 @@
 return {
     "zbirenbaum/copilot.lua",
-    enabled = not vim.g.is_quick_notes_mode,
     cmd = "Copilot",
     event = "InsertEnter",
     opts = {

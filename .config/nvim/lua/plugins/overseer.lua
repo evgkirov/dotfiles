@@ -1,6 +1,5 @@
 return {
     "stevearc/overseer.nvim",
-    enabled = not vim.g.is_quick_notes_mode,
     version = "*",
     lazy = false,
     config = true,
