@@ -13,7 +13,7 @@
     },
     "copilot.lua": {
         "branch": "master",
-        "commit": "5c01badd42049a63ac9e5d6c8ea85aaf66cb940f"
+        "commit": "00446a63cba4cc59bb24fc1e210a555a3e4acdfb"
     },
     "debugprint.nvim": {
         "branch": "main",
@@ -57,7 +57,7 @@
     },
     "nvim-colorizer.lua": {
         "branch": "master",
-        "commit": "171ee669fbc5e547531e28a5bf0e76fce0799355"
+        "commit": "773f9ea44e832fbf74f69d20bb85ce7805eae677"
     },
     "nvim-lspconfig": {
         "branch": "master",
@@ -65,7 +65,7 @@
     },
     "nvim-treesitter": {
         "branch": "main",
-        "commit": "dc42c209f3820bdfaae0956f15de29689aa6b451"
+        "commit": "6bc51d020a5e06b7e20ea82dbc47196d3d3027c7"
     },
     "nvim-treesitter-context": {
         "branch": "master",
@@ -73,7 +73,7 @@
     },
     "nvim-web-devicons": {
         "branch": "master",
-        "commit": "746ffbb17975ebd6c40142362eee1b0249969c5c"
+        "commit": "737cf6c657898d0c697311d79d361288a1343d50"
     },
     "overseer.nvim": {
         "branch": "master",
