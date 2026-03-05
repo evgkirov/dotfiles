@@ -14,6 +14,7 @@ brew "m-cli"
 brew "mas"
 
 # Formulae: Shell / CLI
+brew "bash"
 brew "bat"
 brew "btop"
 brew "eza"
