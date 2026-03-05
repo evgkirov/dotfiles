@@ -12,8 +12,10 @@ if status is-interactive
             pip install -r requirements.txt
         else if test -f "pyproject.toml"
             poetry install
+            echo "Don't forget poetry -C agbackend env use python3.XX"
         else if test -f "agbackend/pyproject.toml"
             poetry -C agbackend install
+            echo "Don't forget poetry -C agbackend env use python3.XX"
         end
     end
 
