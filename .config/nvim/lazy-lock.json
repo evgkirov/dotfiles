@@ -13,7 +13,7 @@
     },
     "copilot.lua": {
         "branch": "master",
-        "commit": "8e2a91828210d6043744468f6d7027d256a41f42"
+        "commit": "0552b44fceedf0c4cba2cd4953d3976633b2509a"
     },
     "debugprint.nvim": {
         "branch": "main",
@@ -57,7 +57,7 @@
     },
     "nvim-colorizer.lua": {
         "branch": "master",
-        "commit": "ef211089af881bea206c7aa3f2693a81feee7e90"
+        "commit": "85a5e83cd4daa258cf95c3204e277991d6fbe747"
     },
     "nvim-lspconfig": {
         "branch": "master",
@@ -65,7 +65,7 @@
     },
     "nvim-treesitter": {
         "branch": "main",
-        "commit": "ebc3201290b8372df2b3a1c23b71b9f007d972ff"
+        "commit": "875515255192864c33981c3ed66ad94e561b904a"
     },
     "nvim-treesitter-context": {
         "branch": "master",
@@ -89,7 +89,7 @@
     },
     "snacks.nvim": {
         "branch": "main",
-        "commit": "a4e46becca45eb65c73a388634b1ce8aad629ae0"
+        "commit": "e6fd58c82f2f3fcddd3fe81703d47d6d48fc7b9f"
     },
     "tabby.nvim": {
         "branch": "main",
