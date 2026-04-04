@@ -26,9 +26,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
         if vim.fn.argc(-1) == 0 and not vim.g.using_stdin then
             -- Save these to a different directory, so our manual sessions don't get polluted
             resession.load(vim.fn.getcwd(), { dir = "dirsession", silence_errors = true })
-            vim.schedule(function()
-                vim.cmd("doautoall BufReadPost")
-            end)
         end
     end,
     nested = true,

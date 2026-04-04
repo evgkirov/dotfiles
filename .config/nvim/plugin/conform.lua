@@ -33,7 +33,6 @@ require("conform").setup({
         yaml = { "prettierd" },
         zsh = { "beautysh" },
     },
-    -- log_level = vim.log.levels.DEBUG,
     default_format_opts = { lsp_format = "fallback" },
     format_on_save = function(bufnr)
         if vim.g.disable_autoformat then

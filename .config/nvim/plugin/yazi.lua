@@ -6,7 +6,6 @@ vim.pack.add({
 vim.g.loaded_netrwPlugin = 1
 
 require("yazi").setup({
-
     open_for_directories = true,
     keymaps = {
         open_file_in_horizontal_split = "<c-s>",

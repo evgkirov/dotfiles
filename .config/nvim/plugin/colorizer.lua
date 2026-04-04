@@ -3,13 +3,16 @@ vim.pack.add({
 })
 
 require("colorizer").setup({
-    filetypes = { "*" },
+    filetypes = { "*", "!beancount" },
     options = {
         parsers = {
             hex = {
-                enable = true,
+                default = true,
                 aarrggbb = true,
             },
+            rgb = { enable = true },
+            hsl = { enable = true },
+            oklch = { enable = true },
         },
     },
 })
