@@ -14,6 +14,7 @@ vim.g.mapleader = " "
 
 vim.o.winborder = "bold"
 vim.o.termguicolors = true
+vim.o.autoindent = true
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = { "*.variables", "*.overrides" },
