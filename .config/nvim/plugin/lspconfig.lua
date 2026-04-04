@@ -2,73 +2,6 @@ vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig", version = vim.version.range("*") },
 })
 
-local servers = {
-    -- Text
-    typos_lsp = {
-        init_options = {
-            diagnosticSeverity = "Warning",
-        },
-    },
-
-    -- Web
-    html = {
-        filetypes = { "html", "htmldjango" },
-    },
-    cssls = {},
-    ts_ls = {
-        init_options = {
-            disableAutomaticTypingAcquisition = true,
-        },
-    },
-    eslint = {},
-    jsonls = {},
-
-    -- Python
-    ty = {},
-    ruff = {},
-
-    -- Beancount
-    beancount = {
-        init_options = {
-            journal_file = require("helpers.beancount").beancount_file,
-        },
-        on_attach = function(client)
-            client.server_capabilities.documentFormattingProvider = false
-            client.server_capabilities.documentRangeFormattingProvider = false
-            client.server_capabilities.textDocumentSync.willSave = false
-            client.server_capabilities.textDocumentSync.willSaveWaitUntil = false
-        end,
-    },
-
-    -- Lua (Neovim)
-    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
-    lua_ls = {
-        on_init = function(client)
-            if client.workspace_folders then
-                local path = client.workspace_folders[1].name
-                if
-                    path ~= vim.fn.stdpath("config")
-                    and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
-                then
-                    return
-                end
-            end
-            client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
-                runtime = { version = "LuaJIT" },
-                workspace = {
-                    checkThirdParty = false,
-                    library = { vim.env.VIMRUNTIME },
-                },
-            })
-        end,
-        settings = {
-            Lua = {},
-        },
-    },
-}
-
-vim.highlight.priorities.semantic_tokens = 95 -- https://github.com/DetachHead/basedpyright/issues/176#issuecomment-2016608736
-
 vim.diagnostic.config({
     signs = {
         text = {
@@ -79,11 +12,82 @@ vim.diagnostic.config({
         },
     },
     jump = {
-        float = true,
+        on_jump = function()
+            vim.diagnostic.open_float()
+        end,
     },
 })
 
-for server, opts in pairs(servers) do
-    vim.lsp.config(server, opts)
-    vim.lsp.enable(server)
-end
+-- 󰓆 Text
+
+vim.lsp.config("typos_lsp", {
+    init_options = {
+        diagnosticSeverity = "Warning",
+    },
+})
+vim.lsp.enable("typos_lsp")
+
+-- 󰖟 Web
+
+vim.lsp.config("html", {
+    filetypes = { "html", "htmldjango" },
+})
+vim.lsp.enable("html")
+
+vim.lsp.config("ts_ls", {
+    init_options = {
+        disableAutomaticTypingAcquisition = true,
+    },
+})
+vim.lsp.enable("ts_ls")
+
+vim.lsp.enable("cssls")
+vim.lsp.enable("eslint")
+vim.lsp.enable("jsonls")
+
+--  Python
+
+vim.lsp.enable("ty")
+vim.lsp.enable("ruff")
+
+--  Beancount
+
+vim.lsp.config("beancount", {
+    init_options = {
+        journal_file = require("helpers.beancount").beancount_file,
+    },
+    on_attach = function(client)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        client.server_capabilities.textDocumentSync.willSave = false
+        client.server_capabilities.textDocumentSync.willSaveWaitUntil = false
+    end,
+})
+vim.lsp.enable("beancount")
+
+--  Lua
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#lua_ls
+vim.lsp.config("lua_ls", {
+    on_init = function(client)
+        if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if
+                path ~= vim.fn.stdpath("config")
+                and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+            then
+                return
+            end
+        end
+        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+            runtime = { version = "LuaJIT" },
+            workspace = {
+                checkThirdParty = false,
+                library = { vim.env.VIMRUNTIME },
+            },
+        })
+    end,
+    settings = {
+        Lua = {},
+    },
+})
+vim.lsp.enable("lua_ls")
