@@ -13,11 +13,11 @@
     },
     "copilot.lua": {
         "branch": "master",
-        "commit": "0a3e09122cfd21e62a1e9d183c61aa1cacdd7da6"
+        "commit": "07aa57148ac28986bab9f55e87ee3d929e2726b1"
     },
     "debugprint.nvim": {
         "branch": "main",
-        "commit": "4f29196c5fe32752bb7a3e8bc83d4a4d2f3b7922"
+        "commit": "e310a282e924c092b1fd95119a2432747d9e8416"
     },
     "everforest": {
         "branch": "master",
@@ -45,7 +45,7 @@
     },
     "lualine.nvim": {
         "branch": "master",
-        "commit": "47f91c416daef12db467145e16bed5bbfe00add8"
+        "commit": "74114f0df664f14d7c228945693ba68a3b70a794"
     },
     "marks.nvim": {
         "branch": "master",
@@ -65,7 +65,7 @@
     },
     "nvim-treesitter": {
         "branch": "main",
-        "commit": "7caec274fd19c12b55902a5b795100d21531391f"
+        "commit": "4916d6592ede8c07973490d9322f187e07dfefac"
     },
     "nvim-treesitter-context": {
         "branch": "master",
@@ -73,7 +73,7 @@
     },
     "nvim-web-devicons": {
         "branch": "master",
-        "commit": "d7462543c9e366c0d196c7f67a945eaaf5d99414"
+        "commit": "40e9d5a6cc3db11b309e39593fc7ac03bb844e38"
     },
     "overseer.nvim": {
         "branch": "master",
