@@ -1,5 +1,0 @@
-return {
-    opts = {
-        enabled = true,
-    },
-}

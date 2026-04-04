@@ -43,6 +43,11 @@ Scripts use `scripts/utils.sh` for consistent terminal output:
 -   `fmt_warning "..."` — yellow text, for non-fatal warnings
 -   `fmt_run_script "..."` — cyan arrow + dimmed path, used by `run_dir`
 
+## Neovim plugin config conventions
+
+-   `vim.pack.add()` must be the first statement in every `plugin/*.lua` file
+-   `vim.keymap.set` spacing: adjacent single-line keymaps are grouped together (no blank line between); adjacent multiline keymaps or a mix of single-line and multiline keymaps must be separated by a blank line
+
 ## Makefile targets
 
 -   `make bootstrap` — initial machine setup
