@@ -15,8 +15,9 @@
             "version": ">=0.0.0"
         },
         "copilot.lua": {
-            "rev": "07aa57148ac28986bab9f55e87ee3d929e2726b1",
-            "src": "https://github.com/zbirenbaum/copilot.lua"
+            "rev": "538f15c4eaad8661389a4a0d1ace2d6e079fac29",
+            "src": "https://github.com/zbirenbaum/copilot.lua",
+            "version": ">=0.0.0"
         },
         "debugprint.nvim": {
             "rev": "e310a282e924c092b1fd95119a2432747d9e8416",
@@ -28,8 +29,9 @@
             "src": "https://github.com/sainnhe/everforest"
         },
         "flash.nvim": {
-            "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
-            "src": "https://github.com/folke/flash.nvim"
+            "rev": "ec0bf2842189f65f60fd40bf3557cac1029cc932",
+            "src": "https://github.com/folke/flash.nvim",
+            "version": ">=0.0.0"
         },
         "friendly-snippets": {
             "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
@@ -45,7 +47,7 @@
             "src": "https://github.com/nmac427/guess-indent.nvim"
         },
         "lualine.nvim": {
-            "rev": "74114f0df664f14d7c228945693ba68a3b70a794",
+            "rev": "8811f3f3f4dc09d740c67e9ce399e7a541e2e5b2",
             "src": "https://github.com/nvim-lualine/lualine.nvim"
         },
         "marks.nvim": {
@@ -101,7 +103,8 @@
         },
         "tabby.nvim": {
             "rev": "3c130e1fcb598ce39a9c292847e32d7c3987cf11",
-            "src": "https://github.com/nanozuki/tabby.nvim"
+            "src": "https://github.com/nanozuki/tabby.nvim",
+            "version": ">=0.0.0"
         },
         "vimade": {
             "rev": "266cb28a451448754eb8ae2a2a46d6ae526b33f8",

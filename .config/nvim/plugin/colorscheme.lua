@@ -1,6 +1,6 @@
 vim.pack.add({
-    "https://github.com/sainnhe/everforest",
-    "https://github.com/f-person/auto-dark-mode.nvim",
+    { src = "https://github.com/sainnhe/everforest" },
+    { src = "https://github.com/f-person/auto-dark-mode.nvim" },
 })
 
 vim.g.everforest_background = "medium"

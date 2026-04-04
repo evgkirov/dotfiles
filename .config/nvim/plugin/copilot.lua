@@ -1,5 +1,5 @@
 vim.pack.add({
-    "https://github.com/zbirenbaum/copilot.lua",
+    { src = "https://github.com/zbirenbaum/copilot.lua", version = vim.version.range("*") },
 })
 
 require("copilot").setup({

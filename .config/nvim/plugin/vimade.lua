@@ -1,8 +1,5 @@
 vim.pack.add({
-    {
-        src = "https://github.com/TaDaa/vimade",
-        version = vim.version.range("*"),
-    },
+    { src = "https://github.com/TaDaa/vimade", version = vim.version.range("*") },
 })
 
 require("vimade").setup({

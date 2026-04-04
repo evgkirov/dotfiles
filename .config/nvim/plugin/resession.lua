@@ -1,8 +1,5 @@
 vim.pack.add({
-    {
-        src = "https://github.com/stevearc/resession.nvim",
-        version = vim.version.range("*"),
-    },
+    { src = "https://github.com/stevearc/resession.nvim", version = vim.version.range("*") },
 })
 
 local resession = require("resession")

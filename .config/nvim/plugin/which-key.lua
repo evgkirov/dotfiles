@@ -1,8 +1,5 @@
 vim.pack.add({
-    {
-        src = "https://github.com/folke/which-key.nvim",
-        version = vim.version.range("*"),
-    },
+    { src = "https://github.com/folke/which-key.nvim", version = vim.version.range("*") },
 })
 
 vim.o.timeout = true

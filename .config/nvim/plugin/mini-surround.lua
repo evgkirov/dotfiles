@@ -1,8 +1,5 @@
 vim.pack.add({
-    {
-        src = "https://github.com/nvim-mini/mini.surround",
-        version = vim.version.range("*"),
-    },
+    { src = "https://github.com/nvim-mini/mini.surround", version = vim.version.range("*") },
 })
 
 require("mini.surround").setup({

@@ -1,8 +1,5 @@
 vim.pack.add({
-    {
-        src = "https://github.com/stevearc/overseer.nvim",
-        version = vim.version.range("*"),
-    },
+    { src = "https://github.com/stevearc/overseer.nvim", version = vim.version.range("*") },
 })
 
 require("overseer").setup()
