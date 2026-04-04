@@ -1,5 +1,3 @@
-local keys = require("helpers.keymaps").keys
-
 vim.o.langmap =
     "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 
@@ -27,29 +25,22 @@ local function close_snacks_picker()
     return false
 end
 
-keys({
-    { "<leader>w", "<cmd>:wa<cr>", desc = "󰆔 Write all" },
-    { "<leader>W", "<cmd>:w<cr>", desc = "󰆓 Write one" },
-    { "<leader>q", "<cmd>:qa<cr>", desc = "󰩈 Quit" },
-    {
-        "<leader>x",
-        function()
-            if not close_snacks_picker() then
-                vim.cmd("close")
-            end
-        end,
-        desc = "󰅗 Close window",
-    },
-    { "<leader>X", "<cmd>bufdo bd<cr>", desc = "󰱝 Clear context" },
-    {
-        "<esc>",
-        function()
-            close_snacks_picker()
-            -- vim.cmd("noh")
-        end,
-        desc = "Cancel Snacks picker",
-    },
-})
+vim.keymap.set("n", "<leader>w", "<cmd>:wa<cr>", { silent = true, desc = "󰆔 Write all" })
+vim.keymap.set("n", "<leader>W", "<cmd>:w<cr>", { silent = true, desc = "󰆓 Write one" })
+vim.keymap.set("n", "<leader>q", "<cmd>:qa<cr>", { silent = true, desc = "󰩈 Quit" })
+
+vim.keymap.set("n", "<leader>x", function()
+    if not close_snacks_picker() then
+        vim.cmd("close")
+    end
+end, { silent = true, desc = "󰅗 Close window" })
+
+vim.keymap.set("n", "<leader>X", "<cmd>bufdo bd<cr>", { silent = true, desc = "󰱝 Clear context" })
+
+vim.keymap.set("n", "<esc>", function()
+    close_snacks_picker()
+    -- vim.cmd("noh")
+end, { silent = true, desc = "Cancel Snacks picker" })
 
 -- code
 
@@ -83,59 +74,47 @@ local function has_code_action()
     return false
 end
 
-keys({
-    {
-        "<cr>",
-        mode = { "n", "v" },
-        function()
-            if vim.bo.filetype == "beancount" then
-                require("helpers.beancount").beancount_action()
-                return
-            end
+vim.keymap.set({ "n", "v" }, "<cr>", function()
+    if vim.bo.filetype == "beancount" then
+        require("helpers.beancount").beancount_action()
+        return
+    end
 
-            if has_code_action() then
-                vim.schedule(vim.lsp.buf.code_action)
-                return
-            end
+    if has_code_action() then
+        vim.schedule(vim.lsp.buf.code_action)
+        return
+    end
 
-            vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<cr>", true, false, true), "n", true)
-        end,
-        expr = true,
-        desc = "Code action",
-    },
-    { "<leader>cr", vim.lsp.buf.rename, desc = "Rename" },
-    {
-        "<S-CR>",
-        function()
-            if vim.bo.filetype == "beancount" then
-                require("helpers.beancount").toggle_transaction_flag()
-            elseif vim.bo.filetype == "markdown" then
-                require("helpers.markdown").toggle_checkbox()
-            end
-        end,
-        desc = "Toggle Markdown checkbox / Beancount flag",
-    },
-    { "<leader>cl", 'viW"cc<C-r>=<C-r>c<cr><esc>', desc = "Calculate" },
-    { "<leader>cl", '"cc<C-r>=<C-r>c<cr><esc>', desc = "Calculate", mode = "v" },
-})
+    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<cr>", true, false, true), "n", true)
+end, { silent = true, expr = true, desc = "Code action" })
+
+vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { silent = true, desc = "Rename" })
+
+vim.keymap.set("n", "<S-CR>", function()
+    if vim.bo.filetype == "beancount" then
+        require("helpers.beancount").toggle_transaction_flag()
+    elseif vim.bo.filetype == "markdown" then
+        require("helpers.markdown").toggle_checkbox()
+    end
+end, { silent = true, desc = "Toggle Markdown checkbox / Beancount flag" })
+
+vim.keymap.set("n", "<leader>cl", 'viW"cc<C-r>=<C-r>c<cr><esc>', { silent = true, desc = "Calculate" })
+vim.keymap.set("v", "<leader>cl", '"cc<C-r>=<C-r>c<cr><esc>', { silent = true, desc = "Calculate" })
 
 -- tabs
 
-keys({
-    { "<leader>tx", "<cmd>tabclose<cr>", desc = "󰅗 Close tab" },
-    { "<leader>tn", "<cmd>tabnew<cr>", desc = "󰐕 New tab" },
-})
+vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<cr>", { silent = true, desc = "󰅗 Close tab" })
+vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<cr>", { silent = true, desc = "󰐕 New tab" })
 
 -- splits
-keys({
-    { "<leader>ss", "<cmd>split<cr>", desc = "Default Split Horizontally" },
-    { "<leader>sv", "<cmd>vsplit<cr>", desc = "Default Split Vertically" },
-    { "<leader>sh", "<cmd>aboveleft vsplit<cr>", desc = "Split to West" },
-    { "<leader>sj", "<cmd>belowright split<cr>", desc = "Split to South" },
-    { "<leader>sk", "<cmd>aboveleft split<cr>", desc = "Split to North" },
-    { "<leader>sl", "<cmd>belowright vsplit<cr>", desc = "Split to East" },
-    { "<leader>sH", "<cmd>topleft vsplit<cr>", desc = "Split to Far West" },
-    { "<leader>sJ", "<cmd>botright split<cr>", desc = "Split to Far South" },
-    { "<leader>sK", "<cmd>topleft split<cr>", desc = "Split to Far North" },
-    { "<leader>sL", "<cmd>botright vsplit<cr>", desc = "Split to Far East" },
-})
+
+vim.keymap.set("n", "<leader>ss", "<cmd>split<cr>", { silent = true, desc = "Default Split Horizontally" })
+vim.keymap.set("n", "<leader>sv", "<cmd>vsplit<cr>", { silent = true, desc = "Default Split Vertically" })
+vim.keymap.set("n", "<leader>sh", "<cmd>aboveleft vsplit<cr>", { silent = true, desc = "Split to West" })
+vim.keymap.set("n", "<leader>sj", "<cmd>belowright split<cr>", { silent = true, desc = "Split to South" })
+vim.keymap.set("n", "<leader>sk", "<cmd>aboveleft split<cr>", { silent = true, desc = "Split to North" })
+vim.keymap.set("n", "<leader>sl", "<cmd>belowright vsplit<cr>", { silent = true, desc = "Split to East" })
+vim.keymap.set("n", "<leader>sH", "<cmd>topleft vsplit<cr>", { silent = true, desc = "Split to Far West" })
+vim.keymap.set("n", "<leader>sJ", "<cmd>botright split<cr>", { silent = true, desc = "Split to Far South" })
+vim.keymap.set("n", "<leader>sK", "<cmd>topleft split<cr>", { silent = true, desc = "Split to Far North" })
+vim.keymap.set("n", "<leader>sL", "<cmd>botright vsplit<cr>", { silent = true, desc = "Split to Far East" })
