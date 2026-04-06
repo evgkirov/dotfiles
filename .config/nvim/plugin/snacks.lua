@@ -197,7 +197,7 @@ end, { desc = "Docker Status (LazyDocker)" })
 vim.keymap.set("n", "<leader>cc", function()
     local cwd = vim.fn.getcwd()
     if string.find(cwd, "/agvend") then
-        Snacks.terminal.toggle("codex")
+        Snacks.terminal.toggle("claude")
     else
         Snacks.terminal.toggle("opencode")
     end
