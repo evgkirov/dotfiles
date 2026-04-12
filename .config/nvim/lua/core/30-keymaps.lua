@@ -77,7 +77,7 @@ end
 
 vim.keymap.set({ "n", "v" }, "<cr>", function()
     if vim.bo.filetype == "beancount" then
-        require("helpers.beancount").beancount_action()
+        vim.schedule(require("helpers.beancount").beancount_action)
         return
     end
 
