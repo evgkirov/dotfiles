@@ -151,5 +151,4 @@ mas "Things", id: 904280696
 # Mac App Store: Safari extensions
 mas "Kagi for Safari", id: 1622835804
 mas "Noir", id: 1592917505
-# mas "Hush", id: 1544743900
-# mas "Obsidian Web Clipper", id: 6720708363
+mas "Obsidian Web Clipper", id: 6720708363
