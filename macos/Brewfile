@@ -84,8 +84,8 @@ brew "resvg"  # yazi
 brew "sevenzip"  # yazi
 
 # Casks: All
-cask "1password"
 cask "1password-cli"
+cask "1password"
 cask "anki"
 cask "arq"
 cask "aws-vpn-client"
@@ -97,9 +97,9 @@ cask "discord"
 cask "figma"
 cask "firefox"
 cask "fliqlo"
-cask "fontsmoothingadjuster"  # TODO: replace with shell command
 cask "font-jetbrains-mono-nerd-font"
 cask "font-symbols-only-nerd-font"
+cask "fontsmoothingadjuster"  # TODO: replace with shell command
 cask "ghostty"
 cask "google-chrome"
 cask "handbrake-app"
