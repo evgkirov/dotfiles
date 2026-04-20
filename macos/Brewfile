@@ -1,5 +1,4 @@
 # Taps
-tap "anomalyco/tap"
 tap "asmvik/formulae"
 tap "daipeihust/tap"
 tap "felixkratz/formulae"
@@ -23,12 +22,12 @@ brew "starship"
 brew "zoxide"
 
 # Formulae: Dev tools
-brew "anomalyco/tap/opencode"
 brew "awscli"
 brew "fd"
 brew "gh"
 brew "git"
 brew "jq"
+brew "opencode"
 brew "pre-commit"
 brew "ripgrep"
 brew "yazi"
