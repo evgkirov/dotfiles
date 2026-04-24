@@ -26,6 +26,7 @@ common_settings() {
 
 rules() {
     echo "Setting rules for Yabai"
+    yabai -m rule --add app=1Password manage=off
     yabai -m rule --add app=Endel manage=off
     yabai -m rule --add app=Step\ Two manage=off
 }
@@ -48,16 +49,14 @@ set_space_to_bsp() {
 set_space_to_webdev() {
     set_space_to_bsp $1
     echo "Setting space $1 to webdev layout"
-    browser_id=$(yabai -m query --windows --space $1 | jq '.[] | select(.app == "Safari") | .id')
     nvim_id=$(yabai -m query --windows --space $1 | jq '.[] | select(.title|endswith("- Nvim")) | .id')
     if [ -z "$nvim_id" ]; then
         nvim_id="first"
     fi
     yabai -m space $1 --balance
-    yabai -m window $browser_id --swap last
+    yabai -m window $nvim_id --swap first
     yabai -m window $nvim_id --focus
-    yabai -m window $nvim_id --ratio abs:0.80
-    yabai -m window $browser_id --ratio abs:0.75
+    yabai -m window $nvim_id --ratio abs:0.6667
 }
 
 set_space_to_stack() {
