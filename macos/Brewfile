@@ -101,6 +101,7 @@ cask "fliqlo"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-symbols-only-nerd-font"
 cask "fontsmoothingadjuster"  # TODO: replace with shell command
+cask "freecad"
 cask "ghostty"
 cask "google-chrome"
 cask "handbrake-app"
