@@ -18,6 +18,10 @@ upgrade:
 dump_config:
 	sh scripts/dump_config.sh
 
+.PHONY: outdated
+outdated:
+	sh scripts/outdated.sh
+
 .PHONY: check_stow
 check_stow:
 	stow --simulate -vv -t $$HOME .
