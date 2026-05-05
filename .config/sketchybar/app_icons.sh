@@ -1,12 +1,7 @@
 #!/usr/bin/env bash
 
-# prefixed with nf-md-
+# prefer icons prefixed with nf-md-
 get_app_icon() {
-    if [[ "$2" == *"- NVIM"* ]]; then
-        echo 
-        return
-    fi
-
     case $1 in
     "1Password") echo 󱉼 ;;
     "Activity Monitor") echo 󱕎 ;;
@@ -17,6 +12,7 @@ get_app_icon() {
     "Arq") echo  ;;
     "Banktivity") echo 󰁰 ;;
     "BetterDisplay") echo 󰨇 ;;
+    "Blender") echo 󰂫 ;;
     "Books") echo 󱓷 ;;
     "Calculator") echo 󰃬 ;;
     "Calendar") echo 󰸗 ;;
@@ -37,9 +33,11 @@ get_app_icon() {
     "Figma") echo  ;;
     "Find My") echo 󰐷 ;;
     "Finder") echo 󰀶 ;;
+    "FreeCAD") echo  ;;
+    "Fusion") echo 󰬍 ;;
+    "Ghostty") echo 󰞷 ;;
     "GitHub Desktop") echo 󰊤 ;;
     "GitKraken") echo  ;;
-    "Ghostty") echo 󰞷 ;;
     "Google Chrome Canary") echo 󰊯 ;;
     "Google Chrome") echo 󰊯 ;;
     "Google Meet") echo 󰕧 ;;
@@ -47,17 +45,19 @@ get_app_icon() {
     "Home Assistant") echo 󰟐 ;;
     "Home") echo 󰋜 ;;
     "IINA") echo 󰐊 ;;
+    "iPhone Mirroring") echo  ;;
+    "iTerm2") echo 󰞷 ;;
     "Keynote") echo 󰐨 ;;
     "Ledger Live") echo 󰖄 ;;
-    "Little Snitch") echo 󰈐 ;;
     "Little Snitch Network Monitor") echo 󰈐 ;;
+    "Little Snitch") echo 󰈐 ;;
     "MacDown") echo  ;;
     "Macs Fan Control") echo 󰈐 ;;
     "Mail") echo 󰇮 ;;
     "Maps") echo 󰦂 ;;
+    "Menu Bar Controller for Sonos") echo 󰐎 ;;
     "Messages") echo 󰭹 ;;
     "MindNode") echo 󰌪 ;;
-    "Menu Bar Controller for Sonos") echo 󰐎 ;;
     "MultiViewer for F1") echo 󰶓 ;;
     "Music") echo 󰝚 ;;
     "Neovide") echo  ;;
@@ -66,6 +66,7 @@ get_app_icon() {
     "OBS Studio") echo  ;;
     "Obsidian") echo 󰇈 ;;
     "OrbStack") echo 󰡨 ;;
+    "OrcaSlicer") echo 󱢴 ;;
     "Orion") echo 󰫢 ;;
     "Pages") echo 󰏪 ;;
     "Phanpy") echo 󰫑 ;;
@@ -89,19 +90,19 @@ get_app_icon() {
     "Slack") echo 󰒱 ;;
     "Sonos") echo 󰓃 ;;
     "Spotify") echo 󰓇 ;;
-    "Steam") echo 󰓓 ;;
     "Steam Helper") echo 󰓓 ;;
+    "Steam") echo 󰓓 ;;
     "Stocks") echo 󰄪 ;;
     "Sublime Text") echo 󰰡 ;;
     "System Settings") echo 󰒓 ;;
-    "TV") echo 󰠹 ;;
     "TablePlus") echo 󰟆 ;;
     "Telegram Desktop") echo  ;;
     "Telegram") echo  ;;
-    "Timing") echo 󰥔 ;;
     "Things") echo 󰄲 ;;
+    "Timing") echo 󰥔 ;;
     "Tower") echo 󰴾 ;;
     "Transmission") echo 󰇚 ;;
+    "TV") echo 󰠹 ;;
     "Twitter") echo 󰕄 ;;
     "Ukelele") echo  ;;
     "Upwork") echo 󰰨 ;;
@@ -112,8 +113,6 @@ get_app_icon() {
     "X") echo 󰕄 ;;
     "YouTube") echo 󰗃 ;;
     "Zed") echo 󰰶 ;;
-    "iPhone Mirroring") echo  ;;
-    "iTerm2") echo 󰞷 ;;
     "zoom.us") echo 󰕧 ;;
     *) echo 󰘔 ;;
     esac
