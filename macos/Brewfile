@@ -2,6 +2,7 @@
 tap "asmvik/formulae"
 tap "daipeihust/tap"
 tap "felixkratz/formulae"
+tap "oven-sh/bun"
 
 # Formulae: OS / GUI
 brew "asmvik/formulae/skhd"
@@ -37,11 +38,12 @@ cask "codex"
 
 # Formulae: Languages & libraries
 brew "node"
+brew "oven-sh/bun/bun"  # required by mulch
 brew "pnpm"
+brew "poetry"
 brew "python@3.12", link: true
 brew "python@3.13", link: true
 brew "python@3.14", link: true
-brew "poetry"
 brew "uv"
 # brew "postgresql@14"
 
@@ -57,12 +59,14 @@ brew "djlint"
 brew "eslint_d"
 brew "lua-language-server"
 brew "prettierd"
+brew "pyright"
 brew "ruff"
 brew "stylua"
 brew "ty"
-brew "typescript-language-server"
+brew "typescript-language-server"  # TODO: replace with vtsls?
 brew "typos-lsp"
 brew "vscode-langservers-extracted"
+brew "vtsls"
 
 # Formulae: MCPs
 brew "playwright-mcp"
