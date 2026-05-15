@@ -1,4 +1,4 @@
-local default_layout = "com.evgkirov.keyboardlayout.custom.keylayout.ENSR"
+local default_layout = "com.evgkirov.keyboardlayout.custom.en+sr"
 local saved_layout = nil
 
 local function switch_layout(layout)
