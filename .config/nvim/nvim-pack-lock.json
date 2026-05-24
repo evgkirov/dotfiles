@@ -15,7 +15,7 @@
       "version": ">=0.0.0"
     },
     "copilot.lua": {
-      "rev": "ad7e729e9a6348f7da482be0271d452dbc4c8e2c",
+      "rev": "407349117f176789df6ec1c23bca72f34e15b4e8",
       "src": "https://github.com/zbirenbaum/copilot.lua",
       "version": ">=0.0.0"
     },
@@ -64,7 +64,7 @@
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
     },
     "nvim-lspconfig": {
-      "rev": "9bafffaeaae363c5211080e06e04ed5b422fd5ad",
+      "rev": "f6738ef65dabade340b473d4ff2a1ad3352c10e7",
       "src": "https://github.com/neovim/nvim-lspconfig",
       "version": ">=0.0.0"
     },
@@ -79,7 +79,7 @@
       "version": ">=0.0.0"
     },
     "nvim-web-devicons": {
-      "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8",
+      "rev": "0d7d35fa946837b8738b17c18d1faa1ac351e7f9",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "overseer.nvim": {
@@ -117,7 +117,7 @@
       "version": ">=0.0.0"
     },
     "yazi.nvim": {
-      "rev": "172bd64a4c2d3adbe2e0ef56289f47ffe139ca55",
+      "rev": "81097571080ce0c5ab9e0311ed8ad03ff080ef47",
       "src": "https://github.com/mikavilpas/yazi.nvim",
       "version": ">=0.0.0"
     }
