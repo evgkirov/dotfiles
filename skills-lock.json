@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "make-commits-great-again": {
+      "source": "h1km4t1ll0/make-commits-great-again",
+      "sourceType": "github",
+      "skillPath": "make-commits-great-again/SKILL.md",
+      "computedHash": "ff0d71ccb2c82a27e9753d3e76ece6f8fd0e6fa74cf79262b747d67fc9d9a868"
+    }
+  }
+}

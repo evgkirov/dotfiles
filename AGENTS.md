@@ -59,4 +59,4 @@ Scripts use `scripts/utils.sh` for consistent terminal output:
 
 ## Git conventions
 
-For commits, use the "make-commits-great-again" skill if available.
+For commits, use the "make-commits-great-again" skill.
