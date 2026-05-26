@@ -8,8 +8,9 @@ get_app_icon() {
     "AetherSX2") echo  ;;
     "AlDente") echo 󱅠 ;;
     "Anki") echo 󰓎 ;;
-    "App Store") echo  ;;
+    "App Store") echo  ;;
     "Arq") echo  ;;
+    "AWS VPN Client") echo 󱇱 ;;
     "Banktivity") echo 󰁰 ;;
     "BetterDisplay") echo 󰨇 ;;
     "Blender") echo 󰂫 ;;
