@@ -5,6 +5,8 @@
 \.gitignore
 \.pre-commit-config\.yaml
 \.stow-local-ignore
+^/.agents
+^/skills-lock.json
 ^/macos
 ^/Makefile
 ^/README\.md
