@@ -47,7 +47,7 @@
       "src": "https://github.com/nmac427/guess-indent.nvim"
     },
     "lualine.nvim": {
-      "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
+      "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "marks.nvim": {
@@ -60,7 +60,7 @@
       "version": ">=0.0.0"
     },
     "nvim-colorizer.lua": {
-      "rev": "5cfe7fffbd01e17b3c1e14af85d5febdef88bd8c",
+      "rev": "664c0b7cea1de71f8b65dfe951b7996fc3e6ccde",
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
     },
     "nvim-lspconfig": {
@@ -117,7 +117,7 @@
       "version": ">=0.0.0"
     },
     "yazi.nvim": {
-      "rev": "81097571080ce0c5ab9e0311ed8ad03ff080ef47",
+      "rev": "8a26074568790bb5c73e56eb871a74709a13dd43",
       "src": "https://github.com/mikavilpas/yazi.nvim",
       "version": ">=0.0.0"
     }
