@@ -1,0 +1,7 @@
+{
+  "trustedformulae": [
+    "felixkratz/formulae/borders",
+    "felixkratz/formulae/sketchybar",
+    "felixkratz/formulae/svim"
+  ]
+}
