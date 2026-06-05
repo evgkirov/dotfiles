@@ -90,6 +90,7 @@ brew "sevenzip"  # yazi
 # Casks: All
 cask "1password-cli"
 cask "1password"
+cask "alfred"
 cask "anki"
 cask "arq"
 cask "autodesk-fusion"
