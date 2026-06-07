@@ -26,6 +26,11 @@ outdated:
 check_stow:
 	stow --simulate -vv -t $$HOME .
 
+.PHONY: edit
+edit:
+	nvim
+	make sync
+
 .PHONY: sync
 sync:
 	git status
