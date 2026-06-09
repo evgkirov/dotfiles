@@ -2,7 +2,6 @@
 tap "asmvik/formulae"
 tap "daipeihust/tap"
 tap "felixkratz/formulae"
-tap "oven-sh/bun"
 
 # Formulae: OS / GUI
 brew "asmvik/formulae/skhd"
@@ -38,7 +37,6 @@ cask "codex"
 
 # Formulae: Languages & libraries
 brew "node"
-brew "oven-sh/bun/bun"  # required by mulch
 brew "pnpm"
 brew "poetry"
 brew "python@3.12", link: true
