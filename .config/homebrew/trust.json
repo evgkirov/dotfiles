@@ -3,5 +3,10 @@
     "felixkratz/formulae/borders",
     "felixkratz/formulae/sketchybar",
     "felixkratz/formulae/svim"
+  ],
+  "trustedtaps": [
+    "asmvik/formulae",
+    "daipeihust/tap",
+    "felixkratz/formulae"
   ]
 }
