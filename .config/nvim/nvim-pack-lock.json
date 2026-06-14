@@ -15,7 +15,7 @@
       "version": ">=0.0.0"
     },
     "copilot.lua": {
-      "rev": "407349117f176789df6ec1c23bca72f34e15b4e8",
+      "rev": "dada2f90220861d6e9d30eca6a3997cf5d0c9936",
       "src": "https://github.com/zbirenbaum/copilot.lua",
       "version": ">=0.0.0"
     },
@@ -25,7 +25,7 @@
       "version": ">=0.0.0"
     },
     "everforest": {
-      "rev": "aeef62ee97872d2557d25904d160ec93a4a355f8",
+      "rev": "85a86eb62409e3ec88713bff3d1b9d7374e112e4",
       "src": "https://github.com/sainnhe/everforest"
     },
     "flash.nvim": {
@@ -64,7 +64,7 @@
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
     },
     "nvim-lspconfig": {
-      "rev": "f6738ef65dabade340b473d4ff2a1ad3352c10e7",
+      "rev": "229b79051b380377664edc4cbd534930154921a1",
       "src": "https://github.com/neovim/nvim-lspconfig",
       "version": ">=0.0.0"
     },
