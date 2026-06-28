@@ -7,8 +7,7 @@
 /.config/fish/functions/fin.fish
 /.config/yazi/plugins/*
 !/.config/yazi/plugins/go-project-root.yazi/
-/.config/github-copilot/apps.json
-/.config/github-copilot/versions.json
+/.config/github-copilot
 /.config/op
 /.config/AWSVPNClient
 /.config/raycast
