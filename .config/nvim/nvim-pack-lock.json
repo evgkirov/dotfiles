@@ -55,7 +55,7 @@
       "src": "https://github.com/chentoast/marks.nvim"
     },
     "mini.surround": {
-      "rev": "88c52297ed3e69ecf9f8652837888ecc727a28ee",
+      "rev": "580e4cb98c5900d9fe743865fb5a5b2178b4ab18",
       "src": "https://github.com/nvim-mini/mini.surround",
       "version": ">=0.0.0"
     },
@@ -117,7 +117,7 @@
       "version": ">=0.0.0"
     },
     "yazi.nvim": {
-      "rev": "8a26074568790bb5c73e56eb871a74709a13dd43",
+      "rev": "bc79c6fd57367d7ac42f1aef34c958018892034c",
       "src": "https://github.com/mikavilpas/yazi.nvim",
       "version": ">=0.0.0"
     }
