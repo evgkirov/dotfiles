@@ -1,12 +1,10 @@
 {
   "trustedformulae": [
+    "asmvik/formulae/skhd",
+    "asmvik/formulae/yabai",
+    "daipeihust/tap/im-select",
     "felixkratz/formulae/borders",
     "felixkratz/formulae/sketchybar",
     "felixkratz/formulae/svim"
-  ],
-  "trustedtaps": [
-    "asmvik/formulae",
-    "daipeihust/tap",
-    "felixkratz/formulae"
   ]
 }
