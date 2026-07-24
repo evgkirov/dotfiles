@@ -23,7 +23,7 @@ vim.keymap.set("n", "<leader>ra", "<cmd>OverseerTaskAction<cr>", { desc = "Task 
 vim.keymap.set("n", "<leader>du", function()
     vim.cmd("OverseerOpen! bottom")
     if vim.fn.filereadable("bin/dev-up.sh") == 1 then
-        vim.cmd("OverseerShell ./bin/dev-up.sh --app -d")
+        vim.cmd("OverseerShell ./bin/dev-up.sh --app --proxy -d")
     else
         vim.cmd("OverseerShell docker compose up -d")
     end
@@ -32,7 +32,7 @@ end, { desc = "docker compose up -d" })
 vim.keymap.set("n", "<leader>dU", function()
     vim.cmd("OverseerOpen! bottom")
     if vim.fn.filereadable("bin/dev-up.sh") == 1 then
-        vim.cmd("OverseerShell ./bin/dev-up.sh --app -d")
+        vim.cmd("OverseerShell ./bin/dev-up.sh --app --proxy -d")
     else
         vim.cmd("OverseerShell docker compose up -d --build")
     end
@@ -57,7 +57,7 @@ vim.keymap.set("n", "<leader>dD", function()
     end
 
     if vim.fn.filereadable("bin/dev-up.sh") == 1 then
-        up_cmd = "./bin/dev-up.sh --app -d"
+        up_cmd = "./bin/dev-up.sh --app --proxy -d"
     end
 
     vim.cmd("OverseerShell " .. down_cmd .. " && " .. up_cmd)
