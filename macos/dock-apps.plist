@@ -777,53 +777,5 @@
 		<key>tile-type</key>
 		<string>file-tile</string>
 	</dict>
-	<dict>
-		<key>GUID</key>
-		<integer>414097534</integer>
-		<key>tile-data</key>
-		<dict>
-			<key>book</key>
-			<data>
-			Ym9vazwCAAAAAAUQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-			AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEwBAAAEAAAAAwMAAAAA
-			ACAMAAAAAQEAAEFwcGxpY2F0aW9ucwwAAAABAQAAQ290eXBpc3Qu
-			YXBwCAAAAAEGAAAQAAAAJAAAAAgAAAAEAwAAaZkIAAAAAAAIAAAA
-			BAMAAKSZQwEAAAAACAAAAAEGAABIAAAAWAAAAAgAAAAABAAAQcf+
-			ozLeKIkYAAAAAQIAAAIAAAAAAAAADwAAAAAAAAAAAAAAAAAAAAgA
-			AAABCQAAZmlsZTovLy8MAAAAAQEAAE1hY2ludG9zaCBIRAgAAAAE
-			AwAAACAlidABAAAIAAAAAAQAAEHH0fL+gAAAJAAAAAEBAABBN0U3
-			MkI4Mi04Mjc0LTQzOTgtOThGMi1CQUQ0Q0Q4MjY2MzEYAAAAAQIA
-			AIEAAAABAAAA7xMAAAEAAAAAAAAAAAAAAAEAAAABAQAALwAAAAAA
-			AAABBQAAqAAAAP7///8BAAAAAAAAAA0AAAAEEAAAOAAAAAAAAAAF
-			EAAAaAAAAAAAAAAQEAAAiAAAAAAAAABAEAAAeAAAAAAAAAACIAAA
-			OAEAAAAAAAAFIAAAqAAAAAAAAAAQIAAAuAAAAAAAAAARIAAA7AAA
-			AAAAAAASIAAAzAAAAAAAAAATIAAA3AAAAAAAAAAgIAAAGAEAAAAA
-			AAAwIAAARAEAAAAAAAAQ0AAABAAAAAAAAAA=
-			</data>
-			<key>bundle-identifier</key>
-			<string>app.cotypist.Cotypist</string>
-			<key>dock-extra</key>
-			<false/>
-			<key>file-data</key>
-			<dict>
-				<key>_CFURLString</key>
-				<string>file:///Applications/Cotypist.app/</string>
-				<key>_CFURLStringType</key>
-				<integer>15</integer>
-			</dict>
-			<key>file-label</key>
-			<string>Cotypist</string>
-			<key>file-mod-date</key>
-			<integer>135505789566753</integer>
-			<key>file-type</key>
-			<integer>41</integer>
-			<key>is-beta</key>
-			<false/>
-			<key>parent-mod-date</key>
-			<integer>139379850505885</integer>
-		</dict>
-		<key>tile-type</key>
-		<string>file-tile</string>
-	</dict>
 </array>
 </plist>
