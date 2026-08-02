@@ -3,8 +3,6 @@
 /.config/fish/completions/docker.fish
 /.config/fish/completions/kubectl.fish
 /.config/fish/completions/orbctl.fish
-/.config/fish/functions/dot.fish
-/.config/fish/functions/fin.fish
 /.config/yazi/plugins/*
 !/.config/yazi/plugins/go-project-root.yazi/
 /.config/github-copilot
