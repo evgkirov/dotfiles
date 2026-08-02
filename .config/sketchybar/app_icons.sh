@@ -68,7 +68,7 @@ get_app_icon() {
     "Obsidian") echo 󰇈 ;;
     "OrbStack") echo 󰡨 ;;
     "OrcaSlicer") echo 󱢴 ;;
-    "Orion") echo 󰫢 ;;
+    "Orion") echo 󰖟 ;;
     "Pages") echo 󰏪 ;;
     "Phanpy") echo 󰫑 ;;
     "Photos") echo  ;;
