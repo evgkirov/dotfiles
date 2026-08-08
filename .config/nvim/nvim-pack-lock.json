@@ -15,7 +15,7 @@
       "version": ">=0.0.0"
     },
     "copilot.lua": {
-      "rev": "eac6eff78e4a864daa0a5ef431d5c729e7d18a50",
+      "rev": "7e6723aabea044519462958ffcea68d7985c5ed0",
       "src": "https://github.com/zbirenbaum/copilot.lua",
       "version": ">=0.0.0"
     },
@@ -69,7 +69,7 @@
       "version": ">=0.0.0"
     },
     "nvim-treesitter": {
-      "rev": "7b6cc8949f9999c5ed91436cbe24aa5f99c42025",
+      "rev": "c9f9ed6c1892f629ea399f4ee7905f2686fa13f2",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
