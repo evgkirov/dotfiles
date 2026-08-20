@@ -20,6 +20,7 @@ brew "btop"
 brew "eza"
 brew "fish"
 brew "starship"
+brew "tmux"
 brew "zoxide"
 
 # Formulae: Dev tools
