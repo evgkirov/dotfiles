@@ -69,7 +69,7 @@
       "version": ">=0.0.0"
     },
     "nvim-treesitter": {
-      "rev": "c9f9ed6c1892f629ea399f4ee7905f2686fa13f2",
+      "rev": "e82ef6ae2c3eeb96c6916b29917f96bf630b2cdb",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -117,7 +117,7 @@
       "version": ">=0.0.0"
     },
     "yazi.nvim": {
-      "rev": "8d6c25cb4e7c5702d6cd5a263cb36129fa78aa4c",
+      "rev": "2508e758d9057da9a3ec3f8c53e9f33a46a66e2d",
       "src": "https://github.com/mikavilpas/yazi.nvim",
       "version": ">=0.0.0"
     }
