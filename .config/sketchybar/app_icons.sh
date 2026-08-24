@@ -42,6 +42,7 @@ get_app_icon() {
     "Google Chrome Canary") echo 󰊯 ;;
     "Google Chrome") echo 󰊯 ;;
     "Google Meet") echo 󰕧 ;;
+    "Granola") echo  ;;
     "Hand Mirror") echo 󱇽 ;;
     "Home Assistant") echo 󰟐 ;;
     "Home") echo 󰋜 ;;
