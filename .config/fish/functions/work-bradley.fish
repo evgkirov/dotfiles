@@ -1,18 +1,18 @@
 function work-bradley --description 'Bootstrap agvend work environment'
     # Requires exactly one subcommand
     if set -q argv[2]
-        echo "usage: work-bradley start" >&2
+        echo "usage: work-bradley up" >&2
         return 1
     end
     switch $argv[1]
-        case start
+        case up
             __work_bradley_start
         case ''
-            echo "usage: work-bradley start" >&2
+            echo "usage: work-bradley up" >&2
             return 1
         case '*'
             echo "work-bradley: unknown command '$argv[1]'" >&2
-            echo "usage: work-bradley start" >&2
+            echo "usage: work-bradley up" >&2
             return 1
     end
 end
@@ -43,12 +43,14 @@ function __work_bradley_start
         end
     end
 
-    # dev-up and the picker belong to main's first pane: relay there and focus it
+    # Focus main's first pane: dev-up and the picker belong there
     set -l main_pane (tmux display-message -p -t bradley:main.1 '#{pane_id}')
+    tmux select-window -t bradley:main
+    tmux select-pane -t "$main_pane"
+
+    # Not running there yet -> relay, that run does the work
     if test "$TMUX_PANE" != "$main_pane"
-        tmux select-window -t bradley:main
-        tmux select-pane -t "$main_pane"
-        tmux send-keys -t "$main_pane" "work-bradley start" Enter
+        tmux send-keys -t "$main_pane" "work-bradley up" Enter
         return 0
     end
 
