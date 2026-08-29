@@ -169,20 +169,24 @@ function __work_bradley_down
         return 1
     end
 
+    # The work runs in a floating pane; it re-enters here with the flag set
+    if not set -q BRADLEY_POPUP
+        tmux display-popup -E -w 80% -h 80% -T 'bradley worktree down' \
+            -d "$PWD" -e BRADLEY_POPUP=1 'fish -c "work-bradley down"'
+        return 0
+    end
+
     set -l choice (__work_bradley_teardown_tree down)
     or return 1
     set -l ticket (basename $choice)
 
-    # Teardown: inline when this pane is the menu popup (which then waits
-    # for the script), otherwise in a fresh pane of the ticket window; the
-    # window dies when worktree-down finishes either way
-    if set -q BRADLEY_POPUP
-        cd $choice
-        ./bin/worktree-down.sh
-        tmux kill-window -t "bradley:$ticket"
-    else
-        tmux split-window -t "bradley:$ticket" -c "$choice" "./bin/worktree-down.sh; tmux kill-window -t bradley:$ticket"
-    end
+    # Teardown: the pause lets the output be read before the window (and
+    # this popup) goes; a failed teardown keeps the window around
+    cd $choice
+    ./bin/worktree-down.sh
+    and read -P 'press enter to close '
+    and tmux kill-window -t "bradley:$ticket"
+    or read -P 'press enter to close '
 end
 
 function __work_bradley_destroy
@@ -196,6 +200,13 @@ function __work_bradley_destroy
     if not test -d $root
         echo "work-bradley: cannot find $root" >&2
         return 1
+    end
+
+    # The work runs in a floating pane; it re-enters here with the flag set
+    if not set -q BRADLEY_POPUP
+        tmux display-popup -E -w 80% -h 80% -T 'bradley worktree destroy' \
+            -d "$PWD" -e BRADLEY_POPUP=1 'fish -c "work-bradley destroy"'
+        return 0
     end
 
     set -l choice (__work_bradley_teardown_tree destroy)
@@ -226,15 +237,12 @@ function __work_bradley_destroy
         return 1
     end
 
-    # Plain git remove: refuses on uncommitted/untracked files, and the
-    # window then survives so the error stays reachable
-    if set -q BRADLEY_POPUP
-        cd $choice
-        ./bin/worktree-down.sh
-        and git -C ~/Projects/agvend/bradley worktree remove $choice
-        and tmux kill-window -t "bradley:$ticket"
-        or read -P 'press enter to close '
-    else
-        tmux split-window -t "bradley:$ticket" -c "$choice" "./bin/worktree-down.sh; and git -C ~/Projects/agvend/bradley worktree remove '$choice'; and tmux kill-window -t bradley:$ticket"
-    end
+    # Plain git remove: refuses on uncommitted/untracked files; the pause
+    # lets the output be read before the window (and this popup) goes
+    cd $choice
+    ./bin/worktree-down.sh
+    and git -C ~/Projects/agvend/bradley worktree remove $choice
+    and read -P 'press enter to close '
+    and tmux kill-window -t "bradley:$ticket"
+    or read -P 'press enter to close '
 end
