@@ -1,18 +1,20 @@
 function work-bradley --description 'Bootstrap agvend work environment'
     # Requires exactly one subcommand
     if set -q argv[2]
-        echo "usage: work-bradley up" >&2
+        echo "usage: work-bradley up|down" >&2
         return 1
     end
     switch $argv[1]
         case up
             __work_bradley_start
+        case down
+            __work_bradley_down
         case ''
-            echo "usage: work-bradley up" >&2
+            echo "usage: work-bradley up|down" >&2
             return 1
         case '*'
             echo "work-bradley: unknown command '$argv[1]'" >&2
-            echo "usage: work-bradley up" >&2
+            echo "usage: work-bradley up|down" >&2
             return 1
     end
 end
@@ -112,4 +114,62 @@ function __work_bradley_start
 
     # Balance the three panes
     tmux select-layout -t "$win" even-horizontal
+end
+
+function __work_bradley_down
+    # Everything below drives tmux windows/panes
+    if not set -q TMUX
+        echo "work-bradley: must be run inside a tmux session" >&2
+        return 1
+    end
+
+    set -l root ~/Projects/agvend/bradley
+    if not test -d $root
+        echo "work-bradley: cannot find $root" >&2
+        return 1
+    end
+
+    # Linked worktrees (main checkout excluded)
+    set -l trees (git -C $root worktree list | awk 'NR>1' | string match -r '^\S+')
+    if not set -q trees[1]
+        echo "work-bradley: no worktrees to take down" >&2
+        return 1
+    end
+
+    # Inside a worktree -> use it, otherwise pick one
+    set -l choice
+    for tree in $trees
+        if string match -q -- "$tree" $PWD; or string match -q -- "$tree/*" $PWD
+            set choice $tree
+            break
+        end
+    end
+    if not set -q choice[1]
+        set choice ({ printf '%s\n' $trees; } | fzf --prompt 'bradley worktree down> ')
+        # fzf cancelled
+        if not set -q choice[1]
+            echo "Aborted"
+            return 1
+        end
+    end
+
+    # The ticket names both the worktree directory and its window
+    set -l ticket (basename $choice)
+
+    # Ensure the ticket window exists, then switch to it
+    if not contains -- "$ticket" (tmux list-windows -t bradley -F '#{window_name}')
+        tmux new-window -d -n "$ticket" -c "$choice"
+    end
+    tmux select-window -t "bradley:$ticket"
+
+    # Teardown: inline when this pane is the menu popup (which then waits
+    # for the script), otherwise in a fresh pane of the ticket window; the
+    # window dies when worktree-down finishes either way
+    if set -q BRADLEY_POPUP
+        cd $choice
+        ./bin/worktree-down.sh
+        tmux kill-window -t "bradley:$ticket"
+    else
+        tmux split-window -t "bradley:$ticket" -c "$choice" "./bin/worktree-down.sh; tmux kill-window -t bradley:$ticket"
+    end
 end
