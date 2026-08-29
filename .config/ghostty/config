@@ -1,4 +1,4 @@
-# PragmataPro
+command = /opt/homebrew/bin/tmux
 font-family = PragmataPro Liga
 font-size = 13
 font-feature = cv04
