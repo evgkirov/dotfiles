@@ -1,7 +1,7 @@
 function work-bradley --description 'Bootstrap agvend work environment'
     # Requires exactly one subcommand
     if set -q argv[2]
-        echo "usage: work-bradley up|down" >&2
+        echo "usage: work-bradley up|down|destroy" >&2
         return 1
     end
     switch $argv[1]
@@ -9,12 +9,14 @@ function work-bradley --description 'Bootstrap agvend work environment'
             __work_bradley_start
         case down
             __work_bradley_down
+        case destroy
+            __work_bradley_destroy
         case ''
-            echo "usage: work-bradley up|down" >&2
+            echo "usage: work-bradley up|down|destroy" >&2
             return 1
         case '*'
             echo "work-bradley: unknown command '$argv[1]'" >&2
-            echo "usage: work-bradley up|down" >&2
+            echo "usage: work-bradley up|down|destroy" >&2
             return 1
     end
 end
@@ -50,9 +52,10 @@ function __work_bradley_start
     tmux select-window -t bradley:main
     tmux select-pane -t "$main_pane"
 
-    # Not running there yet -> relay, that run does the work
-    if test "$TMUX_PANE" != "$main_pane"
-        tmux send-keys -t "$main_pane" "work-bradley up" Enter
+    # The work runs in a floating pane; it re-enters here with the flag set
+    if not set -q BRADLEY_POPUP
+        tmux display-popup -E -w 80% -h 80% -T 'bradley worktree up' \
+            -d "$root" -e BRADLEY_POPUP=1 'fish -c "work-bradley up"'
         return 0
     end
 
@@ -116,6 +119,43 @@ function __work_bradley_start
     tmux select-layout -t "$win" even-horizontal
 end
 
+# Shared teardown prelude: resolve the worktree (implicit when inside one,
+# otherwise fzf), ensure and focus its ticket window, and echo the path.
+# Returns 1 when no worktrees exist or the picker is cancelled.
+function __work_bradley_teardown_tree --argument-names verb
+    set -l trees (git -C ~/Projects/agvend/bradley worktree list | awk 'NR>1' | string match -r '^\S+')
+    if not set -q trees[1]
+        echo "work-bradley: no worktrees found" >&2
+        return 1
+    end
+
+    # Inside a worktree -> use it, otherwise pick one
+    set -l choice
+    for tree in $trees
+        if string match -q -- "$tree" $PWD; or string match -q -- "$tree/*" $PWD
+            set choice $tree
+            break
+        end
+    end
+    if not set -q choice[1]
+        set choice ({ printf '%s\n' $trees; } | fzf --prompt "bradley worktree $verb> ")
+        # fzf cancelled
+        if not set -q choice[1]
+            echo "Aborted"
+            return 1
+        end
+    end
+
+    # The ticket names both the worktree directory and its window
+    set -l ticket (basename $choice)
+    if not contains -- "$ticket" (tmux list-windows -t bradley -F '#{window_name}')
+        tmux new-window -d -n "$ticket" -c "$choice"
+    end
+    tmux select-window -t "bradley:$ticket"
+
+    echo $choice
+end
+
 function __work_bradley_down
     # Everything below drives tmux windows/panes
     if not set -q TMUX
@@ -129,38 +169,9 @@ function __work_bradley_down
         return 1
     end
 
-    # Linked worktrees (main checkout excluded)
-    set -l trees (git -C $root worktree list | awk 'NR>1' | string match -r '^\S+')
-    if not set -q trees[1]
-        echo "work-bradley: no worktrees to take down" >&2
-        return 1
-    end
-
-    # Inside a worktree -> use it, otherwise pick one
-    set -l choice
-    for tree in $trees
-        if string match -q -- "$tree" $PWD; or string match -q -- "$tree/*" $PWD
-            set choice $tree
-            break
-        end
-    end
-    if not set -q choice[1]
-        set choice ({ printf '%s\n' $trees; } | fzf --prompt 'bradley worktree down> ')
-        # fzf cancelled
-        if not set -q choice[1]
-            echo "Aborted"
-            return 1
-        end
-    end
-
-    # The ticket names both the worktree directory and its window
+    set -l choice (__work_bradley_teardown_tree down)
+    or return 1
     set -l ticket (basename $choice)
-
-    # Ensure the ticket window exists, then switch to it
-    if not contains -- "$ticket" (tmux list-windows -t bradley -F '#{window_name}')
-        tmux new-window -d -n "$ticket" -c "$choice"
-    end
-    tmux select-window -t "bradley:$ticket"
 
     # Teardown: inline when this pane is the menu popup (which then waits
     # for the script), otherwise in a fresh pane of the ticket window; the
@@ -171,5 +182,59 @@ function __work_bradley_down
         tmux kill-window -t "bradley:$ticket"
     else
         tmux split-window -t "bradley:$ticket" -c "$choice" "./bin/worktree-down.sh; tmux kill-window -t bradley:$ticket"
+    end
+end
+
+function __work_bradley_destroy
+    # Everything below drives tmux windows/panes
+    if not set -q TMUX
+        echo "work-bradley: must be run inside a tmux session" >&2
+        return 1
+    end
+
+    set -l root ~/Projects/agvend/bradley
+    if not test -d $root
+        echo "work-bradley: cannot find $root" >&2
+        return 1
+    end
+
+    set -l choice (__work_bradley_teardown_tree destroy)
+    or return 1
+    set -l ticket (basename $choice)
+
+    # Branch context for the decision: which branch the tree is on and
+    # whether it still tracks a remote
+    set -l branch (git -C $choice branch --show-current)
+    set -l branch_info
+    if not set -q branch[1]
+        set branch_info "detached HEAD"
+    else
+        set -l upstream (git -C $root for-each-ref --format='%(upstream)' refs/heads/$branch)
+        if not set -q upstream[1]
+            set branch_info "$branch, local-only"
+        else if string match -q '*gone*' -- (git -C $root for-each-ref --format='%(upstream:track)' refs/heads/$branch)
+            set branch_info "$branch, remote gone"
+        else
+            set branch_info "$branch, has remote"
+        end
+    end
+
+    # Deletion needs a deliberate yes: the full path and branch are on screen
+    read -l -P "work-bradley: destroy $choice — $branch_info [y/N]? " confirm
+    if test "$confirm" != y
+        echo "Aborted"
+        return 1
+    end
+
+    # Plain git remove: refuses on uncommitted/untracked files, and the
+    # window then survives so the error stays reachable
+    if set -q BRADLEY_POPUP
+        cd $choice
+        ./bin/worktree-down.sh
+        and git -C ~/Projects/agvend/bradley worktree remove $choice
+        and tmux kill-window -t "bradley:$ticket"
+        or read -P 'press enter to close '
+    else
+        tmux split-window -t "bradley:$ticket" -c "$choice" "./bin/worktree-down.sh; and git -C ~/Projects/agvend/bradley worktree remove '$choice'; and tmux kill-window -t bradley:$ticket"
     end
 end
