@@ -86,13 +86,46 @@ function __work_bradley_start
         echo "Aborted"
         return 1
     end
+    set -l choice
     if test "$picked" = "Create new"
-        echo "not implemented"
-        return 0
-    end
+        read -l -P 'bradley: JIRA ticket: ' ticket
+        # Empty answer aborts, mirroring the fzf cancel above
+        if not set -q ticket[1]
+            echo "Aborted"
+            return 1
+        end
 
-    # First token of the picked line is the worktree path
-    set -l choice (string match -r '^\S+' -- $picked)
+        # Headless Claude builds the tree while this popup watches
+        set -l before (git worktree list | string match -r '^\S+')
+        claude -p "create a new worktree for JIRA ticket $ticket"
+        and read -P 'press enter to close '
+        or begin
+            echo "work-bradley: worktree creation failed" >&2
+            read -P 'press enter to close '
+            return 1
+        end
+
+        # The new tree is whatever the listing gained, falling back to the
+        # conventional path when the diff comes up empty
+        set -l added
+        for tree in (git worktree list | string match -r '^\S+')
+            if not contains -- $tree $before
+                set -a added $tree
+            end
+        end
+        if set -q added[1]; and not set -q added[2]
+            set choice $added[1]
+        else if test -d ~/Projects/agvend/bradley-worktrees/$ticket
+            set choice ~/Projects/agvend/bradley-worktrees/$ticket
+        else
+            echo "work-bradley: no new worktree for '$ticket' found" >&2
+            read -P 'press enter to close '
+            return 1
+        end
+    else
+        # First token of the picked line is the worktree path
+        set choice (string match -r '^\S+' -- $picked)
+    end
 
     # Ticket window already open -> just switch to it
     set -l ticket (basename $choice)
