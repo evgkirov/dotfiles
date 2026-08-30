@@ -40,6 +40,7 @@ get_app_icon() {
     "GitHub Desktop") echo 󰊤 ;;
     "GitKraken") echo  ;;
     "Google Chrome Canary") echo 󰊯 ;;
+    "Google Chrome for Testing") echo 󰊯 ;;
     "Google Chrome") echo 󰊯 ;;
     "Google Meet") echo 󰕧 ;;
     "Granola") echo  ;;
