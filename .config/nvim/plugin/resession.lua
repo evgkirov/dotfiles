@@ -14,7 +14,6 @@ resession.setup({
         overseer = {
             autostart_on_load = false,
         },
-        tabby = {},
     },
 })
 

@@ -42,10 +42,6 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim",
       "version": ">=0.0.0"
     },
-    "guess-indent.nvim": {
-      "rev": "84a4987ff36798c2fc1169cbaff67960aed9776f",
-      "src": "https://github.com/nmac427/guess-indent.nvim"
-    },
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
@@ -99,11 +95,6 @@
     "snacks.nvim": {
       "rev": "e6fd58c82f2f3fcddd3fe81703d47d6d48fc7b9f",
       "src": "https://github.com/folke/snacks.nvim",
-      "version": ">=0.0.0"
-    },
-    "tabby.nvim": {
-      "rev": "3c130e1fcb598ce39a9c292847e32d7c3987cf11",
-      "src": "https://github.com/nanozuki/tabby.nvim",
       "version": ">=0.0.0"
     },
     "vimade": {
