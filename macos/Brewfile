@@ -92,7 +92,7 @@ cask "1password"
 cask "anki"
 cask "arq"
 cask "autodesk-fusion"
-cask "aws-vpn-client"
+# cask "aws-vpn-client"  6.0.3 fails to start
 cask "blender"
 cask "cyberduck"
 cask "daisydisk"
