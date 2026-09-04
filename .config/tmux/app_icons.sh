@@ -7,7 +7,7 @@ get_app_icon() {
     *"- Nvim"*) echo  ;;  # Neovim
     *"OC | "*) echo 󰝣 ;;  # OpenCode
     *"codex "*) echo  ;;  # Codex
-    # *"Claude Code"*) echo "" ;;  # Claude Code has its own icon 
+    *"✳"*) echo ✳ ;;  # Claude Code has its own icon 
     *"lazydocker "*) echo 󰡨 ;;  # lazydocker
     *"lazygit "*) echo  ;;  # lazygit
     *"IPython "*) echo 󰌠 ;;  # IPython
