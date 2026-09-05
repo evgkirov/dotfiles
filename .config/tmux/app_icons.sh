@@ -15,8 +15,8 @@ get_app_icon() {
     *"python3"*) echo 󰌠 ;;  # Python
 
     # Directories
-    *"/dotfiles"*) echo 󰒓 ;;  # dotfiles
-    *"/finances"*) echo 󰠟 ;;  # finances
+    *"/dotfiles"*) echo  ;;  # dotfiles
+    *"/finances"*) echo  ;;  # finances
 
     # Fallback
     *) echo  ;;
