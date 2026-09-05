@@ -20,6 +20,7 @@ get_app_icon() {
     "ChatGPT") echo 󰧑 ;;
     "CleanMyMac") echo 󰃢 ;;
     "Clock") echo 󰥔 ;;
+    "Coach Dave Delta") echo 󰶓 ;;
     "Contacts") echo 󰛋 ;;
     "Cyberduck") echo 󰇥 ;;
     "Dash") echo D ;;
