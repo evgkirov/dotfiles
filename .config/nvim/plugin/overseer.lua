@@ -2,7 +2,14 @@ vim.pack.add({
     { src = "https://github.com/stevearc/overseer.nvim", version = vim.version.range("*") },
 })
 
-require("overseer").setup()
+require("overseer").setup({
+    task_list = {
+        keymaps = {
+            ["<C-j>"] = false,
+            ["<C-k>"] = false,
+        },
+    },
+})
 
 vim.keymap.set("n", "<leader>rr", function()
     vim.cmd("OverseerOpen! bottom")
