@@ -9,8 +9,8 @@ require("copilot").setup({
         keymap = {
             accept = "<S-Tab>",
             accept_line = "<Tab>",
-            prev = "<C-k>",
-            next = "<C-j>",
+            prev = "<C-p>",
+            next = "<C-n>",
         },
     },
     panel = {

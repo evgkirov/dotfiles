@@ -22,7 +22,7 @@ local function switch_window(nvim_direction, tmux_direction, yabai_direction)
     end
 end
 
-vim.keymap.set({ "n", "t", "v", "i" }, "<F7>", switch_window("h", "left", "west"), { desc = "Focus 󰁍" })
-vim.keymap.set({ "n", "t", "v", "i" }, "<F8>", switch_window("j", "down", "south"), { desc = "Focus 󰁅" })
-vim.keymap.set({ "n", "t", "v", "i" }, "<F9>", switch_window("k", "up", "north"), { desc = "Focus 󰁝" })
-vim.keymap.set({ "n", "t", "v", "i" }, "<F10>", switch_window("l", "right", "east"), { desc = "Focus 󰁔" })
+vim.keymap.set({ "n", "t", "v", "i" }, "<C-h>", switch_window("h", "left", "west"), { desc = "Focus 󰁍" })
+vim.keymap.set({ "n", "t", "v", "i" }, "<C-j>", switch_window("j", "down", "south"), { desc = "Focus 󰁅" })
+vim.keymap.set({ "n", "t", "v", "i" }, "<C-k>", switch_window("k", "up", "north"), { desc = "Focus 󰁝" })
+vim.keymap.set({ "n", "t", "v", "i" }, "<C-l>", switch_window("l", "right", "east"), { desc = "Focus 󰁔" })
