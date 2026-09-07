@@ -20,7 +20,7 @@ get_app_icon() {
     *"/finances"*) echo  ;;  # finances
 
     # Fallback
-    *) echo  ;;
+    *) echo 󰆍 ;;
     esac
 }
 
