@@ -247,7 +247,7 @@ function __work_bradley_start
         return 0
     end
 
-    # New window per ticket: shell | claude | nvim, side by side, evenly sized
+    # New window per ticket: shell | claude | lazygit, side by side, evenly sized
     set -l win (tmux new-window -P -F '#{window_id}' -t "$sid:" -n $ticket -c $choice)
 
     # Boot the worktree services in the window's shell pane. worktree-up.sh has
@@ -262,9 +262,9 @@ function __work_bradley_start
     set -l claude_pane (tmux split-window -h -P -F '#{pane_id}' -t $win -c $choice)
     tmux send-keys -t $claude_pane "claude --effort=max" Enter
 
-    # Nvim pane (keeps focus on claude)
-    set -l nvim_pane (tmux split-window -h -d -P -F '#{pane_id}' -t $win -c $choice)
-    tmux send-keys -t $nvim_pane nvim Enter
+    # lazygit pane (keeps focus on claude)
+    set -l lazygit (tmux split-window -h -d -P -F '#{pane_id}' -t $win -c $choice)
+    tmux send-keys -t $lazygit lazygit Enter
 
     # Balance the three panes
     tmux select-layout -t $win even-horizontal
