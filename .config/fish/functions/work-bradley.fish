@@ -253,7 +253,7 @@ function __work_bradley_start
     # Boot the worktree services in the window's shell pane. worktree-up.sh has
     # no WT_PROJECT_ROOT override, so it has to be the worktree's own copy
     if test -x $choice/bin/worktree-up.sh
-        tmux send-keys -t $win "$choice/bin/worktree-up.sh" Enter
+        tmux send-keys -t $win "$choice/bin/worktree-up.sh -d" Enter
     else
         tmux send-keys -t $win "echo 'no bin/worktree-up.sh in this worktree'" Enter
     end
