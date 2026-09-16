@@ -1,7 +1,7 @@
 {
   "plugins": {
     "auto-dark-mode.nvim": {
-      "rev": "54058b4fe414bd64bd2904a6f8a63f1f14e3d8df",
+      "rev": "2b16a24c202892e61fca7df4d2d7c4c872a44165",
       "src": "https://github.com/f-person/auto-dark-mode.nvim"
     },
     "blink.cmp": {
@@ -15,7 +15,7 @@
       "version": ">=0.0.0"
     },
     "copilot.lua": {
-      "rev": "7e6723aabea044519462958ffcea68d7985c5ed0",
+      "rev": "b2b899f93544047ac94d452ecd5af1e63a94377a",
       "src": "https://github.com/zbirenbaum/copilot.lua",
       "version": ">=0.0.0"
     },
@@ -34,7 +34,7 @@
       "version": ">=0.0.0"
     },
     "friendly-snippets": {
-      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "rev": "b4d01b0fdf3c9a549961c2f9ffe8dc09be166219",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "gitsigns.nvim": {
@@ -65,7 +65,7 @@
       "version": ">=0.0.0"
     },
     "nvim-treesitter": {
-      "rev": "857651fce37eba032ebe28f3a206283cdc65c45a",
+      "rev": "9a168f6357ed21c3a636e1727bc7d382abc451b8",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter",
       "version": "'main'"
     },
@@ -75,7 +75,7 @@
       "version": ">=0.0.0"
     },
     "nvim-web-devicons": {
-      "rev": "2ae6958df7ced50baac5035cec0c15799eedfbf7",
+      "rev": "5f032a85be210cd1c6ac98861eb3b187ff3bd5eb",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "overseer.nvim": {
