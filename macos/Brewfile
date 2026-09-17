@@ -7,7 +7,6 @@ tap "felixkratz/formulae"
 brew "asmvik/formulae/skhd", trusted: true
 brew "asmvik/formulae/yabai", trusted: true
 brew "daipeihust/tap/im-select", trusted: true
-brew "felixkratz/formulae/borders", trusted: true
 brew "felixkratz/formulae/sketchybar", trusted: true
 brew "felixkratz/formulae/svim", trusted: true # XXX give it another shot or remove
 brew "m-cli"
