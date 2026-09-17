@@ -1,3 +1,0 @@
-[submodule ".config/ghostty/shaders"]
-	path = .config/ghostty/shaders
-	url = https://github.com/sahaj-b/ghostty-cursor-shaders.git
