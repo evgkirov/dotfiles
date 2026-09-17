@@ -1,5 +1,4 @@
 SPACE_ICONS=("web" "mnge" "comm" "dev" "3d" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15")
-# SPACE_ICONS=("1" "2" "3" "4" "5" "6" "7" "8" "9" "10" "11" "12" "13" "14" "15")
 
 sketchybar \
     --add event window_focus \
