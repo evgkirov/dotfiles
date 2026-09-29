@@ -118,6 +118,7 @@ get_app_icon() {
     "YouTube") echo 󰗃 ;;
     "Zed") echo 󰰶 ;;
     "zoom.us") echo 󰕧 ;;
+    "Zoom") echo 󰕧 ;;
     *) echo 󰘔 ;;
     esac
 }

@@ -6,7 +6,7 @@ NORMAL_WINDOW_OPACITY=0.8
 common_settings() {
     echo "Setting common settings for Yabai"
     yabai -m config layout bsp
-     yabai -m config external_bar all:38:0
+    yabai -m config external_bar all:38:0
     yabai -m config window_gap 5
     yabai -m config top_padding 0
     yabai -m config bottom_padding 0
