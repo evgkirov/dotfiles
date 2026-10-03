@@ -92,6 +92,7 @@ get_app_icon() {
     "Setapp") echo 󰣏 ;;
     "Shortcuts") echo  ;;
     "Slack") echo 󰒱 ;;
+    "Snapmaker Orca") echo 󱢴 ;;
     "Sonos") echo 󰓃 ;;
     "Spotify") echo 󰓇 ;;
     "Steam Helper") echo 󰓓 ;;
