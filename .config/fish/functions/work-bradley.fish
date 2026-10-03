@@ -172,22 +172,22 @@ function __work_bradley_start
         tmux rename-session -t $sid bradley
     end
 
-    # Ensure "main" exists. Reuse the session's sole window only while it is
+    # Ensure "dev" exists. Reuse the session's sole window only while it is
     # still auto-named: window indexes are never renumbered, so "is this index
     # 1" would happily rename a ticket window that inherited the index
-    if not contains -- main (tmux list-windows -t $sid -F '#{window_name}')
+    if not contains -- dev (tmux list-windows -t $sid -F '#{window_name}')
         set -l windows (tmux display-message -p -t $sid '#{session_windows}')
         set -l auto (tmux display-message -p -t $sid '#{?automatic-rename,1,0}')
         if test "$windows" = 1; and test "$auto" = 1
-            tmux rename-window -t $sid main
+            tmux rename-window -t $sid dev
         else
-            tmux new-window -d -n main -t "$sid:" -c $root
+            tmux new-window -d -n dev -t "$sid:" -c $root
         end
     end
 
-    # Focus main's first pane: dev-up and the picker belong there
-    tmux select-window -t "$sid:=main"
-    tmux select-pane -t "$sid:=main.1"
+    # Focus dev's first pane: dev-up and the picker belong there
+    tmux select-window -t "$sid:=dev"
+    tmux select-pane -t "$sid:=dev.1"
 
     # The dev stack runs inside OrbStack
     orbctl start
@@ -203,15 +203,6 @@ function __work_bradley_start
     or begin
         echo "work-bradley: dev-up.sh failed" >&2
         return 1
-    end
-
-    # Container monitor beside the main shell, only if none is running.
-    # pane_current_command reverts to the shell the moment lazydocker exits, so
-    # mark the pane instead — otherwise every re-run splits another one
-    if not contains -- lazydocker (tmux list-panes -s -t $sid -F '#{@bradley_role}')
-        set -l lzd_pane (tmux split-window -h -d -P -F '#{pane_id}' -t "$sid:=main" -c $root)
-        tmux set -p -t $lzd_pane @bradley_role lazydocker
-        tmux send-keys -t $lzd_pane lazydocker Enter
     end
 
     # Pick a linked worktree (main excluded) or choose to create one
@@ -258,9 +249,9 @@ function __work_bradley_start
         tmux send-keys -t $win "echo 'no bin/worktree-up.sh in this worktree'" Enter
     end
 
-    # Claude pane (takes focus)
+    # Claude pane (takes focus). Session named like the window
     set -l claude_pane (tmux split-window -h -P -F '#{pane_id}' -t $win -c $choice)
-    tmux send-keys -t $claude_pane "claude --effort=max" Enter
+    tmux send-keys -t $claude_pane "claude --effort=max -n $ticket" Enter
 
     # lazygit pane (keeps focus on claude)
     set -l lazygit (tmux split-window -h -d -P -F '#{pane_id}' -t $win -c $choice)
