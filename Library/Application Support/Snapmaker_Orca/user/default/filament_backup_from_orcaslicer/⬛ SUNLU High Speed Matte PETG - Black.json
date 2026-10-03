@@ -1,0 +1,63 @@
+{
+	"compatible_printers": [
+		"Snapmaker U1 (0.4 nozzle)"
+	],
+	"enable_pressure_advance": [
+		"1"
+	],
+	"fan_max_speed": [
+		"40"
+	],
+	"filament_density": [
+		"1.26"
+	],
+	"filament_extruder_variant": [
+		"Direct Drive Standard"
+	],
+	"filament_flow_ratio": [
+		"0.98"
+	],
+	"filament_ironing_flow": [
+		"25%"
+	],
+	"filament_ironing_speed": [
+		"50"
+	],
+	"filament_max_volumetric_speed": [
+		"19"
+	],
+	"filament_retraction_length": [
+		"0.2"
+	],
+	"filament_settings_id": [
+		"⬛ SUNLU High Speed Matte PETG - Black"
+	],
+	"filament_vendor": [
+		"SUNLU"
+	],
+	"from": "User",
+	"hot_plate_temp": [
+		"75"
+	],
+	"hot_plate_temp_initial_layer": [
+		"75"
+	],
+	"inherits": "Generic PETG HF @System",
+	"name": "⬛ SUNLU High Speed Matte PETG - Black",
+	"nozzle_temperature": [
+		"245"
+	],
+	"nozzle_temperature_initial_layer": [
+		"245"
+	],
+	"nozzle_temperature_range_high": [
+		"270"
+	],
+	"nozzle_temperature_range_low": [
+		"230"
+	],
+	"pressure_advance": [
+		"0.024"
+	],
+	"version": "2.4.0.3"
+}

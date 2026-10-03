@@ -1,0 +1,25 @@
+{
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_flow_ratio": [
+        "1.01"
+    ],
+    "filament_max_volumetric_speed": [
+        "16"
+    ],
+    "filament_settings_id": [
+        "⬛ Prusament PLA - Jet Black"
+    ],
+    "filament_vendor": [
+        "Prusament"
+    ],
+    "from": "User",
+    "inherits": "Generic PLA High Speed",
+    "is_custom_defined": "0",
+    "name": "⬛ Prusament PLA - Jet Black",
+    "pressure_advance": [
+        "0.03"
+    ],
+    "version": "2.3.3.3"
+}
