@@ -1,0 +1,28 @@
+{
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_max_volumetric_speed": [
+        "16"
+    ],
+    "filament_settings_id": [
+        "🟧 Soleyin Ultra PLA - Rosehip"
+    ],
+    "filament_vendor": [
+        "Soleyin"
+    ],
+    "from": "User",
+    "inherits": "Generic PLA High Speed",
+    "is_custom_defined": "0",
+    "name": "🟧 Soleyin Ultra PLA - Rosehip",
+    "nozzle_temperature": [
+        "215"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "215"
+    ],
+    "pressure_advance": [
+        "0.03"
+    ],
+    "version": "2.3.3.3"
+}
