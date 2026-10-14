@@ -34,7 +34,7 @@ edit:
 .PHONY: sync
 sync:
 	git status
-	opencode run "Analyze changes and git commit all changes with a meaningful message. Use the make-commits-great-again skill. DO NOT ask for confirmation, commit right away"
+	opencode run "Analyze changes and git commit all changes with a meaningful message. Use the make-commits-great-again skill. DO NOT ask for confirmation, commit right away" --model=zai-coding-plan/glm-5.3
 	git pull --rebase
 	git push
 	git log -n 1
