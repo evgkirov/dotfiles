@@ -102,6 +102,13 @@ end, { silent = true, desc = "Toggle Markdown checkbox / Beancount flag" })
 vim.keymap.set("n", "<leader>cl", 'viW"cc<C-r>=<C-r>c<cr><esc>', { silent = true, desc = "Calculate" })
 vim.keymap.set("v", "<leader>cl", '"cc<C-r>=<C-r>c<cr><esc>', { silent = true, desc = "Calculate" })
 
+vim.keymap.set(
+    "n",
+    "<leader>cc",
+    require("helpers.agents").add_comment_for_agent,
+    { silent = true, desc = "Add Comment for Agent" }
+)
+
 -- tabs
 
 vim.keymap.set("n", "<leader>tx", "<cmd>tabclose<cr>", { silent = true, desc = "󰅗 Close tab" })
