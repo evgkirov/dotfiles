@@ -1,0 +1,31 @@
+{
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_flow_ratio": [
+        "1"
+    ],
+    "filament_max_volumetric_speed": [
+        "24"
+    ],
+    "filament_settings_id": [
+        "⬜ SUNLU High Speed Matte PETG - White"
+    ],
+    "filament_vendor": [
+        "Sunlu"
+    ],
+    "from": "User",
+    "inherits": "Generic PETG",
+    "is_custom_defined": "0",
+    "name": "⬜ SUNLU High Speed Matte PETG - White",
+    "nozzle_temperature": [
+        "250"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "250"
+    ],
+    "pressure_advance": [
+        "0.03"
+    ],
+    "version": "2.3.3.3"
+}
