@@ -251,7 +251,7 @@ function __work_bradley_start
 
     # Claude pane (takes focus). Session named like the window
     set -l claude_pane (tmux split-window -h -P -F '#{pane_id}' -t $win -c $choice)
-    tmux send-keys -t $claude_pane "claude --effort=max -n $ticket" Enter
+    tmux send-keys -t $claude_pane "claude -n $ticket" Enter
 
     # lazygit pane (keeps focus on claude)
     set -l lazygit (tmux split-window -h -d -P -F '#{pane_id}' -t $win -c $choice)
