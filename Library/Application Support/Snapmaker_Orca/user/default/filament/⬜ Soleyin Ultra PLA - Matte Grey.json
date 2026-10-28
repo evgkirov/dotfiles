@@ -1,0 +1,31 @@
+{
+    "enable_pressure_advance": [
+        "1"
+    ],
+    "filament_flow_ratio": [
+        "0.97"
+    ],
+    "filament_max_volumetric_speed": [
+        "16"
+    ],
+    "filament_settings_id": [
+        "⬜ Soleyin Ultra PLA - Matte Grey"
+    ],
+    "filament_vendor": [
+        "Soleyin"
+    ],
+    "from": "User",
+    "inherits": "Generic PLA High Speed",
+    "is_custom_defined": "0",
+    "name": "⬜ Soleyin Ultra PLA - Matte Grey",
+    "nozzle_temperature": [
+        "210"
+    ],
+    "nozzle_temperature_initial_layer": [
+        "210"
+    ],
+    "pressure_advance": [
+        "0.022"
+    ],
+    "version": "2.3.4.4"
+}
