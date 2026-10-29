@@ -441,7 +441,7 @@ function __work_bradley_destroy
     WT_PROJECT_ROOT=$choice $root/bin/worktree-down.sh
 
     # Plain git remove: refuses on uncommitted/untracked files
-    if not git -C $root worktree remove $choice
+    if not git -C $root worktree remove --force $choice
         echo "work-bradley: git worktree remove failed" >&2
         return 1
     end
