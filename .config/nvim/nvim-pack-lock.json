@@ -50,6 +50,11 @@
       "src": "https://github.com/nvim-mini/mini.surround",
       "version": ">=0.0.0"
     },
+    "minuet-ai.nvim": {
+      "rev": "e61ace2032473b67706da9e3dae0fe12f3d50758",
+      "src": "https://github.com/milanglacier/minuet-ai.nvim",
+      "version": ">=0.0.0"
+    },
     "nvim-colorizer.lua": {
       "rev": "72a05f62c52241bc7441c820eb53946f92b2e6a4",
       "src": "https://github.com/catgoose/nvim-colorizer.lua"
