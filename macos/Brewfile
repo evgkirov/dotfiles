@@ -2,6 +2,7 @@
 tap "asmvik/formulae"
 tap "daipeihust/tap"
 tap "felixkratz/formulae"
+tap "fujacob/cotabby"
 
 # Formulae: OS / GUI
 brew "asmvik/formulae/skhd", trusted: true
@@ -67,7 +68,8 @@ brew "typos-lsp"
 brew "vscode-langservers-extracted"
 brew "vtsls"
 
-# Formulae: MCPs
+# Formulae: LLM, MCPs
+brew "ollama"
 brew "playwright-mcp"
 
 # Formulae: Misc
@@ -95,6 +97,7 @@ cask "arq"
 cask "autodesk-fusion"
 # cask "aws-vpn-client"  6.0.3 fails to start
 cask "blender"
+cask "cotabby"
 cask "cyberduck"
 cask "daisydisk"
 cask "dictionaries"
