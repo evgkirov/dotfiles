@@ -1,7 +1,4 @@
 {
-    "enable_pressure_advance": [
-        "1"
-    ],
     "filament_flow_ratio": [
         "0.92"
     ],
@@ -29,9 +26,6 @@
     ],
     "nozzle_temperature_range_high": [
         "250"
-    ],
-    "pressure_advance": [
-        "0.012"
     ],
     "version": "2.3.3.3"
 }
