@@ -1,4 +1,7 @@
 {
+    "filament_flow_ratio": [
+        "0.95"
+    ],
     "filament_max_volumetric_speed": [
         "16"
     ],
