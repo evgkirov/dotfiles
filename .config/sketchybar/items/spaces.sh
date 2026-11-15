@@ -6,9 +6,10 @@ sketchybar \
 
 for i in "${!SPACE_ICONS[@]}"; do
     sid=$(($i + 1))
+    # "lctrl - 0" is bound to space 10
+    key=$(($sid % 10))
     space=(
         background.color=$SPACE_BG
-        # click_script="yabai -m space --focus $sid"
         icon=${SPACE_ICONS[i]}
         icon.color=$SPACE_FG
         icon.highlight_color=$SPACE_ACTIVE_FG
@@ -28,7 +29,7 @@ for i in "${!SPACE_ICONS[@]}"; do
         --set space.$sid ${space[@]} \
         icon.font="$TEXT_FONT" \
         label.font="$ICON_FONT" \
-        click_script="yabai -m config mouse_follows_focus off && yabai -m space --focus $sid && sleep 1 && yabai -m config mouse_follows_focus on" \
+        click_script="/opt/homebrew/bin/yabai -m config mouse_follows_focus off && /opt/homebrew/bin/skhd -k 'ctrl - $key' && sleep 1 && /opt/homebrew/bin/yabai -m config mouse_follows_focus on" \
         --subscribe space.$sid window_focus space_windows_change \
         space_change \
         windows_on_spaces
