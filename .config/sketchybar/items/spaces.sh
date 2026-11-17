@@ -29,7 +29,7 @@ for i in "${!SPACE_ICONS[@]}"; do
         --set space.$sid ${space[@]} \
         icon.font="$TEXT_FONT" \
         label.font="$ICON_FONT" \
-        click_script="/opt/homebrew/bin/yabai -m config mouse_follows_focus off && /opt/homebrew/bin/skhd -k 'ctrl - $key' && sleep 1 && /opt/homebrew/bin/yabai -m config mouse_follows_focus on" \
+        click_script="/opt/homebrew/bin/yabai -m config mouse_follows_focus off && /opt/homebrew/bin/skhd -k 'alt - $key' && sleep 1 && /opt/homebrew/bin/yabai -m config mouse_follows_focus on" \
         --subscribe space.$sid window_focus space_windows_change \
         space_change \
         windows_on_spaces
