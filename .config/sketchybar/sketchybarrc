@@ -37,7 +37,7 @@ sketchybar --bar "${bar[@]}"
 defaults=(
     background.corner_radius=4
     background.height=24
-    shadow=on
+    shadow=off
     icon.color=$DATA_FG
     icon.font="$ICON_FONT"
     icon.padding_left=10
