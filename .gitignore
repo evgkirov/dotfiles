@@ -12,4 +12,6 @@
 /.config/1Password
 /.config/configstore/update-notifier-byterover-cli.json
 /.config/opencode/service.json
+/.config/rcmd/*
+!/.config/rcmd/config.yaml
 /Library/Application Support/Snapmaker_Orca/user/default/filament/*.info

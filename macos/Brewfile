@@ -13,6 +13,7 @@ brew "felixkratz/formulae/sketchybar", trusted: true
 brew "felixkratz/formulae/svim", trusted: true # XXX give it another shot or remove
 brew "m-cli"
 brew "mas"
+cask "rcmd"
 
 # Formulae: Shell / CLI
 brew "bash"

@@ -11,21 +11,6 @@
 :: ins @ : yabai -m window --opacity 0.5; sleep 2 ; skhd -k "escape"
 
 #
-# APPS
-#
-
-# "lalt - a" is handled by Ghostty
-lalt - b : open -a "Orion"
-lalt - d : open -a "Discord"
-lalt - f : osascript -e 'tell application "Finder" to make new Finder window' ; osascript -e 'tell application "Finder" to activate'
-lalt - h : open -a "Home Assistant"
-lalt - m : open -a "Spotify"
-lalt - o : open -a "Obsidian"
-lalt - p : open -a "1Password"
-lalt - s : open -a "Things3"
-lalt - t : open -a "Ghostty"
-
-#
 # HACKS
 #
 
