@@ -23,7 +23,7 @@ triggers:
 appKeyAssignments:
   b: {app: /Applications/Orion.app, launchIfNotRunning: true, whenAlreadyFocusedAction: Adaptive}
   f: {app: /System/Library/CoreServices/Finder.app, launchIfNotRunning: true, whenAlreadyFocusedAction: Adaptive}
-  g: {app: /Applications/Ghostty.app, launchIfNotRunning: true, whenAlreadyFocusedAction: Adaptive}
+  t: {app: /Applications/Ghostty.app, launchIfNotRunning: true, whenAlreadyFocusedAction: Adaptive}
 
 # app → letter → saved window
 windowKeyAssignments: {}
@@ -128,14 +128,14 @@ general:
   enableQuickKeys: true
   editorApp: ''
   terminalApp: /Applications/Ghostty.app
-  enableStickySpaceSearch: true
+  enableStickySpaceSearch: false
   enableAppSearch: true
 
 # bundle IDs rcmd never lists
 ignoredApps: []
 
 # keys rcmd never takes
-ignoredKeys: []
+ignoredKeys: [j, q]
 
 # bundle IDs where rcmd stops intercepting keys
 appsWhereRcmdIsPaused: []
